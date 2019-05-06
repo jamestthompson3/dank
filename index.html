@@ -1,0 +1,294 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <link
+      href="https://fonts.googleapis.com/css?family=Anton"
+      rel="stylesheet"
+    />
+    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
+    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="icon" sizes="192x192" href="%PUBILC_URL%/favicon.png" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="Title" />
+    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
+    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/favicon.png" />
+    <meta
+      itemprop="description"
+      content="A website full of intersting things"
+    />
+  </head>
+  <style>
+    /* Reset CSS */
+    html,
+    body,
+    div,
+    span,
+    applet,
+    object,
+    iframe,
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6,
+    p,
+    blockquote,
+    pre,
+    a,
+    abbr,
+    acronym,
+    address,
+    big,
+    cite,
+    code,
+    del,
+    dfn,
+    em,
+    img,
+    ins,
+    kbd,
+    q,
+    s,
+    samp,
+    small,
+    strike,
+    strong,
+    sub,
+    sup,
+    tt,
+    var,
+    b,
+    u,
+    i,
+    center,
+    dl,
+    dt,
+    dd,
+    ol,
+    ul,
+    li,
+    fieldset,
+    form,
+    label,
+    legend,
+    table,
+    caption,
+    tbody,
+    tfoot,
+    thead,
+    tr,
+    th,
+    td,
+    article,
+    aside,
+    canvas,
+    details,
+    embed,
+    figure,
+    figcaption,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    output,
+    ruby,
+    section,
+    summary,
+    time,
+    mark,
+    audio,
+    video {
+      margin: 0;
+      padding: 0;
+      border: 0;
+      font-size: 100%;
+      font: inherit;
+      vertical-align: baseline;
+      font-family: "Anton", sans-serif;
+      font-weight: 400;
+    }
+    /* HTML5 display-role reset for older browsers */
+    article,
+    aside,
+    details,
+    figcaption,
+    figure,
+    footer,
+    header,
+    hgroup,
+    menu,
+    nav,
+    section {
+      display: block;
+    }
+    body {
+      line-height: 1;
+    }
+    ol,
+    ul {
+      list-style: none;
+    }
+    blockquote,
+    q {
+      quotes: none;
+    }
+    blockquote:before,
+    blockquote:after,
+    q:before,
+    q:after {
+      content: "";
+      content: none;
+    }
+    table {
+      border-collapse: collapse;
+      border-spacing: 0;
+    }
+  </style>
+  <style>
+    #root {
+      background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)),
+        url("https://i.redd.it/kshhsob9pyv21.jpg") center repeat;
+      background-size: cover;
+      padding-top: 2.5rem;
+      height: 700px;
+      display: flex;
+      flex-direction: column;
+      justify-content: space-between;
+      align-items: center;
+    }
+    #smash {
+      background: url("https://the-cult.neocities.org/images/important/background.png");
+      background-size: cover;
+      height: 700px;
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      padding: 10px;
+    }
+    #body-container {
+      position: relative;
+      overflow: auto;
+      width: 100vw;
+      height: 100vh;
+    }
+    #cursor {
+      position: absolute;
+      width: 50px;
+      height: 50px;
+    }
+    #programming {
+      background: linear-gradient(#5042f4, #42b0f4);
+      height: 400px;
+      padding: 20px;
+    }
+    .header {
+      text-align: center;
+      font-size: 2.5rem;
+      color: #fff;
+    }
+    .subheader {
+      font-size: 2rem;
+      color: #fff;
+      text-align: center;
+    }
+    #toc-container {
+      width: 80%;
+      border-radius: 8px;
+      border: 1px solid #ababab;
+      padding: 10px;
+      margin-bottom: 2rem;
+    }
+    #toc-list {
+      margin: 1rem auto;
+    }
+    #toc-list > * {
+      font-size: 1.5rem;
+      text-align: center;
+    }
+    #toc-list > * > a {
+      text-decoration-color: aquamarine;
+      color: aquamarine;
+    }
+    #toc-list > * > a:visited {
+      color: #fff;
+    }
+  </style>
+  <script>
+    function jumpToSection() {
+      const lineNum = window.location.hash;
+      const lineElem = document.getElementById(lineNum);
+      if (lineElem) {
+        lineElem.scrollIntoView(true);
+      }
+      return true;
+    }
+  </script>
+  <title>dankkkk</title>
+  <body style="overflow: hidden" onload="jumpToSection();">
+    <div id="body-container">
+      <img id="cursor" src="bb8_1.svg" alt="cursor" />
+      <section id="root" aria-label="welcome" role="content-info">
+        <h1 class="header">Welcome to my homepage</h1>
+        <div id="toc-container" aria-label="table-contents-container">
+          <h2 id="toc" class="subheader">Table of Contents</h2>
+          <ul id="toc-list" aria-labelledby="toc">
+            <li role="link"><a href="#smash">Smash vids</a></li>
+            <li role="link"><a href="#programming">Programming articles</a></li>
+            <li role="link"><a href="#blog">Blog</a></li>
+          </ul>
+        </div>
+      </section>
+      <section id="smash" aria-label="smash bros" role="content-info">
+        <img
+          style="align-self: center;"
+          src="https://media.tenor.com/images/6bf1ba96181f4b3df10e8cbb61901b67/tenor.gif"
+          alt="dat-boi"
+        />
+        <iframe
+          width="375"
+          height="315"
+          src="https://www.youtube-nocookie.com/embed/7_95de2WCUk"
+          frameborder="0"
+          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
+          allowfullscreen
+        ></iframe>
+      </section>
+      <section id="programming" role="content-info" aria-label="programming">
+        <h1 id="programming-header" class="header">
+          Cool Programming Articles / Videos
+        </h1>
+        <ul aria-labelledby="programming-header">
+          <li role="link">
+            <a href="https://vimways.org/2018/">vimways</a> - great articles
+            about how to improve your vim usage.
+          </li>
+          <li role="link">
+            <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ">
+              Jon Gjengset
+            </a>
+            - explains technologies such as tcp, non-blocking async io,
+            cuncurrent databases, etc. in great detail and using Rust
+          </li>
+        </ul>
+      </section>
+    </div>
+    <script>
+      const root = document.querySelector("#root");
+      const cursor = document.querySelector("#cursor");
+      root.addEventListener("mousemove", pokeballMouse);
+      root.addEventListener("touchend", pokeballMouse);
+      function pokeballMouse({ x, y }) {
+        cursor.style.left = `${x + 30}px`;
+        cursor.style.top = `${y + 30}px`;
+      }
+    </script>
+  </body>
+</html>
