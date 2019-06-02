@@ -6,152 +6,19 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <link
-      href="https://fonts.googleapis.com/css?family=Anton"
-      rel="stylesheet"
-    />
-    <link rel="manifest" href="%PUBLIC_URL%/manifest.json" />
-    <link rel="shortcut icon" href="%PUBLIC_URL%/favicon.png" />
-    <link rel="icon" sizes="192x192" href="%PUBILC_URL%/favicon.png" />
+    <!-- <link -->
+    <!--   href="https://fonts.googleapis.com/css?family=Anton" -->
+    <!--   rel="stylesheet" -->
+    <!-- /> -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
-    <meta name="apple-mobile-web-app-title" content="Title" />
-    <link rel="apple-touch-icon" href="%PUBLIC_URL%/favicon.png" />
-    <link rel="apple-touch-startup-image" href="%PUBLIC_URL%/favicon.png" />
+    <meta name="apple-mobile-web-app-title" content="Cool blog, bro" />
     <meta
       itemprop="description"
       content="A website full of intersting things"
     />
   </head>
-  <style>
-    /* Reset CSS */
-    html,
-    body,
-    div,
-    span,
-    applet,
-    object,
-    iframe,
-    h1,
-    h2,
-    h3,
-    h4,
-    h5,
-    h6,
-    p,
-    blockquote,
-    pre,
-    a,
-    abbr,
-    acronym,
-    address,
-    big,
-    cite,
-    code,
-    del,
-    dfn,
-    em,
-    img,
-    ins,
-    kbd,
-    q,
-    s,
-    samp,
-    small,
-    strike,
-    strong,
-    sub,
-    sup,
-    tt,
-    var,
-    b,
-    u,
-    i,
-    center,
-    dl,
-    dt,
-    dd,
-    ol,
-    ul,
-    li,
-    fieldset,
-    form,
-    label,
-    legend,
-    table,
-    caption,
-    tbody,
-    tfoot,
-    thead,
-    tr,
-    th,
-    td,
-    article,
-    aside,
-    canvas,
-    details,
-    embed,
-    figure,
-    figcaption,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    output,
-    ruby,
-    section,
-    summary,
-    time,
-    mark,
-    audio,
-    video {
-      margin: 0;
-      padding: 0;
-      border: 0;
-      font-size: 100%;
-      font: inherit;
-      vertical-align: baseline;
-      font-family: "Anton", sans-serif;
-      font-weight: 400;
-    }
-    /* HTML5 display-role reset for older browsers */
-    article,
-    aside,
-    details,
-    figcaption,
-    figure,
-    footer,
-    header,
-    hgroup,
-    menu,
-    nav,
-    section {
-      display: block;
-    }
-    body {
-      line-height: 1;
-    }
-    ol,
-    ul {
-      list-style: none;
-    }
-    blockquote,
-    q {
-      quotes: none;
-    }
-    blockquote:before,
-    blockquote:after,
-    q:before,
-    q:after {
-      content: "";
-      content: none;
-    }
-    table {
-      border-collapse: collapse;
-      border-spacing: 0;
-    }
-  </style>
+  <link href="reset.css" rel="stylesheet" />
   <style>
     #root {
       background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)),
@@ -159,8 +26,6 @@
       background-size: cover;
       padding-top: 2.5rem;
       height: 700px;
-      display: flex;
-      flex-direction: column;
       justify-content: space-between;
       align-items: center;
     }
@@ -168,8 +33,6 @@
       background: url("https://the-cult.neocities.org/images/important/background.png");
       background-size: cover;
       height: 700px;
-      display: flex;
-      flex-direction: column;
       align-items: center;
     }
     #body-container {
@@ -191,19 +54,49 @@
         #b942f4,
         #9f3cc9
       );
+    }
+    .flex-column {
+      display: flex;
+      flex-direction: column;
+    }
+    .400h {
       height: 400px;
     }
-    #blog {
-      display: flex;
+    .center-text {
+      text-align: center;
+    }
+
+    .bg-black {
+      background: black;
+    }
+    txt-white {
+      color: #fff;
+    }
+        #blog {
       align-items: center;
-      flex-direction: column;
-      height: 400px;
       background: url("http://pixelartmaker.com/art/8baf7524e2c592a.png");
     }
+    .blog-post {
+      padding: 4rem;
+      background: #333;
+      font-family; 'Roboto';
+    }
+    blog-post, p {
+      color: #fff;
+    }
+    blog-post, a {
+      color: skyblue;
+    }
+    blog-post, h3 {
+      font-size: 1.5rem;
+      color: #dbdbdb;
+      margin: 1rem 0rem;
+    }
     .header {
-      text-align: center;
       font-size: 2.5rem;
       color: #fff;
+      background: #000;
+      padding: 5px;
     }
     .container {
       padding: 20px;
@@ -211,7 +104,6 @@
     .subheader {
       font-size: 2rem;
       color: #fff;
-      text-align: center;
     }
     #toc-container {
       width: 80%;
@@ -251,19 +143,25 @@
   <body style="overflow: hidden" onload="jumpToSection();">
     <div id="body-container">
       <img id="cursor" src="bb8_1.svg" alt="cursor" />
-      <section id="root" aria-label="welcome" role="content-info">
-        <h1 class="header">Welcome to my homepage</h1>
+      <section
+        id="root"
+        aria-label="welcome"
+        role="content-info"
+        class="flex-column"
+      >
+        <h1 class="header center-text">Welcome to my homepage</h1>
         <div id="toc-container" aria-label="table-contents-container">
-          <h2 id="toc" class="subheader">Table of Contents</h2>
-          <ul
-            id="toc-list"
-            class="list"
-            style="text-align: center;"
-            aria-labelledby="toc"
-          >
-            <li role="link"><a href="#smash">Smash vids</a></li>
-            <li role="link"><a href="#programming">Programming articles</a></li>
-            <li role="link"><a href="#blog">Blog</a></li>
+          <h2 id="toc" class="subheader center-text">Table of Contents</h2>
+          <ul id="toc-list" class="list center-text" aria-labelledby="toc">
+            <li role="link">
+              <a href="#smash" class="flex-column">Smash vids</a>
+            </li>
+            <li role="link">
+              <a href="#programming" class="400h">Programming articles</a>
+            </li>
+            <li role="link">
+              <a href="#blog" class="flex-column 400h">Blog</a>
+            </li>
           </ul>
         </div>
       </section>
@@ -317,18 +215,527 @@
         class="container"
       >
         <h1 id="blog-header" class="header">Blog</h1>
-        <img
-          src="https://i.redd.it/k23fdquqfhe11.jpg"
-          alt="coming soon"
-          style="height: 300px; width: 500px;"
-        />
       </section>
+      <article id="rxjs-recompose" class="blog-post">
+        <section data-field="body">
+          <section>
+            <div>
+              <div>
+                <h3 id="6d37">
+                  Beyond counters — Using recompose and RXJS 6 to build a (semi)
+                  complex UI
+                </h3>
+                <p>
+                  If you haven’t heard about reactive programming yet, I invite
+                  you to pause and get acquainted.
+                  <a
+                    href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754"
+                    data-href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754"
+                    rel="noopener"
+                    target="_blank"
+                    >This gist </a
+                  >is a great place to get started. Reactive programming allows
+                  your applications to react to events and data streams in real
+                  time. This means you can skip life cycle methods like
+                  <code>componentDidMount</code>
+                  and
+                  <code>componentDidUpdate</code>
+                  when checking for changes in your application state. If you
+                  are already familiar with reactive programming, then hopefully
+                  this post can give you more insights on how it can dovetail
+                  seamlessly with React using the recompose library.
+                </p>
+                <p>
+                  If you would like to skip to the end, the codesandbox is here
+                </p>
+                <div id="9299">
+                  <a
+                    href="https://codesandbox.io/embed/jz12wn45j3"
+                    data-href="https://codesandbox.io/embed/jz12wn45j3"
+                    title="https://codesandbox.io/embed/jz12wn45j3"
+                    ><strong>CodeSandbox</strong><br /><em
+                      >CodeSandbox is an online editor tailored for web
+                      applications.</em
+                    >codesandbox.io</a
+                  ><a
+                    href="https://codesandbox.io/embed/jz12wn45j3"
+                    data-media-id="d61c461d6081faa73b6177dc7ee9ed18"
+                    data-thumbnail-img-id="0*3n--hCZciHgaNMxp"
+                    style="background-image: url(https://cdn-images-1.medium.com/fit/c/160/160/0*3n--hCZciHgaNMxp);"
+                  ></a>
+                </div>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div>
+              <div>
+                <h3>
+                  Task
+                </h3>
+                <p>
+                  While learning about reactive programming in the context of
+                  React, I found a lot of great material, but not many tutorials
+                  outside of simple data fetching and counting. Here we will
+                  build a set of three lists. The first list contains users,
+                  while the other two containers list their likes and dislikes.
+                </p>
+                <p>
+                  Clicking on a user should then load their likes and dislikes
+                  list and change the URL to denote which user is currently
+                  selected. If no user is specified in the the URL, then the
+                  first user on the list should be chosen automatically. Likes
+                  and dislikes should also be able to be added, deleted, and
+                  edited.
+                </p>
+                <h3>
+                  Tools
+                </h3>
+                <p>
+                  The main tools we will be using are
+                  <a
+                    href="https://github.com/acdlite/recompose"
+                    data-href="https://github.com/acdlite/recompose"
+                    rel="noopener"
+                    target="_blank"
+                    >recompose</a
+                  >
+                  and
+                  <a
+                    href="https://github.com/ReactiveX/rxjs"
+                    data-href="https://github.com/ReactiveX/rxjs"
+                    rel="noopener"
+                    target="_blank"
+                    >RXJS</a
+                  >. Both are utility libraries that help you harness the power
+                  of reactive programming. I would suggest looking through the
+                  docs of both libraries to get acquainted with their usage, but
+                  I will also explain how to use them in the context of building
+                  a UI in React.
+                </p>
+                <h3>
+                  Why
+                </h3>
+                <p>
+                  UI design is supposed to feel snappy and reactive, and
+                  reactive programming allows us to change UI elements according
+                  to the flow of our data. Unlike in redux, we don’t have to
+                  update our data store, wait for the update to propagate, check
+                  to see if the update is finished, and finally update our UI to
+                  reflect the changes. With reactive programming, we can push
+                  changes to data streams and our components instantly react to
+                  these changes.
+                </p>
+                <p id="7532">
+                  As our applications grow in size, so can the state management.
+                  The result is a large state object which needs to be traversed
+                  and updated even when you are only using a small part of it
+                  for the current page or view. In many cases, this data can be
+                  kept locally and can be ephemeral, no longer taking up space
+                  when the user navigates away from the page.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div>
+              <div>
+                <h3>
+                  First steps
+                </h3>
+                <p>
+                  The first thing we need to do in this project is to set up
+                  recompose to work with the observable configuration used by
+                  RXJS. This is done by importing the function
+                  <code>setObservableConfig</code>
+                  from recompose, and passing it the
+                  <code>from</code> utility from rxjs.
+                </p>
+                <figure id="8542">
+                  <script src="https://gist.github.com/jamestthompson3/acf5d8bc2e7949dd7676220123d481bc.js.js"></script>
+                </figure>
+                <p>
+                  Now that we have recompose configured to work with RXJS, we
+                  can start making prop streams for our component to consume.
+                  Let’s first start with a
+                  <code>load</code> stream which will fetch our users from the
+                  backend and pass the response — as well as any other props
+                  received — to the next stream.
+                </p>
+                <figure id="b01c">
+                  <script src="https://gist.github.com/jamestthompson3/05a20ca0596d5ff675d6b5db4a37351a.js"></script>
+                </figure>
+                <p>
+                  Let’s break this down line by line.
+                </p>
+                <p>
+                  First, we are importing a few operators from rxjs, so let’s
+                  discuss what they do and why we need them.
+                  <code>switchMap</code> and <code>map</code> allow us to map
+                  values to other functions and components.
+                  <code>switchMap</code> takes an observable and flattens it,
+                  allowing us to pass just its values to the next function and
+                  not the observable itself.
+                </p>
+                <p>
+                  The following operators,
+                  <code>tap</code>, <code>catchError</code>, and
+                  <code>startWith</code>, help us with debugging and allows us
+                  to give the user information about the state of the
+                  application. <code>tap</code> takes and observable, performs a
+                  side effect, and returns a copy of the original observable.
+                </p>
+                <h4>Using <code>tap</code> to debug observables</h4>
+                <figure id="952e">
+                  <script src="https://gist.github.com/jamestthompson3/78b4029c395f3277b0a6808dd153f96f.js"></script>
+                  <figcaption>
+                    Using tap to peer into the Observable stream
+                  </figcaption>
+                </figure>
+                <p>
+                  By using <code>tap</code>, we can log out the response we
+                  receive from the backend without having to worry about
+                  changing anything in our stream. Using the
+                  <code>startWith</code> and
+                  <code>catchError</code>
+                  operators help us communicate the status of the application to
+                  users by giving us the ability to do conditional rendering
+                  based on it’s current state. We will go into the
+                  implementation of this later.
+                </p>
+                <p>
+                  Now that we understand what the operators we are using are
+                  able to do, let’s step through the load stream logic. You will
+                  notice that the variable
+                  <code>load</code> itself is the result of the
+                  <code>mapPropsStream</code>
+                  function taken from
+                  <code>recompose</code> this takes as an argument a function
+                  which receives a stream of props (streams are denoted by the
+                  suffix <code>$</code> for clarity, but that does not have any
+                  syntactic meaning) which can then be piped through our logical
+                  operators.
+                </p>
+                <p>
+                  Here is where
+                  <code>switchMap</code>
+                  becomes very useful. Since React can’t render anything with an
+                  Observable object, we need to flatten our props stream so that
+                  we get only the values of that stream. Those values are the
+                  actual props we need to render our component. So we flatten
+                  the stream and map it to our function which fetches the users
+                  from the backend. You can use
+                  <code>props</code> here to pass any additional arguments to
+                  your function that fetches the data, but since we’re faking it
+                  here, we don’t need to pass anything. Finally, our request
+                  returns a <code>users</code> array which we then map to an
+                  object which passes along the <code>props</code>,
+                  <code>users</code>, and signals a successful request by
+                  setting <code>status</code> to <code>&#39;SUCCESS&#39;</code>.
+                </p>
+                <p>
+                  You may have noticed that we use
+                  <code>tap</code> here as well to call the function
+                  <code>setUserList</code>, which is contained in the props
+                  passed to the load stream. This, combined with the ternary
+                  check of
+                  <code>isEmpty(props.userList</code>
+                  will help us prevent unnecessarily re-fetching the data. If we
+                  have the data, we just want to return it without any
+                  manipulation.
+                </p>
+                <h4>
+                  Using streams to handle DOM events
+                </h4>
+                <p>
+                  Let’s create a second props stream which handles choosing a
+                  user from the list and setting them as a selected user:
+                </p>
+                <script src="https://gist.github.com/15272b3d3b0d4845c4b41931c7c08a8d.js"></script>
+                <p>
+                  Much like in our
+                  <code>load</code> stream, we want to create a stream of props
+                  using recompose’s
+                  <code>mapPropsStream</code>
+                  function. However, instead of directly switchMapping the
+                  props, we want to create two variables — a stream and a
+                  handler — using another utility function from recompose,
+                  <code>createEventHandler</code>.
+                  <code>createEventHandler</code>
+                  will, as the name implies, create a handler and a
+                  corresponding stream which you can then assign to React events
+                  such as
+                  <code>onChange</code>, <code>onClick</code>, etc. The values
+                  from that event will then be passed into the stream which you
+                  can then pipe, map, and whatever else you need. In our case,
+                  we want to flatten both the incoming props stream and the
+                  stream from the event and produce a single object.
+                </p>
+                <p>
+                  Taking our props, we want to check to see if there is a user
+                  specified in the URL. In this project,
+                  <code>react-router-dom</code>
+                  is being used so we find the user param in
+                  <code>props.match.params.user</code>. But where is the
+                  <code>Route</code> to pass the <code>match</code> prop to this
+                  stream?!? Don’t worry, we will get there, just know that for
+                  now, <code>selectUser</code> will be passed the props from
+                  react-router’s
+                  <code>Route</code>
+                  component. Now that we have our user from the URL, we want to
+                  start our stream with either that user, or the first user in
+                  our
+                  <code>userList</code>. If we don’t have the
+                  <code>userList</code> yet, we just want to start with
+                  <code>null</code>. Then we simply pipe the
+                  <code>selectedUser</code>
+                  through the stream and return an object which contains all
+                  props passed to
+                  <code>selectUser</code> as well as our
+                  <code>userSelect</code>
+                  function.
+                </p>
+                <p>
+                  In order to use the two prop stream we just created, we need
+                  to make a component which will take the props from both
+                  streams and render our list element
+                </p>
+                <figure id="0fb5">
+                  <script src="https://gist.github.com/jamestthompson3/3007a6d6309893c53543be60022d5754.js"></script>
+                </figure>
+                <p>
+                  The component itself is quite simple, it just takes the props,
+                  checks to see if the right user is in the URL, and if not,
+                  pushes the correct user there. Next, it takes our
+                  <code>userList</code>, maps through it and returns a list item
+                  for each user in the list and adds some conditional styling if
+                  the user is currently selected. If the request is still
+                  ongoing, then it displays a loading component. Notice that we
+                  pass the
+                  <code>userSelect</code>
+                  function to our list items to use as an
+                  <code>onClick</code>
+                  handler. The user that is passed to
+                  <code>userSelect</code> is then pushed to the
+                  <code>selectUser</code>
+                  stream.
+                </p>
+                <p>
+                  In order for this component to have access to all these props,
+                  it’s time for some functional programming beauty. Using the
+                  <code>compose</code>
+                  function from recompose, we create a new element which streams
+                  all the props from both
+                  <code>load</code>, <code>selectUser</code>, and react-router
+                  to the
+                  <code>IndexPage</code>
+                  element. It is here we will also create the function
+                  <code>setUserlist</code> and the <code>userList</code> prop we
+                  saw in our <code>load</code> stream.
+                </p>
+                <script src="https://gist.github.com/jamestthompson3/050101c8a8d6e1fcc713c07b5bb7df66.js"></script>
+                <p>
+                  The functions
+                  <code>withState</code> and
+                  <code>withHandlers</code>
+                  allow us to keep persistent data and manipulate that data
+                  inside our streams.
+                  <code>withState</code>
+                  accepts three arguments, the name of the item in state, the
+                  name of the function used to update the state, and the inital
+                  state.
+                  <code>withHandlers</code>
+                  receive the function specified in
+                  <code>withState</code> and can accept as many handlers as you
+                  need. In our case, we just need one handler which will take
+                  the <code>users</code> array from our fetch function and set
+                  the <code>userList</code> state property to that array. We
+                  also pass the
+                  <code>withRouter</code>
+                  function so that our component and event streams have access
+                  to router props such as
+                  <code>match</code> and <code>history</code>.
+                </p>
+                <p>
+                  Time to put the first steps together
+                </p>
+                <script src="https://gist.github.com/jamestthompson3/13e3444051bf29a2f20ed1e807b2d21e.js"></script>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div>
+              <div>
+                <h3>
+                  Next Steps
+                </h3>
+                <p>
+                  Now that we have our list of users, it is time to create a
+                  component which will display their lists of likes and
+                  dislikes. Here, we can take advantage of more recompose helper
+                  functions,
+                  <code>withContext</code> and <code>getContext</code>. These
+                  will prevent us from being trapped in passed-down props hell.
+                  Since we will be creating more handlers to update the list of
+                  users, there will be many functions which we will want to pass
+                  down to our components that display the likes and dislikes
+                  which could result in something like this:
+                </p>
+                <p>
+                  All of these props would then have to be continually passed
+                  down until they reach the components that actually consume
+                  them. That is crazy! By using
+                  <code>withContext</code> and <code>getContext</code>, we can
+                  pass down the props we need and consume them in any child of
+                  our
+                  <code>IndexPage</code>
+                  component. So, let’s create our handlers:
+                </p>
+                <figure id="bb5a">
+                  <script src="https://gist.github.com/jamestthompson3/f0d4851c2cd420b54071b4eeb2fc3068.js"></script>
+                </figure>
+                <p>
+                  Here, are a few basic functions that will update our state
+                  after making a request to a fictitious endpoint. We can now
+                  pass these handlers and our selected user down to child
+                  components using
+                  <code>withContext</code>
+                </p>
+                <figure id="e35a">
+                  <script src="https://gist.github.com/jamestthompson3/55a4365059c8ad4633e7d6394752e4ef.js"></script>
+                </figure>
+                <p>
+                  <code>withContext</code>
+                  takes two arguments, the first being the
+                  <code>childContextTypes</code>, and the second being a
+                  function which returns the props to be passed as context. In
+                  our case, we want to pass the selected user and our state
+                  handler functions down as context. We get these props by
+                  placing our
+                  <code>withContext</code>
+                  function as an argument of our
+                  <code>compose</code>
+                  function like this:
+                </p>
+                <figure id="ed28">
+                  <script src="https://gist.github.com/jamestthompson3/ed92ea1686e1153dea739a5441ce371a.js"></script>
+                </figure>
+                <p>
+                  We are now able to consume these props as context in any child
+                  component!
+                </p>
+                <h4>
+                  Using context in child components
+                </h4>
+                <p>
+                  Let’s use the context we just created to display users’ likes
+                  and dislikes and add a simple interface to add and remove
+                  data.
+                </p>
+                <figure id="ff89">
+                  <script src="https://gist.github.com/jamestthompson3/39f28c84bed7ad28fdf8738f1bbdba61.js"></script>
+                </figure>
+                <p>
+                  The above component simply takes the user and their likes from
+                  context and displays them in a list. This component also
+                  allows users to delete a like by clicking on an icon which
+                  calls our
+                  <code>deleteUser</code>
+                  function we defined earlier. Let’s add a modal that will allow
+                  users to add an item to the list by clicking on the
+                  <code>add</code> icon.
+                </p>
+                <p>
+                  It’s time to create more DOM event driven streams. The first
+                  stream we want to create will be one to open and close the
+                  form modal:
+                </p>
+                <figure id="b312">
+                  <script src="https://gist.github.com/jamestthompson3/506b136a0aee1a044d3e0516faf63f65.js"></script>
+                </figure>
+                <p>
+                  Handling a toggle event is quite simple, we specify whether we
+                  want the toggle to be on or off, and then use
+                  <code>scan</code> — a function that applies an accumulator
+                  over the stream ( similar to Array.reduce ) — to toggle the
+                  state. We then return all passed props as well as the current
+                  state of the modal and the handler itself.
+                </p>
+                <p>
+                  Dealing with text input is a bit trickier:
+                </p>
+                <figure id="1e15">
+                  <script src="https://gist.github.com/jamestthompson3/d5a2aa074f22a92cccd30c74295375c7.js"></script>
+                </figure>
+                <p>
+                  In the above snippet, we take the stream produced by our event
+                  handler ( in this case typing in a text input ) and we create
+                  a new stream composed of only the value of
+                  <code>event.target</code>. It is also important to note that
+                  we must use <code>startWith</code> here or else this stream
+                  will not be subscribed to and our component which uses this
+                  stream will not be rendered.
+                </p>
+                <p>
+                  To access these functions in our List component, we must
+                  compose them together like so:
+                </p>
+                <figure id="e8ce">
+                  <script src="https://gist.github.com/jamestthompson3/92834e22fa5fd71433cdf74ffa873435.js"></script>
+                </figure>
+                <p>
+                  By using composable streams, we are able to create a nice
+                  modal form which takes text input and adds it to the list of
+                  user’s likes. Here is it’s parent component:
+                </p>
+                <figure id="5783">
+                  <script src="https://gist.github.com/jamestthompson3/9e33feca7fb966852a2bc7c65e6a062f.js"></script>
+                </figure>
+                <p>
+                  And the modal itself:
+                </p>
+                <figure id="9dd3">
+                  <script src="https://gist.github.com/jamestthompson3/87c6ba9100f5ae1c008bc3b0295356ea.js"></script>
+                </figure>
+                <p id="3a07">
+                  Doing the same for the user’s dislikes gives us two lists that
+                  can be modified by the user.
+                </p>
+              </div>
+            </div>
+          </section>
+          <section>
+            <div>
+              <div>
+                <h3>
+                  Wrap up
+                </h3>
+                <p id="14a8">
+                  Observable streams are a great way of managing data flows in
+                  components. While some of the things outlined here might be a
+                  bit overkill, I wanted to illustrate that composable streams
+                  work well in many use cases. Breaking up logic into streams
+                  can help create separate and composable pieces of logic that
+                  can stem from complicated UIs. Components that subscribe to
+                  changes in the streams are able to react to one source of
+                  truth rather than having to check for side-effects in
+                  lifecycle methods such as
+                  <code>componentDidUpdate</code>. I think that they are a great
+                  way to remove some of the anti-patterns we see in React
+                  components and to avoid the performance costs of a large Redux
+                  store.
+                </p>
+              </div>
+            </div>
+          </section>
+        </section>
+      </article>
     </div>
     <script>
       const root = document.querySelector("#body-container");
       const cursor = document.querySelector("#cursor");
       root.addEventListener("mousemove", pokeballMouse);
-      root.addEventListener("touchend", pokeballMouse);
+      root.addEventListener("touch", pokeballMouse);
       function pokeballMouse({ x, y }) {
         cursor.style.left = `${x + 30}px`;
         cursor.style.top = `${y}px`;
