@@ -3,17 +3,13 @@
   url("https://i.redd.it/kshhsob9pyv21.jpg") center repeat;
   background-size: cover;
   height: 700px;
+  width: 100vw;
   justify-content: space-between;
-  align-items: center;
-}
-#smash {
-  background: url("https://the-cult.neocities.org/images/important/background.png");
-  background-size: cover;
-  height: 700px;
   align-items: center;
 }
 #body-container {
   overflow-y: auto;
+  overflow-x: hidden;
 }
 #cursor {
   position: absolute;
@@ -29,6 +25,7 @@
   #b942f4,
   #9f3cc9
   );
+  width: 100vw;
 }
 .flex-column {
   display: flex;
@@ -47,13 +44,18 @@
 txt-white {
   color: #fff;
 }
+.blockwrapper {
+  width: 100%;
+  overflow: auto;
+}
 
 #blog {
   align-items: center;
   background: url("http://pixelartmaker.com/art/8baf7524e2c592a.png");
+  width: 100%;
 }
 .blog-post {
-  background: #333;
+  background: #1d1e22;
   font-family; 'Roboto';
 }
 .blog-post, section {
@@ -79,19 +81,36 @@ txt-white {
 .blog-post, a {
   color: skyblue;
 }
-blog-post, code, pre {
+
+.blog-post pre {
   font-family: monospace;
   color: #fff;
   background: #000;
   font-size: 0.75rem;
 }
+
+.blockwrapper pre {
+  padding: 0.75rem 1rem;
+  width: 93%;
+  margin: auto;
+}
+
 .blog-post, pre {
   margin: 1rem 0rem;
   text-align: left;
   width: 100%;
 }
+
+.blog-post code {
+  font-family: monospace;
+  color: #f5ac46;
+  background: #000;
+  padding: 3px;
+  border-radius: 3px;
+}
+
 .blog-post, h3 {
-  font-size: 1.5rem;
+  font-size: 1rem;
   color: #dbdbdb;
   margin: 1rem 0rem;
   text-weight: bold;

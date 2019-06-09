@@ -45,9 +45,6 @@
             <li role="link">
               <a href="#blog" class="flex-column 400h">Blog</a>
             </li>
-            <li role="link">
-              <a href="#smash" class="flex-column">Smash vids</a>
-            </li>
           </ul>
         </div>
       </section>
@@ -69,7 +66,7 @@
           </li>
         </ul>
       </section>
-      <div style="background: #333; width: 100vw;" class="no-overflow">
+      <div style="background: #1d1e22; width: 100vw;" class="no-overflow">
         <section id="blog" role="content-info" class="p20">
           <h1 id="blog-header" class="header">Blog</h1>
           <div id="toc-container" aria-label="table-contents-container">
@@ -77,9 +74,7 @@
               Table of Contents
             </h2>
             <ul class="toc-list list center-text" aria-labelledby="toc">
-              <li role="link">
-                <a href="#blog-toc" class="400h">Table of Contents</a>
-              </li>
+              <li role="link"></li>
               <li role="link">
                 <a href="#rxjs-recompose">Rxjs and Recompose</a>
               </li>
@@ -91,10 +86,10 @@
         </section>
         <article id="viiksetjs" class="blog-post">
           <header>
-            <h1>
+            <h2>
               Data visualization in the browser and getting started with
               ViiksetJS
-            </h1>
+            </h2>
           </header>
           <section data-field="body">
             <section>
@@ -181,7 +176,9 @@
                 containing the number of users and posts for a day over the
                 course of several days:
               </p>
-              <pre>[<br> {<br> “posts”: 4225,<br> “users”: 12220,<br> “time”: “2018–02–14T22:07:42.049+02”<br> },<br> {<br> “posts”: 3989,<br> “users”: 22455,<br> “time”: “2018–02–14T23:07:42.049+02”<br> },<br> {<br> “posts”: 3439,<br> “users”: 44512,<br> “time”: “2018–02–15T00:07:42.049+02”<br> },<br> {<br> “posts”: 3238,<br> “users”: 55112,<br> “time”: “2018–02–15T01:07:42.049+02”<br> },<br> {<br> “posts”: 3104,<br> “users”: 11111,<br> “time”: “2018–02–15T02:07:42.049+02”<br> },<br> {<br> “posts”: 3086,<br> “users”: 21135,<br> “time”: “2018–02–15T03:07:42.049+02”<br> },<br> …<br>]</pre>
+              <div class="blockwrapper">
+                <pre>[<br> {<br> “posts”: 4225,<br> “users”: 12220,<br> “time”: “2018–02–14T22:07:42.049+02”<br> },<br> {<br> “posts”: 3989,<br> “users”: 22455,<br> “time”: “2018–02–14T23:07:42.049+02”<br> },<br> {<br> “posts”: 3439,<br> “users”: 44512,<br> “time”: “2018–02–15T00:07:42.049+02”<br> },<br> {<br> “posts”: 3238,<br> “users”: 55112,<br> “time”: “2018–02–15T01:07:42.049+02”<br> },<br> {<br> “posts”: 3104,<br> “users”: 11111,<br> “time”: “2018–02–15T02:07:42.049+02”<br> },<br> {<br> “posts”: 3086,<br> “users”: 21135,<br> “time”: “2018–02–15T03:07:42.049+02”<br> },<br> …<br>]</pre>
+              </div>
               <p>
                 First, we need to import the <code>ChartArea</code> component.
                 This is the basis for many of the out-of-the-box visualizations
@@ -190,13 +187,17 @@
                 Second, we will import the <code>LineChart</code> which will be
                 in charge of rendering our visualization.
               </p>
-              <pre>import React from ‘react’<br>import { ChartArea, LineChart } from ‘viiksetjs’<br>import timeseries from ‘./timeSeries.json’</pre>
-              <pre>const TimeSeries = () =&gt; (<br> &lt;ChartArea data={timeseries.data} &gt;<br>   &lt;LineChart dataKey=”posts” color=”blue” /&gt;<br>   &lt;LineChart dataKey=”users” color=”red” /&gt;<br> &lt;/ChartArea&gt;<br>)</pre>
+              <div class="blockwrapper">
+                <pre>import React from ‘react’<br>import { ChartArea, LineChart } from ‘viiksetjs’<br>import timeseries from ‘./timeSeries.json’
+                <br />const TimeSeries = () =&gt; (<br />&lt;ChartArea data={timeseries.data}&gt;<br />  &lt;LineChart dataKey=”posts” color=”blue” /&gt;<br />  &lt;LineChart dataKey=”users” color=”red” /&gt;<br />&lt;/ChartArea&gt;<br />)</pre>
+              </div>
               <p>
                 That’s it! Of course at this point, we want to customize that
                 chart, so let’s do that:
               </p>
-              <pre>&lt;ChartArea<br>  data={timeSeries.data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>&gt;<br>// ...</pre>
+              <div class="blockwrapper">
+                <pre>&lt;ChartArea<br>  data={timeSeries.data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>&gt;<br>// ...</pre>
+              </div>
               <p>
                 What we did here is specify that on mobile, we only want to
                 render 2 ticks on<br />the x axis, set the color of the x and y
@@ -213,15 +214,21 @@
                 our svg chart, which makes it useful for things such as
                 annotations. Create a new <code>ChartArea</code>:
               </p>
-              <pre>/* using a data array where each point has a shape of <br> * { time: IsoString, messages: number }<br> */</pre>
-              <pre>&lt;ChartArea<br> data={data}<br> numXTicks={isMobile ? 2 : 4}<br> color=”#2189C8&quot;<br> stroke=”grey”<br>&gt;</pre>
+              <div class="blockwrapper">
+                <pre>/** <br />* using a data array where each point has a shape of <br/>* { time: IsoString, messages: number }<br>**/
+                <br />&lt;ChartArea<br/> data={data}<br/> numXTicks={isMobile ? 2 : 4}<br> color=”#2189C8&quot;<br> stroke=”grey”<br>&gt;</pre>
+              </div>
               <p>
                 Perhaps we want to create a marker denoting a the start of a
                 marketing campaign:
               </p>
-              <pre>const campaignStart = {<br> “time”: “2018–02–15T03:07:42.049+02”<br> }</pre>
+              <div class="blockwrapper">
+                <pre>const campaignStart = {<br> “time”: “2018–02–15T03:07:42.049+02”<br> }</pre>
+              </div>
               <p>We can easily add this to the chart:</p>
-              <pre>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>   }<br>&gt;</pre>
+              <div class="blockwrapper">
+                <pre>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>   }<br>&gt;</pre>
+              </div>
               <p>
                 The following arguments are passed to the
                 <code>glyphRenderer</code> function: <code>width</code>,
@@ -242,9 +249,12 @@
                 to the current mouse position. In this case, we will only modify
                 the tool-tip content.
               </p>
-              <pre>import format from &#39;date-fns/format&#39;<br>import { ChartArea, LineChart } from &#39;viiksetjs&#39;</pre>
-              <pre>const TooltipContent = ({ tooltipData }) =&gt; (<br>  &lt;div style={{ textAlign: &quot;center&quot; }}&gt;<br>    &lt;p&gt;{format(tooltipData.time, &quot;MMM Do HH:mm&quot;)}&lt;/p&gt;<br>    &lt;p&gt;{tooltipData.messages} messages&lt;/p&gt;<br>  &lt;/div&gt;<br>)</pre>
-              <pre>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>  }<br>  tooltipContent={TooltipContent}<br>&gt;<br>&lt;LineChart dataKey=&quot;messages&quot; color=&quot;green&quot; /&gt;<br>&lt;/ChartArea&gt;</pre>
+              <div class="blockwrapper">
+                <pre>import format from &#39;date-fns/format&#39;<br>import { ChartArea, LineChart } from &#39;viiksetjs&#39;
+                <br/>const TooltipContent = ({ tooltipData }) =&gt; (<br>  &lt;div style={{ textAlign: &quot;center&quot; }}&gt;<br>    &lt;p&gt;{format(tooltipData.time, &quot;MMM Do HH:mm&quot;)}&lt;/p&gt;<br>    &lt;p&gt;{tooltipData.messages} messages&lt;/p&gt;<br>  &lt;/div&gt;<br>)
+                <br/>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>  }<br>  tooltipContent={TooltipContent}<br>&gt;<br>&lt;LineChart dataKey=&quot;messages&quot; color=&quot;green&quot; /&gt;<br>&lt;/ChartArea&gt;
+                </pre>
+              </div>
               <h3>Third example</h3>
               <p>
                 The third example is a demonstration on how to use the
@@ -267,12 +277,16 @@
                 with HTML canvas. First, let’s seed some random data for our
                 diagram:
               </p>
-              <pre>const voronoiData = Array(150)<br>  .fill(null)<br>  .map(() =&gt; ({<br>    x: Math.random(),<br>    y: Math.random(),<br>    id: Math.random()<br>      .toString(36)<br>      .slice(2)<br>  }))</pre>
+              <div class="blockwrapper">
+                <pre>const voronoiData = Array(150)<br>  .fill(null)<br>  .map(() =&gt; ({<br>    x: Math.random(),<br>    y: Math.random(),<br>    id: Math.random()<br>      .toString(36)<br>      .slice(2)<br>  }))</pre>
+              </div>
               <p>
                 With this data, we can now create the
                 <code>DataContext</code> component
               </p>
-              <pre>&lt;DataContext data={voronoiData} type=&quot;linear&quot; xKey=&quot;x&quot;&gt;<br>  {({ width, height, xScale, yScale, data, xPoints }) =&gt; (<br>   &lt;Voronoi {...{ data, width, height, xScale, xPoints, yScale }} /&gt;<br>  )}<br>&lt;/DataContext&gt;</pre>
+              <div class="blockwrapper">
+                <pre>&lt;DataContext data={voronoiData} type=&quot;linear&quot; xKey=&quot;x&quot;&gt;<br>  {({ width, height, xScale, yScale, data, xPoints }) =&gt; (<br>   &lt;Voronoi {...{ data, width, height, xScale, xPoints, yScale }} /&gt;<br>  )}<br>&lt;/DataContext&gt;</pre>
+              </div>
               <p>
                 Here, we have specified that the type of data we have is linear
                 ( meaning that both x and y are numeric ) and that the
@@ -306,10 +320,12 @@
           <section data-field="body">
             <section>
               <div>
-                <h2>
-                  Beyond counters — Using recompose and RXJS 6 to build a (semi)
-                  complex UI
-                </h2>
+                <header>
+                  <h2>
+                    Beyond counters — Using recompose and RXJS 6 to build a
+                    (semi) complex UI
+                  </h2>
+                </header>
                 <p>
                   If you haven’t heard about reactive programming yet, I invite
                   you to pause and get acquainted.
@@ -739,30 +755,43 @@
           </section>
         </article>
       </div>
-      <section id="smash" role="content-info" class="p20">
-        <img
-          style="align-self: center;"
-          src="https://media.tenor.com/images/6bf1ba96181f4b3df10e8cbb61901b67/tenor.gif"
-          alt="dat-boi"
-        />
-        <iframe
-          width="375"
-          height="315"
-          src="https://www.youtube-nocookie.com/embed/7_95de2WCUk"
-          frameborder="0"
-          allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture"
-          allowfullscreen
-        ></iframe>
-      </section>
     </div>
     <script>
       const root = document.querySelector("#body-container");
       const cursor = document.querySelector("#cursor");
-      root.addEventListener("mousemove", pokeballMouse);
-      root.addEventListener("touch", pokeballMouse);
-      function pokeballMouse({ x, y }) {
+      const blog = document.querySelector("#blog");
+      root.addEventListener("mousemove", bb8move);
+      root.addEventListener("touch", bb8move);
+      root.addEventListener("scroll", elementInView);
+      function bb8move({ x, y }) {
         cursor.style.left = `${x + 30}px`;
         cursor.style.top = `${y}px`;
+      }
+
+      function elementInView() {
+        let el = blog;
+        let top = el.offsetTop;
+        let left = el.offsetLeft;
+        let width = el.offsetWidth;
+        let height = el.offsetHeight;
+
+        while (el.offsetParent) {
+          el = el.offsetParent;
+          top += el.offsetTop;
+          left += el.offsetLeft;
+        }
+
+        const inView =
+          top >= window.pageYOffset &&
+          left >= window.pageXOffset &&
+          top + height <= window.pageYOffset + window.innerHeight &&
+          left + width <= window.pageXOffset + window.innerWidth;
+
+        if (!inView) {
+          cursor.style.display = "block";
+        } else {
+          cursor.style.display = "none";
+        }
       }
     </script>
   </body>
