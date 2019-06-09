@@ -7,8 +7,8 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
     <!-- <link -->
-    <!--   href="https://fonts.googleapis.com/css?family=Anton" -->
-    <!--   rel="stylesheet" -->
+    <!-- href="https://fonts.googleapis.com/css?family=Anton" -->
+    <!-- rel="stylesheet" -->
     <!-- /> -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
@@ -19,144 +19,7 @@
     />
   </head>
   <link href="reset.css" rel="stylesheet" />
-  <style>
-    #root {
-      background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)),
-        url("https://i.redd.it/kshhsob9pyv21.jpg") center repeat;
-      background-size: cover;
-      padding-top: 2.5rem;
-      height: 700px;
-      justify-content: space-between;
-      align-items: center;
-    }
-    #smash {
-      background: url("https://the-cult.neocities.org/images/important/background.png");
-      background-size: cover;
-      height: 700px;
-      align-items: center;
-    }
-    #body-container {
-      overflow: auto;
-      width: 100vw;
-      height: 100vh;
-    }
-    #cursor {
-      position: absolute;
-      width: 50px;
-      height: 50px;
-    }
-    #programming {
-      background: radial-gradient(
-        farthest-corner at 40px 40px,
-        #5042f4,
-        #42b0f4,
-        #743bb5,
-        #b942f4,
-        #9f3cc9
-      );
-    }
-    .flex-column {
-      display: flex;
-      flex-direction: column;
-    }
-    .400h {
-      height: 400px;
-    }
-    .center-text {
-      text-align: center;
-    }
-
-    .bg-black {
-      background: black;
-    }
-    txt-white {
-      color: #fff;
-    }
-
-    #blog {
-      align-items: center;
-      background: url("http://pixelartmaker.com/art/8baf7524e2c592a.png");
-    }
-    .blog-post {
-      background: #333;
-      font-family; 'Roboto';
-    }
-    .blog-post, section {
-      padding: 1rem 5rem;
-    }
-    .blog-post, p {
-      color: #fff;
-      font-size: 1rem;
-      line-height: 2rem;
-    }
-    .blog-post, a {
-      color: skyblue;
-    }
-    blog-post, code, pre {
-      font-family: monospace;
-      color: #fff;
-      background: #000;
-      font-size: 0.75rem;
-    }
-    .blog-post, pre {
-      padding: 1rem;
-      margin: 1rem 0rem;
-    }
-    .blog-post, h3 {
-      font-size: 1.5rem;
-      color: #dbdbdb;
-      margin: 1rem 0rem;
-    }
-    .blog-post, h2 {
-      font-size: 2rem;
-      color: #fff;
-      font-weight: bold;
-      margin: 1rem 0rem;
-    }
-    .blog-post, figure {
-      margin: 1rem 0rem;
-    }
-    .blog-post, figcaption {
-      color: #dbdbdb;
-      font-weight: bold;
-    }
-    .header {
-      font-size: 2.5rem;
-      color: #fff;
-      background: #000;
-      padding: 5px;
-    }
-    .container {
-      padding: 20px;
-    }
-    .subheader {
-      font-size: 2rem;
-      color: #fff;
-    }
-    #toc-container {
-      width: 80%;
-      border-radius: 8px;
-      border: 1px solid #ababab;
-      padding: 10px;
-      margin-bottom: 2rem;
-    }
-    .toc-list {
-      margin: 1rem auto;
-    }
-    .list {
-      font-size: 1.5rem;
-    }
-    .list li {
-      margin: 10px;
-    }
-    .list > * > a {
-      text-decoration-color: aquamarine;
-      color: aquamarine;
-    }
-    .list > * > a:visited {
-      color: #fff;
-    }
-  </style>
+  <link href="style.css" rel="stylesheet" />
   <script>
     function jumpToSection() {
       const lineNum = window.location.hash;
@@ -168,7 +31,7 @@
     }
   </script>
   <title>😎😎😎😎</title>
-  <body style="overflow: hidden" onload="jumpToSection();">
+  <body style="width: 100%;" onload="jumpToSection();">
     <div id="body-container">
       <img id="cursor" src="bb8_1.svg" alt="cursor" />
       <section id="root" role="content-info" class="flex-column">
@@ -188,7 +51,7 @@
           </ul>
         </div>
       </section>
-      <section id="programming" role="content-info" class="container">
+      <section id="programming" role="content-info" class="p20">
         <h1 id="programming-header" class="header">
           Cool Programming Articles / Videos
         </h1>
@@ -206,8 +69,8 @@
           </li>
         </ul>
       </section>
-      <div style="background: #333;">
-        <section id="blog" role="content-info" class="container">
+      <div style="background: #333; width: 100vw;" class="no-overflow">
+        <section id="blog" role="content-info" class="p20">
           <h1 id="blog-header" class="header">Blog</h1>
           <div id="toc-container" aria-label="table-contents-container">
             <h2 id="blog-toc" class="subheader center-text">
@@ -233,34 +96,25 @@
               ViiksetJS
             </h1>
           </header>
-          <section data-field="subtitle">
-            Introduction
-          </section>
           <section data-field="body">
             <section>
               <div>
                 <div>
-                  <h3>
-                    Data visualization in the browser and getting started with
-                    ViiksetJS
-                  </h3>
-                  <h3>
-                    Introduction
-                  </h3>
+                  <h3>Introduction</h3>
                   <p>
                     When it comes to visualizing data in the browser, there is
                     no shortage of options. Developer friendliness and
                     performance are two important things to consider when
                     adopting a data visualization tool. D3 is considered by many
-                    to be the gold standard in Javascript data
-                    visualization — and for good reason it is a powerful tool
-                    which can be used to create beautiful visualizations. One
-                    issue with using D3 in the context of React is the way that
-                    it manipulates the DOM. D3 manipulates the physical DOM,
-                    whereas React changes its own virtual DOM. Mixing these two
-                    methods of DOM manipulation is a good way to introduce hard
-                    to debug problems into your application. For more
-                    information this problem, see
+                    to be the gold standard in Javascript data visualization —
+                    and for good reason it is a powerful tool which can be used
+                    to create beautiful visualizations. One issue with using D3
+                    in the context of React is the way that it manipulates the
+                    DOM. D3 manipulates the physical DOM, whereas React changes
+                    its own virtual DOM. Mixing these two methods of DOM
+                    manipulation is a good way to introduce hard to debug
+                    problems into your application. For more information this
+                    problem, see
                     <a
                       href="https://www.youtube.com/watch?v=ladXdJ3KKd4"
                       data-href="https://www.youtube.com/watch?v=ladXdJ3KKd4"
@@ -297,200 +151,163 @@
                       >ViiksetJS</a
                     >
                     hopes to bridge the gap between out of the box functionality
-                    and<br />powerful flexibility. It has full inter-op between
-                    VX and allows not only for<br />working with svg
-                    visualizations, but also canvas and the DOM itself. This<br />allows
-                    for quick implementations or highly customized
-                    visualizations.<br />ViiksetJS also works seamlessly with
-                    styled-components, allowing you to carry over your themes
-                    without any additional work. As we build some examples, you
-                    will see that flexibility and extensibility are core
-                    features of ViiksetJS.
+                    and powerful flexibility. It has full inter-op between VX
+                    and allows not only for working with svg visualizations, but
+                    also canvas and the DOM itself. This allows for quick
+                    implementations or highly customized visualizations.
+                    ViiksetJS also works seamlessly with styled-components,
+                    allowing you to carry over your themes without any
+                    additional work. As we build some examples, you will see
+                    that flexibility and extensibility are core features of
+                    ViiksetJS.
                   </p>
                 </div>
               </div>
             </section>
             <section>
-              <div>
-                <div>
-                  <figure>
-                    <iframe
-                      src="https://codesandbox.io/embed/5012r69vn4?autoresize=1&amp;hidenavigation=1"
-                      width="700"
-                      height="350"
-                      frameborder="0"
-                      scrolling="no"
-                    ></iframe>
-                    <figcaption>
-                      codesandbox with all examples
-                    </figcaption>
-                  </figure>
-                  <h3>
-                    First example
-                  </h3>
-                  <p>
-                    Let’s start with something simple. Say that we want to plot
-                    data containing<br />the number of users and posts for a day
-                    over the course of several days:
-                  </p>
-                  <pre>[<br> {<br> “posts”: 4225,<br> “users”: 12220,<br> “time”: “2018–02–14T22:07:42.049+02”<br> },<br> {<br> “posts”: 3989,<br> “users”: 22455,<br> “time”: “2018–02–14T23:07:42.049+02”<br> },<br> {<br> “posts”: 3439,<br> “users”: 44512,<br> “time”: “2018–02–15T00:07:42.049+02”<br> },<br> {<br> “posts”: 3238,<br> “users”: 55112,<br> “time”: “2018–02–15T01:07:42.049+02”<br> },<br> {<br> “posts”: 3104,<br> “users”: 11111,<br> “time”: “2018–02–15T02:07:42.049+02”<br> },<br> {<br> “posts”: 3086,<br> “users”: 21135,<br> “time”: “2018–02–15T03:07:42.049+02”<br> },<br> …<br>]</pre>
-                  <p>
-                    First, we need to import the
-                    <code>ChartArea</code>
-                    component. This is the basis for many of the out-of-the-box
-                    visualizations available in ViiksetJS. The
-                    <code>ChartArea</code>
-                    component will handle thing such as styling, scaling,
-                    tool-tips, etc. Second, we will import the
-                    <code>LineChart</code> which will be in charge of rendering
-                    our visualization.
-                  </p>
-                  <pre>import React from ‘react’<br>import { ChartArea, LineChart } from ‘viiksetjs’<br>import timeseries from ‘./timeSeries.json’</pre>
-                  <pre>const TimeSeries = () =&gt; (<br> &lt;ChartArea data={timeseries.data} &gt;<br>   &lt;LineChart dataKey=”posts” color=”blue” /&gt;<br>   &lt;LineChart dataKey=”users” color=”red” /&gt;<br> &lt;/ChartArea&gt;<br>)</pre>
-                  <p>
-                    That’s it! Of course at this point, we want to customize
-                    that chart, so let’s<br />do that:
-                  </p>
-                  <pre>&lt;ChartArea<br>  data={timeSeries.data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>&gt;<br>// ...</pre>
-                  <p>
-                    What we did here is specify that on mobile, we only want to
-                    render 2 ticks on<br />the x axis, set the color of the x
-                    and y axis ticks and toned the grid lines. An important
-                    thing to note here is that D3 will try and approximate the
-                    number of ticks you give as an argument, and does not always
-                    produce the exact number of ticks specified.
-                  </p>
-                  <h3>
-                    Second example
-                  </h3>
-                  <p>
-                    Let’s do another example where we will create a custom
-                    <code>glyphRenderer</code>
-                    and tool-tip. A
-                    <code>glyphRenderer</code>
-                    is placed on top all the layers of our svg chart, which
-                    makes it useful for things such as annotations. Create a new
-                    <code>ChartArea</code>:
-                  </p>
-                  <pre>/* using a data array where each point has a shape of <br> * { time: IsoString, messages: number }<br> */</pre>
-                  <pre>&lt;ChartArea<br> data={data}<br> numXTicks={isMobile ? 2 : 4}<br> color=”#2189C8&quot;<br> stroke=”grey”<br>&gt;</pre>
-                  <p>
-                    Perhaps we want to create a marker denoting a the start of a
-                    marketing campaign:
-                  </p>
-                  <pre>const campaignStart = {<br> “time”: “2018–02–15T03:07:42.049+02”<br> }</pre>
-                  <p>
-                    We can easily add this to the chart:
-                  </p>
-                  <pre>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>   }<br>&gt;</pre>
-                  <p>
-                    The following arguments are passed to the
-                    <code>glyphRenderer</code>
-                    function:
-                    <code>width</code>, <code>height</code>,
-                    <code>xScale</code>, <code>yScale</code>, and
-                    <code>margin</code>. In our case, we only need to use the
-                    <code>xScale</code> function to correctly position our
-                    marker horizontally. Since we want it to stay on the top of
-                    the chart, a value of <code>y={0}</code> is required.
-                  </p>
-                  <p>
-                    Now let’s create the tool-tip. A quick note about custom
-                    tool-tips: there are two different functions used for
-                    creating custom tool-tips,
-                    <code>tooltipRenderer</code>
-                    and
-                    <code>tooltipContent</code>. The
-                    <code>tooltipRenderer</code>
-                    function renders the container of the tool-tip while the
-                    <code>tooltipContent</code>
-                    function only renders the content of tool-tip, which is the
-                    closest data point to the current mouse position. In this
-                    case, we will only modify the tool-tip content.
-                  </p>
-                  <pre>import format from &#39;date-fns/format&#39;<br>import { ChartArea, LineChart } from &#39;viiksetjs&#39;</pre>
-                  <pre>const TooltipContent = ({ tooltipData }) =&gt; (<br>  &lt;div style={{ textAlign: &quot;center&quot; }}&gt;<br>    &lt;p&gt;{format(tooltipData.time, &quot;MMM Do HH:mm&quot;)}&lt;/p&gt;<br>    &lt;p&gt;{tooltipData.messages} messages&lt;/p&gt;<br>  &lt;/div&gt;<br>)</pre>
-                  <pre>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>  }<br>  tooltipContent={TooltipContent}<br>&gt;<br>&lt;LineChart dataKey=&quot;messages&quot; color=&quot;green&quot; /&gt;<br>&lt;/ChartArea&gt;</pre>
-                  <h3>
-                    Third example
-                  </h3>
-                  <p>
-                    The third example is a demonstration on how to use the
-                    <code>DataContext</code>
-                    component.
-                    <code>DataContext</code>
-                    takes your data and returns the building blocks for
-                    visualization including the calculated scale values, x and y
-                    points, as well as the data itself. This is useful when
-                    working outside of the pre-built charts or when working with
-                    thing such as canvas or regular DOM elements.
-                  </p>
-                  <p>
-                    Using the
-                    <code>DataContext</code>
-                    component, we will create a
-                    <a
-                      href="https://en.wikipedia.org/wiki/Voronoi_diagram"
-                      data-href="https://en.wikipedia.org/wiki/Voronoi_diagram"
-                      rel="noopener"
-                      target="_blank"
-                      >voronoi diagram</a
-                    >
-                    with HTML canvas. First, let’s seed some random data for our
-                    diagram:
-                  </p>
-                  <pre>const voronoiData = Array(150)<br>  .fill(null)<br>  .map(() =&gt; ({<br>    x: Math.random(),<br>    y: Math.random(),<br>    id: Math.random()<br>      .toString(36)<br>      .slice(2)<br>  }))</pre>
-                  <p>
-                    With this data, we can now create the
-                    <code>DataContext</code>
-                    component
-                  </p>
-                  <pre>&lt;DataContext data={voronoiData} type=&quot;linear&quot; xKey=&quot;x&quot;&gt;<br>  {({ width, height, xScale, yScale, data, xPoints }) =&gt; (<br>   &lt;Voronoi {...{ data, width, height, xScale, xPoints, yScale }} /&gt;<br>  )}<br>&lt;/DataContext&gt;</pre>
-                  <p>
-                    Here, we have specified that the type of data we have is
-                    linear ( meaning that both x and y are numeric ) and that
-                    the
-                    <code>xKey</code> is named <code>x</code>. The
-                    <code>DataContext</code>
-                    component will then calculate scales, x and y points, and
-                    return that to us to use in our
-                    <code>Voronoi</code>
-                    component which we will now create.
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/637aa4707e0ecd54322e148bc367e21d.js.js"></script>
-                  </figure>
-                  <p>
-                    With the help of the
-                    <code>voronoi</code>
-                    function from VX and the
-                    <code>Path2D</code> browser API, we can create a diagram
-                    using the data and dimensions passed to us from the
-                    <code>DataContext</code>
-                    component.
-                  </p>
-                  <h3>
-                    Conclusion
-                  </h3>
-                  <p>
-                    While this was just a small set of examples, there is much
-                    more than can be done with ViiksetJS, VX, and D3. I hope
-                    that this tutorial sparks your imagination and helps ease
-                    some of the cognitive and technical load of data
-                    visualization in the browser. Please feel free to contribute
-                    to the project!
-                  </p>
-                </div>
-              </div>
+              <figure>
+                <iframe
+                  src="https://codesandbox.io/embed/5012r69vn4?autoresize=1&amp;hidenavigation=1"
+                  width="700"
+                  height="350"
+                  frameborder="0"
+                  scrolling="no"
+                ></iframe>
+                <figcaption>codesandbox with all examples</figcaption>
+              </figure>
+              <h3>First example</h3>
+              <p>
+                Let’s start with something simple. Say that we want to plot data
+                containing the number of users and posts for a day over the
+                course of several days:
+              </p>
+              <pre>[<br> {<br> “posts”: 4225,<br> “users”: 12220,<br> “time”: “2018–02–14T22:07:42.049+02”<br> },<br> {<br> “posts”: 3989,<br> “users”: 22455,<br> “time”: “2018–02–14T23:07:42.049+02”<br> },<br> {<br> “posts”: 3439,<br> “users”: 44512,<br> “time”: “2018–02–15T00:07:42.049+02”<br> },<br> {<br> “posts”: 3238,<br> “users”: 55112,<br> “time”: “2018–02–15T01:07:42.049+02”<br> },<br> {<br> “posts”: 3104,<br> “users”: 11111,<br> “time”: “2018–02–15T02:07:42.049+02”<br> },<br> {<br> “posts”: 3086,<br> “users”: 21135,<br> “time”: “2018–02–15T03:07:42.049+02”<br> },<br> …<br>]</pre>
+              <p>
+                First, we need to import the <code>ChartArea</code> component.
+                This is the basis for many of the out-of-the-box visualizations
+                available in ViiksetJS. The <code>ChartArea</code> component
+                will handle thing such as styling, scaling, tool-tips, etc.
+                Second, we will import the <code>LineChart</code> which will be
+                in charge of rendering our visualization.
+              </p>
+              <pre>import React from ‘react’<br>import { ChartArea, LineChart } from ‘viiksetjs’<br>import timeseries from ‘./timeSeries.json’</pre>
+              <pre>const TimeSeries = () =&gt; (<br> &lt;ChartArea data={timeseries.data} &gt;<br>   &lt;LineChart dataKey=”posts” color=”blue” /&gt;<br>   &lt;LineChart dataKey=”users” color=”red” /&gt;<br> &lt;/ChartArea&gt;<br>)</pre>
+              <p>
+                That’s it! Of course at this point, we want to customize that
+                chart, so let’s do that:
+              </p>
+              <pre>&lt;ChartArea<br>  data={timeSeries.data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>&gt;<br>// ...</pre>
+              <p>
+                What we did here is specify that on mobile, we only want to
+                render 2 ticks on<br />the x axis, set the color of the x and y
+                axis ticks and toned the grid lines. An important thing to note
+                here is that D3 will try and approximate the number of ticks you
+                give as an argument, and does not always produce the exact
+                number of ticks specified.
+              </p>
+              <h3>Second example</h3>
+              <p>
+                Let’s do another example where we will create a custom
+                <code>glyphRenderer</code> and tool-tip. A
+                <code>glyphRenderer</code> is placed on top all the layers of
+                our svg chart, which makes it useful for things such as
+                annotations. Create a new <code>ChartArea</code>:
+              </p>
+              <pre>/* using a data array where each point has a shape of <br> * { time: IsoString, messages: number }<br> */</pre>
+              <pre>&lt;ChartArea<br> data={data}<br> numXTicks={isMobile ? 2 : 4}<br> color=”#2189C8&quot;<br> stroke=”grey”<br>&gt;</pre>
+              <p>
+                Perhaps we want to create a marker denoting a the start of a
+                marketing campaign:
+              </p>
+              <pre>const campaignStart = {<br> “time”: “2018–02–15T03:07:42.049+02”<br> }</pre>
+              <p>We can easily add this to the chart:</p>
+              <pre>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>   }<br>&gt;</pre>
+              <p>
+                The following arguments are passed to the
+                <code>glyphRenderer</code> function: <code>width</code>,
+                <code>height</code>, <code>xScale</code>, <code>yScale</code>,
+                and <code>margin</code>. In our case, we only need to use the
+                <code>xScale</code> function to correctly position our marker
+                horizontally. Since we want it to stay on the top of the chart,
+                a value of <code>y={0}</code> is required.
+              </p>
+              <p>
+                Now let’s create the tool-tip. A quick note about custom
+                tool-tips: there are two different functions used for creating
+                custom tool-tips, <code>tooltipRenderer</code> and
+                <code>tooltipContent</code>. The
+                <code>tooltipRenderer</code> function renders the container of
+                the tool-tip while the <code>tooltipContent</code> function only
+                renders the content of tool-tip, which is the closest data point
+                to the current mouse position. In this case, we will only modify
+                the tool-tip content.
+              </p>
+              <pre>import format from &#39;date-fns/format&#39;<br>import { ChartArea, LineChart } from &#39;viiksetjs&#39;</pre>
+              <pre>const TooltipContent = ({ tooltipData }) =&gt; (<br>  &lt;div style={{ textAlign: &quot;center&quot; }}&gt;<br>    &lt;p&gt;{format(tooltipData.time, &quot;MMM Do HH:mm&quot;)}&lt;/p&gt;<br>    &lt;p&gt;{tooltipData.messages} messages&lt;/p&gt;<br>  &lt;/div&gt;<br>)</pre>
+              <pre>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>  }<br>  tooltipContent={TooltipContent}<br>&gt;<br>&lt;LineChart dataKey=&quot;messages&quot; color=&quot;green&quot; /&gt;<br>&lt;/ChartArea&gt;</pre>
+              <h3>Third example</h3>
+              <p>
+                The third example is a demonstration on how to use the
+                <code>DataContext</code> component.
+                <code>DataContext</code> takes your data and returns the
+                building blocks for visualization including the calculated scale
+                values, x and y points, as well as the data itself. This is
+                useful when working outside of the pre-built charts or when
+                working with thing such as canvas or regular DOM elements.
+              </p>
+              <p>
+                Using the <code>DataContext</code> component, we will create a
+                <a
+                  href="https://en.wikipedia.org/wiki/Voronoi_diagram"
+                  data-href="https://en.wikipedia.org/wiki/Voronoi_diagram"
+                  rel="noopener"
+                  target="_blank"
+                  >voronoi diagram</a
+                >
+                with HTML canvas. First, let’s seed some random data for our
+                diagram:
+              </p>
+              <pre>const voronoiData = Array(150)<br>  .fill(null)<br>  .map(() =&gt; ({<br>    x: Math.random(),<br>    y: Math.random(),<br>    id: Math.random()<br>      .toString(36)<br>      .slice(2)<br>  }))</pre>
+              <p>
+                With this data, we can now create the
+                <code>DataContext</code> component
+              </p>
+              <pre>&lt;DataContext data={voronoiData} type=&quot;linear&quot; xKey=&quot;x&quot;&gt;<br>  {({ width, height, xScale, yScale, data, xPoints }) =&gt; (<br>   &lt;Voronoi {...{ data, width, height, xScale, xPoints, yScale }} /&gt;<br>  )}<br>&lt;/DataContext&gt;</pre>
+              <p>
+                Here, we have specified that the type of data we have is linear
+                ( meaning that both x and y are numeric ) and that the
+                <code>xKey</code> is named <code>x</code>. The
+                <code>DataContext</code> component will then calculate scales, x
+                and y points, and return that to us to use in our
+                <code>Voronoi</code> component which we will now create.
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/637aa4707e0ecd54322e148bc367e21d.js.js"></script>
+              </figure>
+              <p>
+                With the help of the <code>voronoi</code> function from VX and
+                the <code>Path2D</code> browser API, we can create a diagram
+                using the data and dimensions passed to us from the
+                <code>DataContext</code> component.
+              </p>
+              <h3>Conclusion</h3>
+              <p>
+                While this was just a small set of examples, there is much more
+                than can be done with ViiksetJS, VX, and D3. I hope that this
+                tutorial sparks your imagination and helps ease some of the
+                cognitive and technical load of data visualization in the
+                browser. Please feel free to contribute to the project!
+              </p>
             </section>
           </section>
         </article>
+        <div class="dashed-bottom"></div>
         <article id="rxjs-recompose" class="blog-post">
           <section data-field="body">
             <section>
               <div>
                 <h2>
-                  Beyond counters — Using recompose and RXJS 6 to build a (semi)
+                  Beyond counters — Using recompose and RXJS 6 to build a (semi)
                   complex UI
                 </h2>
                 <p>
@@ -505,13 +322,12 @@
                   >is a great place to get started. Reactive programming allows
                   your applications to react to events and data streams in real
                   time. This means you can skip life cycle methods like
-                  <code>componentDidMount</code>
-                  and
-                  <code>componentDidUpdate</code>
-                  when checking for changes in your application state. If you
-                  are already familiar with reactive programming, then hopefully
-                  this post can give you more insights on how it can dovetail
-                  seamlessly with React using the recompose library.
+                  <code>componentDidMount</code> and
+                  <code>componentDidUpdate</code> when checking for changes in
+                  your application state. If you are already familiar with
+                  reactive programming, then hopefully this post can give you
+                  more insights on how it can dovetail seamlessly with React
+                  using the recompose library.
                 </p>
                 <p>
                   If you would like to skip to the end, the codesandbox is here
@@ -529,9 +345,7 @@
             <section>
               <div>
                 <div>
-                  <h3>
-                    Task
-                  </h3>
+                  <h3>Task</h3>
                   <p>
                     While learning about reactive programming in the context of
                     React, I found a lot of great material, but not many
@@ -548,9 +362,7 @@
                     and dislikes should also be able to be added, deleted, and
                     edited.
                   </p>
-                  <h3>
-                    Tools
-                  </h3>
+                  <h3>Tools</h3>
                   <p>
                     The main tools we will be using are
                     <a
@@ -573,9 +385,7 @@
                     their usage, but I will also explain how to use them in the
                     context of building a UI in React.
                   </p>
-                  <h3>
-                    Why
-                  </h3>
+                  <h3>Why</h3>
                   <p>
                     UI design is supposed to feel snappy and reactive, and
                     reactive programming allows us to change UI elements
@@ -599,387 +409,315 @@
               </div>
             </section>
             <section>
-              <div>
-                <div>
-                  <h3>
-                    First steps
-                  </h3>
-                  <p>
-                    The first thing we need to do in this project is to set up
-                    recompose to work with the observable configuration used by
-                    RXJS. This is done by importing the function
-                    <code>setObservableConfig</code>
-                    from recompose, and passing it the
-                    <code>from</code> utility from rxjs.
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/acf5d8bc2e7949dd7676220123d481bc.js.js"></script>
-                  </figure>
-                  <p>
-                    Now that we have recompose configured to work with RXJS, we
-                    can start making prop streams for our component to consume.
-                    Let’s first start with a
-                    <code>load</code> stream which will fetch our users from the
-                    backend and pass the response — as well as any other props
-                    received — to the next stream.
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/05a20ca0596d5ff675d6b5db4a37351a.js"></script>
-                  </figure>
-                  <p>
-                    Let’s break this down line by line.
-                  </p>
-                  <p>
-                    First, we are importing a few operators from rxjs, so let’s
-                    discuss what they do and why we need them.
-                    <code>switchMap</code> and <code>map</code> allow us to map
-                    values to other functions and components.
-                    <code>switchMap</code> takes an observable and flattens it,
-                    allowing us to pass just its values to the next function and
-                    not the observable itself.
-                  </p>
-                  <p>
-                    The following operators,
-                    <code>tap</code>, <code>catchError</code>, and
-                    <code>startWith</code>, help us with debugging and allows us
-                    to give the user information about the state of the
-                    application. <code>tap</code> takes and observable, performs
-                    a side effect, and returns a copy of the original
-                    observable.
-                  </p>
-                  <h4>Using <code>tap</code> to debug observables</h4>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/78b4029c395f3277b0a6808dd153f96f.js"></script>
-                    <figcaption>
-                      Using tap to peer into the Observable stream
-                    </figcaption>
-                  </figure>
-                  <p>
-                    By using <code>tap</code>, we can log out the response we
-                    receive from the backend without having to worry about
-                    changing anything in our stream. Using the
-                    <code>startWith</code> and
-                    <code>catchError</code>
-                    operators help us communicate the status of the application
-                    to users by giving us the ability to do conditional
-                    rendering based on it’s current state. We will go into the
-                    implementation of this later.
-                  </p>
-                  <p>
-                    Now that we understand what the operators we are using are
-                    able to do, let’s step through the load stream logic. You
-                    will notice that the variable
-                    <code>load</code> itself is the result of the
-                    <code>mapPropsStream</code>
-                    function taken from
-                    <code>recompose</code> this takes as an argument a function
-                    which receives a stream of props (streams are denoted by the
-                    suffix <code>$</code> for clarity, but that does not have
-                    any syntactic meaning) which can then be piped through our
-                    logical operators.
-                  </p>
-                  <p>
-                    Here is where
-                    <code>switchMap</code>
-                    becomes very useful. Since React can’t render anything with
-                    an Observable object, we need to flatten our props stream so
-                    that we get only the values of that stream. Those values are
-                    the actual props we need to render our component. So we
-                    flatten the stream and map it to our function which fetches
-                    the users from the backend. You can use
-                    <code>props</code> here to pass any additional arguments to
-                    your function that fetches the data, but since we’re faking
-                    it here, we don’t need to pass anything. Finally, our
-                    request returns a <code>users</code> array which we then map
-                    to an object which passes along the <code>props</code>,
-                    <code>users</code>, and signals a successful request by
-                    setting <code>status</code> to
-                    <code>&#39;SUCCESS&#39;</code>.
-                  </p>
-                  <p>
-                    You may have noticed that we use
-                    <code>tap</code> here as well to call the function
-                    <code>setUserList</code>, which is contained in the props
-                    passed to the load stream. This, combined with the ternary
-                    check of
-                    <code>isEmpty(props.userList</code>
-                    will help us prevent unnecessarily re-fetching the data. If
-                    we have the data, we just want to return it without any
-                    manipulation.
-                  </p>
-                  <h4>
-                    Using streams to handle DOM events
-                  </h4>
-                  <p>
-                    Let’s create a second props stream which handles choosing a
-                    user from the list and setting them as a selected user:
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/15272b3d3b0d4845c4b41931c7c08a8d.js"></script>
-                  </figure>
-                  <p>
-                    Much like in our
-                    <code>load</code> stream, we want to create a stream of
-                    props using recompose’s
-                    <code>mapPropsStream</code>
-                    function. However, instead of directly switchMapping the
-                    props, we want to create two variables — a stream and a
-                    handler — using another utility function from recompose,
-                    <code>createEventHandler</code>.
-                    <code>createEventHandler</code>
-                    will, as the name implies, create a handler and a
-                    corresponding stream which you can then assign to React
-                    events such as
-                    <code>onChange</code>, <code>onClick</code>, etc. The values
-                    from that event will then be passed into the stream which
-                    you can then pipe, map, and whatever else you need. In our
-                    case, we want to flatten both the incoming props stream and
-                    the stream from the event and produce a single object.
-                  </p>
-                  <p>
-                    Taking our props, we want to check to see if there is a user
-                    specified in the URL. In this project,
-                    <code>react-router-dom</code>
-                    is being used so we find the user param in
-                    <code>props.match.params.user</code>. But where is the
-                    <code>Route</code> to pass the <code>match</code> prop to
-                    this stream?!? Don’t worry, we will get there, just know
-                    that for now, <code>selectUser</code> will be passed the
-                    props from react-router’s
-                    <code>Route</code>
-                    component. Now that we have our user from the URL, we want
-                    to start our stream with either that user, or the first user
-                    in our
-                    <code>userList</code>. If we don’t have the
-                    <code>userList</code> yet, we just want to start with
-                    <code>null</code>. Then we simply pipe the
-                    <code>selectedUser</code>
-                    through the stream and return an object which contains all
-                    props passed to
-                    <code>selectUser</code> as well as our
-                    <code>userSelect</code>
-                    function.
-                  </p>
-                  <p>
-                    In order to use the two prop stream we just created, we need
-                    to make a component which will take the props from both
-                    streams and render our list element
-                  </p>
-                  <figure id="0fb5">
-                    <script src="https://gist.github.com/jamestthompson3/3007a6d6309893c53543be60022d5754.js"></script>
-                  </figure>
-                  <p>
-                    The component itself is quite simple, it just takes the
-                    props, checks to see if the right user is in the URL, and if
-                    not, pushes the correct user there. Next, it takes our
-                    <code>userList</code>, maps through it and returns a list
-                    item for each user in the list and adds some conditional
-                    styling if the user is currently selected. If the request is
-                    still ongoing, then it displays a loading component. Notice
-                    that we pass the
-                    <code>userSelect</code>
-                    function to our list items to use as an
-                    <code>onClick</code>
-                    handler. The user that is passed to
-                    <code>userSelect</code> is then pushed to the
-                    <code>selectUser</code>
-                    stream.
-                  </p>
-                  <p>
-                    In order for this component to have access to all these
-                    props, it’s time for some functional programming beauty.
-                    Using the
-                    <code>compose</code>
-                    function from recompose, we create a new element which
-                    streams all the props from both
-                    <code>load</code>, <code>selectUser</code>, and react-router
-                    to the
-                    <code>IndexPage</code>
-                    element. It is here we will also create the function
-                    <code>setUserlist</code> and the <code>userList</code> prop
-                    we saw in our <code>load</code> stream.
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/050101c8a8d6e1fcc713c07b5bb7df66.js"></script>
-                  </figure>
-                  <p>
-                    The functions
-                    <code>withState</code> and
-                    <code>withHandlers</code>
-                    allow us to keep persistent data and manipulate that data
-                    inside our streams.
-                    <code>withState</code>
-                    accepts three arguments, the name of the item in state, the
-                    name of the function used to update the state, and the
-                    inital state.
-                    <code>withHandlers</code>
-                    receive the function specified in
-                    <code>withState</code> and can accept as many handlers as
-                    you need. In our case, we just need one handler which will
-                    take the <code>users</code> array from our fetch function
-                    and set the <code>userList</code> state property to that
-                    array. We also pass the
-                    <code>withRouter</code>
-                    function so that our component and event streams have access
-                    to router props such as
-                    <code>match</code> and <code>history</code>.
-                  </p>
-                  <p>
-                    Time to put the first steps together
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/13e3444051bf29a2f20ed1e807b2d21e.js"></script>
-                  </figure>
-                </div>
-              </div>
+              <h3>First steps</h3>
+              <p>
+                The first thing we need to do in this project is to set up
+                recompose to work with the observable configuration used by
+                RXJS. This is done by importing the function
+                <code>setObservableConfig</code> from recompose, and passing it
+                the <code>from</code> utility from rxjs.
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/acf5d8bc2e7949dd7676220123d481bc.js.js"></script>
+              </figure>
+              <p>
+                Now that we have recompose configured to work with RXJS, we can
+                start making prop streams for our component to consume. Let’s
+                first start with a <code>load</code> stream which will fetch our
+                users from the backend and pass the response — as well as any
+                other props received — to the next stream.
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/05a20ca0596d5ff675d6b5db4a37351a.js"></script>
+              </figure>
+              <p>Let’s break this down line by line.</p>
+              <p>
+                First, we are importing a few operators from rxjs, so let’s
+                discuss what they do and why we need them.
+                <code>switchMap</code> and <code>map</code> allow us to map
+                values to other functions and components.
+                <code>switchMap</code> takes an observable and flattens it,
+                allowing us to pass just its values to the next function and not
+                the observable itself.
+              </p>
+              <p>
+                The following operators, <code>tap</code>,
+                <code>catchError</code>, and <code>startWith</code>, help us
+                with debugging and allows us to give the user information about
+                the state of the application. <code>tap</code> takes and
+                observable, performs a side effect, and returns a copy of the
+                original observable.
+              </p>
+              <h4>Using <code>tap</code> to debug observables</h4>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/78b4029c395f3277b0a6808dd153f96f.js"></script>
+                <figcaption>
+                  Using tap to peer into the Observable stream
+                </figcaption>
+              </figure>
+              <p>
+                By using <code>tap</code>, we can log out the response we
+                receive from the backend without having to worry about changing
+                anything in our stream. Using the <code>startWith</code> and
+                <code>catchError</code> operators help us communicate the status
+                of the application to users by giving us the ability to do
+                conditional rendering based on it’s current state. We will go
+                into the implementation of this later.
+              </p>
+              <p>
+                Now that we understand what the operators we are using are able
+                to do, let’s step through the load stream logic. You will notice
+                that the variable <code>load</code> itself is the result of the
+                <code>mapPropsStream</code> function taken from
+                <code>recompose</code> this takes as an argument a function
+                which receives a stream of props (streams are denoted by the
+                suffix <code>$</code> for clarity, but that does not have any
+                syntactic meaning) which can then be piped through our logical
+                operators.
+              </p>
+              <p>
+                Here is where <code>switchMap</code> becomes very useful. Since
+                React can’t render anything with an Observable object, we need
+                to flatten our props stream so that we get only the values of
+                that stream. Those values are the actual props we need to render
+                our component. So we flatten the stream and map it to our
+                function which fetches the users from the backend. You can use
+                <code>props</code> here to pass any additional arguments to your
+                function that fetches the data, but since we’re faking it here,
+                we don’t need to pass anything. Finally, our request returns a
+                <code>users</code> array which we then map to an object which
+                passes along the <code>props</code>, <code>users</code>, and
+                signals a successful request by setting <code>status</code> to
+                <code>&#39;SUCCESS&#39;</code>.
+              </p>
+              <p>
+                You may have noticed that we use <code>tap</code> here as well
+                to call the function <code>setUserList</code>, which is
+                contained in the props passed to the load stream. This, combined
+                with the ternary check of
+                <code>isEmpty(props.userList</code> will help us prevent
+                unnecessarily re-fetching the data. If we have the data, we just
+                want to return it without any manipulation.
+              </p>
+              <h4>Using streams to handle DOM events</h4>
+              <p>
+                Let’s create a second props stream which handles choosing a user
+                from the list and setting them as a selected user:
+              </p>
+              <figure>
+                <script src="https://gist.github.com/15272b3d3b0d4845c4b41931c7c08a8d.js"></script>
+              </figure>
+              <p>
+                Much like in our <code>load</code> stream, we want to create a
+                stream of props using recompose’s
+                <code>mapPropsStream</code> function. However, instead of
+                directly switchMapping the props, we want to create two
+                variables — a stream and a handler — using another utility
+                function from recompose, <code>createEventHandler</code>.
+                <code>createEventHandler</code> will, as the name implies,
+                create a handler and a corresponding stream which you can then
+                assign to React events such as <code>onChange</code>,
+                <code>onClick</code>, etc. The values from that event will then
+                be passed into the stream which you can then pipe, map, and
+                whatever else you need. In our case, we want to flatten both the
+                incoming props stream and the stream from the event and produce
+                a single object.
+              </p>
+              <p>
+                Taking our props, we want to check to see if there is a user
+                specified in the URL. In this project,
+                <code>react-router-dom</code> is being used so we find the user
+                param in <code>props.match.params.user</code>. But where is the
+                <code>Route</code> to pass the <code>match</code> prop to this
+                stream?!? Don’t worry, we will get there, just know that for
+                now, <code>selectUser</code> will be passed the props from
+                react-router’s <code>Route</code> component. Now that we have
+                our user from the URL, we want to start our stream with either
+                that user, or the first user in our <code>userList</code>. If we
+                don’t have the <code>userList</code> yet, we just want to start
+                with <code>null</code>. Then we simply pipe the
+                <code>selectedUser</code> through the stream and return an
+                object which contains all props passed to
+                <code>selectUser</code> as well as our
+                <code>userSelect</code> function.
+              </p>
+              <p>
+                In order to use the two prop stream we just created, we need to
+                make a component which will take the props from both streams and
+                render our list element
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/3007a6d6309893c53543be60022d5754.js"></script>
+              </figure>
+              <p>
+                The component itself is quite simple, it just takes the props,
+                checks to see if the right user is in the URL, and if not,
+                pushes the correct user there. Next, it takes our
+                <code>userList</code>, maps through it and returns a list item
+                for each user in the list and adds some conditional styling if
+                the user is currently selected. If the request is still ongoing,
+                then it displays a loading component. Notice that we pass the
+                <code>userSelect</code> function to our list items to use as an
+                <code>onClick</code> handler. The user that is passed to
+                <code>userSelect</code> is then pushed to the
+                <code>selectUser</code> stream.
+              </p>
+              <p>
+                In order for this component to have access to all these props,
+                it’s time for some functional programming beauty. Using the
+                <code>compose</code> function from recompose, we create a new
+                element which streams all the props from both <code>load</code>,
+                <code>selectUser</code>, and react-router to the
+                <code>IndexPage</code> element. It is here we will also create
+                the function <code>setUserlist</code> and the
+                <code>userList</code> prop we saw in our
+                <code>load</code> stream.
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/050101c8a8d6e1fcc713c07b5bb7df66.js"></script>
+              </figure>
+              <p>
+                The functions <code>withState</code> and
+                <code>withHandlers</code> allow us to keep persistent data and
+                manipulate that data inside our streams.
+                <code>withState</code> accepts three arguments, the name of the
+                item in state, the name of the function used to update the
+                state, and the inital state. <code>withHandlers</code> receive
+                the function specified in <code>withState</code> and can accept
+                as many handlers as you need. In our case, we just need one
+                handler which will take the <code>users</code> array from our
+                fetch function and set the <code>userList</code> state property
+                to that array. We also pass the <code>withRouter</code> function
+                so that our component and event streams have access to router
+                props such as <code>match</code> and <code>history</code>.
+              </p>
+              <p>Time to put the first steps together</p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/13e3444051bf29a2f20ed1e807b2d21e.js"></script>
+              </figure>
+            </section>
+            <section>
+              <h3>Next Steps</h3>
+              <p>
+                Now that we have our list of users, it is time to create a
+                component which will display their lists of likes and dislikes.
+                Here, we can take advantage of more recompose helper functions,
+                <code>withContext</code> and <code>getContext</code>. These will
+                prevent us from being trapped in passed-down props hell. Since
+                we will be creating more handlers to update the list of users,
+                there will be many functions which we will want to pass down to
+                our components that display the likes and dislikes which could
+                result in something like this:
+              </p>
+              <p>
+                All of these props would then have to be continually passed down
+                until they reach the components that actually consume them. That
+                is crazy! By using <code>withContext</code> and
+                <code>getContext</code>, we can pass down the props we need and
+                consume them in any child of our
+                <code>IndexPage</code> component. So, let’s create our handlers:
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/f0d4851c2cd420b54071b4eeb2fc3068.js"></script>
+              </figure>
+              <p>
+                Here, are a few basic functions that will update our state after
+                making a request to a fictitious endpoint. We can now pass these
+                handlers and our selected user down to child components using
+                <code>withContext</code>
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/55a4365059c8ad4633e7d6394752e4ef.js"></script>
+              </figure>
+              <p>
+                <code>withContext</code> takes two arguments, the first being
+                the <code>childContextTypes</code>, and the second being a
+                function which returns the props to be passed as context. In our
+                case, we want to pass the selected user and our state handler
+                functions down as context. We get these props by placing our
+                <code>withContext</code> function as an argument of our
+                <code>compose</code> function like this:
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/ed92ea1686e1153dea739a5441ce371a.js"></script>
+              </figure>
+              <p>
+                We are now able to consume these props as context in any child
+                component!
+              </p>
+              <h3>Using context in child components</h3>
+              <p>
+                Let’s use the context we just created to display users’ likes
+                and dislikes and add a simple interface to add and remove data.
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/39f28c84bed7ad28fdf8738f1bbdba61.js"></script>
+              </figure>
+              <p>
+                The above component simply takes the user and their likes from
+                context and displays them in a list. This component also allows
+                users to delete a like by clicking on an icon which calls our
+                <code>deleteUser</code> function we defined earlier. Let’s add a
+                modal that will allow users to add an item to the list by
+                clicking on the <code>add</code> icon.
+              </p>
+              <p>
+                It’s time to create more DOM event driven streams. The first
+                stream we want to create will be one to open and close the form
+                modal:
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/506b136a0aee1a044d3e0516faf63f65.js"></script>
+              </figure>
+              <p>
+                Handling a toggle event is quite simple, we specify whether we
+                want the toggle to be on or off, and then use
+                <code>scan</code> — a function that applies an accumulator over
+                the stream ( similar to Array.reduce ) — to toggle the state. We
+                then return all passed props as well as the current state of the
+                modal and the handler itself.
+              </p>
+              <p>Dealing with text input is a bit trickier:</p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/d5a2aa074f22a92cccd30c74295375c7.js"></script>
+              </figure>
+              <p>
+                In the above snippet, we take the stream produced by our event
+                handler ( in this case typing in a text input ) and we create a
+                new stream composed of only the value of
+                <code>event.target</code>. It is also important to note that we
+                must use <code>startWith</code> here or else this stream will
+                not be subscribed to and our component which uses this stream
+                will not be rendered.
+              </p>
+              <p>
+                To access these functions in our List component, we must compose
+                them together like so:
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/92834e22fa5fd71433cdf74ffa873435.js"></script>
+              </figure>
+              <p>
+                By using composable streams, we are able to create a nice modal
+                form which takes text input and adds it to the list of user’s
+                likes. Here is it’s parent component:
+              </p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/9e33feca7fb966852a2bc7c65e6a062f.js"></script>
+              </figure>
+              <p>And the modal itself:</p>
+              <figure>
+                <script src="https://gist.github.com/jamestthompson3/87c6ba9100f5ae1c008bc3b0295356ea.js"></script>
+              </figure>
+              <p>
+                Doing the same for the user’s dislikes gives us two lists that
+                can be modified by the user.
+              </p>
             </section>
             <section>
               <div>
                 <div>
-                  <h3>
-                    Next Steps
-                  </h3>
-                  <p>
-                    Now that we have our list of users, it is time to create a
-                    component which will display their lists of likes and
-                    dislikes. Here, we can take advantage of more recompose
-                    helper functions,
-                    <code>withContext</code> and <code>getContext</code>. These
-                    will prevent us from being trapped in passed-down props
-                    hell. Since we will be creating more handlers to update the
-                    list of users, there will be many functions which we will
-                    want to pass down to our components that display the likes
-                    and dislikes which could result in something like this:
-                  </p>
-                  <p>
-                    All of these props would then have to be continually passed
-                    down until they reach the components that actually consume
-                    them. That is crazy! By using
-                    <code>withContext</code> and <code>getContext</code>, we can
-                    pass down the props we need and consume them in any child of
-                    our
-                    <code>IndexPage</code>
-                    component. So, let’s create our handlers:
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/f0d4851c2cd420b54071b4eeb2fc3068.js"></script>
-                  </figure>
-                  <p>
-                    Here, are a few basic functions that will update our state
-                    after making a request to a fictitious endpoint. We can now
-                    pass these handlers and our selected user down to child
-                    components using
-                    <code>withContext</code>
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/55a4365059c8ad4633e7d6394752e4ef.js"></script>
-                  </figure>
-                  <p>
-                    <code>withContext</code>
-                    takes two arguments, the first being the
-                    <code>childContextTypes</code>, and the second being a
-                    function which returns the props to be passed as context. In
-                    our case, we want to pass the selected user and our state
-                    handler functions down as context. We get these props by
-                    placing our
-                    <code>withContext</code>
-                    function as an argument of our
-                    <code>compose</code>
-                    function like this:
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/ed92ea1686e1153dea739a5441ce371a.js"></script>
-                  </figure>
-                  <p>
-                    We are now able to consume these props as context in any
-                    child component!
-                  </p>
-                  <h4>
-                    Using context in child components
-                  </h4>
-                  <p>
-                    Let’s use the context we just created to display users’
-                    likes and dislikes and add a simple interface to add and
-                    remove data.
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/39f28c84bed7ad28fdf8738f1bbdba61.js"></script>
-                  </figure>
-                  <p>
-                    The above component simply takes the user and their likes
-                    from context and displays them in a list. This component
-                    also allows users to delete a like by clicking on an icon
-                    which calls our
-                    <code>deleteUser</code>
-                    function we defined earlier. Let’s add a modal that will
-                    allow users to add an item to the list by clicking on the
-                    <code>add</code> icon.
-                  </p>
-                  <p>
-                    It’s time to create more DOM event driven streams. The first
-                    stream we want to create will be one to open and close the
-                    form modal:
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/506b136a0aee1a044d3e0516faf63f65.js"></script>
-                  </figure>
-                  <p>
-                    Handling a toggle event is quite simple, we specify whether
-                    we want the toggle to be on or off, and then use
-                    <code>scan</code> — a function that applies an accumulator
-                    over the stream ( similar to Array.reduce ) — to toggle the
-                    state. We then return all passed props as well as the
-                    current state of the modal and the handler itself.
-                  </p>
-                  <p>
-                    Dealing with text input is a bit trickier:
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/d5a2aa074f22a92cccd30c74295375c7.js"></script>
-                  </figure>
-                  <p>
-                    In the above snippet, we take the stream produced by our
-                    event handler ( in this case typing in a text input ) and we
-                    create a new stream composed of only the value of
-                    <code>event.target</code>. It is also important to note that
-                    we must use <code>startWith</code> here or else this stream
-                    will not be subscribed to and our component which uses this
-                    stream will not be rendered.
-                  </p>
-                  <p>
-                    To access these functions in our List component, we must
-                    compose them together like so:
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/92834e22fa5fd71433cdf74ffa873435.js"></script>
-                  </figure>
-                  <p>
-                    By using composable streams, we are able to create a nice
-                    modal form which takes text input and adds it to the list of
-                    user’s likes. Here is it’s parent component:
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/9e33feca7fb966852a2bc7c65e6a062f.js"></script>
-                  </figure>
-                  <p>
-                    And the modal itself:
-                  </p>
-                  <figure>
-                    <script src="https://gist.github.com/jamestthompson3/87c6ba9100f5ae1c008bc3b0295356ea.js"></script>
-                  </figure>
-                  <p>
-                    Doing the same for the user’s dislikes gives us two lists
-                    that can be modified by the user.
-                  </p>
-                </div>
-              </div>
-            </section>
-            <section>
-              <div>
-                <div>
-                  <h3>
-                    Wrap up
-                  </h3>
+                  <h3>Wrap up</h3>
                   <p>
                     Observable streams are a great way of managing data flows in
                     components. While some of the things outlined here might be
@@ -1001,7 +739,7 @@
           </section>
         </article>
       </div>
-      <section id="smash" role="content-info" class="container">
+      <section id="smash" role="content-info" class="p20">
         <img
           style="align-self: center;"
           src="https://media.tenor.com/images/6bf1ba96181f4b3df10e8cbb61901b67/tenor.gif"

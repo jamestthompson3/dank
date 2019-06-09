@@ -1,0 +1,168 @@
+#root {
+  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)),
+  url("https://i.redd.it/kshhsob9pyv21.jpg") center repeat;
+  background-size: cover;
+  height: 700px;
+  justify-content: space-between;
+  align-items: center;
+}
+#smash {
+  background: url("https://the-cult.neocities.org/images/important/background.png");
+  background-size: cover;
+  height: 700px;
+  align-items: center;
+}
+#body-container {
+  overflow-y: auto;
+}
+#cursor {
+  position: absolute;
+  width: 50px;
+  height: 50px;
+}
+#programming {
+  background: radial-gradient(
+  farthest-corner at 40px 40px,
+  #5042f4,
+  #42b0f4,
+  #743bb5,
+  #b942f4,
+  #9f3cc9
+  );
+}
+.flex-column {
+  display: flex;
+  flex-direction: column;
+}
+.400h {
+  height: 400px;
+}
+.center-text {
+  text-align: center;
+}
+
+.bg-black {
+  background: black;
+}
+txt-white {
+  color: #fff;
+}
+
+#blog {
+  align-items: center;
+  background: url("http://pixelartmaker.com/art/8baf7524e2c592a.png");
+}
+.blog-post {
+  background: #333;
+  font-family; 'Roboto';
+}
+.blog-post, section {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: space-around;
+  width: 85%;
+}
+.blog-post, article {
+  width: 100%;
+}
+.no-overflow {
+  overflow: hidden;
+}
+.blog-post, p {
+  color: #fff;
+  font-size: 1rem;
+  line-height: 2rem;
+  margin: 1rem;
+  text-align: justify;
+}
+.blog-post, a {
+  color: skyblue;
+}
+blog-post, code, pre {
+  font-family: monospace;
+  color: #fff;
+  background: #000;
+  font-size: 0.75rem;
+}
+.blog-post, pre {
+  margin: 1rem 0rem;
+  text-align: left;
+  width: 100%;
+}
+.blog-post, h3 {
+  font-size: 1.5rem;
+  color: #dbdbdb;
+  margin: 1rem 0rem;
+  text-weight: bold;
+  text-align: left;
+}
+.blog-post, h2 {
+  font-size: 2rem;
+  color: #fff;
+  font-weight: bold;
+  margin: 1rem 0rem;
+}
+.blog-post, figure {
+  margin: 1rem 0rem;
+}
+.blog-post, figcaption {
+  color: #dbdbdb;
+  font-weight: bold;
+  font-size: 12px;
+  text-align: center;
+}
+.header {
+  font-size: 2.5rem;
+  color: #fff;
+  background: #000;
+  margin: 2rem auto;
+}
+
+.subheader {
+  font-size: 2rem;
+  color: #fff;
+}
+.dashed-bottom {
+  height: 10px;
+  border-bottom: 2px dashed #dbdbdb;
+  width: 100%;
+}
+#toc-container {
+  width: 80%;
+  border-radius: 8px;
+  border: 1px solid #ababab;
+  background: #333333b5;
+  margin-bottom: 2rem;
+}
+.toc-list {
+  margin: 1rem auto;
+}
+.list {
+  font-size: 1.5rem;
+}
+.list li {
+  margin: 10px;
+}
+.list > * > a {
+  text-decoration-color: aquamarine;
+  font-weight: bold;
+  color: aquamarine;
+}
+.list > * > a:visited {
+  color: #fff;
+}
+
+/* smaller screens */
+@media(max-width: 400px) {
+  .blog-post, p {
+    margin: 1rem 1rem;
+  }
+  .blog-post, section {
+    width: 100%;
+  }
+  .blog-post, figure {
+    max-width: 350px;
+    margin: auto;
+  }
+}
