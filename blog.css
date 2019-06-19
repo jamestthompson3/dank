@@ -1,5 +1,5 @@
 body {
-  background: #1d1e22;
+  background: #151618;
 }
 
 html, body {
@@ -17,8 +17,8 @@ header {
 }
 
 .blog-post {
-  background: #1d1e22;
-  font-family: 'Anonymous Pro', monospace;
+  background: #151618;
+  font-family: 'B612 Mono', monospace;
 }
 .blog-post, section {
   display: flex;
@@ -32,7 +32,15 @@ header {
 }
 
 .blog-post, p {
-  color: #fff;
+  color: rgb(209, 206, 199);
+  font-size: 1rem;
+  line-height: 2rem;
+  margin: 1rem;
+  text-align: justify;
+}
+
+.blog-post, li {
+  color: rgb(209, 206, 199);
   font-size: 1rem;
   line-height: 2rem;
   margin: 1rem;
