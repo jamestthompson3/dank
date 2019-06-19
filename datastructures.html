@@ -101,21 +101,24 @@
               I think that we can move data management outside of react, giving
               us the benefits of:
             </p>
-            <p>
-              0: Having a simple API for both writing and reasoning ( a problem
-              with redux, sagas, mobx, etc. is boiler plate code and hard to
-              follow logic ).
-            </p>
-            <p>
-              1: Allowing us to bind the UI to the data when necessary, but not
-              having our data depend on our rendering library ( using react
-              context means our data must follow the constraints of react )
-            </p>
-            <p>
-              2: Allowing for underlying changes to data only
-              <em>relevant</em> to the current component to automatically
-              trigger a request to the react scheduler to update.
-            </p>
+            <ul>
+              <li>
+                0: Having a simple API for both writing and reasoning ( a
+                problem with redux, sagas, mobx, etc. is boiler plate code and
+                hard to follow logic ).
+              </li>
+              <li>
+                1: Allowing us to bind the UI to the data when necessary, but
+                not having our data depend on our rendering library ( using
+                react context means our data must follow the constraints of
+                react )
+              </li>
+              <li>
+                2: Allowing for underlying changes to data only
+                <em>relevant</em> to the current component to automatically
+                trigger a request to the react scheduler to update.
+              </li>
+            </ul>
           </section>
           <section>
             <h3>Big OOF: Why Context Is Complex</h3>
@@ -213,29 +216,40 @@
               user. If we store all of this information in context, we would see
               a lot of render events when using this UI:
             </p>
-            <p>
-              === MAIN LIST === 0: The context mounts and our user list is
-              updated via an XHR request.
-            </p>
-            <p>
-              1: The default selected user is chosen from the user list and is
-              set in the context
-            </p>
-            <p>
-              2: Every time a new selected user is chosen, the context is
-              updated and the component is re-rendered
-            </p>
-            <p>3: Updates from likes list 4: Updates from dislikes list</p>
-            <p>
-              === LIKES LIST === 0: Selected user from Main List causes initial
-              render 1: Selected user update 2: Updates to itself 3: Updates to
-              dislikes list
-            </p>
-            <p>
-              === DISLIKES LIST === 0: Selected user from Main List causes
-              initial render 1: Selected user update 2: Updates to itself 3:
-              Updates to likes list
-            </p>
+            <div class="list-container">
+              <p><strong>=== MAIN LIST ===</strong></p>
+              <ul>
+                <li>
+                  0: The context mounts and our user list is updated via an XHR
+                  request.
+                </li>
+                <li>
+                  1: The default selected user is chosen from the user list and
+                  is set in the context
+                </li>
+                <li>
+                  2: Every time a new selected user is chosen, the context is
+                  updated and the component is re-rendered
+                </li>
+                <li>
+                  3: Updates from likes list 4: Updates from dislikes list
+                </li>
+              </ul>
+              <p><strong>=== LIKES LIST ===</strong></p>
+              <ul>
+                <li>0: Selected user from Main List causes initial render</li>
+                <li>1: Selected user update</li>
+                <li>2: Updates to itself</li>
+                <li>3: Updates to dislikes list</li>
+              </ul>
+              <p><strong>=== DISLIKES LIST ===</strong></p>
+              <ul>
+                <li>0: Selected user from Main List causes initial render</li>
+                <li>1: Selected user update</li>
+                <li>2: Updates to itself</li>
+                <li>3: Updates to likes list</li>
+              </ul>
+            </div>
             <p>
               Notice how with context, even updates to irrelevant bits of the
               data cause re-renders. Our main list that just renders the users’
