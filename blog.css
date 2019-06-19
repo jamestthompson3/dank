@@ -8,7 +8,8 @@ header {
 
 .blockwrapper {
   width: 100%;
-  overflow: auto;
+  overflow-y: auto;
+  overflow-x: hidden;
 }
 
 .blog-post {
@@ -90,7 +91,7 @@ header {
 
 
 /* smaller screens */
-@media(max-width: 400px) {
+@media(max-width: 450px) {
   .blog-post, p {
     margin: 1rem 1rem;
   }
