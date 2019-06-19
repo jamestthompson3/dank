@@ -1,7 +1,10 @@
 body {
   background: #1d1e22;
-  overflow: visible;
-  overflow-x: hidden;
+}
+
+html, body {
+  position: fixed;
+  overflow: hidden;
 }
 
 header {
@@ -88,6 +91,13 @@ header {
   font-weight: bold;
   font-size: 12px;
   text-align: center;
+}
+
+body > .mainwrapper {
+  width: 100vw;
+  height: 100vh;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
 }
 
 
