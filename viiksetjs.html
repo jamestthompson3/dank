@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1, shrink-to-fit=no"
+    />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Getting started with viiksetjs"
+    />
+    <meta itemprop="description" content="👨🏽‍🎨Getting started with viiksetjs" />
+    <link href="reset.css" rel="stylesheet" />
+    <link href="blog.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=Anonymous+Pro&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <title>👨🏽‍🎨 Getting started with viiksetjs</title>
+  <body>
+    <article id="viiksetjs" class="blog-post">
+      <header>
+        <h2>
+          Data visualization in the browser and getting started with ViiksetJS
+        </h2>
+      </header>
+      <section data-field="body">
+        <section>
+          <div>
+            <div>
+              <h3>Introduction</h3>
+              <p>
+                When it comes to visualizing data in the browser, there is no
+                shortage of options. Developer friendliness and performance are
+                two important things to consider when adopting a data
+                visualization tool. D3 is considered by many to be the gold
+                standard in Javascript data visualization — and for good reason
+                it is a powerful tool which can be used to create beautiful
+                visualizations. One issue with using D3 in the context of React
+                is the way that it manipulates the DOM. D3 manipulates the
+                physical DOM, whereas React changes its own virtual DOM. Mixing
+                these two methods of DOM manipulation is a good way to introduce
+                hard to debug problems into your application. For more
+                information this problem, see
+                <a
+                  href="https://www.youtube.com/watch?v=ladXdJ3KKd4"
+                  data-href="https://www.youtube.com/watch?v=ladXdJ3KKd4"
+                  rel="noopener"
+                  target="_blank"
+                  >this talk</a
+                >.
+              </p>
+              <p>
+                Enter
+                <a
+                  href="https://github.com/hshoff/vx"
+                  data-href="https://github.com/hshoff/vx"
+                  rel="noopener"
+                  target="_blank"
+                  >VX</a
+                >. This amazing library by Harrison Shoff brings the power of D3
+                to accessible React bindings. With it, you are able to only
+                manipulate React’s virtual DOM while still having access to all
+                of the great functionality of D3. It is performant and flexible.
+                However, there is a learning curve associated with D3, and it
+                can be difficult for new developers or those new to building
+                visualizations. There are many libraries which try and abstract
+                away this complexity, however, you are often forced to pay a
+                performance penalty.
+              </p>
+              <p>
+                <a
+                  href="https://github.com/jamestthompson3/viiksetjs"
+                  data-href="https://github.com/jamestthompson3/viiksetjs"
+                  rel="noopener"
+                  target="_blank"
+                  >ViiksetJS</a
+                >
+                hopes to bridge the gap between out of the box functionality and
+                powerful flexibility. It has full inter-op between VX and allows
+                not only for working with svg visualizations, but also canvas
+                and the DOM itself. This allows for quick implementations or
+                highly customized visualizations. ViiksetJS also works
+                seamlessly with styled-components, allowing you to carry over
+                your themes without any additional work. As we build some
+                examples, you will see that flexibility and extensibility are
+                core features of ViiksetJS.
+              </p>
+            </div>
+          </div>
+        </section>
+        <section>
+          <figure>
+            <iframe
+              src="https://codesandbox.io/embed/5012r69vn4?autoresize=1&amp;hidenavigation=1"
+              width="700"
+              height="350"
+              frameborder="0"
+              scrolling="no"
+            ></iframe>
+            <figcaption>codesandbox with all examples</figcaption>
+          </figure>
+          <h3>First example</h3>
+          <p>
+            Let’s start with something simple. Say that we want to plot data
+            containing the number of users and posts for a day over the course
+            of several days:
+          </p>
+          <div class="blockwrapper">
+            <pre>[<br> {<br> “posts”: 4225,<br> “users”: 12220,<br> “time”: “2018–02–14T22:07:42.049+02”<br> },<br> {<br> “posts”: 3989,<br> “users”: 22455,<br> “time”: “2018–02–14T23:07:42.049+02”<br> },<br> {<br> “posts”: 3439,<br> “users”: 44512,<br> “time”: “2018–02–15T00:07:42.049+02”<br> },<br> {<br> “posts”: 3238,<br> “users”: 55112,<br> “time”: “2018–02–15T01:07:42.049+02”<br> },<br> {<br> “posts”: 3104,<br> “users”: 11111,<br> “time”: “2018–02–15T02:07:42.049+02”<br> },<br> {<br> “posts”: 3086,<br> “users”: 21135,<br> “time”: “2018–02–15T03:07:42.049+02”<br> },<br> …<br>]</pre>
+          </div>
+          <p>
+            First, we need to import the <code>ChartArea</code> component. This
+            is the basis for many of the out-of-the-box visualizations available
+            in ViiksetJS. The <code>ChartArea</code> component will handle thing
+            such as styling, scaling, tool-tips, etc. Second, we will import the
+            <code>LineChart</code> which will be in charge of rendering our
+            visualization.
+          </p>
+          <div class="blockwrapper">
+            <pre>import React from ‘react’<br>import { ChartArea, LineChart } from ‘viiksetjs’<br>import timeseries from ‘./timeSeries.json’
+                <br />const TimeSeries = () =&gt; (<br />&lt;ChartArea data={timeseries.data}&gt;<br />  &lt;LineChart dataKey=”posts” color=”blue” /&gt;<br />  &lt;LineChart dataKey=”users” color=”red” /&gt;<br />&lt;/ChartArea&gt;<br />)</pre>
+          </div>
+          <p>
+            That’s it! Of course at this point, we want to customize that chart,
+            so let’s do that:
+          </p>
+          <div class="blockwrapper">
+            <pre>&lt;ChartArea<br>  data={timeSeries.data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>&gt;<br>// ...</pre>
+          </div>
+          <p>
+            What we did here is specify that on mobile, we only want to render 2
+            ticks on<br />the x axis, set the color of the x and y axis ticks
+            and toned the grid lines. An important thing to note here is that D3
+            will try and approximate the number of ticks you give as an
+            argument, and does not always produce the exact number of ticks
+            specified.
+          </p>
+          <h3>Second example</h3>
+          <p>
+            Let’s do another example where we will create a custom
+            <code>glyphRenderer</code> and tool-tip. A
+            <code>glyphRenderer</code> is placed on top all the layers of our
+            svg chart, which makes it useful for things such as annotations.
+            Create a new <code>ChartArea</code>:
+          </p>
+          <div class="blockwrapper">
+            <pre>/** <br />* using a data array where each point has a shape of <br/>* { time: IsoString, messages: number }<br>**/
+                <br />&lt;ChartArea<br/> data={data}<br/> numXTicks={isMobile ? 2 : 4}<br> color=”#2189C8&quot;<br> stroke=”grey”<br>&gt;</pre>
+          </div>
+          <p>
+            Perhaps we want to create a marker denoting a the start of a
+            marketing campaign:
+          </p>
+          <div class="blockwrapper">
+            <pre>const campaignStart = {<br> “time”: “2018–02–15T03:07:42.049+02”<br> }</pre>
+          </div>
+          <p>We can easily add this to the chart:</p>
+          <div class="blockwrapper">
+            <pre>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>   }<br>&gt;</pre>
+          </div>
+          <p>
+            The following arguments are passed to the
+            <code>glyphRenderer</code> function: <code>width</code>,
+            <code>height</code>, <code>xScale</code>, <code>yScale</code>, and
+            <code>margin</code>. In our case, we only need to use the
+            <code>xScale</code> function to correctly position our marker
+            horizontally. Since we want it to stay on the top of the chart, a
+            value of <code>y={0}</code> is required.
+          </p>
+          <p>
+            Now let’s create the tool-tip. A quick note about custom tool-tips:
+            there are two different functions used for creating custom
+            tool-tips, <code>tooltipRenderer</code> and
+            <code>tooltipContent</code>. The
+            <code>tooltipRenderer</code> function renders the container of the
+            tool-tip while the <code>tooltipContent</code> function only renders
+            the content of tool-tip, which is the closest data point to the
+            current mouse position. In this case, we will only modify the
+            tool-tip content.
+          </p>
+          <div class="blockwrapper">
+            <pre>import format from &#39;date-fns/format&#39;<br>import { ChartArea, LineChart } from &#39;viiksetjs&#39;
+                <br/>const TooltipContent = ({ tooltipData }) =&gt; (<br>  &lt;div style={{ textAlign: &quot;center&quot; }}&gt;<br>    &lt;p&gt;{format(tooltipData.time, &quot;MMM Do HH:mm&quot;)}&lt;/p&gt;<br>    &lt;p&gt;{tooltipData.messages} messages&lt;/p&gt;<br>  &lt;/div&gt;<br>)
+                <br/>&lt;ChartArea<br>  data={data}<br>  numXTicks={isMobile ? 2 : 4}<br>  color=”#2189C8&quot;<br>  stroke=”grey”<br>  glyphRenderer={({ xScale }) =&gt; <br>    &lt;circle x={xScale(campaignStart.time)} y={0} r={6}/&gt;<br>  }<br>  tooltipContent={TooltipContent}<br>&gt;<br>&lt;LineChart dataKey=&quot;messages&quot; color=&quot;green&quot; /&gt;<br>&lt;/ChartArea&gt;
+                </pre>
+          </div>
+          <h3>Third example</h3>
+          <p>
+            The third example is a demonstration on how to use the
+            <code>DataContext</code> component. <code>DataContext</code> takes
+            your data and returns the building blocks for visualization
+            including the calculated scale values, x and y points, as well as
+            the data itself. This is useful when working outside of the
+            pre-built charts or when working with thing such as canvas or
+            regular DOM elements.
+          </p>
+          <p>
+            Using the <code>DataContext</code> component, we will create a
+            <a
+              href="https://en.wikipedia.org/wiki/Voronoi_diagram"
+              data-href="https://en.wikipedia.org/wiki/Voronoi_diagram"
+              rel="noopener"
+              target="_blank"
+              >voronoi diagram</a
+            >
+            with HTML canvas. First, let’s seed some random data for our
+            diagram:
+          </p>
+          <div class="blockwrapper">
+            <pre>const voronoiData = Array(150)<br>  .fill(null)<br>  .map(() =&gt; ({<br>    x: Math.random(),<br>    y: Math.random(),<br>    id: Math.random()<br>      .toString(36)<br>      .slice(2)<br>  }))</pre>
+          </div>
+          <p>
+            With this data, we can now create the
+            <code>DataContext</code> component
+          </p>
+          <div class="blockwrapper">
+            <pre>&lt;DataContext data={voronoiData} type=&quot;linear&quot; xKey=&quot;x&quot;&gt;<br>  {({ width, height, xScale, yScale, data, xPoints }) =&gt; (<br>   &lt;Voronoi {...{ data, width, height, xScale, xPoints, yScale }} /&gt;<br>  )}<br>&lt;/DataContext&gt;</pre>
+          </div>
+          <p>
+            Here, we have specified that the type of data we have is linear (
+            meaning that both x and y are numeric ) and that the
+            <code>xKey</code> is named <code>x</code>. The
+            <code>DataContext</code> component will then calculate scales, x and
+            y points, and return that to us to use in our
+            <code>Voronoi</code> component which we will now create.
+          </p>
+          <figure>
+            <script src="https://gist.github.com/jamestthompson3/637aa4707e0ecd54322e148bc367e21d.js.js"></script>
+          </figure>
+          <p>
+            With the help of the <code>voronoi</code> function from VX and the
+            <code>Path2D</code> browser API, we can create a diagram using the
+            data and dimensions passed to us from the
+            <code>DataContext</code> component.
+          </p>
+          <h3>Conclusion</h3>
+          <p>
+            While this was just a small set of examples, there is much more than
+            can be done with ViiksetJS, VX, and D3. I hope that this tutorial
+            sparks your imagination and helps ease some of the cognitive and
+            technical load of data visualization in the browser. Please feel
+            free to contribute to the project!
+          </p>
+        </section>
+      </section>
+    </article>
+  </body>
+</html>

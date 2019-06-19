@@ -1,10 +1,33 @@
+
+
+@-webkit-keyframes AnimationName {
+    0%{background-position:0% 97%}
+    50%{background-position:100% 4%}
+    100%{background-position:0% 97%}
+}
+@-moz-keyframes AnimationName {
+    0%{background-position:0% 97%}
+    50%{background-position:100% 4%}
+    100%{background-position:0% 97%}
+}
+@keyframes AnimationName {
+    0%{background-position:0% 97%}
+    50%{background-position:100% 4%}
+    100%{background-position:0% 97%}
+}
+
 #root {
-  background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)),
-  url("https://i.redd.it/kshhsob9pyv21.jpg") center repeat;
-  background-size: cover;
+ background: linear-gradient(84deg, #246655, #244066, #4b2466, #f2bd39);
+  background-size: 800% 800%;
+  -webkit-animation: AnimationName 10s ease infinite;
+  -moz-animation: AnimationName 10s ease infinite;
+  animation: AnimationName 10s ease infinite;
+  /* background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)), */
+  /* url("https://i.redd.it/kshhsob9pyv21.jpg") center repeat; */
+  background-size: 800% 800%;
   height: 700px;
   width: 100vw;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
 }
 #body-container {
@@ -26,6 +49,7 @@
   #9f3cc9
   );
   width: 100vw;
+  overflow: hidden;
 }
 .flex-column {
   display: flex;
@@ -41,100 +65,27 @@
 .bg-black {
   background: black;
 }
+
 txt-white {
   color: #fff;
-}
-.blockwrapper {
-  width: 100%;
-  overflow: auto;
 }
 
 #blog {
   align-items: center;
   background: url("http://pixelartmaker.com/art/8baf7524e2c592a.png");
   width: 100%;
-}
-.blog-post {
-  background: #1d1e22;
-  font-family; 'Roboto';
-}
-.blog-post, section {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: space-around;
-  width: 85%;
-}
-.blog-post, article {
-  width: 100%;
+  height: 400px;
+  padding: 20px;
 }
 .no-overflow {
   overflow: hidden;
 }
-.blog-post, p {
-  color: #fff;
-  font-size: 1rem;
-  line-height: 2rem;
-  margin: 1rem;
-  text-align: justify;
-}
-.blog-post, a {
-  color: skyblue;
-}
 
-.blog-post pre {
-  font-family: monospace;
-  color: #fff;
-  background: #000;
-  font-size: 0.75rem;
-}
-
-.blockwrapper pre {
-  padding: 0.75rem 1rem;
-  width: 93%;
-  margin: auto;
-}
-
-.blog-post, pre {
-  margin: 1rem 0rem;
-  text-align: left;
-  width: 100%;
-}
-
-.blog-post code {
-  font-family: monospace;
-  color: #f5ac46;
-  background: #000;
-  padding: 3px;
-  border-radius: 3px;
-}
-
-.blog-post, h3 {
-  font-size: 1rem;
-  color: #dbdbdb;
-  margin: 1rem 0rem;
-  text-weight: bold;
-  text-align: left;
-}
-.blog-post, h2 {
-  font-size: 2rem;
-  color: #fff;
-  font-weight: bold;
-  margin: 1rem 0rem;
-}
-.blog-post, figure {
-  margin: 1rem 0rem;
-}
-.blog-post, figcaption {
-  color: #dbdbdb;
-  font-weight: bold;
-  font-size: 12px;
-  text-align: center;
-}
 .header {
   font-size: 2.5rem;
   color: #fff;
   background: #000;
+  text-align: center;
   margin: 2rem auto;
 }
 
@@ -147,21 +98,26 @@ txt-white {
   border-bottom: 2px dashed #dbdbdb;
   width: 100%;
 }
+
 #toc-container {
   width: 80%;
   border-radius: 8px;
   border: 1px solid #ababab;
   background: #333333b5;
-  margin-bottom: 2rem;
+  margin: auto;
 }
 .toc-list {
-  margin: 1rem auto;
+  margin: 0;
+  padding: 0;
 }
 .list {
   font-size: 1.5rem;
 }
 .list li {
   margin: 10px;
+  background: #000;
+  color: #fff;
+  padding: 3px;
 }
 .list > * > a {
   text-decoration-color: aquamarine;
@@ -172,16 +128,3 @@ txt-white {
   color: #fff;
 }
 
-/* smaller screens */
-@media(max-width: 400px) {
-  .blog-post, p {
-    margin: 1rem 1rem;
-  }
-  .blog-post, section {
-    width: 100%;
-  }
-  .blog-post, figure {
-    max-width: 350px;
-    margin: auto;
-  }
-}
