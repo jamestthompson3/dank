@@ -1,5 +1,7 @@
 body {
   background: #1d1e22;
+  overflow: visible;
+  overflow-x: hidden;
 }
 
 header {
@@ -8,8 +10,7 @@ header {
 
 .blockwrapper {
   width: 100%;
-  overflow-y: auto;
-  overflow-x: hidden;
+  overflow: auto;
 }
 
 .blog-post {
