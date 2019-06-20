@@ -71,11 +71,21 @@ txt-white {
 }
 
 #blog {
+  display: flex;
+  flex-direction: column;
   align-items: center;
   background: url("http://pixelartmaker.com/art/8baf7524e2c592a.png");
   width: 100%;
   height: 400px;
   padding: 20px;
+}
+
+#root a {
+  background: #000;
+  color: #fff;
+  padding: 3px;
+  text-decoration-color: aquamarine;
+  font-weight: bold;
 }
 .no-overflow {
   overflow: hidden;
