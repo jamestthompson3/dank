@@ -6,10 +6,6 @@
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
-    <!-- <link -->
-    <!-- href="https://fonts.googleapis.com/css?family=Anton" -->
-    <!-- rel="stylesheet" -->
-    <!-- /> -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Cool blog, bro" />
@@ -20,6 +16,7 @@
   </head>
   <link href="reset.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
+  <link href="readinglist.css" rel="stylesheet" />
   <script>
     function jumpToSection() {
       const lineNum = window.location.hash;
@@ -54,7 +51,7 @@
           <h1 class="header" style="width: 100%;" id="blog-header">
             Blog
           </h1>
-          <ul class="toc-list list center-text" aria-labelledby="blog-header">
+          <ul class="toc-list list center-text" aria-labelledby="blog-header" id="posts-list">
             <li role="link">
               <a href="./datastructures.html">Data Structure Memes For Edgy JavaScript Teens</a>
             </li>
@@ -70,7 +67,7 @@
           bottom;">Contact me!</a>
       </section>
       <section id="blog" role="content-info">
-        <h2 id="programming-header" class="subheader center-text">Cool Programming articles / videos</h2>
+        <h2 id="programming-header" class="subheader center-text" style="margin: 1rem auto;">Cool Programming articles / videos</h2>
         <ul aria-labelledby="programming-header" class="list">
           <li role="link">
             <a href="https://vimways.org/2018/">vimways</a> - great articles
@@ -84,6 +81,7 @@
             cuncurrent databases, etc. in great detail and using Rust
           </li>
         </ul>
+        <script src="https://www.goodreads.com/review/custom_widget/58802055.What%20I'm%20reading?cover_position=left&cover_size=small&num_books=5&order=d&shelf=currently-reading&show_author=1&show_cover=0&show_rating=0&show_review=0&show_tags=0&show_title=1&sort=date_updated&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=1561351334&widget_text_color=000000&widget_title_size=medium&widget_width=medium" type="text/javascript" charset="utf-8"></script>
       </section>
     <script>
       const root = document.querySelector("#body-container");
@@ -122,6 +120,13 @@
           cursor.style.display = "none";
         }
       }
+  const header = document.getElementById('blog-header')
+  header.addEventListener('click', showBlog)
+function showBlog() {
+  const postsList = document.getElementById('posts-list')
+  postsList.style.display = 'block'
+}
+
     </script>
   </body>
 </html>

@@ -1,0 +1,47 @@
+.gr_custom_container_1561351334 {
+  /* customize your Goodreads widget container here*/
+  border-radius:10px;
+  padding: 10px 5px 10px 5px;
+  color: #fff;
+  min-width: 350px;
+  margin: 1rem auto;
+}
+.gr_custom_container_1561351334, a {
+  color: #fff;
+  text-decoration-color: aquamarine;
+}
+.gr_custom_container_1561351334 center {
+    display: none;
+}
+.gr_custom_header_1561351334 {
+  /* customize your Goodreads header here*/
+  width: 100%;
+  margin: 1rem auto;
+  text-align: center;
+  font-size: 2rem;
+}
+.gr_custom_header_1561351334 a {
+  color: #9700ff;
+}
+.gr_custom_each_container_1561351334 {
+  /* customize each individual book container here */
+  width: 100%;
+  margin-bottom: 10px;
+  background-color: #000;
+  overflow: auto;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  overflow-wrap: break-word;
+  height: 50px;
+}
+.gr_custom_author_1561351334 {
+  /* customize your author names here */
+  font-size: 10px;
+  color: #fff;
+  font-weight: bold;
+}
+.gr_custom_author_1561351334 a {
+  text-decoration: none;
+}
