@@ -35,7 +35,7 @@
   overflow-x: hidden;
 }
 #posts-list {
-  display: none;
+  display: block;
   transition: display 600ms ease-in;
 }
 #cursor {
