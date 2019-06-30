@@ -30,59 +30,84 @@
   <title>😎😎😎😎</title>
   <body style="width: 100%;" onload="jumpToSection();">
     <div id="body-container">
+      <a id="nav-toggle" href="#">&#9776;</a>
       <img id="cursor" src="bb8_1.svg" alt="cursor" />
-      <section id="root" role="content-info" class="flex-column">
-        <h1 class="header center-text">Welcome to my homepage</h1>
-        <!-- <div id="toc-container" aria-label="table-contents-container"> -->
-        <!--
-          <h2 id="toc" class="subheader center-text">Table of Contents</h2>
-        -->
-        <!-- <ul class="toc-list list center-text" aria-labelledby="toc"> -->
-        <!-- <li role="link"> -->
-        <!-- <a href="#programming" class="400h">Programming articles</a> -->
-        <!-- </li> -->
-        <!-- <li role="link"> -->
-        <!-- <a href="#blog" class="flex-column 400h">Blog</a> -->
-        <!-- </li> -->
-        <!-- </ul> -->
-        <!-- </div> -->
-        <div style="height: 300px; display: flex; flex-direction: column; justify-content:
-          space-around;">
-          <h1 class="header" style="width: 100%;" id="blog-header">
-            Blog
-          </h1>
-          <ul class="toc-list list center-text" aria-labelledby="blog-header" id="posts-list">
-            <li role="link">
-              <a href="./datastructures.html">Data Structure Memes For Edgy JavaScript Teens</a>
-            </li>
-            <li role="link">
-              <a href="./viiksetjs.html">Data visualization with ViiksetJS</a>
-            </li>
-            <li role="link">
-              <a href="./rxjs-recompose.html">Rxjs and Recompose</a>
-            </li>
-          </ul>
-        </div>
-        <a href="mailto:taylor@teukka.tech?subject=Greetings from the Web!" style="align-self:
-          bottom;">Contact me!</a>
-      </section>
-      <section id="blog" role="content-info">
-        <h2 id="programming-header" class="subheader center-text" style="margin: 1rem auto;">Cool Programming articles / videos</h2>
-        <ul aria-labelledby="programming-header" class="list">
+      <div id="menu">
+        <ul class="toc-list list center-text" aria-labelledby="toc">
           <li role="link">
-            <a href="https://vimways.org/2018/">vimways</a> - great articles
-            about how to improve your vim usage.
+            <a href="#programming" class="400h">Programming articles</a>
           </li>
+          <li role="link"><a href="#post-list" class="flex-column 400h">Blog</a></li>
+
           <li role="link">
-            <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ">
-              Jon Gjengset
-            </a>
-            - explains technologies such as tcp, non-blocking async io,
-            cuncurrent databases, etc. in great detail and using Rust
+            <a href="#readinglist" class="flex-column 400h">What I'm Reading</a>
           </li>
         </ul>
-        <script src="https://www.goodreads.com/review/custom_widget/58802055.What%20I'm%20reading?cover_position=left&cover_size=small&num_books=5&order=d&shelf=currently-reading&show_author=1&show_cover=0&show_rating=0&show_review=0&show_tags=0&show_title=1&sort=date_updated&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=1561351334&widget_text_color=000000&widget_title_size=medium&widget_width=medium" type="text/javascript" charset="utf-8"></script>
-      </section>
+      </div>
+    <section id="root" role="content-info" class="flex-column">
+      <h1 class="header center-text">Welcome to my homepage</h1>
+      <!-- <div id="toc-container" aria-label="table-contents-container"> -->
+      <!-- <h2 id="toc" class="subheader center-text">Table of Contents</h2> -->
+      <!-- </div> -->
+      <div
+        style="height: 300px; display: flex; flex-direction: column; justify-content:
+        space-around;"
+      >
+        <h1 class="header" style="width: 100%;" id="blog-header">Blog</h1>
+        <ul
+          class="toc-list list center-text"
+          aria-labelledby="blog-header"
+          id="posts-list"
+        >
+          <li role="link">
+            <a href="./datastructures.html"
+              >Data Structure Memes For Edgy JavaScript Teens</a
+            >
+          </li>
+          <li role="link">
+            <a href="./viiksetjs.html">Data visualization with ViiksetJS</a>
+          </li>
+          <li role="link">
+            <a href="./rxjs-recompose.html">Rxjs and Recompose</a>
+          </li>
+        </ul>
+      </div>
+      <a
+        href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
+        style="align-self:
+        bottom;"
+      >
+        📝 Contact me!</a
+      >
+    </section>
+    <section id="other" role="content-info">
+      <h2
+        id="programming-header"
+        class="subheader center-text"
+        style="margin: 1rem auto;"
+      >
+        Cool Programming articles / videos
+      </h2>
+      <ul aria-labelledby="programming-header" class="list">
+        <li role="link">
+          <a href="https://vimways.org/2018/">vimways</a> - great articles about
+          how to improve your vim usage.
+        </li>
+        <li role="link">
+          <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ">
+            Jon Gjengset
+          </a>
+          - explains technologies such as tcp, non-blocking async io, cuncurrent
+          databases, etc. in great detail and using Rust
+        </li>
+      </ul>
+      <div id="readinglist"></div>
+      <script
+        src="https://www.goodreads.com/review/custom_widget/58802055.What%20I'm%20reading?cover_position=left&cover_size=small&num_books=5&order=d&shelf=currently-reading&show_author=1&show_cover=0&show_rating=0&show_review=0&show_tags=0&show_title=1&sort=date_updated&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=1561351334&widget_text_color=000000&widget_title_size=medium&widget_width=medium"
+        type="text/javascript"
+        charset="utf-8"
+      ></script>
+    </section>
     <script>
       const root = document.querySelector("#body-container");
       const cursor = document.querySelector("#cursor");
@@ -120,13 +145,22 @@
           cursor.style.display = "none";
         }
       }
-  const header = document.getElementById('blog-header')
-  header.addEventListener('click', showBlog)
-function showBlog() {
-  const postsList = document.getElementById('posts-list')
-  postsList.style.display = 'block'
-}
-
+      const navmenu = document.getElementById("nav-toggle");
+      navmenu.addEventListener("click", showMenu)
+      const menu = document.getElementById("menu")
+      menu.addEventListener("click",hideMenu)
+      function showMenu(e) {
+        e.preventDefault();
+        const isVisible = menu.style.transform === "translateX(0%)"
+        if (isVisible) {
+          menu.style.transform = "translateX(-150%)"
+        } else {
+          menu.style.transform = "translateX(0%)";
+        }
+      }
+      function hideMenu(e) {
+        menu.style.transform = "translateX(-150%)"
+      }
     </script>
   </body>
 </html>

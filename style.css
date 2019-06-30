@@ -34,10 +34,7 @@
   overflow-y: auto;
   overflow-x: hidden;
 }
-#posts-list {
-  display: block;
-  transition: display 600ms ease-in;
-}
+
 #cursor {
   position: absolute;
   width: 50px;
@@ -74,11 +71,11 @@ txt-white {
   color: #fff;
 }
 
-#blog {
+#other {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background: url("http://pixelartmaker.com/art/8baf7524e2c592a.png");
+  background: url("./space.png");
   justify-content: space-around;
   width: 100%;
   height: auto;
@@ -140,4 +137,39 @@ txt-white {
 }
 .list > * > a:visited {
   color: #fff;
+}
+
+#nav-toggle {
+  display: none;
+}
+
+#menu {
+  display: none;
+}
+
+/* smaller screens */
+@media(max-width: 450px) {
+  #cursor {
+    display: none;
+  }
+  #nav-toggle {
+    align-self: flex-start;
+    font-size: 2rem;
+    text-decoration: none;
+    display: block;
+    width: 100%;
+    padding: 3px;
+    background-color: #000;
+  }
+  #menu {
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(-150%);
+    transition: transform 0.3s linear;
+  }
 }
