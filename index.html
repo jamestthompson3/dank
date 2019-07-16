@@ -33,6 +33,7 @@
       <a id="nav-toggle" href="#">&#9776;</a>
       <img id="cursor" src="bb8_1.svg" alt="cursor" />
       <div id="menu">
+        <!-- <span id="nav-toggle" style="color: #fff;">&#8592;</span> -->
         <ul class="toc-list list center-text" aria-labelledby="toc">
           <li role="link">
             <a href="#programming" class="400h">Programming articles</a>
@@ -112,40 +113,36 @@
       const root = document.querySelector("#body-container");
       const cursor = document.querySelector("#cursor");
       const blog = document.querySelector("#blog");
+      const body = document.querySelector("body");
+      const navmenu = document.getElementById("nav-toggle");
+      let start = {x:0, y:0}
       root.addEventListener("mousemove", bb8move);
       root.addEventListener("touch", bb8move);
-      root.addEventListener("scroll", elementInView);
+      body.addEventListener("touchstart", touchStart, false);
+      body.addEventListener("touchmove", touchMove, false);
       function bb8move({ x, y }) {
         cursor.style.left = `${x + 30}px`;
         cursor.style.top = `${y}px`;
       }
 
-      function elementInView() {
-        let el = blog;
-        let top = el.offsetTop;
-        let left = el.offsetLeft;
-        let width = el.offsetWidth;
-        let height = el.offsetHeight;
+      function touchStart(event) {
+        start.x = event.touches[0].pageX;
+        start.y = event.touches[0].pageY;
+      }
 
-        while (el.offsetParent) {
-          el = el.offsetParent;
-          top += el.offsetTop;
-          left += el.offsetLeft;
-        }
-
-        const inView =
-          top >= window.pageYOffset &&
-          left >= window.pageXOffset &&
-          top + height <= window.pageYOffset + window.innerHeight &&
-          left + width <= window.pageXOffset + window.innerWidth;
-
-        if (!inView) {
-          cursor.style.display = "block";
-        } else {
-          cursor.style.display = "none";
+      function touchMove(event){
+        offsetX = start.x - event.touches[0].pageX;
+        offsetY = start.y - event.touches[0].pageY;
+        if (window.innerWidth <= 450) {
+          if (offsetY <= -30) {
+              navmenu.style.position = 'fixed'
+          }
+          if (offsetY >= 30 && navmenu.style.position === 'fixed') {
+              navmenu.style.position = 'static'
+          }
         }
       }
-      const navmenu = document.getElementById("nav-toggle");
+
       navmenu.addEventListener("click", showMenu)
       const menu = document.getElementById("menu")
       menu.addEventListener("click",hideMenu)
