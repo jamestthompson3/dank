@@ -1,2 +1,10 @@
+---
+version: 1.0.0
+min_ruby_version: 2.4.0
+name: Dank
+description: A homepage for tech and Taylor
+url: https://teukka.tech
+repository: https://github.com/jamestthompson3/dank
+
 plugins:
-  -jekyll-feed
+- jekyll-feed
