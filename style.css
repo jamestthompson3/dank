@@ -123,8 +123,10 @@ txt-white {
 }
 .list {
   font-size: 1.5rem;
+  display: flex;
+  flex-direction: column;
 }
-.list li {
+.list a, span {
   margin: 10px;
   background: #000;
   color: #fff;
