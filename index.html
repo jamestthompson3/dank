@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
-  <head >
+  <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta
       name="viewport"
@@ -29,34 +29,38 @@
   </script>
   <title>😎😎😎😎</title>
   <body style="width: 100%;" onload="jumpToSection();">
-    <div id="body-container">
+    <div id="body-container" role="main">
       <a id="nav-toggle" href="#">&#9776;</a>
       <img id="cursor" src="bb8_1.svg" alt="cursor" />
       <div id="menu" role="navigation">
         <!-- <span id="nav-toggle" style="color: #fff;">&#8592;</span> -->
-        <div class="toc-list list center-text" aria-labelledby="toc" >
-            <a href="#programming" class="400h">Programming articles</a>
-            <a href="#post-list" class="flex-column 400h">Blog</a>
-            <a href="#readinglist" class="flex-column 400h">What I'm Reading</a>
+        <div class="toc-list list center-text" aria-labelledby="toc">
+          <a href="#programming" class="400h">Programming articles</a>
+          <a href="#post-list" class="flex-column 400h">Blog</a>
+          <a href="#readinglist" class="flex-column 400h">What I'm Reading</a>
         </div>
       </div>
-      <section id="root" role="main" class="flex-column">
+      <section id="root" class="flex-column">
         <h1 class="header center-text">Welcome to my homepage</h1>
         <!-- <div id="toc-container" aria-label="table-contents-container"> -->
-        <!-- <h2 id="toc" class="subheader center-text">Table of Contents</h2> -->
+        <!--
+          <h2 id="toc" class="subheader center-text">Table of Contents</h2>
+        -->
         <!-- </div> -->
         <div
           style="display: flex; flex-direction: column; justify-content:
           space-around;"
-          >
+        >
           <h1 class="header" style="width: 100%;" id="blog-header">Blog</h1>
         </div>
         <div
           class="toc-list list center-text"
           aria-labelledby="blog-header"
           id="posts-list"
+        >
+          <a href="./datastructures.html"
+            >Data Structure Memes For Edgy JavaScript Teens</a
           >
-          <a href="./datastructures.html">Data Structure Memes For Edgy JavaScript Teens</a>
           <a href="./viiksetjs.html">Data visualization with ViiksetJS</a>
           <a href="./rxjs-recompose.html">Rxjs and Recompose</a>
         </div>
@@ -64,30 +68,32 @@
           href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
           style="align-self:
           bottom;"
-          >
+        >
           📝 Contact me!</a
         >
-        <a href="/feed.xml" style="align-self: bottom;">📃 Follow the RSS feed</a>
-      </section>
-    <section id="other" role="contentinfo">
-      <h2
-        id="programming-header"
-        class="subheader center-text"
-        style="margin: 1rem auto;"
+        <a href="/feed.xml" style="align-self: bottom;"
+          >📃 Follow the RSS feed</a
         >
-        Cool Programming articles / videos
-      </h2>
+      </section>
+      <section id="other" role="contentinfo">
+        <h2
+          id="programming-header"
+          class="subheader center-text"
+          style="margin: 1rem auto;"
+        >
+          Cool Programming articles / videos
+        </h2>
         <div aria-labelledby="programming-header" class="list">
           <span>
-            <a href="https://vimways.org/2018/">vimways</a> - great articles about
-            how to improve your vim usage.
+            <a href="https://vimways.org/2018/">vimways</a> - great articles
+            about how to improve your vim usage.
           </span>
           <span>
             <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ">
               Jon Gjengset
             </a>
-            - explains technologies such as tcp, non-blocking async io, cuncurrent
-            databases, etc. in great detail and using Rust
+            - explains technologies such as tcp, non-blocking async io,
+            cuncurrent databases, etc. in great detail and using Rust
           </span>
         </div>
         <div id="readinglist"></div>
@@ -95,15 +101,16 @@
           src="https://www.goodreads.com/review/custom_widget/58802055.Books%20and%20Novels?cover_position=left&cover_size=small&num_books=5&order=d&shelf=currently-reading&show_author=1&show_cover=0&show_rating=0&show_review=0&show_tags=0&show_title=1&sort=date_updated&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=1561351334&widget_text_color=000000&widget_title_size=medium&widget_width=medium"
           type="text/javascript"
           charset="utf-8"
-          ></script>
-    </section>
+        ></script>
+      </section>
+    </div>
     <script>
       const root = document.querySelector("#body-container");
       const cursor = document.querySelector("#cursor");
       const blog = document.querySelector("#blog");
       const body = document.querySelector("body");
       const navmenu = document.getElementById("nav-toggle");
-      let start = {x:0, y:0}
+      let start = { x: 0, y: 0 };
       root.addEventListener("mousemove", bb8move);
       root.addEventListener("touch", bb8move);
       body.addEventListener("touchstart", touchStart, false);
@@ -118,39 +125,127 @@
         start.y = event.touches[0].pageY;
       }
 
-      function touchMove(event){
+      function touchMove(event) {
         offsetX = start.x - event.touches[0].pageX;
         offsetY = start.y - event.touches[0].pageY;
         if (window.innerWidth <= 450) {
           if (offsetY <= -30) {
-              navmenu.style.position = 'fixed'
+            navmenu.style.position = "fixed";
           }
-          if (offsetY >= 30 && navmenu.style.position === 'fixed') {
-              navmenu.style.position = 'static'
+          if (offsetY >= 30 && navmenu.style.position === "fixed") {
+            navmenu.style.position = "static";
           }
         }
       }
 
-      navmenu.addEventListener("click", showMenu)
-      const menu = document.getElementById("menu")
-      menu.addEventListener("click",hideMenu)
+      navmenu.addEventListener("click", showMenu);
+      const menu = document.getElementById("menu");
+      menu.addEventListener("click", hideMenu);
       function showMenu(e) {
         e.preventDefault();
-        const isVisible = menu.style.transform === "translateX(0%)"
+        const isVisible = menu.style.transform === "translateX(0%)";
         if (isVisible) {
-          menu.style.transform = "translateX(-150%)"
+          menu.style.transform = "translateX(-150%)";
         } else {
           menu.style.transform = "translateX(0%)";
         }
       }
       function hideMenu(e) {
-        menu.style.transform = "translateX(-150%)"
+        menu.style.transform = "translateX(-150%)";
       }
-      if (window.location.host.includes('teukka.tech')) {
-        (function(c,a){if(!a.__SV){var b=window;try{var d,m,j,k=b.location,f=k.hash;d=function(a,b){return(m=a.match(RegExp(b+"=([^&]*)")))?m[1]:null};f&&d(f,"state")&&(j=JSON.parse(decodeURIComponent(d(f,"state"))),"mpeditor"===j.action&&(b.sessionStorage.setItem("_mpcehash",f),history.replaceState(j.desiredHash||"",c.title,k.pathname+k.search)))}catch(n){}var l,h;window.mixpanel=a;a._i=[];a.init=function(b,d,g){function c(b,i){var a=i.split(".");2==a.length&&(b=b[a[0]],i=a[1]);b[i]=function(){b.push([i].concat(Array.prototype.slice.call(arguments,
-        0)))}}var e=a;"undefined"!==typeof g?e=a[g]=[]:g="mixpanel";e.people=e.people||[];e.toString=function(b){var a="mixpanel";"mixpanel"!==g&&(a+="."+g);b||(a+=" (stub)");return a};e.people.toString=function(){return e.toString(1)+".people (stub)"};l="disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(" ");
-        for(h=0;h<l.length;h++)c(e,l[h]);var f="set set_once union unset remove delete".split(" ");e.get_group=function(){function a(c){b[c]=function(){call2_args=arguments;call2=[c].concat(Array.prototype.slice.call(call2_args,0));e.push([d,call2])}}for(var b={},d=["get_group"].concat(Array.prototype.slice.call(arguments,0)),c=0;c<f.length;c++)a(f[c]);return b};a._i.push([b,d,g])};a.__SV=1.2;b=c.createElement("script");b.type="text/javascript";b.async=!0;b.src="undefined"!==typeof MIXPANEL_CUSTOM_LIB_URL?
-        MIXPANEL_CUSTOM_LIB_URL:"file:"===c.location.protocol&&"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(/^\/\//)?"https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js":"//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";d=c.getElementsByTagName("script")[0];d.parentNode.insertBefore(b,d)}})(document,window.mixpanel||[]);
+      if (window.location.host.includes("teukka.tech")) {
+        (function(c, a) {
+          if (!a.__SV) {
+            var b = window;
+            try {
+              var d,
+                m,
+                j,
+                k = b.location,
+                f = k.hash;
+              d = function(a, b) {
+                return (m = a.match(RegExp(b + "=([^&]*)"))) ? m[1] : null;
+              };
+              f &&
+                d(f, "state") &&
+                ((j = JSON.parse(decodeURIComponent(d(f, "state")))),
+                "mpeditor" === j.action &&
+                  (b.sessionStorage.setItem("_mpcehash", f),
+                  history.replaceState(
+                    j.desiredHash || "",
+                    c.title,
+                    k.pathname + k.search
+                  )));
+            } catch (n) {}
+            var l, h;
+            window.mixpanel = a;
+            a._i = [];
+            a.init = function(b, d, g) {
+              function c(b, i) {
+                var a = i.split(".");
+                2 == a.length && ((b = b[a[0]]), (i = a[1]));
+                b[i] = function() {
+                  b.push([i].concat(Array.prototype.slice.call(arguments, 0)));
+                };
+              }
+              var e = a;
+              "undefined" !== typeof g ? (e = a[g] = []) : (g = "mixpanel");
+              e.people = e.people || [];
+              e.toString = function(b) {
+                var a = "mixpanel";
+                "mixpanel" !== g && (a += "." + g);
+                b || (a += " (stub)");
+                return a;
+              };
+              e.people.toString = function() {
+                return e.toString(1) + ".people (stub)";
+              };
+              l = "disable time_event track track_pageview track_links track_forms track_with_groups add_group set_group remove_group register register_once alias unregister identify name_tag set_config reset opt_in_tracking opt_out_tracking has_opted_in_tracking has_opted_out_tracking clear_opt_in_out_tracking people.set people.set_once people.unset people.increment people.append people.union people.track_charge people.clear_charges people.delete_user people.remove".split(
+                " "
+              );
+              for (h = 0; h < l.length; h++) c(e, l[h]);
+              var f = "set set_once union unset remove delete".split(" ");
+              e.get_group = function() {
+                function a(c) {
+                  b[c] = function() {
+                    call2_args = arguments;
+                    call2 = [c].concat(
+                      Array.prototype.slice.call(call2_args, 0)
+                    );
+                    e.push([d, call2]);
+                  };
+                }
+                for (
+                  var b = {},
+                    d = ["get_group"].concat(
+                      Array.prototype.slice.call(arguments, 0)
+                    ),
+                    c = 0;
+                  c < f.length;
+                  c++
+                )
+                  a(f[c]);
+                return b;
+              };
+              a._i.push([b, d, g]);
+            };
+            a.__SV = 1.2;
+            b = c.createElement("script");
+            b.type = "text/javascript";
+            b.async = !0;
+            b.src =
+              "undefined" !== typeof MIXPANEL_CUSTOM_LIB_URL
+                ? MIXPANEL_CUSTOM_LIB_URL
+                : "file:" === c.location.protocol &&
+                  "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js".match(
+                    /^\/\//
+                  )
+                ? "https://cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js"
+                : "//cdn4.mxpnl.com/libs/mixpanel-2-latest.min.js";
+            d = c.getElementsByTagName("script")[0];
+            d.parentNode.insertBefore(b, d);
+          }
+        })(document, window.mixpanel || []);
         mixpanel.init("fd1c0606fc62c14de802053bbdbeb31f");
         mixpanel.track("homepage loaded");
       }
