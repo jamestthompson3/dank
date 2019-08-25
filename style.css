@@ -1,16 +1,16 @@
 
 
-@-webkit-keyframes AnimationName {
+@-webkit-keyframes Animate {
     0%{background-position:0% 97%}
     50%{background-position:100% 4%}
     100%{background-position:0% 97%}
 }
-@-moz-keyframes AnimationName {
+@-moz-keyframes Animate {
     0%{background-position:0% 97%}
     50%{background-position:100% 4%}
     100%{background-position:0% 97%}
 }
-@keyframes AnimationName {
+@keyframes Animate {
     0%{background-position:0% 97%}
     50%{background-position:100% 4%}
     100%{background-position:0% 97%}
@@ -19,9 +19,9 @@
 #root {
  background: linear-gradient(84deg, #246655, #244066, #4b2466, #f2bd39);
   background-size: 800% 800%;
-  -webkit-animation: AnimationName 10s ease infinite;
-  -moz-animation: AnimationName 10s ease infinite;
-  animation: AnimationName 10s ease infinite;
+  -webkit-animation: Animate 10s ease infinite;
+  -moz-animation: Animate 10s ease infinite;
+  animation: Animate 10s ease infinite;
   /* background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)), */
   /* url("https://i.redd.it/kshhsob9pyv21.jpg") center repeat; */
   background-size: 800% 800%;
@@ -56,8 +56,14 @@
   display: flex;
   flex-direction: column;
 }
-.400h {
-  height: 400px;
+.flex-row {
+  display: flex;
+}
+.overflow {
+  overflow: auto;
+}
+.baseline {
+  align-items: baseline;
 }
 .center-text {
   text-align: center;
