@@ -1,37 +1,38 @@
-
-
 @-webkit-keyframes Animate {
-    0%{background-position:0% 97%}
-    50%{background-position:100% 4%}
-    100%{background-position:0% 97%}
+  0%{background-position:0% 97%}
+  50%{background-position:100% 4%}
+  100%{background-position:0% 97%}
 }
 @-moz-keyframes Animate {
-    0%{background-position:0% 97%}
-    50%{background-position:100% 4%}
-    100%{background-position:0% 97%}
+  0%{background-position:0% 97%}
+  50%{background-position:100% 4%}
+  100%{background-position:0% 97%}
 }
 @keyframes Animate {
-    0%{background-position:0% 97%}
-    50%{background-position:100% 4%}
-    100%{background-position:0% 97%}
+  0%{background-position:0% 97%}
+  50%{background-position:100% 4%}
+  100%{background-position:0% 97%}
 }
 
 #root {
- background: linear-gradient(84deg, #246655, #244066, #4b2466, #f2bd39);
+  background: linear-gradient(84deg, #246655, #244066, #4b2466, #f2bd39);
   background-size: 800% 800%;
   -webkit-animation: Animate 10s ease infinite;
   -moz-animation: Animate 10s ease infinite;
   animation: Animate 10s ease infinite;
-  /* background: linear-gradient(rgba(0, 0, 0, 0.35), rgba(0, 0, 0, 0.5)), */
-  /* url("https://i.redd.it/kshhsob9pyv21.jpg") center repeat; */
-  background-size: 800% 800%;
-  height: 700px;
   width: 100vw;
   justify-content: space-around;
   align-items: center;
+  -webkit-overflow-scrolling: touch;
 }
 #body-container {
-  overflow-y: auto;
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  overflow: scroll;
+  -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
 }
 
@@ -72,9 +73,24 @@
 .bg-black {
   background: black;
 }
-
-txt-white {
+.w100 {
+  width: 100%;
+}
+.p1 {
+  padding: 1rem;
+}
+.h200 {
+  height: 200px;
+}
+.space-even {
+  justify-content: space-evenly;
+}
+.txt-white {
   color: #fff;
+}
+
+.flex-even {
+  flex: 1 0 50%;
 }
 
 #other {
@@ -110,6 +126,7 @@ txt-white {
 .subheader {
   font-size: 2rem;
   color: #fff;
+  background: #000;
 }
 .dashed-bottom {
   height: 10px;
@@ -166,6 +183,8 @@ txt-white {
     font-size: 2rem;
     text-decoration: none;
     display: block;
+    position: absolute;
+    z-index: 1000;
     width: 100%;
     padding: 3px;
     background-color: #000;
