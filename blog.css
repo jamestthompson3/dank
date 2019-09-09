@@ -99,6 +99,13 @@ header {
   text-align: left;
   width: 100%;
 }
+.blog-post, h4 {
+  color: #fff;
+  margin: 1rem 0rem;
+  text-weight: bold;
+  text-align: left;
+  width: 100%;
+}
 .blog-post, h2 {
   font-size: 2rem;
   color: #fff;
