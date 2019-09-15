@@ -30,21 +30,22 @@
   <title>😎😎😎😎</title>
   <body onload="jumpToSection();">
     <div id="body-container" role="main">
-      <a id="nav-toggle" href="#">&#9776;</a>
+    <!--   <a id="nav-toggle" href="#">&#9776;</a> -->
       <img id="cursor" src="bb8_1.svg" alt="cursor" />
-      <div id="menu" role="navigation">
-        <div class="toc-list list center-text" aria-labelledby="toc">
-          <a href="#programming">Programming articles</a>
-          <a href="#post-list" class="flex-column">Blog</a>
-          <!-- <a href="#readinglist" class="flex-column">What I'm Reading</a> -->
-        </div>
-      </div>
+      <!-- <div id="menu" role="navigation"> -->
+      <!--   <div class="toc-list list center-text" aria-labelledby="toc"> -->
+      <!--     <a href="#programming">Programming articles</a> -->
+      <!--     <a href="#post-list" class="flex-column">Blog</a> -->
+      <!--     <1!-- <a href="#readinglist" class="flex-column">What I'm Reading</a> --1> -->
+      <!--   </div> -->
+      <!-- </div> -->
       <section id="root" class="flex-column">
         <h1 class="header center-text">Taylor Thompson's homepage</h1>
-        <div class="flex-row baseline w100 p1">
+        <div id="toc" class="flex-row baseline w100 p1">
           <div class="flex-column" style="justify-content: space-around;">
             <h1 class="header"  id="blog-header">Blog</h1>
             <div class="toc-list list center-text overflow" aria-labelledby="blog-header" id="posts-list">
+              <a href="./frameworkpt1.html">Build Your Own Frontend Framework: Part 1, Basic Components</a>
               <a href="./frameworkintro.html">Build Your Own Frontend Framework: Intro</a>
               <a href="./vimcandothat.html">Getting the Most Out of Vim: Navigating Code</a>
               <a href="./datastructures.html">Data Structure Memes For Edgy JavaScript Teens</a>

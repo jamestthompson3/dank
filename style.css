@@ -31,7 +31,7 @@
   left: 0;
   right: 0;
   bottom: 0;
-  overflow: scroll;
+  overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
 }
@@ -108,7 +108,7 @@
   color: #fff;
   padding: 3px;
   text-decoration-color: aquamarine;
-  font-weight: bold;
+  font-family: sans-serif;
 }
 .no-overflow {
   overflow: hidden;

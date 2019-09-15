@@ -10,7 +10,9 @@ html {
   overflow: hidden;
 }
 body {
-  overflow: auto;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
 }
 html,
 body {
