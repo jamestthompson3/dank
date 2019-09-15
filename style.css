@@ -60,6 +60,13 @@
 .flex-row {
   display: flex;
 }
+.flex-wrap {
+  flex-wrap: wrap;
+}
+.center {
+  align-items: center;
+  justify-content: center;
+}
 .overflow {
   overflow: auto;
 }
@@ -85,6 +92,9 @@
 .space-even {
   justify-content: space-evenly;
 }
+.space-around {
+  justify-content: space-around;
+}
 .txt-white {
   color: #fff;
 }
@@ -107,13 +117,13 @@
   background: #000;
   color: #fff;
   padding: 3px;
-  text-decoration-color: aquamarine;
+  text-decoration: none;
+  font-weight: bold;
   font-family: sans-serif;
 }
 .no-overflow {
   overflow: hidden;
 }
-
 .header {
   font-size: 2.5rem;
   color: #fff;
@@ -127,6 +137,12 @@
   font-size: 2rem;
   color: #fff;
   background: #000;
+}
+.br5 {
+  border-radius: 5px;
+}
+.shadow {
+  box-shadow: 3px 3px 8px #3a3535bf;
 }
 .dashed-bottom {
   height: 10px;
@@ -145,10 +161,11 @@
   margin: 0;
   padding: 0;
 }
-.list {
-  font-size: 1.5rem;
-  display: flex;
-  flex-direction: column;
+.box {
+  width: 160px;
+  height: 160px;
+  margin-bottom: 5px;
+  padding: 10px;
 }
 .list a, span {
   margin: 10px;

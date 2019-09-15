@@ -41,46 +41,39 @@
       <!-- </div> -->
       <section id="root" class="flex-column">
         <h1 class="header center-text">Taylor Thompson's homepage</h1>
-        <div id="toc" class="flex-row baseline w100 p1">
-          <div class="flex-column" style="justify-content: space-around;">
+          <div class="flex-column flex-even space-around">
             <h1 class="header"  id="blog-header">Blog</h1>
-            <div class="toc-list list center-text overflow" aria-labelledby="blog-header" id="posts-list">
-              <a href="./frameworkpt1.html">Build Your Own Frontend Framework: Part 1, Basic Components</a>
-              <a href="./frameworkintro.html">Build Your Own Frontend Framework: Intro</a>
-              <a href="./vimcandothat.html">Getting the Most Out of Vim: Navigating Code</a>
-              <a href="./datastructures.html">Data Structure Memes For Edgy JavaScript Teens</a>
-              <a href="./viiksetjs.html">Data visualization with ViiksetJS</a>
-              <a href="./rxjs-recompose.html">Rxjs and Recompose</a>
+            <div class="toc-list center-text flex-row flex-wrap center" aria-labelledby="blog-header" id="posts-list">
+              <span class="box center-text flex-row center br5 shadow"> <a href="./frameworkpt1.html">Build Your Own Frontend Framework: Part 1, Basic Components</a> </span>
+              <span class="box center-text flex-row center br5 shadow"> <a href="./frameworkintro.html">Build Your Own Frontend Framework: Intro</a></span>
+              <span class="box center-text flex-row center br5 shadow"> <a href="./vimcandothat.html">Getting the Most Out of Vim: Navigating Code</a></span>
+              <span class="box center-text flex-row center br5 shadow"> <a href="./datastructures.html">Data Structure Memes For Edgy JavaScript Teens</a> </span>
+              <span class="box center-text flex-row center br5 shadow"> <a href="./viiksetjs.html">Data visualization with ViiksetJS</a> </span>
+              <span class="box center-text flex-row center br5 shadow"> <a href="./rxjs-recompose.html">Rxjs and Recompose</a> </span>
             </div>
           </div>
 
-          <div class="flex-column flex-even" style="justify-content:space-around;">
+          <div class="flex-column flex-even space-around">
             <h1 class="header"> Projects </h1>
-            <div class="toc-list list center-text overflow" id="projects-list" >
-              <a target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/viiksetjs">ViiksetJS</a >
-              <a target="__blank" rel="noreferrer noopener" href="https://vsrc.jamestthompson3.now.sh/">View Source</a>
-              <a target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/nimblef">Nimblef</a>
-              <a target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/vim-jest">Vim Jest</a>
-              <a target="__blank" rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/linkshare-telegram/">Telegram Link Share</a>
+            <div class="toc-list center-text overflow flex-row flex-wrap center" id="projects-list" >
+              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/viiksetjs">ViiksetJS</a > </span>
+              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://vsrc.jamestthompson3.now.sh/">View Source</a> </span>
+              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/nimblef">Nimblef</a> </span>
+              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/vim-jest">Vim Jest</a> </span>
+              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/linkshare-telegram/">Telegram Link Share</a> </span>
             </div>
           </div>
-        </div>
         <div class="flex-column h200 space-even center-text">
           <a
+            class="br5 shadow"
             href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
-            style="align-self:
-            bottom;"
-            >
+            style="align-self: bottom;">
             📝 Contact me!</a
           >
-          <a href="/feed.xml" style="align-self: bottom;"
-            >📃 Follow the RSS feed</a
-          >
+          <a class="br5 shadow" href="/feed.xml" style="align-self: bottom;">📃 Follow the RSS feed</a>
           <!-- TODO: Copy on click -->
-            <a href="" style="align-self: bottom; text-align: center;"
-              >Scuttlebut Public Key:<br />
-              <span style="font-size: 0.75rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519<span></a
-                >
+            <a href="" style="align-self: bottom; text-align: center;">Scuttlebut Public Key:<br />
+            <span style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519<span></a>
         </div>
       </section>
       <section id="other" role="contentinfo">
@@ -91,7 +84,7 @@
         >
           Cool Programming articles / videos
         </h2>
-        <div aria-labelledby="programming-header" class="list">
+        <div aria-labelledby="programming-header" class="flex-column">
           <span>
             <a href="https://vimways.org/2018/">vimways</a> - great articles
             about how to improve your vim usage.
