@@ -12,6 +12,7 @@
       name="apple-mobile-web-app-title"
       content="Datastructure memes for edgy JS teens"
     />
+    <script src="index.js"></script>
     <meta itemprop="description" content=" 🙏 Datastructure memes" />
     <link href="reset.css" rel="stylesheet" />
     <link href="blog.css" rel="stylesheet" />
@@ -613,5 +614,12 @@
         </section>
       </article>
     </div>
+
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script  id="fb" src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+    <script>
+      configFirebase()
+      saveVisit('datastructures')
+    </script>
   </body>
 </html>

@@ -5,6 +5,9 @@
     <meta name="author" content="taylor thompson" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
     <title>🏗️ BYOFF: Intro</title>
+  <script async defer src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+  <script async defer src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+  <script src="index.js"></script>
     <link href="reset.css" rel="stylesheet" />
     <link href="blog.css" rel="stylesheet" />
     <link href="code.css" rel="stylesheet" />
@@ -50,5 +53,11 @@ li {
         </section>
       </article>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script  id="fb" src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+    <script>
+      configFirebase()
+      saveVisit('frameworkintro')
+    </script>
   </body>
 </html>

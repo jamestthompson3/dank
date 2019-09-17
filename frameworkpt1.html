@@ -11,6 +11,7 @@
     <link href="reset.css" rel="stylesheet" />
     <link href="blog.css" rel="stylesheet" />
     <link href="code.css" rel="stylesheet" />
+    <script src="index.js"></script>
     <link
       href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
       rel="stylesheet"
@@ -242,5 +243,11 @@
         </section>
       </article>
     </div>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script  id="fb" src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+    <script>
+      configFirebase()
+      saveVisit('frameworkpt1')
+    </script>
   </body>
 </html>
