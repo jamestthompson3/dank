@@ -2,10 +2,8 @@
 <html lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Cool blog, bro" />
@@ -30,7 +28,6 @@
   </script>
   <title>😎😎😎😎</title>
   <body onload="jumpToSection();">
-    <div id="body-container" role="main">
     <!--   <a id="nav-toggle" href="#">&#9776;</a> -->
       <img id="cursor" src="bb8_1.svg" alt="cursor" />
       <!-- <div id="menu" role="navigation"> -->
@@ -40,8 +37,12 @@
       <!--     <1!-- <a href="#readinglist" class="flex-column">What I'm Reading</a> --1> -->
       <!--   </div> -->
       <!-- </div> -->
-      <section id="root" class="flex-column">
-        <h1 class="header center-text">Taylor Thompson's homepage</h1>
+        <section id="root" class="flex-column">
+          <h1 class="header center-text">Taylor Thompson's homepage</h1>
+          <div class="bg-black txt-white flex-column space-around" style="padding: 12px; height: 250px;">
+            <h1 class="header center-text" style="margin: 0;">About me</h1>
+            <p class="center-text">I'm a web developer based in Helsinki, Finland. I enjoy reading about and writing software. I program mostly in JS, but enjoy trying new languages and concepts!</p>
+          </div>
           <div class="flex-column flex-even space-around">
             <h1 class="header"  id="blog-header">Blog</h1>
             <div class="toc-list center-text flex-row flex-wrap center" aria-labelledby="blog-header" id="posts-list">
@@ -64,48 +65,47 @@
               <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/linkshare-telegram/">Telegram Link Share</a> </span>
             </div>
           </div>
-        <div class="flex-column h200 space-even center-text">
-          <a
-            class="br5 shadow"
-            href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
-            style="align-self: bottom;">
-            📝 Contact me!</a
-          >
-          <a class="br5 shadow" href="/feed.xml" style="align-self: bottom;">📃 Follow the RSS feed</a>
-          <!-- TODO: Copy on click -->
+          <div class="flex-column h200 space-even center-text">
+            <a
+              class="br5 shadow"
+              href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
+              style="align-self: bottom;">
+              📝 Contact me!</a
+            >
+            <a class="br5 shadow" href="/feed.xml" style="align-self: bottom;">📃 Follow the RSS feed</a>
+            <!-- TODO: Copy on click -->
             <a href="" style="align-self: bottom; text-align: center;">Scuttlebut Public Key:<br />
-            <span style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519<span></a>
-        </div>
-      </section>
-      <section id="other" role="contentinfo">
-        <h2
-          id="programming-header"
-          class="subheader center-text"
-          style="margin: 1rem auto;"
-        >
-          Cool Programming articles / videos
-        </h2>
-        <div aria-labelledby="programming-header" class="flex-column">
-          <span>
-            <a href="https://vimways.org/2018/">vimways</a> - great articles
-            about how to improve your vim usage.
-          </span>
-          <span>
-            <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ">
-              Jon Gjengset
-            </a>
-            - explains technologies such as tcp, non-blocking async io,
-            cuncurrent databases, etc. in great detail and using Rust
-          </span>
-        </div>
-        <div id="readinglist"></div>
-        <script
-          src="https://www.goodreads.com/review/custom_widget/58802055.Book%20and%20Novel%20Reading%List?cover_position=left&cover_size=small&num_books=5&order=d&shelf=currently-reading&show_author=1&show_cover=0&show_rating=0&show_review=0&show_tags=0&show_title=1&sort=date_updated&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=1561351334&widget_text_color=000000&widget_title_size=medium&widget_width=medium"
-          type="text/javascript"
-          charset="utf-8"
-        ></script>
-      </section>
-    </div>
+              <span style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519<span></a>
+          </div>
+        </section>
+        <section id="other" role="contentinfo">
+          <h2
+            id="programming-header"
+            class="subheader center-text"
+            style="margin: 1rem auto;"
+            >
+            Cool Programming articles / videos
+          </h2>
+            <div aria-labelledby="programming-header" class="flex-column">
+              <span>
+                <a href="https://vimways.org/2018/">vimways</a> - great articles
+                about how to improve your vim usage.
+              </span>
+              <span>
+                <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ">
+                  Jon Gjengset
+                </a>
+                - explains technologies such as tcp, non-blocking async io,
+                cuncurrent databases, etc. in great detail and using Rust
+              </span>
+            </div>
+            <div id="readinglist"></div>
+            <script
+              src="https://www.goodreads.com/review/custom_widget/58802055.Book%20and%20Novel%20Reading%List?cover_position=left&cover_size=small&num_books=5&order=d&shelf=currently-reading&show_author=1&show_cover=0&show_rating=0&show_review=0&show_tags=0&show_title=1&sort=date_updated&widget_bg_color=FFFFFF&widget_bg_transparent=&widget_border_width=1&widget_id=1561351334&widget_text_color=000000&widget_title_size=medium&widget_width=medium"
+              type="text/javascript"
+              charset="utf-8"
+  ></script>
+        </section>
     <script>
       const root = document.querySelector("#body-container");
       const cursor = document.querySelector("#cursor");
@@ -113,8 +113,8 @@
       const body = document.querySelector("body");
       const navmenu = document.getElementById("nav-toggle");
       let start = { x: 0, y: 0 };
-      root.addEventListener("mousemove", bb8move);
-      root.addEventListener("touch", bb8move);
+      body.addEventListener("mousemove", bb8move);
+      body.addEventListener("touch", bb8move);
       body.addEventListener("touchstart", touchStart, false);
       body.addEventListener("touchmove", touchMove, false);
       function bb8move({ x, y }) {

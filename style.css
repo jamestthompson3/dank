@@ -31,9 +31,12 @@
   left: 0;
   right: 0;
   bottom: 0;
+  height: auto;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
   overflow-x: hidden;
+  scroll-snap-type: y proximity;
+  overscroll-behavior: none;
 }
 
 #cursor {
@@ -177,6 +180,12 @@
   text-decoration-color: aquamarine;
   font-weight: bold;
   color: aquamarine;
+}
+
+.list > * > a:hover {
+  font-weight: bold;
+  background: aquamarine;
+  color: #fff;
 }
 .list > * > a:visited {
   color: #fff;

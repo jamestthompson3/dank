@@ -8,11 +8,15 @@ ul {
 }
 html {
   overflow: hidden;
+  height: 100vh;
 }
 body {
   overflow-x: hidden;
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch;
+  height: 100vh;
+  scroll-snap-type: y proximity;
+  overscroll-behavior: none;
 }
 html,
 body {
@@ -20,6 +24,11 @@ body {
   font-family: "Anton", sans-serif;
   margin: 0;
   padding: 0;
-  height: 100%;
   width: auto;
+}
+
+@media(max-width: 450px) {
+  body {
+    height: auto;
+  }
 }

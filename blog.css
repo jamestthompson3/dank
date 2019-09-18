@@ -1,10 +1,6 @@
 body {
   background: #151618;
-}
-
-html, body {
-  position: fixed;
-  overflow: hidden;
+  height: auto;
 }
 
 header {
@@ -142,4 +138,8 @@ body > .mainwrapper {
     max-width: 350px;
     margin: auto;
   }
+
+body > .mainwrapper {
+  height: auto;
+}
 }
