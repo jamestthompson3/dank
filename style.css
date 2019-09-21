@@ -165,10 +165,13 @@
   padding: 0;
 }
 .box {
-  width: 160px;
-  height: 160px;
+  width: 180px;
+  height: 180px;
   margin-bottom: 5px;
   padding: 10px;
+}
+.box i {
+  font-size: 1rem;
 }
 .list a, span {
   margin: 10px;
