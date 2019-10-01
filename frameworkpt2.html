@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-us" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="author" content="taylor thompson" />
+    <title>🖼 Part 2: Actions on Mount</title>
+    <link href="blog.css" rel="stylesheet" />
+    <link href="reset.css" rel="stylesheet" />
+    <link href="code.css" rel="stylesheet" />
+    <script src="index.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
+      rel="stylesheet"
+      />
+  </head>
+  <body>
+    <div class="mainwrapper">
+      <article class="blog-post">
+        <section data-field="body">
+          <h2 id="part-two-data-fetching-on-mount">Part Two, Actions on Mount</h2>
+          <p>Asynchronous actions are essential in any modern web application. The ability to fetch data from some service and display it to users is an important part of building a framework to support these applications. In order for our components to do this, we need to refactor. Our component calls <code>mount</code> when we want to render it on the page, but this function only serves to attach styles and event handlers to the component, not fetch data asynchronously. To accommodate actions taken after our component has been defined, but before it is actually rendered, we need a new method: <code>componentDidMount</code>.</p>
+          <p>The <code>componentDidMount</code> method will be called just before the component's initial render. When called during this stage of the component's life cycle, the <code>componentDidMount</code> method will not have access to any reference to the component's children. As we implement more complex use cases for our components, the life cycle stage of <code>componentDidMount</code> will need to change in order to support features such as child refs.</p>
+          <p>Moving into our component code, we can do a bit of refactoring:</p>
+          <div class="sourceCode" id="cb1"><pre class="sourceCode diff"><code class="sourceCode diff"><span id="cb1-1"><a href="#cb1-1"></a>export class Component {</span>
+    <span id="cb1-2"><a href="#cb1-2"></a>  constructor(element, args = {}) {</span>
+    <span id="cb1-3"><a href="#cb1-3"></a>    this.$$typeof = OUR_COMPONENT;</span>
+    <span id="cb1-4"><a href="#cb1-4"></a>    this.el = document.createElement(element);</span>
+    <span id="cb1-5"><a href="#cb1-5"></a>    this.args = args;</span>
+    <span id="cb1-6"><a href="#cb1-6"></a>  }</span>
+    <span id="cb1-7"><a href="#cb1-7"></a></span>
+    <span id="cb1-8"><a href="#cb1-8"></a> + componentDidMount() {}</span>
+    <span id="cb1-9"><a href="#cb1-9"></a></span>
+    <span id="cb1-10"><a href="#cb1-10"></a>  - mount() {</span>
+    <span id="cb1-11"><a href="#cb1-11"></a>  + setup() {</span>
+    <span id="cb1-12"><a href="#cb1-12"></a>  + if (this.args.style) this.applyStyles();</span>
+    <span id="cb1-13"><a href="#cb1-13"></a>  +  if (this.args.on) {</span>
+    <span id="cb1-14"><a href="#cb1-14"></a>  +    this.args.on.forEach(handler =&gt; {</span>
+    <span id="cb1-15"><a href="#cb1-15"></a>  +      const [event, func] = Object.entries(handler)[0];</span>
+    <span id="cb1-16"><a href="#cb1-16"></a>  +      this.el.addEventListener(event, func);</span>
+    <span id="cb1-17"><a href="#cb1-17"></a>  +      Object.entries(handler).forEach(([event, func]) =&gt; {</span>
+    <span id="cb1-18"><a href="#cb1-18"></a>  +        this.el.addEventListener(event, func);</span>
+    <span id="cb1-19"><a href="#cb1-19"></a>  +      });</span>
+    <span id="cb1-20"><a href="#cb1-20"></a>  +    });</span>
+    <span id="cb1-21"><a href="#cb1-21"></a>  +  }</span>
+    <span id="cb1-22"><a href="#cb1-22"></a>  }</span>
+    <span id="cb1-23"><a href="#cb1-23"></a></span>
+    <span id="cb1-24"><a href="#cb1-24"></a>  render(children = []) {</span>
+    <span id="cb1-25"><a href="#cb1-25"></a>   + this.setup();</span>
+    <span id="cb1-26"><a href="#cb1-26"></a>   + this.componentDidMount();</span></code></pre></div>
+            <p>By default, we want the <code>componentDidMount</code> method to be a no-op since adding life cycle behavior is not always necessary. Logic for applying styles and event handlers is moved to a separate function so that it won't be overridden by or need to be implemented in the <code>componentDidMount</code> method.</p>
+            <p>We can now put these changes to use by creating a component which fetches an image from a server and applies it as the background of the element created in the component's render method.</p>
+            <div class="sourceCode" id="cb2"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="im">import</span> <span class="op">{</span> Component <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./Component&#39;</span><span class="op">;</span></span>
+    <span id="cb2-2"><a href="#cb2-2"></a></span>
+    <span id="cb2-3"><a href="#cb2-3"></a><span class="co">// fetch the image</span></span>
+    <span id="cb2-4"><a href="#cb2-4"></a><span class="kw">async</span> <span class="kw">function</span> <span class="at">getImage</span>(width<span class="op">,</span> height) <span class="op">{</span></span>
+    <span id="cb2-5"><a href="#cb2-5"></a>  <span class="kw">const</span> response <span class="op">=</span> <span class="cf">await</span> <span class="at">fetch</span>(<span class="vs">`https://picsum.photos/</span><span class="sc">${</span>width<span class="sc">}</span><span class="vs">/</span><span class="sc">${</span>height<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
+    <span id="cb2-6"><a href="#cb2-6"></a>  <span class="cf">return</span> <span class="va">response</span>.<span class="at">url</span><span class="op">;</span></span>
+    <span id="cb2-7"><a href="#cb2-7"></a><span class="op">}</span></span>
+    <span id="cb2-8"><a href="#cb2-8"></a></span>
+    <span id="cb2-9"><a href="#cb2-9"></a><span class="kw">class</span> PageWrapper <span class="kw">extends</span> Component <span class="op">{</span></span>
+    <span id="cb2-10"><a href="#cb2-10"></a>  <span class="kw">async</span> <span class="at">componentDidMount</span>() <span class="op">{</span></span>
+    <span id="cb2-11"><a href="#cb2-11"></a>    <span class="kw">const</span> width <span class="op">=</span> <span class="va">window</span>.<span class="at">innerWidth</span><span class="op">;</span></span>
+    <span id="cb2-12"><a href="#cb2-12"></a>    <span class="kw">const</span> height <span class="op">=</span> <span class="va">window</span>.<span class="at">innerHeight</span><span class="op">;</span></span>
+    <span id="cb2-13"><a href="#cb2-13"></a>    <span class="kw">this</span>.<span class="va">el</span>.<span class="va">style</span>.<span class="at">width</span> <span class="op">=</span> width <span class="op">+</span> <span class="st">&#39;px&#39;</span><span class="op">;</span></span>
+    <span id="cb2-14"><a href="#cb2-14"></a>    <span class="kw">this</span>.<span class="va">el</span>.<span class="va">style</span>.<span class="at">height</span> <span class="op">=</span> height <span class="op">+</span> <span class="st">&#39;px&#39;</span><span class="op">;</span></span>
+    <span id="cb2-15"><a href="#cb2-15"></a>    <span class="kw">const</span> url <span class="op">=</span> <span class="cf">await</span> <span class="at">getImage</span>(width<span class="op">,</span> height)<span class="op">;</span></span>
+    <span id="cb2-16"><a href="#cb2-16"></a>    <span class="kw">this</span>.<span class="va">el</span>.<span class="va">style</span>.<span class="at">background</span> <span class="op">=</span> <span class="vs">`url(</span><span class="sc">${</span>url<span class="sc">}</span><span class="vs">)`</span><span class="op">;</span></span>
+    <span id="cb2-17"><a href="#cb2-17"></a>  <span class="op">}</span></span>
+    <span id="cb2-18"><a href="#cb2-18"></a><span class="op">}</span></span>
+    <span id="cb2-19"><a href="#cb2-19"></a></span>
+    <span id="cb2-20"><a href="#cb2-20"></a><span class="kw">const</span> Container <span class="op">=</span> <span class="kw">new</span> <span class="at">PageWrapper</span>(<span class="st">&quot;div&quot;</span><span class="op">,</span> <span class="op">{</span></span>
+    <span id="cb2-21"><a href="#cb2-21"></a>  <span class="dt">style</span><span class="op">:</span> <span class="op">{</span> <span class="dt">background</span><span class="op">:</span> <span class="st">&quot;papayawhip&quot;</span><span class="op">}</span></span>
+    <span id="cb2-22"><a href="#cb2-22"></a><span class="op">}</span>)</span></code></pre></div>
+              <p>Our newly created <code>PageWrapper</code> component will now fetch and display a full screen image when it is rendered. You may notice that there is no way to set an intermediary state for our component, such as generating some text to inform the user that the image is loading. This concept of local state will be covered by the next post.</p>
+        </section>
+      </article>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/6.6.1/firebase-app.js"></script>
+    <script  id="fb" src="https://www.gstatic.com/firebasejs/6.6.1/firebase-firestore.js"></script>
+    <script>
+      configFirebase()
+      saveVisit('frameworkpt2')
+    </script>
+  </body>
+</html>

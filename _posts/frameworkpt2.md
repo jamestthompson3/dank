@@ -1,0 +1,74 @@
+---
+Title: Build Your Own Frontend Framework Part 2: Data Fetching
+Author: Taylor Thompson
+Keywords: javascript, frontend, web development
+loc: frameworkpt2
+---
+
+## Part Two, Data Fetching on Mount
+
+Asynchronous actions are essential in any modern web application. The ability to fetch data from some service and display it to users is an important part of building a framework to support these applications. In order for our components to do this, we need to refactor. Our component calls `mount` when we want to render it on the page, but this function only serves to attach styles and event handlers to the component, not fetch data asynchronously. To accommodate actions taken after our component has been defined, but before it is actually rendered, we need a new method: `componentDidMount`.
+
+The `componentDidMount` method will be called just before the component's initial render. When called during this stage of the component's life cycle, the `componentDidMount` method will not have access to any reference to the component's children. As we implement more complex use cases for our components, the life cycle stage of `componentDidMount` will need to change in order to support features such as child refs.
+
+Moving into our component code, we can do a bit of refactoring:
+
+```diff
+export class Component {
+  constructor(element, args = {}) {
+    this.$$typeof = OUR_COMPONENT;
+    this.el = document.createElement(element);
+    this.args = args;
+  }
+
+ + componentDidMount() {}
+
+  - mount() {
+  + setup() {
+  + if (this.args.style) this.applyStyles();
+  +  if (this.args.on) {
+  +    this.args.on.forEach(handler => {
+  +      const [event, func] = Object.entries(handler)[0];
+  +      this.el.addEventListener(event, func);
+  +      Object.entries(handler).forEach(([event, func]) => {
+  +        this.el.addEventListener(event, func);
+  +      });
+  +    });
+  +  }
+  }
+
+  render(children = []) {
+   + this.setup();
+   + this.componentDidMount();
+```
+
+By default, we want the `componentDidMount` method to be a no-op since adding life cycle behavior is not always necessary. Logic for applying styles and event handlers is moved to a separate function so that it won't be overridden by or need to be implemented in the `componentDidMount` method.
+
+We can now put these changes to use by creating a component which fetches an image from a server and applies it as the background of the element created in the component's render method.
+
+```javascript
+import { Component } from './Component';
+
+// fetch the image
+async function getImage(width, height) {
+  const response = await fetch(`https://picsum.photos/${width}/${height}`);
+  return response.url;
+}
+
+class PageWrapper extends Component {
+  async componentDidMount() {
+    const width = window.innerWidth;
+    const height = window.innerHeight;
+    this.el.style.width = width + 'px';
+    this.el.style.height = height + 'px';
+    const url = await getImage(width, height);
+    this.el.style.background = `url(${url})`;
+  }
+}
+
+const Container = new PageWrapper("div", {
+  style: { background: "papayawhip"}
+})
+```
+
+Our newly created `PageWrapper` component will now fetch and display a full screen image when it is rendered. You may notice that there is no way to set an intermediary state for our component, such as generating some text to inform the user that the image is loading. This concept of local state will be covered by the next post.
