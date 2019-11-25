@@ -31,13 +31,6 @@
   <body onload="jumpToSection();">
     <!--   <a id="nav-toggle" href="#">&#9776;</a> -->
       <img id="cursor" src="bb8_1.svg" alt="cursor" />
-      <!-- <div id="menu" role="navigation"> -->
-      <!--   <div class="toc-list list center-text" aria-labelledby="toc"> -->
-      <!--     <a href="#programming">Programming articles</a> -->
-      <!--     <a href="#post-list" class="flex-column">Blog</a> -->
-      <!--     <1!-- <a href="#readinglist" class="flex-column">What I'm Reading</a> --1> -->
-      <!--   </div> -->
-      <!-- </div> -->
         <section id="root" class="flex-column">
           <h1 class="header center-text">Taylor Thompson's homepage</h1>
           <div class="bg-black txt-white flex-column space-around" style="padding: 12px; height: 250px;">
@@ -47,24 +40,24 @@
           <div class="flex-column flex-even space-around">
             <h1 class="header"  id="blog-header">Blog</h1>
             <div class="toc-list center-text flex-row flex-wrap center" aria-labelledby="blog-header" id="posts-list">
-              <span class="box center-text flex-column space-around br5 shadow"> <a href="./frameworkpt2.html">BYOFF Part 2: Actions on Mount</a><i>01 Oct. 2019</i></span>
-              <span class="box center-text flex-column space-around br5 shadow"> <a href="./frameworkpt1.html">BYOFF Part 1: Basic Components</a><i>15 Sept. 2019</i></span>
-              <span class="box center-text flex-column space-around br5 shadow"> <a href="./frameworkintro.html">Build Your Own Frontend Framework: Intro</a> <i>09 Sept. 2019</i></span>
-              <span class="box center-text flex-column space-around br5 shadow"> <a href="./vimcandothat.html">Getting the Most Out of Vim: Navigating Code</a><i>25 Aug. 2019</i></span>
-              <span class="box center-text flex-column space-around br5 shadow"> <a href="./datastructures.html">Data Structure Memes For Edgy JavaScript Teens</a><i>20 Jun. 2019</i></span>
-              <span class="box center-text flex-column space-around br5 shadow"> <a href="./viiksetjs.html">Data visualization with ViiksetJS</a> <i>02 Nov. 2018</i></span>
-              <span class="box center-text flex-column space-around br5 shadow"> <a href="./rxjs-recompose.html">Rxjs and Recompose</a> <i>14 Jun. 2018</i></span>
+              <a href="./frameworkpt2.html" class="box center-text flex-column space-around br5 shadow"><span >BYOFF Part 2: Actions on Mount</span><i>01 Oct. 2019</i></a>
+              <a class="box center-text flex-column space-around br5 shadow" href="./frameworkpt1.html">   <span >  BYOFF Part 1: Basic Components</span><i>15 Sept. 2019</i></a>
+              <a class="box center-text flex-column space-around br5 shadow" href="./frameworkintro.html"> <span >  Build Your Own Frontend Framework: Intro</span><i>09 Sept. 2019</i></a>
+              <a class="box center-text flex-column space-around br5 shadow" href="./vimcandothat.html">   <span >  Getting the Most Out of Vim: Navigating Code</span><i>25 Aug. 2019</i></a>
+              <a class="box center-text flex-column space-around br5 shadow" href="./datastructures.html"> <span >  Data Structure Memes For Edgy JavaScript Teens</span><i>20 Jun. 2019</i></a>
+              <a class="box center-text flex-column space-around br5 shadow" href="./viiksetjs.html">      <span >  Data visualization with ViiksetJS</span><i>02 Nov. 2018</i></a>
+              <a class="box center-text flex-column space-around br5 shadow" href="./rxjs-recompose.html"> <span >  Rxjs and Recompose</span><i>14 Jun. 2018</i></a>
             </div>
           </div>
 
           <div class="flex-column flex-even space-around">
             <h1 class="header"> Projects </h1>
             <div class="toc-list center-text overflow flex-row flex-wrap center" id="projects-list" >
-              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/viiksetjs">ViiksetJS</a > </span>
-              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://vsrc.jamestthompson3.now.sh/">View Source</a> </span>
-              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/nimblef">Nimblef</a> </span>
-              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/vim-jest">Vim Jest</a> </span>
-              <span class="box center-text flex-row center br5 shadow"> <a target="__blank" rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/linkshare-telegram/">Telegram Link Share</a> </span>
+              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/viiksetjs">                       <span> ViiksetJS           </span></a>
+              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://vsrc.jamestthompson3.now.sh/">                               <span> View Source         </span></a>
+              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/nimblef">                         <span> Nimblef             </span></a>
+              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/vim-jest">                        <span> Vim Jest            </span></a>
+              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/linkshare-telegram/"> <span> Telegram Link Share </span></a>
             </div>
           </div>
           <div class="flex-column h200 space-even center-text">
@@ -110,13 +103,15 @@
       const body = document.querySelector("body");
       const navmenu = document.getElementById("nav-toggle");
       let start = { x: 0, y: 0 };
-      body.addEventListener("mousemove", bb8move);
-      body.addEventListener("touch", bb8move);
-      body.addEventListener("touchstart", touchStart, false);
-      body.addEventListener("touchmove", touchMove, false);
-      function bb8move({ x, y }) {
-        cursor.style.left = `${x + 30}px`;
-        cursor.style.top = `${y}px`;
+
+      document.addEventListener("mousemove", bb8move);
+      document.addEventListener("touch", bb8move);
+      document.addEventListener("touchstart", touchStart, false);
+      document.addEventListener("touchmove", touchMove, false);
+
+      function bb8move({x, pageY}) {
+        cursor.style.left = `${x+ 30}px`;
+        cursor.style.top = `${pageY - 50}px`;
       }
 
       function touchStart(event) {

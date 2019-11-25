@@ -130,16 +130,22 @@ body > .mainwrapper {
 @media(max-width: 450px) {
   .blog-post, p {
     margin: 1rem 1rem;
+    overflow-x: hidden;
   }
   .blog-post, section {
     width: 100%;
+    overflow-x: hidden;
   }
   .blog-post, figure {
     max-width: 350px;
     margin: auto;
   }
 
-body > .mainwrapper {
-  height: auto;
-}
+  .blog-posts {
+    overflow-x: hidden;
+  }
+  body > .mainwrapper {
+    height: auto;
+    overflow-x: hidden;
+  }
 }
