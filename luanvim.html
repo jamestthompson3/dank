@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="en-US">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta name="apple-mobile-web-app-title" content="lua and neovim" />
+    <meta itemprop="description" content="lua and neovim" />
+    <meta property="og:title" content="lua and neovim" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://teukka.tech/luanvim.html" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=696&q=80" />
+    <title>🌑 Lua and Neovim</title>
+    <link href="reset.css" rel="stylesheet" />
+    <link href="blog.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
+      rel="stylesheet"
+      />
+  </head>
+  <body>
+    <div class="mainwrapper">
+      <article id="luanvim" class="blog-post">
+        <section data-field="body">
+          <h2 id="why-lua">Why Lua?</h2>
+          <p>Neovim has an embedded Lua 5.1 runtime which is used to create faster and more powerful extensions of your favorite editor. In the <a href="https://neovim.io/charter/">Neovim charter</a>, it lists one of its goals as developing a first-class Lua scripting alternative to VimL. One of the reasons for doing this is that VimL is a slow interpreted language with almost no optimizations. Much of the time spent in vim startup and in actions from plugins that can block the main loop in the editor is in parsing and executing vimscript. A great explanation of this can be found in Neovim lead maintainer, Justin M. Keyes' talk, <a href="https://www.youtube.com/watch?v=Bt-vmPC_-Ho">We can have nice things</a>.</p>
+          <p>With the recent introduction of the built-in LSP client in the master branch written in Lua, I became more interested in the possibilities Lua has to offer and began trying to use Lua in Neovim. I have never written Lua before and have not seen very many guides on how to utilize the Lua runtime in Neovim, so I want to illustrate the process of learning how to take advantage of the powerful scripting capabilities that are available in the Neovim runtime. Given that my experience is still very basic, these examples will also be quite small, but I hope that it can be a good jumping off point for those interested in using Lua more in extending Neovim.</p>
+          <h2 id="getting-started">Getting Started</h2>
+          <p>One of the first things I was confused about was how to use Lua code inside of vim and vimscript. Luckily, the documentation in <code>:h lua</code> gives a few examples of how Lua can be used in the editor. I recommend reading it for an in-depth explanation of how Neovim treats Lua and the source of Lua files. Here's a high-level overview of different approaches to executing Lua code in your editor:</p>
+          <ul>
+            <li>From the vim command line, you can run <code>:lua &lt;yourCodeHere&gt;</code>. This is useful for keybindings, commands, and other one-off execution cases.</li>
+            <li>Inside of a VimL file, you can demarcate Lua code with the following code fencing:</li>
+          </ul>
+          <div class="blockwrapper"><pre class="viml"><code>lua &lt;&lt; EOF
+    -- your lua code here
+EOF
+          </code></pre></div>
+          <ul>
+            <li>Inside of a VimL file you can use the <code>lua</code> keyword to execute commands similar to the first example. (i.e. <code>lua &lt;yourCodeHere&gt;</code>).</li>
+          </ul>
+          <p>One important note here is that Neovim will look for Lua code in the <code>runtimepath</code> you've set in your settings. Additionally, it will append your runtimepath with <code>/lua/?.lua</code> and <code>/lua/?/init.lua</code> so it is common practice to see a <code>/lua</code> sub-directory inside <code>.nvim</code>. For more detailed information about where Neovim looks for Lua code, check out <code>:h lua-require</code>.</p>
+          <h2 id="your-first-function">Your first function</h2>
+          <p>Porting your <code>init.vim</code> to Lua can be a big undertaking, so it's best to start small. For the first example, we'll create a function which creates a scratch buffer.</p>
+          <p>This function will live in a file we'll call <code>tools</code>, so create it in the <code>lua</code> directory in your nvim config: <code>~/.config/nvim/lua/tools.lua</code>. Once we've created the file, we'll fill it out with some boilerplate:</p>
+          <div class="blockwrapper"><div class="sourceCode" id="cb2"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">-- in tools.lua</span></span>
+    <span id="cb2-2"><a href="#cb2-2"></a></span>
+    <span id="cb2-3"><a href="#cb2-3"></a><span class="kw">local</span> <span class="cn">M</span> <span class="op">=</span> <span class="op">{}</span></span>
+    <span id="cb2-4"><a href="#cb2-4"></a></span>
+    <span id="cb2-5"><a href="#cb2-5"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>makeScratch<span class="op">()</span></span>
+    <span id="cb2-6"><a href="#cb2-6"></a><span class="cf">end</span></span>
+    <span id="cb2-7"><a href="#cb2-7"></a></span>
+    <span id="cb2-8"><a href="#cb2-8"></a><span class="cf">return</span> <span class="cn">M</span></span></code></pre></div></div>
+            <p>Using the table <code>M</code> here allows us to keep things out of the global scope and to use only what we need when calling the function from nvim. We'll be using the neovim API to make scratch buffer, so let's create a shorthand for it in our <code>tools.lua</code> file:</p>
+            <div class="blockwrapper"><div class="sourceCode" id="cb3"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">-- in tools.lua</span></span>
+    <span id="cb3-2"><a href="#cb3-2"></a><span class="kw">local</span> api <span class="op">=</span> vim<span class="op">.</span>api</span>
+    <span id="cb3-3"><a href="#cb3-3"></a></span>
+    <span id="cb3-4"><a href="#cb3-4"></a><span class="kw">local</span> <span class="cn">M</span> <span class="op">=</span> <span class="op">{}</span></span>
+    <span id="cb3-5"><a href="#cb3-5"></a></span>
+    <span id="cb3-6"><a href="#cb3-6"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>makeScratch<span class="op">()</span></span>
+    <span id="cb3-7"><a href="#cb3-7"></a><span class="cf">end</span></span>
+    <span id="cb3-8"><a href="#cb3-8"></a></span>
+    <span id="cb3-9"><a href="#cb3-9"></a><span class="cf">return</span> <span class="cn">M</span></span></code></pre></div></div>
+              <p>We can create a new buffer with the <code>enew</code> command, and the neovim API gives us a way to call nvim commands from lua:</p>
+              <div class="blockwrapper"><div class="sourceCode" id="cb4"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb4-1"><a href="#cb4-1"></a><span class="co">-- in tools.lua</span></span>
+    <span id="cb4-2"><a href="#cb4-2"></a><span class="kw">local</span> api <span class="op">=</span> vim<span class="op">.</span>api</span>
+    <span id="cb4-3"><a href="#cb4-3"></a></span>
+    <span id="cb4-4"><a href="#cb4-4"></a><span class="kw">local</span> <span class="cn">M</span> <span class="op">=</span> <span class="op">{}</span></span>
+    <span id="cb4-5"><a href="#cb4-5"></a></span>
+    <span id="cb4-6"><a href="#cb4-6"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>makeScratch<span class="op">()</span></span>
+    <span id="cb4-7"><a href="#cb4-7"></a>  api<span class="op">.</span>nvim_command <span class="vs">[[enew]] -- equivalent to :enew</span></span>
+    <span id="cb4-8"><a href="#cb4-8"></a><span class="vs">end</span></span>
+    <span id="cb4-9"><a href="#cb4-9"></a></span>
+    <span id="cb4-10"><a href="#cb4-10"></a><span class="vs">return M</span></span></code></pre></div></div>
+                <p>Next, we want to set some buffer options so that our scratch buffer isn't listed in the buffer list and doesn't have a swapfile created for it:</p>
+                <div class="blockwrapper"><div class="sourceCode" id="cb5"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">-- in tools.lua</span></span>
+    <span id="cb5-2"><a href="#cb5-2"></a><span class="kw">local</span> api <span class="op">=</span> vim<span class="op">.</span>api</span>
+    <span id="cb5-3"><a href="#cb5-3"></a></span>
+    <span id="cb5-4"><a href="#cb5-4"></a><span class="kw">local</span> <span class="cn">M</span> <span class="op">=</span> <span class="op">{}</span></span>
+    <span id="cb5-5"><a href="#cb5-5"></a></span>
+    <span id="cb5-6"><a href="#cb5-6"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>makeScratch<span class="op">()</span></span>
+    <span id="cb5-7"><a href="#cb5-7"></a>  api<span class="op">.</span>nvim_command <span class="vs">[[enew]] -- equivalent to :enew</span></span>
+    <span id="cb5-8"><a href="#cb5-8"></a><span class="vs">  api.nvim_buf_set_option(0, &#39;buftype&#39;, &#39;nofile&#39;)</span></span>
+    <span id="cb5-9"><a href="#cb5-9"></a><span class="vs">  api.nvim_buf_set_option(0, &#39;bufhidden&#39;, &#39;hide&#39;)</span></span>
+    <span id="cb5-10"><a href="#cb5-10"></a><span class="vs">  api.nvim_buf_set_option(0, &#39;swapfile&#39;, false)</span></span>
+    <span id="cb5-11"><a href="#cb5-11"></a><span class="vs">end</span></span>
+    <span id="cb5-12"><a href="#cb5-12"></a></span>
+    <span id="cb5-13"><a href="#cb5-13"></a><span class="vs">return M</span></span></code></pre></div></div>
+                  <p>That is all we need to create the scratch buffer! Now let's use it in our <code>init.vim</code>:</p>
+                  <div class="blockwrapper">pre class="viml"><code>&quot; in init.vim
+
+    command! Scratch lua require&#39;tools&#39;.makeScratch()
+                    </code></pre></div>
+                  <p>Now a scratch buffer is created by running the command <code>:Scratch</code>.</p>
+                  <p>You can port your <code>init.vim</code> to lua one function at a time, and if you get stuck, you can always use <code>vim.api.nvim_command</code>! When looking for help, make sure to check out <code>:h api</code>, and <code>:h lua</code>.</p>
+        </section>
+      </article>
+    </div>
+    <script src="blogheader.js"></script>
+  </body>
+</html>
