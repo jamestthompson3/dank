@@ -14,7 +14,7 @@
     <meta
       itemprop="description"
       content="A website full of intersting things"
-    />
+      />
   </head>
   <link href="reset.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
@@ -33,126 +33,193 @@
   <title>😎😎😎😎</title>
   <body onload="jumpToSection();">
     <!--   <a id="nav-toggle" href="#">&#9776;</a> -->
-      <img id="cursor" src="bb8_1.svg" alt="cursor" />
-        <section id="root" class="flex-column">
-          <h1 class="header center-text">Taylor Thompson's homepage</h1>
-          <div class="bg-black txt-white flex-column space-around" style="padding: 12px; height: 250px;">
-            <h1 class="header center-text" style="margin: 0;">About me</h1>
-            <p class="center-text">I'm a web developer based in Helsinki, Finland. I enjoy reading about and writing software. I program mostly in JS, but enjoy trying new languages and concepts!</p>
-          </div>
-          <div class="flex-column flex-even space-around">
-            <h1 class="header"  id="blog-header">Blog</h1>
-            <div class="toc-list center-text flex-row flex-wrap center" aria-labelledby="blog-header" id="posts-list">
-              <a class="box center-text flex-column space-around br5 shadow" href="./luanvim.html"><span>Lua and Neovim</span><i>16 Dec. 2019</i></a>
-              <a href="./frameworkpt2.html" class="box center-text flex-column space-around br5 shadow"><span >BYOFF Part 2: Actions on Mount</span><i>01 Oct. 2019</i></a>
-              <a class="box center-text flex-column space-around br5 shadow" href="./frameworkpt1.html">   <span >  BYOFF Part 1: Basic Components</span><i>15 Sept. 2019</i></a>
-              <a class="box center-text flex-column space-around br5 shadow" href="./frameworkintro.html"> <span >  Build Your Own Frontend Framework: Intro</span><i>09 Sept. 2019</i></a>
-              <a class="box center-text flex-column space-around br5 shadow" href="./vimcandothat.html">   <span >  Getting the Most Out of Vim: Navigating Code</span><i>25 Aug. 2019</i></a>
-              <a class="box center-text flex-column space-around br5 shadow" href="./datastructures.html"> <span >  Data Structure Memes For Edgy JavaScript Teens</span><i>20 Jun. 2019</i></a>
-              <a class="box center-text flex-column space-around br5 shadow" href="./viiksetjs.html">      <span >  Data visualization with ViiksetJS</span><i>02 Nov. 2018</i></a>
-              <a class="box center-text flex-column space-around br5 shadow" href="./rxjs-recompose.html"> <span >  Rxjs and Recompose</span><i>14 Jun. 2018</i></a>
-            </div>
-          </div>
+    <img id="cursor" src="bb8_1.svg" alt="cursor" />
+    <section id="root" class="flex-column">
+      <h1 class="header center-text">Taylor Thompson's homepage</h1>
+      <div class="bg-black txt-white flex-column space-around" style="padding: 12px; height: 250px;">
+        <h1 class="header center-text" style="margin: 0;">About me</h1>
+        <p class="center-text">I'm a web developer based in Helsinki, Finland. I enjoy reading about and writing software. I program mostly in JS, but enjoy trying new languages and concepts!</p>
+      </div>
+      <div class="flex-column flex-even space-around w100">
+        <table class="w100">
+          <caption><h2 id="blog-header" class="header">Blog Posts</h2></caption>
+          <!-- <thead> -->
+          <!--   <tr class="txt-white checkbox space-around" style="background: none; user-select: none;"> -->
+          <!--     <td class="bg-black shadow br5" style="width: 75px;"> -->
+          <!--       <input type="checkbox" id="vim" class="transparent" /> -->
+          <!--       <label for="vim" class="br5 topic-filter">Vim</label> -->
+          <!--     </td> -->
+          <!--     <td class="bg-black shadow br5" style="width: 140px;"> -->
+          <!--       <input type="checkbox" id="js" class="transparent" /> -->
+          <!--       <label for="js" class="br5 topic-filter">JavaScript</label> -->
+          <!--     </td> -->
+          <!--   </tr> -->
+          <!-- </thead> -->
+          <tbody class="p1 flex-column">
+            <tr role="link" data-href="./luanvim.html">
+              <th scope="row"><p>Lua and Neovim</p>
+              </th>
+              <td><i>16 Dec. 2019</i></td>
+            </tr>
+            <tr role="link" data-href="./frameworkpt2.html">
+              <th scope="row">
+                <p>BYOFF Part 2: Actions on Mount</p>
+              </th>
+              <td><i>01 Oct. 2019</i></td>
+            </tr>
+            <tr role="link" data-href="./frameworkpt1.html">
+              <th scope="row">
+                <p>BYOFF Part 1: Basic Components</p>
+              </th>
+              <td><i>15 Sept. 2019</i></td>
+            </tr>
+            <tr role="link" data-href="./frameworkintro.html">
+              <th scope="row">
+                <p>Build Your Own Frontend Framework: Intro</p>
+              </th>
+              <td><i>09 Sept. 2019</i></td>
+            </tr>
+            <tr role="link" data-href="./vimcandothat.html">
+              <th scope="row">
+                <p>Getting the Most Out of Vim: Navigating Code</p>
+              </th>
+              <td>
+                <i>25 Aug. 2019</i>
+              </td>
+            </tr>
+            <tr role="link" data-href="./datastructures.html">
+              <th scope="row">
+                <p> Data Structure Memes For Edgy JavaScript Teens</p>
+              </th>
+              <td><i>20 Jun. 2019</i></td>
+            </tr>
+            <tr role="link" data-href="./viiksetjs.html">
+              <th scope="row">
+                <p>Data visualization with ViiksetJS</p>
+              </th>
+              <td><i>02 Nov. 2018</i></td>
+            </tr>
+            <tr role="link" data-href="./rxjs-recompose.html">
+              <th role="row">
+                <p>Rxjs and Recompose<p>
+                <th>
+                <td><i>14 Jun. 2018</i></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
 
-          <div class="flex-column flex-even space-around">
-            <h1 class="header"> Projects </h1>
-            <div class="toc-list center-text overflow flex-row flex-wrap center" id="projects-list" >
-              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/viiksetjs">                       <span> ViiksetJS           </span></a>
-              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://vsrc.jamestthompson3.now.sh/">                               <span> View Source         </span></a>
-              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/nimblef">                         <span> Nimblef             </span></a>
-              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/vim-jest">                        <span> Vim Jest            </span></a>
-              <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/linkshare-telegram/"> <span> Telegram Link Share </span></a>
-            </div>
-          </div>
-          <div class="flex-column h200 space-even center-text">
-            <a
-              class="br5 shadow"
-              href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
-              style="align-self: bottom;">
-              📝 Contact me!</a
-            >
-            <a class="br5 shadow" href="/feed.xml" style="align-self: bottom;">📃 Follow the RSS feed</a>
-            <!-- TODO: Copy on click -->
-            <a href="" style="align-self: bottom; text-align: center;">Scuttlebut Public Key:<br />
-              <span style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519<span></a>
-          </div>
-        </section>
-        <section id="other" role="contentinfo">
-          <h2
-            id="programming-header"
-            class="subheader center-text"
-            style="margin: 1rem auto;"
-            >
-            Cool Programming articles / videos
-          </h2>
-            <div aria-labelledby="programming-header" class="flex-column">
-              <span>
-                <a href="https://vimways.org/2018/">vimways</a> - great articles
-                about how to improve your vim usage.
-              </span>
-              <span>
-                <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ">
-                  Jon Gjengset
-                </a>
-                - explains technologies such as tcp, non-blocking async io,
-                cuncurrent databases, etc. in great detail and using Rust
-              </span>
-            </div>
-            <div id="readinglist"></div>
-        </section>
+      <div class="flex-column flex-even space-around">
+        <h1 class="header"> Projects </h1>
+        <div class="toc-list center-text overflow flex-row flex-wrap center" id="projects-list" >
+          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/viiksetjs">                       <span> ViiksetJS           </span></a>
+          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://vsrc.jamestthompson3.now.sh/">                               <span> View Source         </span></a>
+          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/nimblef">                         <span> Nimblef             </span></a>
+          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/vim-jest">                        <span> Vim Jest            </span></a>
+          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/linkshare-telegram/"> <span> Telegram Link Share </span></a>
+        </div>
+      </div>
+      <div class="flex-column h200 space-even center-text">
+        <a
+          class="br5 shadow"
+          href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
+          style="align-self: bottom;">
+          📝 Contact me!</a
+        >
+        <a class="br5 shadow" href="/feed.xml" style="align-self: bottom;">📃 Follow the RSS feed</a>
+        <!-- TODO: Copy on click -->
+        <a href="" style="align-self: bottom; text-align: center;">Scuttlebut Public Key:<br />
+          <span style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519<span></a>
+      </div>
+    </section>
+    <section id="other" role="contentinfo">
+      <h2
+        id="programming-header"
+        class="subheader center-text"
+        style="margin: 1rem auto;"
+        >
+        Cool Programming articles / videos
+      </h2>
+        <div aria-labelledby="programming-header" class="flex-column">
+          <span>
+            <a href="https://vimways.org/2018/">vimways</a> - great articles
+            about how to improve your vim usage.
+          </span>
+          <span>
+            <a href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ">
+              Jon Gjengset
+            </a>
+            - explains technologies such as tcp, non-blocking async io,
+            cuncurrent databases, etc. in great detail and using Rust
+          </span>
+        </div>
+        <div id="readinglist"></div>
+    </section>
     <script>
-      const root = document.querySelector("#body-container");
-      const cursor = document.querySelector("#cursor");
-      const blog = document.querySelector("#blog");
-      const body = document.querySelector("body");
-      const navmenu = document.getElementById("nav-toggle");
-      let start = { x: 0, y: 0 };
 
-      document.addEventListener("mousemove", bb8move);
-      document.addEventListener("touch", bb8move);
-      document.addEventListener("touchstart", touchStart, false);
-      document.addEventListener("touchmove", touchMove, false);
+const blogLinks = document.getElementsByTagName('tr')
 
-      function bb8move({x, pageY}) {
-        cursor.style.left = `${x+ 30}px`;
-        cursor.style.top = `${pageY - 50}px`;
-      }
+for (let i=0; i < blogLinks.length; i++) {
+  const currentLink = blogLinks[i]
+  if (currentLink.dataset.href) {
+    currentLink.addEventListener('click', () => window.location = window.location + currentLink.dataset.href.replace('./', ''))
+  }
+}
 
-      function touchStart(event) {
-        start.x = event.touches[0].pageX;
-        start.y = event.touches[0].pageY;
-      }
+const root = document.querySelector("#body-container");
+const cursor = document.querySelector("#cursor");
+const blog = document.querySelector("#blog");
+const body = document.querySelector("body");
+const navmenu = document.getElementById("nav-toggle");
+let start = { x: 0, y: 0 };
 
-      function touchMove(event) {
-        offsetX = start.x - event.touches[0].pageX;
-        offsetY = start.y - event.touches[0].pageY;
-        if (window.innerWidth <= 450) {
-          if (offsetY <= -30) {
-            navmenu.style.position = "fixed";
-          }
-          if (offsetY >= 30 && navmenu.style.position === "fixed") {
-            navmenu.style.position = "static";
-          }
-        }
-      }
+document.addEventListener("mousemove", bb8move);
+document.addEventListener("touch", bb8move);
+document.addEventListener("touchstart", touchStart, false);
+document.addEventListener("touchmove", touchMove, false);
 
-      navmenu.addEventListener("click", showMenu);
-      const menu = document.getElementById("menu");
-      menu.addEventListener("click", hideMenu);
-      function showMenu(e) {
-        e.preventDefault();
-        const isVisible = menu.style.transform === "translateX(0%)";
-        if (isVisible) {
-          menu.style.transform = "translateX(-150%)";
-        } else {
-          menu.style.transform = "translateX(0%)";
-        }
-      }
-      function hideMenu(e) {
-        menu.style.transform = "translateX(-150%)";
-      }
+function bb8move({x, pageY}) {
+  cursor.style.left = `${x+ 30}px`;
+  cursor.style.top = `${pageY - 50}px`;
+}
 
-    </script>
+function touchStart(event) {
+  start.x = event.touches[0].pageX;
+  start.y = event.touches[0].pageY;
+}
+
+function touchMove(event) {
+  offsetX = start.x - event.touches[0].pageX;
+  offsetY = start.y - event.touches[0].pageY;
+  if (window.innerWidth <= 450) {
+    if (offsetY <= -30) {
+      navmenu.style.position = "fixed";
+    }
+    if (offsetY >= 30 && navmenu.style.position === "fixed") {
+      navmenu.style.position = "static";
+    }
+  }
+}
+
+navmenu.addEventListener("click", showMenu);
+const menu = document.getElementById("menu");
+menu.addEventListener("click", hideMenu);
+function showMenu(e) {
+  e.preventDefault();
+  const isVisible = menu.style.transform === "translateX(0%)";
+  if (isVisible) {
+    menu.style.transform = "translateX(-150%)";
+  } else {
+    menu.style.transform = "translateX(0%)";
+  }
+}
+
+function hideMenu(e) {
+  menu.style.transform = "translateX(-150%)";
+}
+
+
+</script>
 
   </body>
 </html>
