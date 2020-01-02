@@ -7,15 +7,16 @@ url: https://teukka.tech
 repository: jamestthompson3/dank
 author: taylor thompson
 
-collections:
-  posts:
-    output: true
-    permalink: "/:collection/:path"
+feed:
+  collections:
+    posts:
+      output: true
+      permalink: "/:collection/:path"
 
-    defaults:
-      - scope:
-        path: _posts
-        type: posts
+      defaults:
+        - scope:
+          path: _posts
+          type: posts
 
 plugins:
 - jekyll-feed

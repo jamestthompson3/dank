@@ -19,6 +19,7 @@
   <link href="reset.css" rel="stylesheet" />
   <link href="style.css" rel="stylesheet" />
   <link href="readinglist.css" rel="stylesheet" />
+  <link rel="alternate" type="application/rss+xml" title="RSS" href="https://teukka.tech/feed">
   <script>
     function jumpToSection() {
       const lineNum = window.location.hash;
@@ -126,7 +127,7 @@
           style="align-self: bottom;">
           📝 Contact me!</a
         >
-        <a class="br5 shadow" href="/feed.xml" style="align-self: bottom;">📃 Follow the RSS feed</a>
+        <p tabindex="1" data-tip="link copied!" class="br5 shadow bg-black txt-white" style="align-self: bottom; padding: 3px;" id="feed" onclick="copyFeed()">📃 Follow the RSS feed</p>
         <!-- TODO: Copy on click -->
         <a href="" style="align-self: bottom; text-align: center;">Scuttlebut Public Key:<br />
           <span style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519<span></a>
@@ -216,6 +217,31 @@ function showMenu(e) {
 
 function hideMenu(e) {
   menu.style.transform = "translateX(-150%)";
+}
+
+function copyFeed(){
+  const text = document.getElementById('feed')
+  if (!navigator.clipboard) {
+    copyFallback()
+  } else {
+    navigator.clipboard.writeText(`${location.href}feed.xml`)
+  }
+  text.classList.add('tooltip')
+  setTimeout(() => {
+  text.classList.remove('tooltip')
+  }, 600)
+}
+
+function copyFallback(){
+  const input = document.createElement('textarea')
+  input.value = location.href + "feed.xml"
+  input.style.display = "none"
+  document.head.appendChild(input)
+  input.focus()
+  input.select()
+  <!-- input.setSelectionRange(0,9999) -->
+  document.execCommand('copy')
+  document.head.removeChild(input)
 }
 
 
