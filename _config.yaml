@@ -1,23 +1,10 @@
----
 version: 1.0.0
 min_ruby_version: 2.4.0
 name: Dank
-description: A homepage for tech and Taylor
+description: Taylor Thompson's Blog
 url: https://teukka.tech
 repository: jamestthompson3/dank
 author: taylor thompson
 
-feed:
-  collections:
-    posts:
-      output: true
-      permalink: "/:collection/:path"
-
-      defaults:
-        - scope:
-          path: _posts
-          type: posts
-
 plugins:
-- jekyll-feed
-
+  - jekyll-feed

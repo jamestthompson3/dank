@@ -1,9 +1,10 @@
 ---
 title: Vim does that already
-published: false
+published: true
 description: Exploring some of the built in functionality of Vim you may not know exists
-tags: vim, productivity
+tags: [vim, productivity]
 loc: vimcandothat
+date: 25 Aug. 2019
 ---
 
 ## Power to Productivity

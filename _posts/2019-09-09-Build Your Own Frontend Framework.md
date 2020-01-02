@@ -1,10 +1,11 @@
 ---
-Title: Build Your Own Frontend Framework, Introduction
-Author: Taylor Thompson
-Keywords: javascript, frontend, learning
-Description: Introduction to the frontend framework project
+title: Build Your Own Frontend Framework, Introduction
+author: Taylor Thompson
+tags: [javascript, frontend, learning]
+description: Introduction to the frontend framework project
 published: true
 loc: frontendintro
+date: 09 Sept. 2019
 ---
 
 Welcome to build your own frontend framework project! I will be coding this live on my [twitch stream](https://www.twitch.tv/slower_loris).
