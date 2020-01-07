@@ -99,6 +99,7 @@ body {
   padding: 0rem 3rem;
   background: #151618;
   height: auto;
+  overflow-x: hidden;
 }
 
 header {
