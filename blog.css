@@ -7,6 +7,7 @@ header {
   margin: 1rem 0rem 2rem 0rem;
 }
 
+
 .blockwrapper {
   width: 100%;
   overflow: auto;
@@ -37,9 +38,11 @@ header {
   width: 100%;
 }
 
+
 .blog-post, p {
   color: rgb(209, 206, 199);
   font-size: 1rem;
+  font-family: monospace;
   line-height: 2rem;
   margin: 1rem;
   text-align: justify;
@@ -92,22 +95,23 @@ header {
   font-size: 2rem;
   color: #45b3ff;
   margin: 1rem 0rem;
-  text-weight: bold;
+  font-weight: bold;
   text-align: left;
   width: 100%;
 }
 .blog-post, h4 {
   color: #fff;
   margin: 1rem 0rem;
-  text-weight: bold;
+  font-weight: bold;
   text-align: left;
   width: 100%;
 }
 .blog-post, h2 {
-  font-size: 2rem;
+  font-size: 1.5rem;
   color: #fff;
   font-weight: bold;
   margin: 1rem 0rem;
+  padding: 0px 10px;
 }
 .blog-post, figure {
   margin: 1rem 0rem;
@@ -125,35 +129,6 @@ body > .mainwrapper {
   overflow-y: scroll;
   -webkit-overflow-scrolling: touch; /* enables “momentum” (smooth) scrolling */
 }
-
-code span.al { color: #ffff00; } /* Alert */
-code span.an { color: #0066ff; font-weight: bold; font-style: italic; } /* Annotation */
-code span.at { } /* Attribute */
-code span.bn { color: #44aa43; } /* BaseN */
-code span.bu { } /* BuiltIn */
-code span.cf { color: #43a8ed; font-weight: bold; } /* ControlFlow */
-code span.ch { color: #049b0a; } /* Char */
-code span.cn { } /* Constant */
-code span.co { color: #0066ff; font-weight: bold; font-style: italic; } /* Comment */
-code span.do { color: #0066ff; font-style: italic; } /* Documentation */
-code span.dt { text-decoration: underline; } /* DataType */
-code span.dv { color: #44aa43; } /* DecVal */
-code span.er { color: #ffff00; font-weight: bold; } /* Error */
-code span.ex { } /* Extension */
-code span.fl { color: #44aa43; } /* Float */
-code span.fu { color: #ff9358; font-weight: bold; } /* Function */
-code span.im { } /* Import */
-code span.in { color: #0066ff; font-weight: bold; font-style: italic; } /* Information */
-code span.kw { color: #43a8ed; font-weight: bold; } /* Keyword */
-code span.op { } /* Operator */
-code span.pp { font-weight: bold; } /* Preprocessor */
-code span.sc { color: #049b0a; } /* SpecialChar */
-code span.ss { color: #049b0a; } /* SpecialString */
-code span.st { color: #049b0a; } /* String */
-code span.va { } /* Variable */
-code span.vs { color: #049b0a; } /* VerbatimString */
-code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
-
 
 /* smaller screens */
 @media(max-width: 450px) {
@@ -176,5 +151,11 @@ code span.wa { color: #ffff00; font-weight: bold; } /* Warning */
   body > .mainwrapper {
     height: auto;
     overflow-x: hidden;
+  }
+  body {
+    padding: 0rem;
+  }
+  pre {
+    width: 100%;
   }
 }
