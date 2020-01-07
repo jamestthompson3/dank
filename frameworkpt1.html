@@ -12,7 +12,6 @@
       content="width=device-width, initial-scale=1.0, user-scalable=yes"
     />
     <title>✨ Part 1: Basic Components</title>
-    <link href="blog.css" rel="stylesheet" />
     <link href="pandocoverride.css" rel="stylesheet" />
     <link
       href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
@@ -35,7 +34,7 @@
 <span id="cb1-8"><a href="#cb1-8"></a>  <span class="op">}</span></span>
 <span id="cb1-9"><a href="#cb1-9"></a><span class="op">}</span></span></code></pre></div>
 <p>Breaking this down:</p>
-<p><code><span class="kw">const</span> <span style="color: #fff;">COOL_COMPONENT</span> <span class="op">=</span> <span class="ot">Symbol</span>(<span class="vs">'component'</span>)</code></p>
+<span><code><span class="kw">const</span> <span style="color: #fff;">COOL_COMPONENT</span> <span class="op">=</span> <span class="ot">Symbol</span><span class="op">(</span><span class="vs">'component'</span><span class="op">)</span></code></span>
 <p>This creates a unique representation for our component type, and will help identify component instances as they get passed around our framework. The component takes an element type and some arguments which we’ll handle a bit later. The constructor also creates a new element which we’ll mount on the DOM with a <code>mount</code> function. Now that we have a very basic component, we need a way to mount it to the DOM. Starting with a naive implementation, we can do something like this:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">function</span> <span class="at">renderToDOM</span>(id<span class="op">,</span> component) <span class="op">{</span></span>
 <span id="cb2-2"><a href="#cb2-2"></a>  <span class="kw">const</span> root <span class="op">=</span> <span class="va">document</span>.<span class="at">querySelector</span>(<span class="vs">`#</span><span class="sc">${</span>id<span class="sc">}</span><span class="vs">`</span>)<span class="op">;</span></span>
