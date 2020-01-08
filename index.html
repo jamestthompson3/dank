@@ -20,6 +20,7 @@
   <link href="style.css" rel="stylesheet" />
   <link href="readinglist.css" rel="stylesheet" />
   <link rel="alternate" type="application/rss+xml" title="RSS" href="https://teukka.tech/feed">
+  <script src="index.js" async defer />
   <script>
     function jumpToSection() {
       const lineNum = window.location.hash;
@@ -30,11 +31,10 @@
       return true;
     }
   </script>
-  <!-- <script>alert(window.innerWidth)</script> -->
   <title>😎😎😎😎</title>
-  <body onload="jumpToSection();">
+  <body>
     <!--   <a id="nav-toggle" href="#">&#9776;</a> -->
-    <img id="cursor" src="bb8_1.svg" alt="cursor" />
+    <img id="cursor" src="bb8_1.svg" alt="cursor_image" />
     <section id="root" class="flex-column">
       <h1 class="header center-text">Taylor Thompson's homepage</h1>
       <h1 class="header center-text" style="margin: 0;">About me</h1>
@@ -43,7 +43,10 @@
       </div>
       <div class="flex-column flex-even space-around w100">
         <table class="w100">
-          <caption><h2 id="blog-header" class="header">Blog Posts</h2></caption>
+          <caption>
+            <h2 id="blog-header" class="header">Blog Posts</h2>
+            <p class="txt-white bg-black p05" style="margin: auto;">📚 available to read offline!</p>
+          </caption>
           <!-- <thead> -->
           <!--   <tr class="txt-white checkbox space-around" style="background: none; user-select: none;"> -->
           <!--     <td class="bg-black shadow br5" style="width: 75px;"> -->
