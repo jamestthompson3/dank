@@ -108,6 +108,9 @@ th > p {
 .w100 {
   width: 100%;
 }
+.mw17 {
+  min-width: 17rem;
+}
 .transparent {
   opacity: 0;
 }
@@ -116,6 +119,13 @@ th > p {
 }
 .p05 {
   padding: 0.5rem;
+}
+.mb05 {
+  margin-bottom: 0.5rem;
+}
+.text-dec {
+  text-decoration: underline !important;
+  text-decoration-color: aquamarine !important;
 }
 .h200 {
   height: 200px;
@@ -396,6 +406,11 @@ p.tooltip {
         /* Relative to the span elements */
 }
 
+span.tooltip {
+    position: relative;
+        /* Relative to the span elements */
+}
+
 .tooltip::before,
 .tooltip::after {
     position: absolute;
@@ -434,5 +449,5 @@ p.tooltip {
         /* margin-left is negative and half the width to center the bubble */
     color: white;
     text-align: center;
-    font-size: 0.75em;
+    font-size: 0.75rem !important;
 }

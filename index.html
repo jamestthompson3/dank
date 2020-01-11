@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" prefix="og: http://ogp.me/ns#">
+<html lang="en" prefix="og:http://ogp.me/ns#">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
@@ -134,11 +134,17 @@
           style="align-self: bottom;">
           📝 Contact me!</a
         >
-        <p tabindex="1" data-tip="link copied!" class="br5 shadow bg-black txt-white" style="align-self: bottom; padding: 3px;" id="feed" onclick="copyFeed()">📃 Follow the RSS feed</p>
-        <!-- TODO: Copy on click -->
-        <a href="" style="align-self: bottom; text-align: center;">Scuttlebut Public Key:<br />
-          <span style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519<span></a>
+        <p tabindex="1" data-tip="link copied!" class="br5 shadow bg-black txt-white" style="align-self: bottom; padding: 3px; cursor: pointer;" id="feed" onclick="copyFeed('feed')">📃 Follow the RSS feed</p>
+        <div class="br5 shadow bg-black txt-white" style="cursor: pointer;" onclick="copyFeed('sbkey')">
+          <p style="text-align: center;" >Scuttlebut Public Key:</p>
+          <p tabindex="1" data-tip="key copied!" id="sbkey" style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519</p>
+        </div>
       </div>
+      <h1 class="header">Reading List</h1>
+        <div class="flex-column">
+          <a class="text-dec br5 shadow bg-black txt-white mb05" href="/books.html">Favorite Books</a>
+          <p onclick="copyFeed('reading-list', true)" tabindex="1" id="reading-list" data-tip="link copied!" data-link="https://raindrop.io/collection/9007981/feed" class="br5 shadow bg-black txt-white mb05" style="padding: 3px;">Current Reading List (RSS feed)</p>
+        </div>
     </section>
     <section id="other" role="contentinfo">
       <h2
@@ -226,12 +232,16 @@ function hideMenu(e) {
   menu.style.transform = "translateX(-150%)";
 }
 
-function copyFeed(){
-  const text = document.getElementById('feed')
+function copyFeed(id, usedataref){
+  const text = document.getElementById(id)
   if (!navigator.clipboard) {
     copyFallback()
   } else {
-    navigator.clipboard.writeText(`${location.href}feed.xml`)
+    if (id === 'feed') {
+      navigator.clipboard.writeText(`${location.href}feed.xml`)
+  } else {
+    usedataref ? navigator.clipboard.writeText(text.data.link) : navigator.clipboard.writeText(text.textContent)
+  }
   }
   text.classList.add('tooltip')
   setTimeout(() => {

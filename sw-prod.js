@@ -1,4 +1,4 @@
-const CACHE_NAME = "posts-878502e1-3d46-40b8-a661-47bcb12cc5af";
+const CACHE_NAME = "posts-eaac5f5e-9032-4223-9a2a-f9f3907273a3";
 const PAGES = [
   "./pandocoverride.css",
   "./style.css",
@@ -23,11 +23,10 @@ self.addEventListener("install", e => {
   e.waitUntil(
     Promise.all([
       caches.open(CACHE_NAME),
-      self.skipWaiting(),
+      self.skipWaiting(), // Immediately trigger 'activate' event
       deleteOldCaches()
     ])
       .then(cache => {
-        console.log(cache);
         return cache[0].addAll(PAGES);
       })
 
@@ -38,8 +37,7 @@ self.addEventListener("install", e => {
 });
 
 self.addEventListener("activate", event => {
-  console.log("ACTIVATING");
-  event.waitUntil(clients.claim());
+  event.waitUntil(clients.claim()); // make the current sw the active sw in all cached pages
 });
 
 async function deleteOldCaches() {
@@ -52,33 +50,33 @@ async function deleteOldCaches() {
   }
 }
 
-self.addEventListener("fetch", event => {
-  if (
-    event.request.mode === "navigate" ||
-    event.request.destination === "style" ||
-    event.request.destination === "script" ||
-    event.request.destination === "image"
-  ) {
-    event.respondWith(cacheResponse(event.request, event));
-  }
-});
+// self.addEventListener("fetch", event => {
+//   if (
+//     event.request.mode === "navigate" ||
+//     event.request.destination === "style" ||
+//     event.request.destination === "script" ||
+//     event.request.destination === "image"
+//   ) {
+//     event.respondWith(cacheResponse(event.request, event));
+//   }
+// });
 
-async function cacheResponse(request, event) {
-  const cache = await caches.open(CACHE_NAME);
-  const match = await cache.match(request.url);
-  if (match) {
-    return match;
-  }
-  // Create promises for both the network response,
-  // and a copy of the response that can be used in the cache.
-  const fetchResponseP = fetch(request);
-  const fetchResponseCloneP = fetchResponseP.then(r => r.clone());
+// async function cacheResponse(request, event) {
+//   const cache = await caches.open(CACHE_NAME);
+//   const match = await cache.match(request.url);
+//   if (match) {
+//     return match;
+//   }
+//   // Create promises for both the network response,
+//   // and a copy of the response that can be used in the cache.
+//   const fetchResponseP = fetch(request);
+//   const fetchResponseCloneP = fetchResponseP.then(r => r.clone());
 
-  event.waitUntil(
-    (async function() {
-      await cache.put(request, await fetchResponseCloneP);
-    })()
-  );
+//   event.waitUntil(
+//     (async function() {
+//       await cache.put(request, await fetchResponseCloneP);
+//     })()
+//   );
 
-  return fetchResponseP;
-}
+//   return fetchResponseP;
+// }
