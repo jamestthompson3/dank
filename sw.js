@@ -1,21 +1,21 @@
 const CACHE_NAME = "posts-%VERSION%";
 const PAGES = [
-  "./pandocoverride.css",
-  "./style.css",
-  "./space.png",
-  "./reset.css",
-  "./blog.css",
-  "./index.html",
-  "./vimloop.html",
-  "./luanvim.html",
-  "./frameworkpt2.html",
-  "./frameworkpt1.html",
-  "./frameworkintro.html",
-  "./vimcandothat.html",
-  "./datastructures.html",
-  "./viiksetjs.html",
-  "./rxjs-recompose.html",
-  "./blogheader.js"
+  "https://teukka.tech/pandocoverride.css",
+  "https://teukka.tech/style.css",
+  "https://teukka.tech/space.png",
+  "https://teukka.tech/reset.css",
+  "https://teukka.tech/blog.css",
+  "https://teukka.tech/index.html",
+  "https://teukka.tech/vimloop.html",
+  "https://teukka.tech/luanvim.html",
+  "https://teukka.tech/frameworkpt2.html",
+  "https://teukka.tech/frameworkpt1.html",
+  "https://teukka.tech/frameworkintro.html",
+  "https://teukka.tech/vimcandothat.html",
+  "https://teukka.tech/datastructures.html",
+  "https://teukka.tech/viiksetjs.html",
+  "https://teukka.tech/rxjs-recompose.html",
+  "https://teukka.tech/blogheader.js"
 ];
 
 // install pages
