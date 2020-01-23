@@ -1,0 +1,15 @@
+{
+  "short_name": "(^_^)",
+  "name": "Taylor's Blog",
+  "icons": [
+    {
+      "src": "ico.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "start_url": "./index.html",
+  "display": "standalone",
+  "theme_color": "#f2bd39",
+  "background_color": "#244066"
+}
