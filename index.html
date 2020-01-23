@@ -13,10 +13,11 @@
     <!-- APPLE STUFF -->
     <meta name="apple-mobile-web-app-capable" content="yes" />
     <meta name="apple-mobile-web-app-title" content="Cool blog, bro" />
-    <meta name="apple-touch-icon" content="https://illlustrations.co/static/day39-pc-20f462fca3cc4b5921e1fc4e0e496727.png" />
-    <meta name="apple-touch-startup-image" content="https://illlustrations.co/static/day39-pc-20f462fca3cc4b5921e1fc4e0e496727.png" />
+    <link rel="apple-touch-icon" href="ico.png" />
+    <meta rel="apple-touch-startup-image" href="ico.png" />
     <meta name="apple-moble-web-app-status-bar-style" content="black" />
-    <link rel="shortcut icon" href="https://illlustrations.co/static/day39-pc-20f462fca3cc4b5921e1fc4e0e496727.png">
+
+    <link rel="shortcut icon" href="ico.png">
     <link rel="manifest" href="manifest.json">
     <meta
       itemprop="description"
@@ -66,35 +67,35 @@
           <!--   </tr> -->
           <!-- </thead> -->
           <tbody class="p1 flex-column" id="posts">
-            <tr role="link" data-href="./vimloop.html">
+            <tr role="link" data-href="vimloop.html">
               <th scope="row"><p>Working with Libuv in Neovim</p>
               </th>
               <td><i>07 Jan. 2020</i></td>
             </tr>
-            <tr role="link" data-href="./luanvim.html">
+            <tr role="link" data-href="luanvim.html">
               <th scope="row"><p>Lua and Neovim</p>
               </th>
               <td><i>16 Dec. 2019</i></td>
             </tr>
-            <tr role="link" data-href="./frameworkpt2.html">
+            <tr role="link" data-href="frameworkpt2.html">
               <th scope="row">
                 <p>BYOFF Part 2: Actions on Mount</p>
               </th>
               <td><i>01 Oct. 2019</i></td>
             </tr>
-            <tr role="link" data-href="./frameworkpt1.html">
+            <tr role="link" data-href="frameworkpt1.html">
               <th scope="row">
                 <p>BYOFF Part 1: Basic Components</p>
               </th>
               <td><i>15 Sept. 2019</i></td>
             </tr>
-            <tr role="link" data-href="./frameworkintro.html">
+            <tr role="link" data-href="frameworkintro.html">
               <th scope="row">
                 <p>Build Your Own Frontend Framework: Intro</p>
               </th>
               <td><i>09 Sept. 2019</i></td>
             </tr>
-            <tr role="link" data-href="./vimcandothat.html">
+            <tr role="link" data-href="vimcandothat.html">
               <th scope="row">
                 <p>Getting the Most Out of Vim: Navigating Code</p>
               </th>
@@ -102,19 +103,19 @@
                 <i>25 Aug. 2019</i>
               </td>
             </tr>
-            <tr role="link" data-href="./datastructures.html">
+            <tr role="link" data-href="datastructures.html">
               <th scope="row">
                 <p> Data Structure Memes For Edgy JavaScript Teens</p>
               </th>
               <td><i>20 Jun. 2019</i></td>
             </tr>
-            <tr role="link" data-href="./viiksetjs.html">
+            <tr role="link" data-href="viiksetjs.html">
               <th scope="row">
                 <p>Data visualization with ViiksetJS</p>
               </th>
               <td><i>02 Nov. 2018</i></td>
             </tr>
-            <tr role="link" data-href="./rxjs-recompose.html">
+            <tr role="link" data-href="rxjs-recompose.html">
               <th role="row">
                 <p>Rxjs and Recompose<p>
                 <th>
@@ -183,7 +184,10 @@ const blogLinks = document.getElementsByTagName('tr')
 for (let i=0; i < blogLinks.length; i++) {
   const currentLink = blogLinks[i]
   if (currentLink.dataset.href) {
-    currentLink.addEventListener('click', () => window.location = window.location + currentLink.dataset.href.replace('./', ''))
+    currentLink.addEventListener('click', () => {
+      const newURL = window.location.href + currentLink.dataset.href
+      window.location.href = newURL
+    })
   }
 }
 
