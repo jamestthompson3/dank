@@ -177,12 +177,10 @@
         </div>
         <div id="readinglist"></div>
     </section>
-    <pre id="debug-pwa" style="overflow:scroll;"></pre>
     <script>
 
 const blogLinks = document.getElementsByTagName('tr')
 
-document.getElementById('debug-pwa').textContent = JSON.stringify(window.location, 2, null)
 for (let i=0; i < blogLinks.length; i++) {
   const currentLink = blogLinks[i]
   if (currentLink.dataset.href) {
