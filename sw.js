@@ -20,35 +20,35 @@ const PAGES = [
 ];
 
 // install pages
-self.addEventListener("install", e => {
-  e.waitUntil(
-    Promise.all([
-      caches.open(CACHE_NAME),
-      self.skipWaiting(), // Immediately trigger 'activate' event
-      deleteOldCaches()
-    ])
-      .then(cache => {
-        return cache[0].addAll(PAGES);
-      })
+self.addEventListener("install", installWorker);
 
-      .catch(e => {
-        console.log("ERROR in install: ", e);
-      })
-  );
-});
+async function installWorker(e) {
+  await self.skipWaiting();
+}
 
-self.addEventListener("activate", event => {
+self.addEventListener("activate", activateServiceWorker);
+
+async function activateServiceWorker(event) {
+  await deleteOldCaches();
+  await installCachedFiles();
   event.waitUntil(clients.claim()); // make the current sw the active sw in all cached pages
-});
+}
+
+async function installCachedFiles() {
+  const cache = await caches.open(CACHE_NAME);
+  return cache.addAll(PAGES);
+}
 
 async function deleteOldCaches() {
-  const keys = await caches.keys(CACHE_NAME);
-
-  for (const key of keys) {
-    if (CACHE_NAME !== key) {
-      caches.delete(key);
+  const keys = await caches.keys();
+  const oldVersions = keys.filter(name => {
+    if (/^posts-(\w{8}(-\w{4}){3}-\w{12}?)/.test(name)) {
+      return true;
+    } else {
+      return false;
     }
-  }
+  });
+  return Promise.all(oldVersions.map(key => caches.delete(key)));
 }
 
 self.addEventListener("fetch", event => {
