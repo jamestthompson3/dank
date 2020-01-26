@@ -1,4 +1,4 @@
-const CACHE_NAME = "posts-994cf192-cae6-4c0e-b420-2257597a3904";
+const CACHE_NAME = "posts-b3b5f859-a493-4a7a-a6f6-9c92aab0e1d4";
 const PAGES = [
   "./ico.png",
   "./pandocoverride.css",
@@ -51,33 +51,33 @@ async function deleteOldCaches() {
   }
 }
 
-// self.addEventListener("fetch", event => {
-//   if (
-//     event.request.mode === "navigate" ||
-//     event.request.destination === "style" ||
-//     event.request.destination === "script" ||
-//     event.request.destination === "image"
-//   ) {
-//     event.respondWith(cacheResponse(event.request, event));
-//   }
-// });
+self.addEventListener("fetch", event => {
+  if (
+    event.request.mode === "navigate" ||
+    event.request.destination === "style" ||
+    event.request.destination === "script" ||
+    event.request.destination === "image"
+  ) {
+    event.respondWith(cacheResponse(event.request, event));
+  }
+});
 
-// async function cacheResponse(request, event) {
-//   const cache = await caches.open(CACHE_NAME);
-//   const match = await cache.match(request.url);
-//   if (match) {
-//     return match;
-//   }
-//   // Create promises for both the network response,
-//   // and a copy of the response that can be used in the cache.
-//   const fetchResponseP = fetch(request);
-//   const fetchResponseCloneP = fetchResponseP.then(r => r.clone());
+async function cacheResponse(request, event) {
+  const cache = await caches.open(CACHE_NAME);
+  const match = await cache.match(request.url);
+  if (match) {
+    return match;
+  }
+  // Create promises for both the network response,
+  // and a copy of the response that can be used in the cache.
+  const fetchResponseP = fetch(request);
+  const fetchResponseCloneP = fetchResponseP.then(r => r.clone());
 
-//   event.waitUntil(
-//     (async function() {
-//       await cache.put(request, await fetchResponseCloneP);
-//     })()
-//   );
+  event.waitUntil(
+    (async function() {
+      await cache.put(request, await fetchResponseCloneP);
+    })()
+  );
 
-//   return fetchResponseP;
-// }
+  return fetchResponseP;
+}
