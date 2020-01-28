@@ -1,4 +1,4 @@
-const CACHE_NAME = "posts-675891f2-0088-48a7-b6d5-7d0375fd0e4b";
+const CACHE_NAME = "posts-b0445686-dae8-4d95-954c-61ccf86f47b7";
 const PAGES = [
   "./ico.png",
   "./pandocoverride.css",
@@ -9,6 +9,7 @@ const PAGES = [
   "./index.html",
   "./vimloop.html",
   "./luanvim.html",
+  "./vimtip-gitlens.html",
   "./frameworkpt2.html",
   "./frameworkpt1.html",
   "./frameworkintro.html",

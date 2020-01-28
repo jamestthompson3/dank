@@ -9,6 +9,7 @@ const PAGES = [
   "./index.html",
   "./vimloop.html",
   "./luanvim.html",
+  "./vimtip-gitlens.html",
   "./frameworkpt2.html",
   "./frameworkpt1.html",
   "./frameworkintro.html",
