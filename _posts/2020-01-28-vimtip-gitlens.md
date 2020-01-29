@@ -1,5 +1,5 @@
 ---
-title: Neovim Tip: GitLens
+title: Neovim Tip - GitLens
 author: Taylor Thompson
 tags: [neovim, lua, productivity]
 description: Replicate the basic functionality VSCode's GitLens in 26 lines of lua
