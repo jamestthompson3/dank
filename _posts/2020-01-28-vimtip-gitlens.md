@@ -7,7 +7,7 @@ date: 28 Jan. 2020
 loc: vimtip-gitlens
 ---
 
-
+## Intro
 [GitLens](https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens) is a VSCode plugin that, among other things, allows you to see the time, commit author, and commit message of the current line. With a little help from to the neovim api and our shell, it we can recreate this functionality in a few lines of lua code.
 
 

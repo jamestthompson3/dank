@@ -19,6 +19,7 @@
     <![endif]-->
   </head>
   <body>
+    <h2 id="intro">Intro</h2>
     <p><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">GitLens</a> is a VSCode plugin that, among other things, allows you to see the time, commit author, and commit message of the current line. With a little help from to the neovim api and our shell, it we can recreate this functionality in a few lines of lua code.</p>
     <h2 id="the-code">The Code</h2>
     <div class="sourceCode" id="cb1"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">-- in utils.lua</span></span>
@@ -60,5 +61,6 @@
 <span class="st">lua</span> vim.api.nvim_command [[autocmd CursorMovedI * lua require&#39;utils&#39;.clearBlameVirtText()]]
 
 hi! link GitLens Comment</code></pre>
+<script src="./blogheader.js"></script>
   </body>
 </html>

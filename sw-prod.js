@@ -1,4 +1,4 @@
-const CACHE_NAME = "posts-b0445686-dae8-4d95-954c-61ccf86f47b7";
+const CACHE_NAME = "posts-c0980e26-65f1-4f33-a6f1-15f6a030b328";
 const PAGES = [
   "./ico.png",
   "./pandocoverride.css",
@@ -65,20 +65,22 @@ self.addEventListener("fetch", event => {
 
 async function cacheResponse(request, event) {
   const cache = await caches.open(CACHE_NAME);
-  const match = await cache.match(request.url);
-  if (match) {
-    return match;
-  }
   // Create promises for both the network response,
   // and a copy of the response that can be used in the cache.
-  const fetchResponseP = fetch(request);
-  const fetchResponseCloneP = fetchResponseP.then(r => r.clone());
+  try {
+    const fetchResponseP = fetch(request);
+    const fetchResponseCloneP = fetchResponseP.then(r => r.clone());
 
-  event.waitUntil(
-    (async function() {
-      await cache.put(request, await fetchResponseCloneP);
-    })()
-  );
-
-  return fetchResponseP;
+    event.waitUntil(
+      (async function() {
+        await cache.put(request, await fetchResponseCloneP);
+      })()
+    );
+    return fetchResponseP;
+  } catch (e) {
+    const match = await cache.match(request.url);
+    if (match) {
+      return match;
+    }
+  }
 }
