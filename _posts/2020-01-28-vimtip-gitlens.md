@@ -16,6 +16,7 @@ loc: vimtip-gitlens
 ```lua
 -- in utils.lua
 local M = {}
+local api = vim.api
 function M.blameVirtText()
   local ft = vim.fn.expand('%:h:t') -- get the current file extension
   if ft == '' then -- if we are in a scratch buffer or unknown filetype
