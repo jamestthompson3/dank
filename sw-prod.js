@@ -1,4 +1,4 @@
-const CACHE_NAME = "posts-03e01d7c-94c9-4b49-adfc-d223d553ac21";
+const CACHE_NAME = "posts-fec5e830-2e7c-4b8d-9ca5-9c19bcaf4083";
 const PAGES = [
   "./ico.png",
   "./pandocoverride.css",
@@ -16,6 +16,7 @@ const PAGES = [
   "./vimcandothat.html",
   "./datastructures.html",
   "./viiksetjs.html",
+  "./proxies.html",
   "./rxjs-recompose.html",
   "./blogheader.js"
 ];

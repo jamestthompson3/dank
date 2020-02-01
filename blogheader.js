@@ -12,8 +12,8 @@
   const main = document.querySelector(".mainwrapper");
   body.insertBefore(header, body.childNodes[0]);
 
-  main.addEventListener("touchMove", touchMove, false);
-  main.addEventListener("touchStart", touchStart, false);
+  body.addEventListener("touchMove", touchMove, false);
+  body.addEventListener("touchStart", touchStart, false);
 
   function touchStart(event) {
     start.x = event.touches[0].pageX;

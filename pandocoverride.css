@@ -91,7 +91,7 @@ h1 {
   text-align: center;
 }
 
-h1, h2 {
+h1, h2, h3 {
   font-family: 'B612 Mono', monospace;
 }
 
@@ -121,6 +121,13 @@ h2 {
   font-weight: bold;
   margin: 1rem 0rem;
   padding: 0px 10px;
+}
+
+h3 {
+  color: #fff;
+  font-weight: bold;
+  margin: 1rem 0rem;
+  text-align: center;
 }
 
 h4 {

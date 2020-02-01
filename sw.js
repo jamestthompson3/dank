@@ -16,6 +16,7 @@ const PAGES = [
   "./vimcandothat.html",
   "./datastructures.html",
   "./viiksetjs.html",
+  "./proxies.html",
   "./rxjs-recompose.html",
   "./blogheader.js"
 ];
