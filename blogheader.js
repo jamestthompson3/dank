@@ -32,4 +32,37 @@
       }
     }
   }
+
+function copyFallback(){
+  const input = document.createElement('textarea')
+  input.value = "https://teukka.tech/feed.xml"
+  input.style.display = "none"
+  document.head.appendChild(input)
+  input.focus()
+  input.select()
+  <!-- input.setSelectionRange(0,9999) -->
+  document.execCommand('copy')
+  document.head.removeChild(input)
+}
+
+
+  function copyFeed() {
+    const text = document.getElementById("feed");
+    if (!navigator.clipboard) {
+      copyFallback();
+    } else {
+      navigator.clipboard.writeText("https://teukka.tech/feed.xml");
+    }
+    text.classList.add("tooltip");
+    setTimeout(() => {
+      text.classList.remove("tooltip");
+    }, 600);
+  }
+
+  const footer = document.createElement("span");
+  footer.innerHTML =
+    '<p tabindex="1" data-tip="link copied!" class="footer" id="feed">📃 Follow the RSS feed</p>';
+  body.appendChild(footer);
+  const feed = document.getElementById("feed");
+  feed.addEventListener("click", copyFeed);
 })();

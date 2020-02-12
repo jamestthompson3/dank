@@ -157,12 +157,22 @@ li {
   text-align: justify;
 }
 
+.footer {
+  width: 30%;
+  color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  margin: 3rem auto;
+  text-align: center;
+  cursor: pointer;
+}
+
 
 @media(max-width: 450px) {
   body {
     padding: 0rem;
   }
-  pre {
+  pre, .footer {
     width: 95%;
   }
 }
