@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<OpenSearchDescription xmlns="http://a9.com/-/spec/opensearch/1.1/">
+ <ShortName>teukka.tech</ShortName>
+ <Description>Use Duck Duck Go to search teukka.tech</Description>
+  <Image width="16" height="16" type="image/x-icon">https://teukka.tech/ico.png</Image>
+ <Tags>technology webdev</Tags>
+ <Url type="text/html"
+      template="http://www.duckduckgo.com/search?q=site:teukka.tech+{searchTerms}"/>
+<Url type="application/opensearchdescription+xml"
+     rel="self"
+     template="https://teukka.tech/opensearchdescription.xml" />
+</OpenSearchDescription>
