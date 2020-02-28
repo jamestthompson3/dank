@@ -29,6 +29,12 @@ li {
   text-align: left;
 }
     </style>
+
+<script>
+	// Only load on production environment.
+	if (window.location.host !== 'teukka.tech')
+		window.goatcounter = {no_onload: true};
+</script>
   </head>
   <body>
     <div class="mainwrapper">

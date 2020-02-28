@@ -21,6 +21,12 @@
       href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
       rel="stylesheet"
     />
+
+<script>
+	// Only load on production environment.
+	if (window.location.host !== 'teukka.tech')
+		window.goatcounter = {no_onload: true};
+</script>
   </head>
   <title>🧙‍♂️ RXJS + Recompose</title>
   <body>

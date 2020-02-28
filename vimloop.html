@@ -21,6 +21,11 @@
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
+<script>
+	// Only load on production environment.
+	if (window.location.host !== 'teukka.tech')
+		window.goatcounter = {no_onload: true};
+</script>
 </head>
 <body>
 <header id="title-block-header">
@@ -80,7 +85,7 @@ nnoremap &lt;leader&gt;c :lua require&#39;markdown&#39;.convertFile()&lt;CR&gt;<
 <span id="cb4-8"><a href="#cb4-8"></a>  <span class="kw">local</span> stdout <span class="op">=</span> loop<span class="op">.</span>new_pipe<span class="op">(</span><span class="kw">false</span><span class="op">)</span> <span class="co">-- create file descriptor for stdout</span></span>
 <span id="cb4-9"><a href="#cb4-9"></a>  <span class="kw">local</span> stderr <span class="op">=</span> loop<span class="op">.</span>new_pipe<span class="op">(</span><span class="kw">false</span><span class="op">)</span> <span class="co">-- create file descriptor for stdout</span></span>
 <span id="cb4-10"><a href="#cb4-10"></a>  handle <span class="op">=</span> loop<span class="op">.</span>spawn<span class="op">(</span><span class="st">&#39;rg&#39;</span><span class="op">,</span> <span class="op">{</span></span>
-<span id="cb4-11"><a href="#cb4-11"></a>    args <span class="op">=</span> <span class="op">{</span>term<span class="op">,</span> <span class="st">&#39;--vimgrep&#39;</span><span class="op">,</span> <span class="st">&#39;--smart-case&#39;</span><span class="op">},</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a>    args <span class="op">=</span> <span class="op">{</span>term<span class="op">,</span> <span class="st">&#39;--vimgrep&#39;</span><span class="op">,</span> <span class="st">&#39;--smart-case&#39;</span><span class="op">,</span> <span class="st">&#39;--block-buffered&#39;</span><span class="op">},</span></span>
 <span id="cb4-12"><a href="#cb4-12"></a>    stdio <span class="op">=</span> <span class="op">{</span>stdout<span class="op">,</span>stderr<span class="op">}</span></span>
 <span id="cb4-13"><a href="#cb4-13"></a>  <span class="op">},</span></span>
 <span id="cb4-14"><a href="#cb4-14"></a>  <span class="kw">function</span><span class="op">()</span></span>
@@ -104,9 +109,14 @@ nnoremap &lt;leader&gt;c :lua require&#39;markdown&#39;.convertFile()&lt;CR&gt;<
 <span id="cb5-6"><a href="#cb5-6"></a>    <span class="co">-- </span><span class="al">TODO</span><span class="co"> handle err</span></span>
 <span id="cb5-7"><a href="#cb5-7"></a>  <span class="cf">end</span></span>
 <span id="cb5-8"><a href="#cb5-8"></a>  <span class="cf">if</span> data <span class="cf">then</span></span>
-<span id="cb5-9"><a href="#cb5-9"></a>    <span class="fu">table.insert</span><span class="op">(</span>results<span class="op">,</span> data<span class="op">)</span></span>
-<span id="cb5-10"><a href="#cb5-10"></a>  <span class="cf">end</span></span>
-<span id="cb5-11"><a href="#cb5-11"></a><span class="cf">end</span></span></code></pre></div>
+<span id="cb5-9"><a href="#cb5-9"></a>    <span class="kw">local</span> vals <span class="op">=</span> vim<span class="op">.</span>split<span class="op">(</span>data<span class="op">,</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">)</span></span>
+<span id="cb5-10"><a href="#cb5-10"></a>    <span class="cf">for</span> <span class="cn">_</span><span class="op">,</span> d <span class="kw">in</span> <span class="fu">pairs</span><span class="op">(</span>vals<span class="op">)</span> <span class="cf">do</span></span>
+<span id="cb5-11"><a href="#cb5-11"></a>      <span class="cf">if</span> d <span class="op">==</span> <span class="st">&quot;&quot;</span> <span class="cf">then</span> <span class="cf">goto</span> continue <span class="cf">end</span></span>
+<span id="cb5-12"><a href="#cb5-12"></a>      <span class="fu">table.insert</span><span class="op">(</span>results<span class="op">,</span> d<span class="op">)</span></span>
+<span id="cb5-13"><a href="#cb5-13"></a>      <span class="op">::</span>continue<span class="op">::</span></span>
+<span id="cb5-14"><a href="#cb5-14"></a>    <span class="cf">end</span></span>
+<span id="cb5-15"><a href="#cb5-15"></a>  <span class="cf">end</span></span>
+<span id="cb5-16"><a href="#cb5-16"></a><span class="cf">end</span></span></code></pre></div>
 <p>The <code>onread</code> callback takes data written to our file descriptor by the <code>ripgrep</code> process and appends a table called <code>results</code>. We now want to add functionality to our <code>asyncGrep</code> function that will allow us to use these results to set the quickfix list:</p>
 <div class="sourceCode" id="cb6"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb6-1"><a href="#cb6-1"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>asyncGrep<span class="op">(</span>term<span class="op">)</span></span>
 <span id="cb6-2"><a href="#cb6-2"></a>  <span class="kw">local</span> stdout <span class="op">=</span> loop<span class="op">.</span>new_pipe<span class="op">(</span><span class="kw">false</span><span class="op">)</span> <span class="co">-- create file descriptor for stdout</span></span>
@@ -140,15 +150,22 @@ nnoremap &lt;leader&gt;c :lua require&#39;markdown&#39;.convertFile()&lt;CR&gt;<
 <span id="cb7-4"><a href="#cb7-4"></a><span class="kw">local</span> api <span class="op">=</span> vim<span class="op">.</span>api</span>
 <span id="cb7-5"><a href="#cb7-5"></a><span class="kw">local</span> results <span class="op">=</span> <span class="op">{}</span></span>
 <span id="cb7-6"><a href="#cb7-6"></a></span>
+<span id="cb7-6"><a href="#cb7-6"></a></span>
 <span id="cb7-7"><a href="#cb7-7"></a><span class="kw">local</span> <span class="kw">function</span> onread<span class="op">(</span>err<span class="op">,</span> data<span class="op">)</span></span>
 <span id="cb7-8"><a href="#cb7-8"></a>  <span class="cf">if</span> err <span class="cf">then</span></span>
 <span id="cb7-9"><a href="#cb7-9"></a>    <span class="co">-- print(&#39;ERROR: &#39;, err)</span></span>
 <span id="cb7-10"><a href="#cb7-10"></a>    <span class="co">-- </span><span class="al">TODO</span><span class="co"> handle err</span></span>
 <span id="cb7-11"><a href="#cb7-11"></a>  <span class="cf">end</span></span>
 <span id="cb7-12"><a href="#cb7-12"></a>  <span class="cf">if</span> data <span class="cf">then</span></span>
-<span id="cb7-13"><a href="#cb7-13"></a>    <span class="fu">table.insert</span><span class="op">(</span>results<span class="op">,</span> data<span class="op">)</span></span>
-<span id="cb7-14"><a href="#cb7-14"></a>  <span class="cf">end</span></span>
-<span id="cb7-15"><a href="#cb7-15"></a><span class="cf">end</span></span>
+<span id="cb7-13"><a href="#cb7-13"></a>    <span class="kw">local</span> vals <span class="op">=</span> vim<span class="op">.</span>split<span class="op">(</span>data<span class="op">,</span> <span class="st">&quot;</span><span class="sc">\n</span><span class="st">&quot;</span><span class="op">)</span></span>
+<span id="cb7-14"><a href="#cb7-14"></a>    <span class="cf">for</span> <span class="cn">_</span><span class="op">,</span> d <span class="kw">in</span> <span class="fu">pairs</span><span class="op">(</span>vals<span class="op">)</span> <span class="cf">do</span></span>
+<span id="cb7-15"><a href="#cb7-15"></a>      <span class="cf">if</span> d <span class="op">==</span> <span class="st">&quot;&quot;</span> <span class="cf">then</span> <span class="cf">goto</span> continue <span class="cf">end</span></span>
+<span id="cb7-16"><a href="#cb7-16"></a>      <span class="fu">table.insert</span><span class="op">(</span>results<span class="op">,</span> d<span class="op">)</span></span>
+<span id="cb7-17"><a href="#cb7-17"></a>      <span class="op">::</span>continue<span class="op">::</span></span>
+<span id="cb7-18"><a href="#cb7-18"></a>    <span class="cf">end</span></span>
+<span id="cb7-19"><a href="#cb7-19"></a>  <span class="cf">end</span></span>
+<span id="cb7-20"><a href="#cb7-20"></a><span class="cf">end</span></span>
+<span id="cb7-21"><a href="#cb7-21"></a></span>
 <span id="cb7-16"><a href="#cb7-16"></a></span>
 <span id="cb7-17"><a href="#cb7-17"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>asyncGrep<span class="op">(</span>term<span class="op">)</span></span>
 <span id="cb7-18"><a href="#cb7-18"></a>  <span class="kw">local</span> stdout <span class="op">=</span> vim<span class="op">.</span>loop<span class="op">.</span>new_pipe<span class="op">(</span><span class="kw">false</span><span class="op">)</span></span>

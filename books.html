@@ -47,6 +47,12 @@
         }
       }
     </style>
+
+<script>
+	// Only load on production environment.
+	if (window.location.host !== 'teukka.tech')
+		window.goatcounter = {no_onload: true};
+</script>
   </head>
   <title>Favorite Books</title>
   <body>

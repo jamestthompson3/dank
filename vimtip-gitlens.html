@@ -18,6 +18,12 @@
       href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
       rel="stylesheet"
       />
+
+<script>
+	// Only load on production environment.
+	if (window.location.host !== 'teukka.tech')
+		window.goatcounter = {no_onload: true};
+</script>
     <!--[if lt IE 9]>
       <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
     <![endif]-->
