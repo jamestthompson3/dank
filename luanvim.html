@@ -48,6 +48,7 @@ EOF</code></pre>
 </ul>
 <p>One important note here is that Neovim will look for lua code in the <code>runtimepath</code> you’ve set in your settings. Additionally, it will append your runtimepath with <code>/lua/?.lua</code> and <code>/lua/?/init.lua</code> so it is common practice to see a <code>/lua</code> sub-directory inside <code>.nvim</code>. For more detailed information about where Neovim looks for lua code, check out <code>:h lua-require</code>.</p>
 <h2 id="your-first-function">Your First Function</h2>
+<blockquote><h4><em>Disclaimer</em></h4><br /><span>Some of the following code uses the <pre>vim.bo</pre> API call that is currently only available in the master branch of neovim</span></blockquote>
 <p>Porting your <code>init.vim</code> to lua can be a big undertaking, so it’s best to start small. For the first example, we’ll create a function which creates a scratch buffer.</p>
 <p>This function will live in a file we’ll call <code>tools</code>, so create it in the <code>lua</code> directory in your nvim config: <code>~/.config/nvim/lua/tools.lua</code>. Once we’ve created the file, we’ll fill it out with some boilerplate:</p>
 <div class="sourceCode" id="cb2"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">-- in tools.lua</span></span>

@@ -167,6 +167,22 @@ li {
   cursor: pointer;
 }
 
+blockquote {
+  background: #333;
+  padding: 12px;
+  border-radius: 5px;
+  border-left: 5px solid #6894db;
+  color: rgb(209, 206, 199);
+}
+
+blockquote pre {
+  display: inline;
+}
+
+blockquote h4 {
+  margin: 0;
+}
+
 
 @media(max-width: 450px) {
   body {
