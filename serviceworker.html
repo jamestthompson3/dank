@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
+    <meta name="author" content="Taylor Thompson" />
+    <meta property="og:title" content="Using Serivce Workers to cache content" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://teukka.tech/serviceworker.html" />
+    <meta property="og:description" content="improve your website's offline experience" />
+    <meta name="description" content="improve your websit'es offline experience" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1573325743508-f6eef36bb65f?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80" />
+    <meta name="robots" content="index, follow">
+    <title> 👷 Using Service Workers to Cache Content</title>
+    <link rel="stylesheet" href="./pandocoverride.css" />
+    <link href="tooltip.css" rel="stylesheet" />
+
+    <link
+      href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
+      rel="stylesheet"
+      />
+
+<script>
+	// Only load on production environment.
+	if (window.location.host !== 'teukka.tech')
+		window.goatcounter = {no_onload: true};
+</script>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+</head>
+<body>
+<hr />
+<h2 id="working-hard-or-hardly-working">Working Hard, or Hardly Working?</h2>
+<p>The Service Worker API is a powerful tool for providing better offline experiences, push notifications, and background syncing for web applications. Like me, you may be familiar with service workers from the role they play in creating Progressive Web Apps (PWAs), or from seeing them registered as part of the build output of <code>create-react-app</code>. While this automatic output from build tools such as <code>create-react-app</code> is very useful in getting started with PWAs, using the Service Worker API is much more beneficial to your application when tailored to your use cases. Let's dive into the Service Worker API to see how it provides a better user experience in some common use cases, starting with caching network responses.</p>
+<p>A great place to start for any Web API is the MDN Page. In the case of the Service Worker API, MDN offers the <a href="https://developer.mozilla.org/en-US/docs/Web/API/Service_Worker_API">following paragraph</a> as an introduction:</p>
+<blockquote>
+<p>Service workers essentially act as proxy servers that sit between web applications, the browser, and the network (when available). They are intended, among other things, to enable the creation of effective offline experiences, intercept network requests and take appropriate action based on whether the network is available, and update assets residing on the server. They will also allow access to push notifications and background sync APIs.</p>
+</blockquote>
+<p>Since service workers act as a man in the middle between the browser, network, and your application, their potential is huge! However, this means that the potential for abuse is also huge, and to combat this abuse, browsers have built in security measures around the Service Worker API. Some of these security measures are: service workers are <em>only</em> registered over HTTPS or from your <code>localhost</code>, and only registered from the same origin as the current page. Working in Firefox, you enable service workers over HTTP in your developer tools console, and inspect and debug registered service workers in <code>about:debugging</code>.</p>
+<h2 id="cache-money">Cache Money</h2>
+<p>Content Caching is a great starting point for utilizing service workers, and tools like <code>create-react-app</code> implement by default. Caching static assets is one of the first steps in creating a PWA. Let's dive into caching by looking at the code for caching this blog for offline use! If you open up your devloper tools on the <a href="https://teukka.tech">homepage</a> of this blog, you'll find an <code>index.js</code> file that has this content:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">function</span> <span class="at">registerSW</span>() <span class="op">{</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a>  <span class="cf">if</span> (<span class="va">location</span>.<span class="at">hostname</span> <span class="op">===</span> <span class="st">&quot;localhost&quot;</span>) <span class="cf">return</span><span class="op">;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a>  <span class="cf">if</span> (<span class="st">&quot;serviceWorker&quot;</span> <span class="kw">in</span> navigator) <span class="op">{</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>    <span class="va">navigator</span>.<span class="va">serviceWorker</span>.<span class="at">register</span>(<span class="st">&quot;/sw-prod.js&quot;</span>).<span class="at">catch</span>(e <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>      <span class="va">console</span>.<span class="at">log</span>(<span class="st">&quot;Registration fail: &quot;</span><span class="op">,</span> e)<span class="op">;</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="op">}</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="op">}</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a></span>
+<span id="cb1-10"><a href="#cb1-10"></a><span class="at">registerSW</span>()<span class="op">;</span></span></code></pre></div>
+<p>This is the code for registering the service worker for this site. On its own, it's not very compelling or informative, to really understand what's going on under the hood, we need to take a look at the <code>sw-prod.js</code> file. Inspect this file by opening Firefox's <code>about:debugging</code> in a new tab, selecting the service worker for this domain, and clicking <code>inspect</code> (or if it's not running, clicking <code>run</code>, and then <code>inspect</code>).</p>
+<h3 id="what-to-cache">What to cache</h3>
+<p>Now that you have the service worker code let's break it down:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb2-1"><a href="#cb2-1"></a><span class="kw">const</span> CACHE_NAME <span class="op">=</span> <span class="st">&quot;posts-{someUUID}&quot;</span><span class="op">;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">const</span> PAGES <span class="op">=</span> [</span>
+<span id="cb2-3"><a href="#cb2-3"></a>  <span class="st">&quot;./ico.png&quot;</span><span class="op">,</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a>  <span class="st">&quot;./pandocoverride.css&quot;</span><span class="op">,</span></span>
+<span id="cb2-5"><a href="#cb2-5"></a>  <span class="st">&quot;./style.css&quot;</span><span class="op">,</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="st">&quot;./space.png&quot;</span><span class="op">,</span></span>
+<span id="cb2-7"><a href="#cb2-7"></a>  <span class="st">&quot;./reset.css&quot;</span><span class="op">,</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>  <span class="st">&quot;./blog.css&quot;</span><span class="op">,</span></span>
+<span id="cb2-9"><a href="#cb2-9"></a>  <span class="st">&quot;./index.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-10"><a href="#cb2-10"></a>  <span class="st">&quot;./vimloop.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-11"><a href="#cb2-11"></a>  <span class="st">&quot;./luanvim.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>  <span class="st">&quot;./vimtip-gitlens.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-13"><a href="#cb2-13"></a>  <span class="st">&quot;./frameworkpt2.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-14"><a href="#cb2-14"></a>  <span class="st">&quot;./frameworkpt1.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-15"><a href="#cb2-15"></a>  <span class="st">&quot;./frameworkintro.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-16"><a href="#cb2-16"></a>  <span class="st">&quot;./vimcandothat.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-17"><a href="#cb2-17"></a>  <span class="st">&quot;./datastructures.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-18"><a href="#cb2-18"></a>  <span class="st">&quot;./viiksetjs.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-19"><a href="#cb2-19"></a>  <span class="st">&quot;./proxies.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-20"><a href="#cb2-20"></a>  <span class="st">&quot;./rxjs-recompose.html&quot;</span><span class="op">,</span></span>
+<span id="cb2-21"><a href="#cb2-21"></a>  <span class="st">&quot;./blogheader.js&quot;</span></span>
+<span id="cb2-22"><a href="#cb2-22"></a>]<span class="op">;</span></span>
+<span id="cb2-23"><a href="#cb2-23"></a></span>
+<span id="cb2-24"><a href="#cb2-24"></a><span class="co">// install pages</span></span>
+<span id="cb2-25"><a href="#cb2-25"></a><span class="va">self</span>.<span class="at">addEventListener</span>(<span class="st">&quot;install&quot;</span><span class="op">,</span> installWorker)<span class="op">;</span></span>
+<span id="cb2-26"><a href="#cb2-26"></a></span>
+<span id="cb2-27"><a href="#cb2-27"></a><span class="kw">async</span> <span class="kw">function</span> <span class="at">installWorker</span>(e) <span class="op">{</span></span>
+<span id="cb2-28"><a href="#cb2-28"></a>  <span class="cf">await</span> <span class="va">self</span>.<span class="at">skipWaiting</span>()<span class="op">;</span></span>
+<span id="cb2-29"><a href="#cb2-29"></a><span class="op">}</span></span>
+<span id="cb2-30"><a href="#cb2-30"></a><span class="co">// ...continues below</span></span></code></pre></div>
+<h3 id="service-worker-life-cycle">Service Worker life cycle</h3>
+<p>This snippet handles the installation event, as well assigning a value for the cache name and the pages to be initially cached. The interesting part of this code is the function that gets called on the <code>install</code> event. Installation is the first event in the <a href="https://developer.mozilla.org/en-US/docs/Web/API/ServiceWorkerState">service worker lifecycle</a>, it gets kicked off by the <code>register</code> function in <code>index.js</code>. In our <code>installWorker</code> function, we call the <code>skipWaiting</code> method on the service worker, which causes the waiting service worker (in this case the one we are trying to install) to become the active service worker. Let's move on to the next section:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="va">self</span>.<span class="at">addEventListener</span>(<span class="st">&quot;activate&quot;</span><span class="op">,</span> activateServiceWorker)<span class="op">;</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a></span>
+<span id="cb3-3"><a href="#cb3-3"></a><span class="kw">async</span> <span class="kw">function</span> <span class="at">activateServiceWorker</span>(event) <span class="op">{</span></span>
+<span id="cb3-4"><a href="#cb3-4"></a>  <span class="cf">await</span> <span class="at">deleteOldCaches</span>()<span class="op">;</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>  <span class="cf">await</span> <span class="at">installCachedFiles</span>()<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>  <span class="va">event</span>.<span class="at">waitUntil</span>(<span class="va">clients</span>.<span class="at">claim</span>())<span class="op">;</span> <span class="co">// make the current sw the active sw in all cached pages</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a><span class="op">}</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a></span>
+<span id="cb3-9"><a href="#cb3-9"></a><span class="kw">async</span> <span class="kw">function</span> <span class="at">installCachedFiles</span>() <span class="op">{</span></span>
+<span id="cb3-10"><a href="#cb3-10"></a>  <span class="kw">const</span> cache <span class="op">=</span> <span class="cf">await</span> <span class="va">caches</span>.<span class="at">open</span>(CACHE_NAME)<span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a>  <span class="cf">return</span> <span class="va">cache</span>.<span class="at">addAll</span>(PAGES)<span class="op">;</span></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="op">}</span></span>
+<span id="cb3-13"><a href="#cb3-13"></a></span>
+<span id="cb3-14"><a href="#cb3-14"></a><span class="kw">async</span> <span class="kw">function</span> <span class="at">deleteOldCaches</span>() <span class="op">{</span></span>
+<span id="cb3-15"><a href="#cb3-15"></a>  <span class="kw">const</span> keys <span class="op">=</span> <span class="cf">await</span> <span class="va">caches</span>.<span class="at">keys</span>()<span class="op">;</span></span>
+<span id="cb3-16"><a href="#cb3-16"></a>  <span class="kw">const</span> oldVersions <span class="op">=</span> <span class="va">keys</span>.<span class="at">filter</span>(name <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb3-17"><a href="#cb3-17"></a>    <span class="cf">if</span> (<span class="ss">/</span><span class="sc">^</span><span class="ss">posts-</span><span class="sc">(\w{8}(</span><span class="ss">-</span><span class="sc">\w{4}){3}</span><span class="ss">-</span><span class="sc">\w{12}?)</span><span class="ss">/</span>.<span class="at">test</span>(name)) <span class="op">{</span></span>
+<span id="cb3-18"><a href="#cb3-18"></a>      <span class="cf">return</span> <span class="kw">true</span><span class="op">;</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a>    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></span>
+<span id="cb3-20"><a href="#cb3-20"></a>      <span class="cf">return</span> <span class="kw">false</span><span class="op">;</span></span>
+<span id="cb3-21"><a href="#cb3-21"></a>    <span class="op">}</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a>  <span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb3-23"><a href="#cb3-23"></a>  <span class="cf">return</span> <span class="va">Promise</span>.<span class="at">all</span>(<span class="va">oldVersions</span>.<span class="at">map</span>(key <span class="kw">=&gt;</span> <span class="va">caches</span>.<span class="at">delete</span>(key)))<span class="op">;</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a><span class="op">}</span></span>
+<span id="cb3-25"><a href="#cb3-25"></a><span class="co">// ...continues below</span></span></code></pre></div>
+<p>After the service worker is installed, it activates, calling the <code>activateServiceWorker</code> function we registered on the <code>activate</code> event. When our service worker is activated, we want to delete the old cache and install the current version of the files denoted in the <code>PAGES</code> array in the new cache. The function, <code>deleteOldCaches</code> gets all of the cache keys (which are the old versions of <code>CACHE_NAME</code>), and checks them to see if they match the format we've given to our <code>CACHE_NAME</code>. We don't simply clear <em>all</em> the keys in the cache because we may have several service workers running at a time, and clearing their data may have unintended consequences, so this service worker only removes data that it has placed in the cache itself.</p>
+<p>Installing the new versions of the blog posts requires opening a cache with the key of <code>CACHE_NAME</code>, and using the <code>addAll</code> method to specify that we want to add everything in the <code>PAGES</code> array to be added. After deleting old versions of the cache and installing the latest posts, the <code>clients.claim()</code> call allows the current service worker to become the active service worker on all pages in its scope. Wrapping <code>clients.claim()</code> inside of <code>event.waitUntil()</code> is an important step because it prevents the browser from interrupting the claim process which could lead to the service worker becoming active on some pages but not on others within its scope. Let's break down the final section:</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode js"><code class="sourceCode javascript"><span id="cb4-1"><a href="#cb4-1"></a><span class="va">self</span>.<span class="at">addEventListener</span>(<span class="st">&quot;fetch&quot;</span><span class="op">,</span> event <span class="kw">=&gt;</span> <span class="op">{</span></span>
+<span id="cb4-2"><a href="#cb4-2"></a>  <span class="cf">if</span> (</span>
+<span id="cb4-3"><a href="#cb4-3"></a>    <span class="va">event</span>.<span class="va">request</span>.<span class="at">mode</span> <span class="op">===</span> <span class="st">&quot;navigate&quot;</span> <span class="op">||</span></span>
+<span id="cb4-4"><a href="#cb4-4"></a>    <span class="va">event</span>.<span class="va">request</span>.<span class="at">destination</span> <span class="op">===</span> <span class="st">&quot;style&quot;</span> <span class="op">||</span></span>
+<span id="cb4-5"><a href="#cb4-5"></a>    <span class="va">event</span>.<span class="va">request</span>.<span class="at">destination</span> <span class="op">===</span> <span class="st">&quot;script&quot;</span> <span class="op">||</span></span>
+<span id="cb4-6"><a href="#cb4-6"></a>    <span class="va">event</span>.<span class="va">request</span>.<span class="at">destination</span> <span class="op">===</span> <span class="st">&quot;image&quot;</span></span>
+<span id="cb4-7"><a href="#cb4-7"></a>  ) <span class="op">{</span></span>
+<span id="cb4-8"><a href="#cb4-8"></a>    <span class="va">event</span>.<span class="at">respondWith</span>(<span class="at">cacheResponse</span>(<span class="va">event</span>.<span class="at">request</span><span class="op">,</span> event))<span class="op">;</span></span>
+<span id="cb4-9"><a href="#cb4-9"></a>  <span class="op">}</span></span>
+<span id="cb4-10"><a href="#cb4-10"></a><span class="op">}</span>)<span class="op">;</span></span>
+<span id="cb4-11"><a href="#cb4-11"></a></span>
+<span id="cb4-12"><a href="#cb4-12"></a><span class="kw">async</span> <span class="kw">function</span> <span class="at">cacheResponse</span>(request<span class="op">,</span> event) <span class="op">{</span></span>
+<span id="cb4-13"><a href="#cb4-13"></a>  <span class="kw">const</span> cache <span class="op">=</span> <span class="cf">await</span> <span class="va">caches</span>.<span class="at">open</span>(CACHE_NAME)<span class="op">;</span></span>
+<span id="cb4-14"><a href="#cb4-14"></a>  <span class="kw">const</span> match <span class="op">=</span> <span class="cf">await</span> <span class="va">cache</span>.<span class="at">match</span>(<span class="va">request</span>.<span class="at">url</span>)<span class="op">;</span></span>
+<span id="cb4-15"><a href="#cb4-15"></a>  <span class="cf">if</span> (match) <span class="op">{</span></span>
+<span id="cb4-16"><a href="#cb4-16"></a>    <span class="cf">return</span> match<span class="op">;</span></span>
+<span id="cb4-17"><a href="#cb4-17"></a>  <span class="op">}</span></span>
+<span id="cb4-18"><a href="#cb4-18"></a>  <span class="co">// Create promises for both the network response,</span></span>
+<span id="cb4-19"><a href="#cb4-19"></a>  <span class="co">// and a copy of the response that can be used in the cache.</span></span>
+<span id="cb4-20"><a href="#cb4-20"></a>  <span class="kw">const</span> fetchResponseP <span class="op">=</span> <span class="at">fetch</span>(request)<span class="op">;</span></span>
+<span id="cb4-21"><a href="#cb4-21"></a>  <span class="kw">const</span> fetchResponseCloneP <span class="op">=</span> <span class="va">fetchResponseP</span>.<span class="at">then</span>(r <span class="kw">=&gt;</span> <span class="va">r</span>.<span class="at">clone</span>())<span class="op">;</span></span>
+<span id="cb4-22"><a href="#cb4-22"></a></span>
+<span id="cb4-23"><a href="#cb4-23"></a>  <span class="va">event</span>.<span class="at">waitUntil</span>(</span>
+<span id="cb4-24"><a href="#cb4-24"></a>    (<span class="kw">async</span> <span class="kw">function</span>() <span class="op">{</span></span>
+<span id="cb4-25"><a href="#cb4-25"></a>      <span class="cf">await</span> <span class="va">cache</span>.<span class="at">put</span>(request<span class="op">,</span> <span class="cf">await</span> fetchResponseCloneP)<span class="op">;</span></span>
+<span id="cb4-26"><a href="#cb4-26"></a>    <span class="op">}</span>)()</span>
+<span id="cb4-27"><a href="#cb4-27"></a>  )<span class="op">;</span></span>
+<span id="cb4-28"><a href="#cb4-28"></a></span>
+<span id="cb4-29"><a href="#cb4-29"></a>  <span class="cf">return</span> fetchResponseP<span class="op">;</span></span>
+<span id="cb4-30"><a href="#cb4-30"></a><span class="op">}</span></span></code></pre></div>
+<h3 id="going-to-the-network">Going to the network</h3>
+<p>In this segment of the service worker code, we are adding an event listener for <code>fetch</code> events and responding with a cached response under certain conditions. The conditions we are checking before responding with cached response are: if the request is a navigation event (loading this blog post in your browser for example), or if the browser requests additional resources like CSS, Javascript, or images. To illustrate this flow, we'll take a look at two different resources requested by this website, <code>vimtip-gitlens.html</code> and <code>bb8_1.svg</code>.</p>
+<p>Since <code>vimtip-gitlens.html</code> is specified in the <code>PAGES</code> array we cached on service worker activation, we'll look at it first. When you navigate to <a href="https://teukka.tech/vimtip-gitlens.html">the post</a>, the <code>event.respondWith</code> function is executed with the value from <code>cacheResponse</code> being evaluated. Using <code>event.respondWith</code> tells the service worker to intercept the request and respond with the argument passed to this function. Let's step through the <code>cacheResponse</code> function: we first open the current cache (as denoted with the <code>CACHE_NAME</code>) and check to see if there are any entries for the URL of the incoming request. If we've cached this URL before, we return the cached response--avoiding a network call. If the service worker can't find the URL from its cache, then makes a network request and places the response into the cache while returning the <em>Promise</em> containing the response back to our main application. Putting the response in the cache is wrapped inside <code>event.waitUntil</code> to ensure that the browser does not interrupt the service worker while updating.</p>
+<h3 id="wrapping-up">Wrapping up</h3>
+<p>The final step in this example is making sure that the service worker always reflects the most up to date content. This means that every time we make a change to one of our cached assets, we update the <code>CACHE_NAME</code> in the service worker. For this blog, I created a bash script that helps ensure I don't forget to update my service worker cache:</p>
+<div class="sourceCode" id="cb5"><pre class="sourceCode bash"><code class="sourceCode bash"><span id="cb5-1"><a href="#cb5-1"></a><span class="co">#!/bin/bash</span></span>
+<span id="cb5-2"><a href="#cb5-2"></a></span>
+<span id="cb5-3"><a href="#cb5-3"></a><span class="va">UUID=$(</span><span class="fu">cat</span> /proc/sys/kernel/random/uuid<span class="va">)</span></span>
+<span id="cb5-4"><a href="#cb5-4"></a><span class="fu">rm</span> -f sw-prod.js</span>
+<span id="cb5-5"><a href="#cb5-5"></a><span class="fu">cp</span> sw.js sw-prod.js</span>
+<span id="cb5-6"><a href="#cb5-6"></a><span class="fu">sed</span> -i <span class="st">&quot;s/%VERSION%/</span><span class="va">$UUID</span><span class="st">/g&quot;</span> sw-prod.js</span>
+<span id="cb5-7"><a href="#cb5-7"></a><span class="bu">echo</span> <span class="st">&quot;Built version: </span><span class="va">${UUID}</span><span class="st">&quot;</span></span></code></pre></div>
+<p>I use the <code>uuid</code> functionality built into Linux to generate a unique name for my cache, then I copy my service worker code with a placeholder for <code>CACHE_NAME</code> to the <code>sw-prod.js</code> file. The final step is to replace my placeholder cache name with the unique identifier I generated.</p>
+<p>Caching static files is a great way to start using the Service Worker API, and offers your users a better offline experience. Stay tuned for more service worker tips!</p>
+
+<script src="./blogheader.js"></script>
+<script data-goatcounter="https://teukka_tech.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+</body>
+</html>
