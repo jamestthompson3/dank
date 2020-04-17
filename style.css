@@ -58,16 +58,16 @@
   overflow: hidden;
 }
 tr {
- margin-bottom: 8px;
- color: white;
- background: black;
- display: flex;
- flex-wrap: wrap;
- align-items: center;
- justify-content: space-between;
- padding: 8px;
- cursor: pointer;
- border-radius: 5px;
+  margin-bottom: 8px;
+  color: white;
+  background: black;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  padding: 8px;
+  cursor: pointer;
+  border-radius: 5px;
 }
 
 
@@ -156,7 +156,7 @@ th > p {
 }
 
 .checkbox input[type="checkbox"]:checked + label::after {
-    background-color: #b942f4;
+  background-color: #b942f4;
 }
 
 .topic-filter {
@@ -269,6 +269,9 @@ th > p {
 
 #menu {
   display: none;
+}
+span a {
+  color: rgb(0, 238, 193);
 }
 
 /* smaller screens */

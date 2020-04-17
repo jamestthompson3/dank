@@ -2,10 +2,11 @@
 <html lang="en" prefix="og:http://ogp.me/ns#">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0,viewport-fit=cover">
+    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes,viewport-fit=cover">
 
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="robots" content="index, follow">
+    <meta name="description" content="Personal website of Taylor Thompson">
     <!-- OG -->
     <meta property="og:title" content="teukka.tech, a place of fun and wonder" />
     <meta property="og:type" content="website" />
@@ -162,16 +163,16 @@
           style="align-self: bottom;">
           📝 Contact me!</a
         >
-        <p tabindex="1" data-tip="link copied!" class="br5 shadow bg-black txt-white" style="align-self: bottom; padding: 3px; cursor: pointer;" id="feed" onclick="copyFeed('feed')">📃 Follow the RSS feed</p>
+        <p  data-tip="link copied!" class="br5 shadow bg-black txt-white" style="align-self: bottom; padding: 3px; cursor: pointer;" id="feed" onclick="copyFeed('feed')">📃 Follow the RSS feed</p>
         <div class="br5 shadow bg-black txt-white" style="cursor: pointer;" onclick="copyFeed('sbkey')">
           <p style="text-align: center;" >Scuttlebut Public Key:</p>
-          <p tabindex="1" data-tip="key copied!" id="sbkey" style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519</p>
+          <p data-tip="key copied!" id="sbkey" style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519</p>
         </div>
       </div>
       <h1 class="header">Reading List</h1>
         <div class="flex-column">
           <a class="text-dec br5 shadow bg-black txt-white mb05" href="/books.html">Favorite Books</a>
-          <p onclick="copyFeed('reading-list', true)" tabindex="1" id="reading-list" data-tip="link copied!" data-link="https://raindrop.io/collection/9007981/feed" class="br5 shadow bg-black txt-white mb05" style="padding: 3px;">Current Reading List (RSS feed)</p>
+          <p onclick="copyFeed('reading-list', true)" id="reading-list" data-tip="link copied!" data-link="https://raindrop.io/collection/9007981/feed" class="br5 shadow bg-black txt-white mb05" style="padding: 3px;">Current Reading List (RSS feed)</p>
         </div>
     </section>
     <section id="other" role="contentinfo">

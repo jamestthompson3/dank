@@ -1,4 +1,5 @@
 (function buildHeader() {
+  if (Boolean(window.location.hash)) return
   let start = { x: 0, y: 0 };
   const header = document.createElement("div");
   header.style.height = "40px";
@@ -33,17 +34,17 @@
     }
   }
 
-function copyFallback(){
-  const input = document.createElement('textarea')
-  input.value = "https://teukka.tech/feed.xml"
-  input.style.display = "none"
-  document.head.appendChild(input)
-  input.focus()
-  input.select()
-  <!-- input.setSelectionRange(0,9999) -->
-  document.execCommand('copy')
-  document.head.removeChild(input)
-}
+  function copyFallback(){
+    const input = document.createElement('textarea')
+    input.value = "https://teukka.tech/feed.xml"
+    input.style.display = "none"
+    document.head.appendChild(input)
+    input.focus()
+    input.select()
+      <!-- input.setSelectionRange(0,9999) -->
+      document.execCommand('copy')
+    document.head.removeChild(input)
+  }
 
 
   function copyFeed() {
@@ -66,3 +67,45 @@ function copyFallback(){
   const feed = document.getElementById("feed");
   feed.addEventListener("click", copyFeed);
 })();
+
+function enterPreview(e) {
+  const preview = document.getElementById('preview')
+  fetch(e.target.dataset.href).then(res => res.text()).then(html => {
+    if (preview.style.display === 'none') {
+      preview.style.display = 'block'
+    }
+    const shadow = document.createElement('div')
+    shadow.innerHTML = html
+    // remove hit counter
+    shadow.lastElementChild.remove()
+    for (const child of shadow.childNodes) {
+      switch(child.tagName) {
+        case "META": {
+          child.remove()
+          break;
+        }
+        case "TITLE":
+          child.remove()
+          break;
+        case "LINK":
+          child.remove()
+          break;
+        case "SCRIPT":
+          child.remove()
+          break;
+        default:
+          break;
+      }
+    }
+    preview.innerHTML = shadow.innerHTML
+    const previewButtons = document.getElementsByClassName('rel-article')
+    for (const button of previewButtons) {
+      if (e.target === button) {
+        button.classList.add('active')
+      } else {
+        button.classList.remove('active')
+      }
+    }
+    document.getElementById('related').scrollIntoView()
+  })
+}

@@ -201,6 +201,15 @@ command! -nargs=+ -complete=dir -bar Grep lua require&#39;tools&#39;.asyncGrep(&
 <p>Now we can call <code>:Grep searchTerm</code> and get results without blocking the main editor loop!</p>
 <h2 id="whats-next">What’s Next?</h2>
 <p>Having libuv bindings in Neovim unlocks a lot of potential for extending the functionality of your editor. The ability to asynchronously spawn other process can be used for linting, file watching, formatting, and much more. Free yourself from main loop blockage and try experimenting with <code>vim.loop</code>.</p>
+  <br />
+  <div>
+    <h3 class="related" id="related">Related Posts</h3>
+    <div class="related-container">
+      <p onclick="enterPreview(event)" data-href="/luanvim.html#preview" class="rel-article">Lua and Neovim</p>
+      <p onclick="enterPreview(event)" data-href="/vimtip-gitlens.html#preview" class="rel-article">5 Minute Neovim Tip: GitLens</p>
+    </div>
+    <div id="preview"></div>
+  </div>
 <script src="./blogheader.js"></script>
 <script data-goatcounter="https://teukka_tech.goatcounter.com/count"
         async src="//gc.zgo.at/count.js"></script>
