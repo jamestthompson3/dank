@@ -179,8 +179,8 @@ li {
   position: sticky;
   top: 0;
   display: flex;
-  width: 100vw;
-  height: 80px;
+  flex-wrap: wrap;
+  width: 100%;
   z-index: 200;
 }
 

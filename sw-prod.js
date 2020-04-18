@@ -1,4 +1,4 @@
-const CACHE_NAME = "posts-92af7565-a873-441f-934c-e7c67e85c595";
+const CACHE_NAME = "posts-0d0d39c4-72dd-4231-ac74-3bb920d7e475";
 const PAGES = [
   "./ico.png",
   "./pandocoverride.css",
