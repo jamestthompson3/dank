@@ -6,6 +6,8 @@ const PAGES = [
   "./space.png",
   "./reset.css",
   "./blog.css",
+  "./vim.css",
+  "./knowledge-base.css",
   "./index.html",
   "./vimloop.html",
   "./luanvim.html",

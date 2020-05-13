@@ -49,12 +49,30 @@
   <body>
     <!--   <a id="nav-toggle" href="#">&#9776;</a> -->
     <img id="cursor" src="bb8_1.svg" alt="cursor_image" />
-    <section id="root" class="flex-column">
-      <h1 class="header center-text">Taylor Thompson's homepage</h1>
-      <div class="bg-black txt-white flex-column space-around" style="padding: 12px;">
-        <p class="center-text" style="margin:0;">I'm a web developer based in Helsinki, Finland. I enjoy reading about and writing software. I program mostly in JS, but enjoy trying new languages and concepts!</p>
+    <section id="root" class="flex-column space-between">
+      <div class="p1">
+        <h1 class="header center-text">Taylor Thompson's homepage</h1>
+        <p class="bg-black txt-white center-text br5 shadow p1">I'm a web developer based in Helsinki, Finland. I enjoy reading about and writing software. I program mostly in JS, but enjoy trying new languages and concepts!</p>
       </div>
-      <div class="flex-column flex-even space-around w100">
+      <div class="flex-row flex-wrap baseline space-between center-text w80 flex-even p1">
+        <a
+          class="br5 shadow p1 center-text"
+          href="https://github.com/jamestthompson3"
+          target="__blank">
+          Projects
+        </a>
+        <a class="br5 shadow bg-black txt-white mb05 p1" href="/knowledge-base">Knowledge Base</a>
+        <a
+          class="br5 shadow p1"
+          href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
+          style="align-self: bottom;">
+          📝 Contact me!</a
+        >
+        <p  data-tip="link copied!" class="br5 p1 shadow bg-black txt-white" style="align-self: bottom; cursor: pointer;" id="feed" onclick="copyFeed('feed')">📃 Follow the RSS feed</p>
+          <a class="br5 shadow bg-black txt-white mb05 p1 center-text" href="/books.html">Favorite Books</a>
+          <p onclick="copyFeed('reading-list', true)" id="reading-list" data-tip="link copied!" data-link="https://raindrop.io/collection/9007981/feed" class="br5 shadow bg-black txt-white mb05 p1" style="cursor: pointer;">Current Reading List (RSS feed) 📋</p>
+      </div>
+      <div class="flex-column flex-even space-around w70">
         <table class="w100">
           <caption>
             <h2 id="blog-header" class="header">Blog Posts</h2>
@@ -145,35 +163,6 @@
           </tbody>
         </table>
       </div>
-
-      <div class="flex-column flex-even space-around">
-        <h1 class="header"> Projects </h1>
-        <div class="toc-list center-text overflow flex-row flex-wrap center" id="projects-list" >
-          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/viiksetjs">                       <span> ViiksetJS           </span></a>
-          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://vsrc.jamestthompson3.now.sh/">                               <span> View Source         </span></a>
-          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/nimblef">                         <span> Nimblef             </span></a>
-          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://github.com/jamestthompson3/vim-jest">                        <span> Vim Jest            </span></a>
-          <a class="box center-text flex-row center br5 shadow" target="__blank" rel="noreferrer noopener" href="https://addons.mozilla.org/en-US/firefox/addon/linkshare-telegram/"> <span> Telegram Link Share </span></a>
-        </div>
-      </div>
-      <div class="flex-column h200 space-even center-text">
-        <a
-          class="br5 shadow"
-          href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
-          style="align-self: bottom;">
-          📝 Contact me!</a
-        >
-        <p  data-tip="link copied!" class="br5 shadow bg-black txt-white" style="align-self: bottom; padding: 3px; cursor: pointer;" id="feed" onclick="copyFeed('feed')">📃 Follow the RSS feed</p>
-        <div class="br5 shadow bg-black txt-white" style="cursor: pointer;" onclick="copyFeed('sbkey')">
-          <p style="text-align: center;" >Scuttlebut Public Key:</p>
-          <p data-tip="key copied!" id="sbkey" style="font-size: 0.65rem;">@u5kpexTfLz07TKpRrDVkTgtVH6dtIHiahTeuwwp8XAs=.ed25519</p>
-        </div>
-      </div>
-      <h1 class="header">Reading List</h1>
-        <div class="flex-column">
-          <a class="text-dec br5 shadow bg-black txt-white mb05" href="/books.html">Favorite Books</a>
-          <p onclick="copyFeed('reading-list', true)" id="reading-list" data-tip="link copied!" data-link="https://raindrop.io/collection/9007981/feed" class="br5 shadow bg-black txt-white mb05" style="padding: 3px;">Current Reading List (RSS feed)</p>
-        </div>
     </section>
     <section id="other" role="contentinfo">
       <h2
@@ -222,7 +211,7 @@ let start = { x: 0, y: 0 };
 document.addEventListener("mousemove", bb8move);
 document.addEventListener("touch", bb8move);
 document.addEventListener("touchstart", touchStart, false);
-document.addEventListener("touchmove", touchMove, false);
+<!-- document.addEventListener("touchmove", touchMove, false); -->
 
 function bb8move({x, pageY}) {
   cursor.style.left = `${x+ 30}px`;
@@ -247,7 +236,7 @@ function touchMove(event) {
   }
 }
 
-navmenu.addEventListener("click", showMenu);
+<!-- navmenu.addEventListener("click", showMenu); -->
 const menu = document.getElementById("menu");
 menu.addEventListener("click", hideMenu);
 function showMenu(e) {
@@ -272,7 +261,7 @@ function copyFeed(id, usedataref){
     if (id === 'feed') {
       navigator.clipboard.writeText(`${location.href}feed.xml`)
   } else {
-    usedataref ? navigator.clipboard.writeText(text.data.link) : navigator.clipboard.writeText(text.textContent)
+    usedataref ? navigator.clipboard.writeText(text.dataset.link) : navigator.clipboard.writeText(text.textContent)
   }
   }
   text.classList.add('tooltip')

@@ -8,3 +8,5 @@ author: taylor thompson
 
 plugins:
   - jekyll-feed
+
+highlighter: rouge

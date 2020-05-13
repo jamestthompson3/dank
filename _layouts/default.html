@@ -7,11 +7,16 @@
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
     />
   </head>
-  <link rel="stylesheet" href="../feed.css" />
-  <link rel="stylesheet" href="../reset.css.css" />
+  <link rel="stylesheet" href="../pandocoverride.css" />
+  <link rel="stylesheet" href="../knowledge-base.css" />
+  <link rel="stylesheet" href="../vim.css" />
   <title>{{ page.title }}</title>
   <body>
     <section>{{ content }}</section>
-    <a href="/{{ page.loc }}/">This post looks best on the blog</a>
+    <div class="tags">
+      {% for tag in page.tags %}
+      <p>#{{tag}}</p>
+      {% endfor %}
+    </div>
   </body>
 </html>
