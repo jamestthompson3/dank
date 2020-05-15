@@ -2,8 +2,7 @@
 <html lang="en" prefix="og:http://ogp.me/ns#">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
-    <meta name="viewport" content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=yes,viewport-fit=cover">
-
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0,viewport-fit=cover">
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="robots" content="index, follow">
     <meta name="description" content="Personal website of Taylor Thompson">
@@ -61,22 +60,20 @@
           target="__blank">
           Projects
         </a>
-        <a class="br5 shadow bg-black txt-white mb05 p1" href="/knowledge-base">Knowledge Base</a>
+        <a class="br5 shadow bg-black txt-white p1" href="/knowledge-base">Knowledge Base</a>
         <a
           class="br5 shadow p1"
-          href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
-          style="align-self: bottom;">
-          📝 Contact me!</a
-        >
-        <p  data-tip="link copied!" class="br5 p1 shadow bg-black txt-white" style="align-self: bottom; cursor: pointer;" id="feed" onclick="copyFeed('feed')">📃 Follow the RSS feed</p>
-          <a class="br5 shadow bg-black txt-white mb05 p1 center-text" href="/books.html">Favorite Books</a>
+          href="mailto:taylor@teukka.tech?subject=Greetings from the Web!">
+          📝 Contact me!</a>
+          <p data-tip="link copied!" class="br5 p1 shadow bg-black txt-white" style="cursor: pointer;" id="feed" onclick="copyFeed('feed')">📃 Follow the RSS feed</p>
+          <a class="br5 shadow bg-black txt-white p1 center-text" href="/books.html">Favorite Books</a>
           <p onclick="copyFeed('reading-list', true)" id="reading-list" data-tip="link copied!" data-link="https://raindrop.io/collection/9007981/feed" class="br5 shadow bg-black txt-white mb05 p1" style="cursor: pointer;">Current Reading List (RSS feed) 📋</p>
       </div>
       <div class="flex-column flex-even space-around w70">
         <table class="w100">
           <caption>
             <h2 id="blog-header" class="header">Blog Posts</h2>
-            <p class="txt-white bg-black p05" style="margin: auto;">📚 available to read offline!</p>
+            <p class="txt-white bg-black p05">📚 available to read offline!</p>
           </caption>
           <!-- <thead> -->
           <!--   <tr class="txt-white checkbox space-around" style="background: none; user-select: none;"> -->
@@ -91,6 +88,12 @@
           <!--   </tr> -->
           <!-- </thead> -->
           <tbody class="p1 flex-column" id="posts">
+            <tbody class="p1 flex-column" id="posts">
+              <tr role="link" data-href="notifications.html">
+                <th scope="row"><p>Javascript Quick Tip: Web Notifications</p>
+                </th>
+                <td><i>16 May. 2020</i></td>
+              </tr>
             <tr role="link" data-href="serviceworker.html">
               <th scope="row"><p>Using Service Workers to Cache Content</p>
               </th>
@@ -168,7 +171,6 @@
       <h2
         id="programming-header"
         class="subheader center-text"
-        style="margin: 1rem auto;"
         >
         Cool Programming articles / videos
       </h2>
@@ -185,7 +187,6 @@
             cuncurrent databases, etc. in great detail and using Rust
           </span>
         </div>
-        <div id="readinglist"></div>
     </section>
     <script>
 

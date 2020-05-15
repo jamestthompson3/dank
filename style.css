@@ -73,6 +73,16 @@ tr {
   border-radius: 5px;
 }
 
+#infocontainer {
+  display: flex;
+  flex: 1 0 50%;
+  flex-wrap: wrap;
+  align-items: baseline;
+  justify-content: space-between;
+  text-align: center;
+  width: 80%;
+  padding: 1rem;
+}
 
 table {
   align-self: center;
@@ -201,8 +211,7 @@ th > p {
   align-items: center;
   background: url("./space.png");
   justify-content: space-around;
-  width: 100%;
-  height: 400px;
+  height: 600px;
 }
 
 #root a {
@@ -290,59 +299,6 @@ th > p {
 }
 span a {
   color: rgb(0, 238, 193);
-}
-
-/* smaller screens */
-@media(max-width: 450px) {
-  #cursor {
-    display: none;
-  }
-  #nav-toggle {
-    align-self: flex-start;
-    font-size: 2rem;
-    text-decoration: none;
-    display: block;
-    position: absolute;
-    z-index: 1000;
-    width: 100%;
-    padding: 3px;
-    background-color: #000;
-  }
-  #menu {
-    background-color: #000;
-    width: 100%;
-    position: absolute;
-    height: 200px;
-    display: flex;
-    flex-direction: column;
-    justify-content: space-around;
-    transform: translateX(-150%);
-    transition: transform 0.3s linear;
-  }
-  #posts td {
-    margin: auto;
-  }
-  #posts tr {
-    justify-content: center;
-  }
-  .flex-row.flex-wrap {
-    flex-direction: column;
-  }
-  .flex-row.flex-wrap a {
-    width: 100%;
-    margin: 1rem 0rem;
-    padding: 0.5rem;
-  }
-  .flex-row.flex-wrap p {
-    width: 100%;
-    margin: 1rem 0rem;
-  }
-  .w70 {
-    width: 100%;
-  }
-  .w80 {
-    width: 100%;
-  }
 }
 
 /*! Typebase.less v0.1.0 | MIT License */
@@ -438,3 +394,63 @@ code {
 .hug {
   margin-top: 0;
 }
+
+/* smaller screens */
+@media(max-width: 485px) {
+  #cursor {
+    display: none;
+  }
+  #nav-toggle {
+    align-self: flex-start;
+    font-size: 2rem;
+    text-decoration: none;
+    display: block;
+    position: absolute;
+    z-index: 1000;
+    width: 100%;
+    padding: 3px;
+    background-color: #000;
+  }
+  #menu {
+    background-color: #000;
+    width: 100%;
+    position: absolute;
+    height: 200px;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-around;
+    transform: translateX(-150%);
+    transition: transform 0.3s linear;
+  }
+  #posts td {
+    margin: auto;
+  }
+  #posts tr {
+    justify-content: center;
+  }
+  .flex-row.flex-wrap {
+    flex-direction: column;
+  }
+  .flex-row.flex-wrap a {
+    min-width: calc(100vw - 20%);
+    margin: 1rem 0rem;
+    padding: 0.5rem;
+  }
+  .flex-row.flex-wrap p {
+    min-width: calc(100vw - 20%);
+    margin: 1rem 0rem;
+  }
+  #feed {
+    padding: 0.5rem;
+  }
+  #reading-list {
+    padding: 0.5rem;
+  }
+  .w70 {
+    width: auto;
+  }
+  .w80 {
+    width: auto;
+  }
+}
+

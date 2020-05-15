@@ -5,11 +5,16 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1, shrink-to-fit=no"
-    />
+      />
+    <script>
+      // Only load on production environment.
+      if (window.location.host !== 'teukka.tech')
+  window.goatcounter = {no_onload: true};
+    </script>
+    <link rel="stylesheet" href="../pandocoverride.css" />
+    <link rel="stylesheet" href="../knowledge-base.css" />
+    <link rel="stylesheet" href="../vim.css" />
   </head>
-  <link rel="stylesheet" href="../pandocoverride.css" />
-  <link rel="stylesheet" href="../knowledge-base.css" />
-  <link rel="stylesheet" href="../vim.css" />
   <title>{{ page.title }}</title>
   <body>
     <section>{{ content }}</section>
@@ -18,5 +23,7 @@
       <p>#{{tag}}</p>
       {% endfor %}
     </div>
+  <script data-goatcounter="https://teukka_tech.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
   </body>
 </html>
