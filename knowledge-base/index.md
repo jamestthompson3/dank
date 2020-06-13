@@ -23,7 +23,7 @@
 | Title                               | Author       |Rating       | Read On       |
 | :---------------------------------- | :----------- |:--------- | :----------- |
 | The Philosophy of Walking |  Fredric Gros, Clifford Harper, John Howe | 2| 2020/05/30 |
-| Zen and the Art of Motorcycle Maintenence |  Robert Pirsig | 5| 2020/05/23 |
+| [Zen and the Art of Motorcycle Maintenence](./zaamm.md) |  Robert Pirsig | 5| 2020/05/23 |
 | [a definition and criticism of cybercommunism](./cybercommunism.md)  |  Tere Vadén and Juha Suoranta | 2 | 2020/01/03 |
 |[The Science of Managing Our Digital Stuff](./digitalstuff.md)|Ofer Bergman|5|2020/05/02|
 |The Englishman's Food: Five Centuries of English Diet|J.C. Drummond|5|2020/04/17|
