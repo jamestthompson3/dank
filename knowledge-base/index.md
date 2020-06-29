@@ -3,12 +3,19 @@
 
 <div style="height: 1rem;"></div>
 
-### Research Notes
+### Notes
 * [linux programming](./linuxprogramming.md)
 
 * [webstreams](./webstreams.md)
 
 * [distributed systems](./distributed-systems.md)
+
+* [productivity / organization](./productivity.md)
+
+* [graph datastructures](./graphs.md)
+
+* [udp multicasting](./UDPPeerDiscovery.md)
+
 
 ### Learning Paths
 * [learning roadmap](./learning-roadmap.md)
@@ -31,7 +38,7 @@
 |The First Cell: And the Human Costs of Pursuing Cancer to the Last|Azra Raza|3|2020/02/09|
 |Babel: Around the World in Twenty Languages|Gaston Dorren|5|2020/01/11|
 |Hyperion (Hyperion Cantos #1)|Dan Simmons|3|2020/01/11|
-|Gunsl Germs, and Steel: The Fates of Human Societies|Jared Diamond|4|2019/12/26|
+|Guns Germs, and Steel: The Fates of Human Societies|Jared Diamond|4|2019/12/26|
 |The Bhagavad Gita|Krishna-Dwaipayana Vyasa|3|2019/11/07|
 |Religio Medici|Thomas Browne|3|2019/11/06|
 |The Enemy at the Gate: Habsburgs, Ottomans, and the Battle for Europe|Andrew Wheatcroft|5|2019/11/05|
