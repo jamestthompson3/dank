@@ -28,9 +28,12 @@
 <div style="height: 1rem;"></div>
 
 | Title                               | Author       |Rating       | Read On       |
-| :---------------------------------- | :----------- |:--------- | :----------- |
+| :---------------------------------- | :---------- |:--------- | :----------- |
+| Lies My Teacher Told Me: Everything your American History Textbook Got Wrong |  James W. Loewen | 5| 2020/06/28 |
+| Why We Sleep: Unlocking the Power of Sleep and Dreams |  Matthew Walker | 5| 2020/06/28 |
 | The Philosophy of Walking |  Fredric Gros, Clifford Harper, John Howe | 2| 2020/05/30 |
 | [Zen and the Art of Motorcycle Maintenence](./zaamm.md) |  Robert Pirsig | 5| 2020/05/23 |
+| Shape Up: Stop Running in Circles and Ship Work that Matters |  Ryan Singer | 3| 2020/05/04 |
 | [a definition and criticism of cybercommunism](./cybercommunism.md)  |  Tere Vadén and Juha Suoranta | 2 | 2020/01/03 |
 |[The Science of Managing Our Digital Stuff](./digitalstuff.md)|Ofer Bergman|5|2020/05/02|
 |The Englishman's Food: Five Centuries of English Diet|J.C. Drummond|5|2020/04/17|

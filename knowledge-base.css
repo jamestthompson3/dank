@@ -52,7 +52,10 @@ th {
 }
 
 td {
-  padding: 8px 0px;
+  padding: 8px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 tr {
