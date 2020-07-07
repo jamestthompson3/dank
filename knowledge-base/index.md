@@ -4,9 +4,6 @@
 <div style="height: 1rem;"></div>
 
 
-### Learning Paths
-* [learning roadmap](./learning-roadmap.md)
-
 
 <div style="height: 2rem;"></div>
 
