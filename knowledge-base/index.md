@@ -3,19 +3,6 @@
 
 <div style="height: 1rem;"></div>
 
-### Notes
-* [linux programming](./linuxprogramming.md)
-
-* [webstreams](./webstreams.md)
-
-* [distributed systems](./distributed-systems.md)
-
-* [productivity / organization](./productivity.md)
-
-* [graph datastructures](./graphs.md)
-
-* [udp multicasting](./UDPPeerDiscovery.md)
-
 
 ### Learning Paths
 * [learning roadmap](./learning-roadmap.md)
