@@ -159,7 +159,7 @@ a {
 li {
   font-family: monospace;
   color: rgb(209, 206, 199);
-  margin: 1rem;
+  padding: 1rem;
   font-size: 1rem;
   text-align: justify;
 }
@@ -223,6 +223,41 @@ blockquote p {
   line-height: 1.5rem;
 }
 
+.tab {
+  background: #151618;
+  color: #7b7b7b;
+  border: none;
+  min-width: 115px;
+  border-radius: 5px 5px 0px 0px;
+  cursor: pointer;
+}
+
+.tab:active {
+  background: #333;
+  color: #ffc30f;
+}
+
+.tab:hover:not(.selected) {
+  background: #353535;
+}
+
+.tab.selected {
+  border: 2px solid #7b7b7b;
+  border-bottom: 0;
+  position: relative;
+  color: #ffc30f;
+  top: 2px;
+}
+
+[role="tabpanel"] {
+  border: 2px solid #7b7b7b;
+  border-radius: 5px;
+}
+
+[role="tablist"] {
+  width: 235px;
+  padding-left: 20px;
+}
 
 @media(max-width: 485px) {
   body {

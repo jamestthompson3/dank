@@ -91,91 +91,6 @@ th > p {
   display: block;
   margin: 0;
 }
-.flex-column {
-  display: flex;
-  flex-direction: column;
-}
-.flex-row {
-  display: flex;
-}
-.flex-wrap {
-  flex-wrap: wrap;
-}
-.center {
-  align-items: center;
-  justify-content: center;
-}
-.overflow {
-  overflow: auto;
-}
-.baseline {
-  align-items: baseline;
-}
-.center-text {
-  text-align: center;
-}
-
-.bg-black {
-  background: black;
-}
-.w100 {
-  width: 100%;
-}
-.w70 {
-  width: 70%;
-}
-.w80 {
-  width: 80%;
-}
-.mw17 {
-  min-width: 17rem;
-}
-.transparent {
-  opacity: 0;
-}
-.p1 {
-  padding: 1rem;
-}
-.p05 {
-  padding: 0.5rem;
-}
-.mb05 {
-  margin-bottom: 0.5rem;
-}
-.text-dec {
-  text-decoration: underline !important;
-  text-decoration-color: aquamarine !important;
-}
-.h2 {
-  height: var(--height);
-}
-.h4 {
-  height: calc(var(--height) * 2);
-}
-.h6 {
-  height: calc(var(--height) * 3)
-}
-
-.h8 {
-  height: calc(var(--height) * 4)
-}
-.space-even {
-  justify-content: space-evenly;
-}
-.space-around {
-  justify-content: space-around;
-}
-.space-between {
-  justify-content: space-between;
-}
-.txt-white {
-  color: #fff;
-}
-
-.flex-even {
-  flex: 1 0 50%;
-}
-
 .checkbox input[type="checkbox"]:focus + label::after {
   outline: rgb(59, 153, 252) auto 2px;
 }
@@ -231,24 +146,11 @@ th > p {
   margin: 2rem auto;
   padding: 0px 5px;
 }
-
 .subheader {
   font-size: 2rem;
   color: #fff;
   background: #000;
 }
-.br5 {
-  border-radius: 5px;
-}
-.shadow {
-  box-shadow: 3px 3px 8px #3a3535bf;
-}
-.dashed-bottom {
-  height: 10px;
-  border-bottom: 2px dashed #dbdbdb;
-  width: 100%;
-}
-
 #toc-container {
   width: 80%;
   border-radius: 8px;
