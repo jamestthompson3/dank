@@ -7,6 +7,8 @@ const PAGES = [
   "./reset.css",
   "./blog.css",
   "./vim.css",
+  "peer-discover.html",
+  "viiksetjsretro.html",
   "./knowledge-base.css",
   "./index.html",
   "./vimloop.html",
@@ -20,7 +22,7 @@ const PAGES = [
   "./viiksetjs.html",
   "./proxies.html",
   "./rxjs-recompose.html",
-  "./blogheader.js"
+  "./blogheader.js",
 ];
 
 // install pages
@@ -45,17 +47,17 @@ async function installCachedFiles() {
 
 async function deleteOldCaches() {
   const keys = await caches.keys();
-  const oldVersions = keys.filter(name => {
+  const oldVersions = keys.filter((name) => {
     if (/^posts-(\w{8}(-\w{4}){3}-\w{12}?)/.test(name)) {
       return true;
     } else {
       return false;
     }
   });
-  return Promise.all(oldVersions.map(key => caches.delete(key)));
+  return Promise.all(oldVersions.map((key) => caches.delete(key)));
 }
 
-self.addEventListener("fetch", event => {
+self.addEventListener("fetch", (event) => {
   if (
     event.request.mode === "navigate" ||
     event.request.destination === "style" ||
@@ -72,10 +74,10 @@ async function cacheResponse(request, event) {
   // and a copy of the response that can be used in the cache.
   try {
     const fetchResponseP = fetch(request);
-    const fetchResponseCloneP = fetchResponseP.then(r => r.clone());
+    const fetchResponseCloneP = fetchResponseP.then((r) => r.clone());
 
     event.waitUntil(
-      (async function() {
+      (async function () {
         await cache.put(request, await fetchResponseCloneP);
       })()
     );
