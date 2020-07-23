@@ -1,0 +1,227 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0,viewport-fit=cover">
+    <meta http-equiv="Content-Type" content="text/html;charset=utf-8" />
+    <!-- OG -->
+    <meta property="og:title" content="ViiksetJS, a retropsective" />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://teukka.tech/knowledge-base/viiksetjsretro.html" />
+    <meta property="og:image" content="https://images.unsplash.com/photo-1456421385613-d0666bb96b78?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1353&q=80" />
+    <title>👀 Looking back at ViiksetJS</title>
+    <link rel="stylesheet" href="viiksetstyles.css" />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito+Sans:ital,wght@0,400;0,700;1,400&display=swap"
+      rel="stylesheet"
+    />
+  </head>
+  <body>
+    <h4 style='padding: 0px 8px; font-size: 1rem;' role="button" aria-label="back"><a href='/'>← Back to Home</a></h4>
+    <h1 style="text-align: center;">ViiksetJS: A Retrospective</h1>
+    <section>
+        <div class="flex space-between">
+          <img
+            id="viikset-logo"
+            src="https://raw.githubusercontent.com/jamestthompson3/viiksetjs/master/viiksetjs.jpg"
+          />
+          <div id="what-container" type="text-container">
+            <h2>What it is</h2>
+            <p>
+              <a
+                id="viikset-anchor"
+                href="https://github.com/jamestthompson3/viiksetjs"
+                >ViiksetJS</a
+              >
+              <span id="viikset-link"
+                >https://github.com/jamestthompson3/viiksetjs</span
+              >
+              is a data visualization library for React that is built on
+              <a
+                id="d3-anchor"
+                href="https://d3js.org/"
+                rel="noopener noreferrer"
+                target="_blank"
+                >D3</a
+              >
+              <span id="d3-link">https://d3js.org</span>
+              and
+              <a
+                id="vx-anchor"
+                href="https://vx-demo.now.sh/"
+                rel="noopener noreferrer"
+                target="_blank"
+                >vx</a
+              >. <span id="vx-link">https://vx-demo.now.sh</span>It aims for
+              high performance and ease-of-use so that developers who are not
+              familiar with D3 or other lower level charting libraries can
+              visualize large datasets easily.
+            </p>
+            <h3>Cool features</h3>
+            <ul>
+              <li>Support for livestreaming data via websockets</li>
+              <li>Custom chart annotations via text or React components</li>
+              <li>Non-blocking data processing</li>
+              <li>Fast canvas renderer</li>
+            </ul>
+          </div>
+        </div>
+        <div class="vspacer"></div>
+        <div class="vspacer"></div>
+        <div class="flex space-between">
+          <div id="why-container" type="text-container">
+            <h2>Why it was created</h2>
+            <p>
+            ViiksetJS was created at Kamu, the company behind
+            <a
+              id="eac-anchor"
+              href="https://www.easy.ac/en-us/"
+              rel="noopener noreferrer"
+              target="_blank"
+              >EasyAntiCheat</a
+            >
+            <span id="eac-link">https://www.easy.ac/en-us/</span>
+            for charting large sets of anti-cheat analysis data. We had tried
+            many of the out-of-the-box charting libraries for React, but none of
+            them fit our requirements of having a easy to understand API and
+            being performant when charting large amounts of data.
+            </p>
+            <p>
+            While D3 offered a solution to the performance bottlenecks, it often
+            requires a non-trivial time commitment to get past the learning
+            curve. Being a small team with a high workload, many developers felt
+            that this learning curve was too steep and the library too low-level
+            for creating the type of visualizations required by our customers.
+            That's why ViiksetJS aimed to be as simple as possible so that any
+            developer could pick it up and start being productive right away.
+            </p>
+          </div>
+        <div id="why-mount" type="viz-mount" ></div>
+        </div>
+        <div class="vspacer"></div>
+        <div class="vspacer"></div>
+        <div class="flex space-between small-rev">
+          <div id="learning-mount" type="viz-mount"></div>
+          <div id="learning-container" type="text-container">
+            <h2>What I learned along the way</h2>
+            <p>
+            This was my first ever open source project as well as my first attempt
+            at making a reusable library. Needless to say, it has been a great
+            learning experience! Here are some of the lessons I learned:
+            </p>
+            <h3>Documentation is hard</h3>
+            <p>
+            Documenting <em>all</em> the features you've built and keeping that
+            documentation up to date is almost as difficult a task as writing the
+            code! Luckily now that the library is in Typescript, the code is a bit
+            more self-documenting, but types are not a replacement for well
+            written documentation.
+            </p>
+            <h3>Validate early, validate often</h3>
+            <p>
+            Spending a lot of time on an API of a component or the architecture of
+            a library only for it to be confusing to others is tough. Asking for
+            feedback early and often in the process helps point out weak spots in
+            your thinking!
+            </p>
+            <h3>Rethink dependencies</h3>
+            <p>
+            Getting something out of your mind and into code will always be a
+            sloppy process and there are many libraries that can help smooth out
+            the creases, however, keeping the dependencies used to validate an
+            idea long term can lead to big pains down the road. Creating a library
+            with as few dependencies as possible helps keep the scope down and
+            doesn't tie you to a certain API structure based on your dependencies.
+            </p>
+            <h3>Look at the cause, not just the symptoms</h3>
+            <p>
+            On the surface, ViiksetJS was about solving the problem of high
+            performance + ease-of-use, but those were merely the symptoms of the
+            actual challenge of complex React state management and creating highly
+            configurable components. Asking
+            <em>why</em> something is difficult would have allowed me to avoid
+            some of the mistakes in the API design of ViiksetJS.
+            </p>
+          </div>
+        </div>
+        <div class="vspacer"></div>
+        <div class="vspacer"></div>
+        <div class="flex space-between">
+          <div id="again-container" type="text-container">
+            <h2>What I would change if I were to do it again</h2>
+            <p>
+            Having used ViiksetJS in production for nearly two years, and having
+            gone through many iterations of the API, if I had to create a graphing
+            library again, there are a few things I would change. Here are some
+            examples:
+            </p>
+            <h3>More composable components</h3>
+            <p>
+            One of the most painful parts of using ViiksetJS is creating highly
+            customized components. This is in part due to a poorly thought out API
+            from the beginning, but also in part due to the underlying dependency
+            on VX. With basic components being pulled straight from VX, there is a
+            lot of prop drilling that needs to happen, so components tend to have
+            a lot of available props that take huge config objects. Components
+            that have a large number props or props with complex configurations
+            tend to be fragile and prone to breaking when updating the library or
+            the underlying data structures. Instead of the current design, I would
+            focus on having clear interfaces between components so that they can
+            be easily composed. I would also remove the underlying dependency on
+            VX so that I have a bit more flexibility in the API design and can
+            remove the prop drilling.
+            </p>
+            <h3>Decouple shared state</h3>
+            <p>
+            Currently, state is shared between the visualization components via
+            React Context. This causes an issue where components are tightly
+            coupled to their position in the render tree and each component needs
+            to check whether or not shared props relevant to itself have updated
+            each time it gets called to re-render. Decoupling this shared state
+            would give much more flexibility to how components could be laid out,
+            as well as reduce the amount of memoization checks and logic related
+            to cloning props to children of children. What I would explore would
+            be a system of sharing state based on events. This would allow data
+            processing to happen in a web or service worker instead of on the main
+            thread. By opening up the ability to do the heavy data work off the
+            main thread, I could remove hacks being used now such as
+            <code>queMicrotask</code> calls. Using events would also allow
+            components to subscribe to only the updates they are interested in,
+            allowing for easier updates to tooltips, gradual data loading, and
+            multi-graph filtering.
+            </p>
+            <h3>Visualizations are like onions...</h3>
+            <p>
+            They have layers! One of the most challenging features of ViiksetJS to
+            implement was the custom chart annotations. The reason it was so
+            challenging was because of the above listed poor design choices of
+            tightly coupled state and complex component configurations. To change
+            this, I would try and make it easier for users of the library to think
+            in layers, similar to graphic design software. By layering different
+            elements together, complex visualizations would be much easier to
+            create and debug. Changes to state management and component
+            composition would allow for a layering API to be possible. One of the
+            challenges of a layering API, however, is dealing with the positioning
+            of the elements on the page as well as the medium of which the layers
+            are created. Mixing canvas charts with SVG annotations takes some
+            thought to prevent running into the issue currently faced by the
+            library where elements are highly dependent on their position in the
+            rendering tree.
+            </p>
+          </div>
+          <div id="again-mount" type="viz-mount" style="padding-top:30px;"></div>
+        </div>
+        <h2>Looking back</h2>
+        <p>
+        ViiksetJS has been in production for nearly two years and has served
+        my team well. It has good performance, and an easy enough API for
+        visualizations to be created quickly. It's not perfect, but it has
+        been a great learning experience for in learning how to design
+        software for general use cases and diving into the world of data
+        visualization!
+        </p>
+    </section>
+    <script type="module" src="scripts/learning.js"></script>
+    <script type="module" src="scripts/why.js"></script>
+    <script type="module" src="scripts/again.js"></script>
+  </body>
+</html>
