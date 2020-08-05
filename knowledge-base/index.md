@@ -5,7 +5,8 @@
 <div style="height: 1rem;"></div>
 ### Notes
 
-[InterPlanetary File System](./ipfs.md)
+* [InterPlanetary File System](./ipfs.html)
+* [Approaching Problems](./approachingproblems.html)
 
 <div style="height: 2rem;"></div>
 
