@@ -1,6 +1,5 @@
 
 body {
-  padding: 0rem 3rem;
   background: #151618;
   height: auto;
   overflow-x: hidden;
@@ -21,15 +20,12 @@ img {
   flex-wrap: wrap;
   justify-content: center;
 }
-@media(max-width: 450px) {
-  img {
-    margin-right: 0.5rem;
-  }
+@media(max-width: 485px) {
   .main-container {
-    width: 100%;
+    width: 90%;
   }
-  h3 {
-    font-size: 1rem;
+  .book {
+    margin: 1rem;
   }
 }
 /* 3D book
