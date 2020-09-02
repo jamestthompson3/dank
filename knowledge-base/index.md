@@ -5,8 +5,7 @@
 <div style="height: 1rem;"></div>
 ### Notes
 
-* [InterPlanetary File System](./ipfs.html)
-* [Approaching Problems](./approachingproblems.html)
+My notes are hosted [here](http://wiki.teukka.tech). If you're interested in browsing them, send me an <a href="mailto:taylor@teukka.tech?subject=Notebook Access">email</a>!
 
 <div style="height: 2rem;"></div>
 
@@ -16,7 +15,13 @@
 
 | Title                                                                                                           | Author                                   | Rating | Read On    |
 | :-------------------------------------------------------------------------------------------------------------- | :--------------------------------------- | :----- | :--------- |
+| The Hard Thing About Hard                                                                                       | Ben Horowitz                             | 4      | 2020/08/26 |
+| The Cuckoo's Egg                                                                                                | Clifford Stoll                           | 4      | 2020/08/13 |
+| King Leopold's Ghost                                                                                            | Adam Hochshild                           | 4      | 2020/08/04 |
+| The Culture Code: The Secrets of Highly Successful Groups                                                       | Daniel Coyle                             | 5      | 2020/08/03 |
+| The Art of Doing Science and Engineering: Learning to Learn                                                     | Richard Hamming                          | 4      | 2020/07/26 |
 | The End of Policing                                                                                             | Alex Vitale                              | 4      | 2020/07/09 |
+| How to Take Smart Notes                                                                                         | Sonke Ahrens                             | 5      | 2020/07/06 |
 | Lies My Teacher Told Me: Everything your American History Textbook Got Wrong                                    | James W. Loewen                          | 5      | 2020/06/28 |
 | Why We Sleep: Unlocking the Power of Sleep and Dreams                                                           | Matthew Walker                           | 5      | 2020/06/28 |
 | The Philosophy of Walking                                                                                       | Fredric Gros, Clifford Harper, John Howe | 2      | 2020/05/30 |
