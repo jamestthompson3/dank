@@ -15,7 +15,7 @@ My notes are hosted [here](http://wiki.teukka.tech). If you're interested in bro
 
 | Title                                                                                                           | Author                                   | Rating | Read On    |
 | :-------------------------------------------------------------------------------------------------------------- | :--------------------------------------- | :----- | :--------- |
-| The Hard Thing About Hard                                                                                       | Ben Horowitz                             | 4      | 2020/08/26 |
+| The Hard Thing About Hard Things                                                                                | Ben Horowitz                             | 4      | 2020/08/26 |
 | The Cuckoo's Egg                                                                                                | Clifford Stoll                           | 4      | 2020/08/13 |
 | King Leopold's Ghost                                                                                            | Adam Hochshild                           | 4      | 2020/08/04 |
 | The Culture Code: The Secrets of Highly Successful Groups                                                       | Daniel Coyle                             | 5      | 2020/08/03 |
