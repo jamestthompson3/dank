@@ -102,11 +102,13 @@ h1, h2, h3 {
 }
 
 body {
-  padding: 0rem 25rem;
+  padding: 0rem 2.5rem;
   background: #151618;
   height: auto;
   overflow-x: hidden;
   max-width: 100vw;
+  width: 70%;
+  margin: auto;
 }
 
 header {
@@ -261,6 +263,7 @@ blockquote p {
 @media(max-width: 485px) {
   body {
     padding: 0rem;
+    width: 100%;
   }
   pre, .footer {
     width: auto;

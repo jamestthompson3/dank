@@ -5,7 +5,7 @@
 <div style="height: 1rem;"></div>
 ### Notes
 
-My notes are hosted [here](http://wiki.teukka.tech). If you're interested in browsing them, send me an <a href="mailto:taylor@teukka.tech?subject=Notebook Access">email</a>!
+My notes are hosted [here](https://notebook.teukka.tech).
 
 <div style="height: 2rem;"></div>
 
@@ -15,6 +15,8 @@ My notes are hosted [here](http://wiki.teukka.tech). If you're interested in bro
 
 | Title                                                                                                           | Author                                   | Rating | Read On    |
 | :-------------------------------------------------------------------------------------------------------------- | :--------------------------------------- | :----- | :--------- |
+| The Metaphysical Elements of Ethics                                                                             | Immanuel Kant                            | 3      | 2020/10/19 |
+| The Making of a Manger: What to Do When Everyone Looks To You                                                   | Julie Zhou                               | 4      | 2020/10/14 |
 | The Hard Thing About Hard Things                                                                                | Ben Horowitz                             | 4      | 2020/08/26 |
 | The Cuckoo's Egg                                                                                                | Clifford Stoll                           | 4      | 2020/08/13 |
 | King Leopold's Ghost                                                                                            | Adam Hochshild                           | 4      | 2020/08/04 |
