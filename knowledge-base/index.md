@@ -15,6 +15,10 @@ My notes are hosted [here](https://notebook.teukka.tech).
 
 | Title                                                                                                           | Author                                   | Rating | Read On    |
 | :-------------------------------------------------------------------------------------------------------------- | :--------------------------------------- | :----- | :--------- |
+| The Monk of Mokha                                                                                               | Dave Eggers                              | 5      | 2020/12/28 |
+| Words of Radiance                                                                                               | Brandon Sanderson                        | 5      | 2020/12/27 |
+| The Way of Kings                                                                                                | Brandon Sanderson                        | 5      | 2020/12/23 |
+| Mind Management, Not Time Management: Productivity When Creativity Matters (Getting Art Done Book 2)            | David Kadavy                             | 4      | 2020/11/22 |
 | The Metaphysical Elements of Ethics                                                                             | Immanuel Kant                            | 3      | 2020/10/19 |
 | The Making of a Manger: What to Do When Everyone Looks To You                                                   | Julie Zhou                               | 4      | 2020/10/14 |
 | The Hard Thing About Hard Things                                                                                | Ben Horowitz                             | 4      | 2020/08/26 |
