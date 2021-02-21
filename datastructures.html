@@ -1,0 +1,630 @@
+<!DOCTYPE html>
+<html lang="en-us">
+  <head>
+    <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0,viewport-fit=cover">
+  <meta name="author" content="Taylor Thompson" />
+    <meta property="og:title" content="Data structure memes for edgy javascript teens" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://teukka.tech/datastructures.html" />
+    <meta property="og:image" content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Ftse4.mm.bing.net%2Fth%3Fid%3DOIP.jdhn3eMauFqu3RwQyrvF8wDIEs%26pid%3DApi&f=1" />
+    <meta name="apple-mobile-web-app-capable" content="yes" />
+    <meta name="mobile-web-app-capable" content="yes" />
+    <meta
+      name="apple-mobile-web-app-title"
+      content="Datastructure memes for edgy JS teens"
+    />
+    <meta name="description" content="javascript data structures" />
+    <meta name="robots" content="index, follow">
+    <link rel="canonical" href="https://teukka.tech/datastructures.html" />
+    <link href="reset.css" rel="stylesheet" />
+    <link href="blog.css" rel="stylesheet" />
+    <link href="code.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
+      rel="stylesheet"
+    />
+
+<script>
+	// Only load on production environment.
+	if (window.location.host !== 'teukka.tech')
+		window.goatcounter = {no_onload: true};
+</script>
+  </head>
+  <title>🙏 Datastructure Memes For Edgy Javascript Teens</title>
+  <body>
+    <div class="mainwrapper">
+      <article id="datastructures" class="blog-post">
+        <header><h2>Data Structure Memes For Edgy JavaScript Teens</h2></header>
+        <section data-field="body">
+          <section>
+            <p>
+              Frontend developers increasingly face challenges surrounding
+              complex state and data management. We encounter issues resulting
+              from data management which has become too monolithic or too
+              fragmented, our components update too often, or we spend much of
+              our development time trying to discover how data is being passed
+              through our entire application. Our components should consume only
+              the minimum amount of information necessary to render their
+              children. How can that be achieved in a way both easy to use and
+              easy to comprehend throughout our application? I think the answer
+              is in taking data management outside the realm of react and using
+              react hooks to, well, hook into relevant data updates.
+            </p>
+            <p>
+              React has shipped with hooks since 16.8.0, and this has caused
+              developers to replace class components in favor of functional
+              components with
+              <a
+                href="https://twitter.com/kentcdodds/status/1136261881696382977"
+                rel="noopener
+                noreferer"
+                target="__blank"
+                >hooks</a
+              >. You may have also considered ditching a library like redux by
+              using hooks and react context. While this initially seems like an
+              excellent idea ( I re-wrote a large portion of our application at
+              work this way ), you will find that hooks and context can cause
+              unnecessary re-renders and increase the logical complexity of your
+              codebase.
+            </p>
+            <p>
+              If you want to just skip to the code,
+              <a href="https://codesandbox.io/s/obsv-hooks-382xk?fontsize=14"
+                >here is the sandbox</a
+              >
+            </p>
+          </section>
+          <section>
+            <h3>Cache Me Outside: How ’Bout That?</h3>
+            <p>
+              Most react applications need to fetch data from a server and
+              display it to the user of the application. Where to store that
+              data in the application quick becomes a challenge as the
+              application grows in size and scope. If you inspect a react
+              application of nearly any size, you will probably find a
+              combination of different solutions. It’s popular to use a
+              third-party library like redux or mobx, but sometimes this data is
+              stored in local component state.
+            </p>
+            <p>
+              Trade offs need to be considered in each approach: using an
+              external library can mean writing more code to update and consume
+              our data in the application, leading to hard to follow logic;
+              keeping application data in component state means that it
+              disappears when the component is unmounted, forcing us to re-fetch
+              the data or place the component higher up in the render tree (
+              often this is the pattern of “container” components ).
+            </p>
+            <p>
+              State and data management in many cases can and should be
+              separated. The data available to consume in an application is not
+              necessarily reflected in the current state of the components which
+              consume that data. An example of this is storing data in redux.
+              When we place data in a reducer from a server, we now have access
+              to that data while we are connected to the redux store. A
+              component that consumes that data may have several states and
+              state transitions, but that does not change the availability of
+              the data for consumption.
+            </p>
+            <p>
+              I think that we can move data management outside of react, giving
+              us the benefits of:
+            </p>
+            <ul>
+              <li>
+                0: Having a simple API for both writing and reasoning ( a
+                problem with redux, sagas, mobx, etc. is boiler plate code and
+                hard to follow logic ).
+              </li>
+              <li>
+                1: Allowing us to bind the UI to the data when necessary, but
+                not having our data depend on our rendering library ( using
+                react context means our data must follow the constraints of
+                react )
+              </li>
+              <li>
+                2: Allowing for underlying changes to data only
+                <em>relevant</em> to the current component to automatically
+                trigger a request to the react scheduler to update.
+              </li>
+            </ul>
+          </section>
+          <section>
+            <h3>Big OOF: Why Context Is Complex</h3>
+            <p>
+              Storing data inside of react context can lead to complexity and
+              re-renders, which can both harm the performance of your
+              application and decrease the codebase’s maintainability. Nik Graf
+              has an excellent talk concerning this, so if you’d rather here it
+              from him,
+              <a href="https://www.youtube.com/watch?v=c9YtmMi-5rM"
+                >check it out</a
+              >. Digging into context, however, the problems quickly arise when
+              looking for a solution for managing data needed by your
+              application. Let’s dig into some examples.
+            </p>
+            <p>Using the following collection of data:</p>
+            <div class="blockwrapper">
+              <div class="sourceCode" id="cb1">
+                <pre
+                  class="sourceCode json"
+                ><code class="sourceCode json"><a class="sourceLine" id="cb1-1" title="1"><span class="ot">[</span></a>
+    <a class="sourceLine" id="cb1-2" title="2">  <span class="fu">{</span></a>
+    <a class="sourceLine" id="cb1-3" title="3">      <span class="dt">&quot;name&quot;</span><span class="fu">:</span> <span class="st">&quot;sam&quot;</span><span class="fu">,</span></a>
+    <a class="sourceLine" id="cb1-4" title="4">      <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="st">&quot;1987ea87gde302&quot;</span><span class="fu">,</span></a>
+    <a class="sourceLine" id="cb1-5" title="5">      <span class="dt">&quot;likes&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+    <a class="sourceLine" id="cb1-6" title="6">        <span class="fu">{</span> <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span> <span class="dt">&quot;item&quot;</span><span class="fu">:</span> <span class="st">&quot;cars&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+    <a class="sourceLine" id="cb1-7" title="7">        <span class="fu">{</span> <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span> <span class="dt">&quot;item&quot;</span><span class="fu">:</span> <span class="st">&quot;dogs&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+    <a class="sourceLine" id="cb1-8" title="8">        <span class="fu">{</span> <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span> <span class="dt">&quot;item&quot;</span><span class="fu">:</span> <span class="st">&quot;Bruce Springsteen&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+    <a class="sourceLine" id="cb1-9" title="9">        <span class="fu">{</span> <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">3</span><span class="fu">,</span> <span class="dt">&quot;item&quot;</span><span class="fu">:</span> <span class="st">&quot;mowing the lawn&quot;</span> <span class="fu">}</span></a>
+    <a class="sourceLine" id="cb1-10" title="10">      <span class="ot">]</span><span class="fu">,</span></a>
+    <a class="sourceLine" id="cb1-11" title="11">      <span class="dt">&quot;dislikes&quot;</span><span class="fu">:</span> <span class="ot">[</span></a>
+    <a class="sourceLine" id="cb1-12" title="12">        <span class="fu">{</span> <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">0</span><span class="fu">,</span> <span class="dt">&quot;item&quot;</span><span class="fu">:</span> <span class="st">&quot;vegetables&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+    <a class="sourceLine" id="cb1-13" title="13">        <span class="fu">{</span> <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">1</span><span class="fu">,</span> <span class="dt">&quot;item&quot;</span><span class="fu">:</span> <span class="st">&quot;income tax&quot;</span> <span class="fu">}</span><span class="ot">,</span></a>
+    <a class="sourceLine" id="cb1-14" title="14">        <span class="fu">{</span> <span class="dt">&quot;id&quot;</span><span class="fu">:</span> <span class="dv">2</span><span class="fu">,</span> <span class="dt">&quot;item&quot;</span><span class="fu">:</span> <span class="st">&quot;existential crises&quot;</span> <span class="fu">}</span></a>
+    <a class="sourceLine" id="cb1-15" title="15">      <span class="ot">]</span></a>
+    <a class="sourceLine" id="cb1-16" title="16">  <span class="fu">}</span><span class="ot">,</span></a>
+    <a class="sourceLine" id="cb1-17" title="17">  <span class="er">...</span></a>
+    <a class="sourceLine" id="cb1-18" title="18"><span class="ot">]</span></a></code></pre>
+              </div>
+            </div>
+            <p>
+              If we wanted to store this in react context and pull it out with
+              hooks, we would do something like this:
+            </p>
+            <div class="blockwrapper">
+              <div class="sourceCode" id="cb2">
+                <pre
+                  class="sourceCode js"
+                ><code class="sourceCode javascript"><a class="sourceLine" id="cb2-1" title="1"><span class="co">// Assuming the data structure above, a list of user objects is named userList</span></a>
+    <a class="sourceLine" id="cb2-2" title="2"><span class="kw">const</span> UserContext <span class="op">=</span> <span class="va">React</span>.<span class="at">createContext</span>(userList)</a>
+    <a class="sourceLine" id="cb2-3" title="3"></a>
+    <a class="sourceLine" id="cb2-4" title="4"><span class="kw">function</span> <span class="at">UserListView</span>() <span class="op">{</span></a>
+    <a class="sourceLine" id="cb2-5" title="5">  <span class="kw">const</span> listOfUsers <span class="op">=</span> <span class="va">React</span>.<span class="at">useContext</span>(UserContext)</a>
+    <a class="sourceLine" id="cb2-6" title="6"></a>
+    <a class="sourceLine" id="cb2-7" title="7">  <span class="cf">return</span> <span class="va">listOfUsers</span>.<span class="at">map</span>(user <span class="kw">=&gt;</span> <span class="op">&lt;</span>p<span class="op">&gt;{</span><span class="va">user</span>.<span class="at">name</span><span class="op">}</span>&lt;/p<span class="op">&gt;</span>)</a>
+    <a class="sourceLine" id="cb2-8" title="8"><span class="op">}</span></a></code></pre>
+              </div>
+            </div>
+            <p>
+              This works great! Until you need to update that list of users, in
+              which case you probably need to create a custom component that
+              exposes methods for updating and retrieving values inside the
+              context:
+            </p>
+            <div class="blockwrapper">
+              <div class="sourceCode" id="cb3">
+                <pre
+                  class="sourceCode js"
+                ><code class="sourceCode javascript"><a class="sourceLine" id="cb3-1" title="1"><span class="kw">const</span> UserContext <span class="op">=</span> <span class="va">React</span>.<span class="at">createContext</span>([])</a>
+    <a class="sourceLine" id="cb3-2" title="2"><span class="kw">function</span> <span class="at">UserContextHolder</span>(<span class="op">{</span>children<span class="op">}</span>) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb3-3" title="3">  <span class="kw">const</span> [users<span class="op">,</span> setUsers] <span class="op">=</span> <span class="va">React</span>.<span class="at">useState</span>([])</a>
+    <a class="sourceLine" id="cb3-4" title="4">  <span class="cf">return</span> (</a>
+    <a class="sourceLine" id="cb3-5" title="5">    <span class="op">&lt;</span><span class="va">UserContext</span>.<span class="at">Provider</span> value<span class="op">={{</span>users<span class="op">,</span> setUsers<span class="op">}}&gt;</span></a>
+    <a class="sourceLine" id="cb3-6" title="6">      <span class="op">{</span>children<span class="op">}</span></a>
+    <a class="sourceLine" id="cb3-7" title="7">    &lt;/<span class="va">UserContext</span>.<span class="at">Provider</span><span class="op">&gt;</span></a>
+    <a class="sourceLine" id="cb3-8" title="8">  )</a>
+    <a class="sourceLine" id="cb3-9" title="9"><span class="op">}</span></a></code></pre>
+              </div>
+            </div>
+            <p>
+              Seems simple enough! However, this component will have to sit high
+              enough in the react DOM tree that all components that consume from
+              it can be its children. This means that any other children of this
+              component will be forced to re-render whenever <em>any</em> values
+              of this context are updated! Additionally, if we try and re-use
+              this context to store something else related to our user list,
+              such as a selected user, or a collection of selected users, we
+              would again force all components which consume this information to
+              be children of the context and force them to re-render anytime any
+              of the data changes.
+            </p>
+            <p>
+              To illustrate this, imagine we have a UI that shows a list of our
+              users and then a list of the likes and dislikes of a selected
+              user. If we store all of this information in context, we would see
+              a lot of render events when using this UI:
+            </p>
+            <div class="list-container">
+              <p><strong>=== MAIN LIST ===</strong></p>
+              <ul>
+                <li>
+                  0: The context mounts and our user list is updated via an XHR
+                  request.
+                </li>
+                <li>
+                  1: The default selected user is chosen from the user list and
+                  is set in the context
+                </li>
+                <li>
+                  2: Every time a new selected user is chosen, the context is
+                  updated and the component is re-rendered
+                </li>
+                <li>
+                  3: Updates from likes list 4: Updates from dislikes list
+                </li>
+              </ul>
+              <p><strong>=== LIKES LIST ===</strong></p>
+              <ul>
+                <li>0: Selected user from Main List causes initial render</li>
+                <li>1: Selected user update</li>
+                <li>2: Updates to itself</li>
+                <li>3: Updates to dislikes list</li>
+              </ul>
+              <p><strong>=== DISLIKES LIST ===</strong></p>
+              <ul>
+                <li>0: Selected user from Main List causes initial render</li>
+                <li>1: Selected user update</li>
+                <li>2: Updates to itself</li>
+                <li>3: Updates to likes list</li>
+              </ul>
+            </div>
+            <p>
+              Notice how with context, even updates to irrelevant bits of the
+              data cause re-renders. Our main list that just renders the users’
+              names should not be forced to re-render when information about a
+              specific user’s likes and dislikes is updated. This model also
+              assumes that the three lists are the only children of the context
+              component, but in the real world, our applications tend to be a
+              little more complex. For example, if we add button components for
+              adding, deleting, and editing likes and dislikes, all of those
+              components would also be re-rendered.
+            </p>
+            <p>
+              Imagine if we add properties to the user object–for example if we
+              want to show if a user is online–or we have a recursive data
+              structure, with each user having a list of friends who in turn are
+              user objects. Since many changes to the user list could take
+              place, we would increase the amount of re-renders of every
+              component each time we add, remove, or modify a part of this list.
+              Storing data in react context creates unnecessary links between
+              components and forces us to wrap each component in
+              <code>useMemo</code> to optimize rendering.
+            </p>
+          </section>
+          <section>
+            <h3>
+              Don’t Forget To Like And Subscribe: Using RXJS To Build Custom
+              Data Structures
+            </h3>
+            <p>
+              One of the convenient aspects of using react context is that you
+              get updates for free! Anytime a context value is updated, all the
+              components that consume it and their children call for a
+              re-render. This behavior is fantastic when you think about having
+              a truly data-driven UI, but not so fantastic when you consider the
+              complexities introduced above. So how can we keep this
+              auto-updating behavior while reducing component renders to only
+              depend on data directly consumed by the component itself? Enter
+              rxjs.
+            </p>
+            <p>
+              If you aren’t familiar with rxjs or reactive programming, I
+              recommend you check out Andre Staltz’s gist covering some of the
+              principles of
+              <a href="https://gist.github.com/staltz/868e7e9bc2a7b8c1f754"
+                >reactive programming</a
+              >. Rxjs subjects are a way for components to subscribe to data
+              changes. They offer a clean API for receiving and interacting with
+              updates to a data store. However, piping data directly from
+              observables into components will not be compatible with future
+              react updates since react updates on a pull based system, whereas
+              observables are
+              <a href="https://twitter.com/acdlite/status/1086517628653334528"
+                >push based</a
+              >. Using the hooks related to updating state provided by react, we
+              subscribe to changes in the data without directly pushing updates
+              to our components but rather requesting an update from the react
+              scheduler.
+            </p>
+            <p>
+              Using the user list defined above, we can construct a custom store
+              to contain our data and expose methods for updating and
+              subscribing to updates. By creating this data structure outside of
+              react, we allow its methods to be accessed independently from our
+              UI, giving us a powerful starting point for creating our own
+              useful data management utilities.
+            </p>
+            <p>
+              Let’s start by creating a basic structure for storing data and
+              subscriptions:
+            </p>
+            <div class="blockwrapper">
+              <div class="sourceCode" id="cb4">
+                <pre
+                  class="sourceCode js"
+                ><code class="sourceCode javascript"><a class="sourceLine" id="cb4-1" title="1"><span class="im">import</span> <span class="op">{</span> Subject <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;rxjs&#39;</span></a>
+    <a class="sourceLine" id="cb4-2" title="2"></a>
+    <a class="sourceLine" id="cb4-3" title="3"><span class="kw">class</span> DataStore <span class="op">{</span></a>
+    <a class="sourceLine" id="cb4-4" title="4">  subjects <span class="op">=</span> <span class="kw">new</span> <span class="at">Map</span>()</a>
+    <a class="sourceLine" id="cb4-5" title="5">  store <span class="op">=</span> <span class="kw">new</span> <span class="at">Map</span>()</a>
+    <a class="sourceLine" id="cb4-6" title="6"></a>
+    <a class="sourceLine" id="cb4-7" title="7">  getSubscription <span class="op">=</span> key <span class="kw">=&gt;</span> <span class="kw">this</span>.<span class="va">subjects</span>.<span class="at">get</span>(key)</a>
+    <a class="sourceLine" id="cb4-8" title="8">  getValue <span class="op">=</span> key <span class="kw">=&gt;</span> <span class="kw">this</span>.<span class="va">store</span>.<span class="at">get</span>(key)</a>
+    <a class="sourceLine" id="cb4-9" title="9"></a>
+    <a class="sourceLine" id="cb4-10" title="10">  createSubscription <span class="op">=</span> key <span class="kw">=&gt;</span> <span class="op">{</span></a>
+    <a class="sourceLine" id="cb4-11" title="11">    <span class="kw">const</span> subject <span class="op">=</span> <span class="kw">this</span>.<span class="va">subjects</span>.<span class="at">get</span>(key)</a>
+    <a class="sourceLine" id="cb4-12" title="12">    <span class="kw">const</span> storeValue <span class="op">=</span> <span class="kw">this</span>.<span class="va">store</span>.<span class="at">get</span>(key)</a>
+    <a class="sourceLine" id="cb4-13" title="13">    <span class="cf">if</span> (subject <span class="op">&amp;&amp;</span> storeValue) <span class="cf">return</span> subject</a>
+    <a class="sourceLine" id="cb4-14" title="14">    <span class="kw">this</span>.<span class="va">subjects</span>.<span class="at">set</span>(key<span class="op">,</span> <span class="kw">new</span> <span class="at">Subject</span>())</a>
+    <a class="sourceLine" id="cb4-15" title="15">    <span class="kw">this</span>.<span class="va">store</span>.<span class="at">set</span>(key<span class="op">,</span> <span class="kw">undefined</span>)</a>
+    <a class="sourceLine" id="cb4-16" title="16">    <span class="cf">return</span> <span class="kw">this</span>.<span class="va">subjects</span>.<span class="at">get</span>(key)</a>
+    <a class="sourceLine" id="cb4-17" title="17">  <span class="op">}</span></a>
+    <a class="sourceLine" id="cb4-18" title="18"></a>
+    <a class="sourceLine" id="cb4-19" title="19">  setValue <span class="op">=</span> (key<span class="op">,</span> value) <span class="kw">=&gt;</span> <span class="op">{</span></a>
+    <a class="sourceLine" id="cb4-20" title="20">    <span class="kw">this</span>.<span class="va">store</span>.<span class="at">set</span>(key<span class="op">,</span> value)</a>
+    <a class="sourceLine" id="cb4-21" title="21">    <span class="kw">this</span>.<span class="va">subjects</span>.<span class="at">get</span>(key).<span class="at">next</span>(value)</a>
+    <a class="sourceLine" id="cb4-22" title="22">  <span class="op">}</span></a>
+    <a class="sourceLine" id="cb4-23" title="23"></a>
+    <a class="sourceLine" id="cb4-24" title="24">  removeSubscription <span class="op">=</span> key <span class="kw">=&gt;</span> <span class="op">{</span></a>
+    <a class="sourceLine" id="cb4-25" title="25">    <span class="kw">const</span> selectedSubscription <span class="op">=</span> <span class="kw">this</span>.<span class="va">subjects</span>.<span class="at">get</span>(key)</a>
+    <a class="sourceLine" id="cb4-26" title="26">    <span class="kw">const</span> selectedValue <span class="op">=</span> <span class="kw">this</span>.<span class="va">store</span>.<span class="at">get</span>(key)</a>
+    <a class="sourceLine" id="cb4-27" title="27">    <span class="cf">if</span> (selectedSubscription) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb4-28" title="28">      <span class="va">selectedSubscription</span>.<span class="at">complete</span>()</a>
+    <a class="sourceLine" id="cb4-29" title="29">      <span class="kw">this</span>.<span class="va">subjects</span>.<span class="at">delete</span>(key)</a>
+    <a class="sourceLine" id="cb4-30" title="30">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+    <a class="sourceLine" id="cb4-31" title="31">      <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;Cannot find subscription %s&#39;</span><span class="op">,</span> key)</a>
+    <a class="sourceLine" id="cb4-32" title="32">    <span class="op">}</span></a>
+    <a class="sourceLine" id="cb4-33" title="33">    <span class="cf">if</span> (selectedValue) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb4-34" title="34">      <span class="kw">this</span>.<span class="va">store</span>.<span class="at">delete</span>(key)</a>
+    <a class="sourceLine" id="cb4-35" title="35">    <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+    <a class="sourceLine" id="cb4-36" title="36">      <span class="cf">throw</span> <span class="kw">new</span> <span class="at">Error</span>(<span class="st">&#39;Cannot find store key %s&#39;</span><span class="op">,</span> key)</a>
+    <a class="sourceLine" id="cb4-37" title="37">    <span class="op">}</span></a>
+    <a class="sourceLine" id="cb4-38" title="38">  <span class="op">}</span></a>
+    <a class="sourceLine" id="cb4-39" title="39"><span class="op">}</span></a></code></pre>
+              </div>
+            </div>
+            <p>
+              Unlike our example using context, this structure is completely
+              agnostic to the shape of our data giving it flexibility to be
+              re-used across our entire application. A data structure like this
+              allows us to store almost anything ( except duplicate keys ),
+              which means that we could have many instances of the
+              <code>DataStore</code> object, or we could have a monolithic store
+              that contains all of our application’s data ( though I’m not sure
+              if that is the best idea ).
+            </p>
+            <p>
+              From the methods exposed by the <code>DataStore</code> object, we
+              can make a whole host of utilities for consuming, updating,
+              introspecting, and subscribing to our data. Let’s see how they can
+              be consumed directly within our react components.
+            </p>
+            <p>
+              First, instantiate an instance of the
+              <code>DataStore</code> object outside of our component and create
+              a subscription for our user list.
+            </p>
+            <div class="blockwrapper">
+              <div class="sourceCode" id="cb5">
+                <pre
+                  class="sourceCode js"
+                ><code class="sourceCode javascript"><a class="sourceLine" id="cb5-1" title="1"><span class="co">// in UserRender.jsx</span></a>
+    <a class="sourceLine" id="cb5-2" title="2"></a>
+    <a class="sourceLine" id="cb5-3" title="3"><span class="kw">const</span> USER_STORE <span class="op">=</span> <span class="kw">new</span> <span class="at">DataStore</span>()</a>
+    <a class="sourceLine" id="cb5-4" title="4"><span class="va">USER_STORE</span>.<span class="at">createSubscription</span>(<span class="st">&#39;userList&#39;</span>)</a></code></pre>
+              </div>
+            </div>
+            <p>
+              Inside our component logic we can create methods for consuming the
+              data from the store. Here is where we want to cause re-renders
+              when our data changes.
+            </p>
+            <div class="blockwrapper">
+              <div class="sourceCode" id="cb6">
+                <pre
+                  class="sourceCode js"
+                ><code class="sourceCode javascript"><a class="sourceLine" id="cb6-1" title="1"><span class="co">// in UserRender.jsx</span></a>
+    <a class="sourceLine" id="cb6-2" title="2"></a>
+    <a class="sourceLine" id="cb6-3" title="3"><span class="kw">const</span> USER_STORE <span class="op">=</span> <span class="kw">new</span> <span class="at">DataStore</span>()</a>
+    <a class="sourceLine" id="cb6-4" title="4"><span class="va">USER_STORE</span>.<span class="at">createSubscription</span>(<span class="st">&#39;userList&#39;</span>)</a>
+    <a class="sourceLine" id="cb6-5" title="5"></a>
+    <a class="sourceLine" id="cb6-6" title="6"><span class="kw">const</span> fetchAndStoreUserList <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+    <a class="sourceLine" id="cb6-7" title="7">  <span class="at">fetchUsers</span>().<span class="at">then</span>(users <span class="kw">=&gt;</span> <span class="va">USER_STORE</span>.<span class="at">setValue</span>(<span class="st">&#39;userList&#39;</span><span class="op">,</span> users))</a>
+    <a class="sourceLine" id="cb6-8" title="8"><span class="op">}</span></a>
+    <a class="sourceLine" id="cb6-9" title="9"></a>
+    <a class="sourceLine" id="cb6-10" title="10"><span class="im">export</span> <span class="kw">function</span> <span class="at">UserRender</span>() <span class="op">{</span></a>
+    <a class="sourceLine" id="cb6-11" title="11">  <span class="kw">const</span> [userList<span class="op">,</span> setUserList] <span class="op">=</span> <span class="va">React</span>.<span class="at">useState</span>([])</a>
+    <a class="sourceLine" id="cb6-12" title="12">  <span class="va">USER_STORE</span>.<span class="at">getSubscription</span>(<span class="st">&#39;userList&#39;</span>).<span class="at">subscribe</span>(setUserList)</a>
+    <a class="sourceLine" id="cb6-13" title="13">  <span class="va">React</span>.<span class="at">useEffect</span>(fetchAndStoreUserList<span class="op">,</span> [])</a>
+    <a class="sourceLine" id="cb6-14" title="14"></a>
+    <a class="sourceLine" id="cb6-15" title="15">  <span class="cf">return</span> <span class="va">userList</span>.<span class="at">map</span>(user <span class="kw">=&gt;</span> <span class="op">&lt;</span>p<span class="op">&gt;{</span><span class="va">user</span>.<span class="at">name</span><span class="op">}</span>&lt;/p<span class="op">&gt;</span>)</a>
+    <a class="sourceLine" id="cb6-16" title="16"><span class="op">}</span></a></code></pre>
+              </div>
+            </div>
+            <p>
+              This is how we pull the list of users out of the
+              <code>DataStore</code> and into our component. This leverages
+              react’s <code>useState</code> function by allowing us to request
+              an update from react instead of immediately pushing component
+              updates from our subscription. Piping the output of our
+              subscription into <code>useState</code> also allows react to batch
+              renders, which comes in handy if the user list was being updated
+              from a web-socket connection or any other method that rapidly
+              triggers state updates.
+            </p>
+            <p>
+              At this point you are probably be thinking, “this looks nice, but
+              won’t I still have to re-render the main list when I call
+              <code>USER_STORE.setValue</code> ?”. The answer is yes. Even
+              though we have moved the management of the application data
+              outside of react, we’re still tied to the update cycle called by
+              <code>useState</code> as it’s passed as a callback to
+              <code>USER_STORE.setValue</code>. This is where hooks really start
+              to shine!
+            </p>
+          </section>
+          <section>
+            <h3>Press F For Selects ?</h3>
+            <p>
+              If you’ve used redux, you’ve most likely encountered selectors.
+              For those who aren’t familiar with the subject, selectors allow us
+              to isolate ( or select ) a part of our application data and only
+              initiate renders when that part of the data changes. Using hooks,
+              we wrap the functionality of the <code>USER_STORE</code> to use a
+              selector which only updates the <code>UserRender</code> component
+              when the list of users changes. This means that we update parts of
+              the user data ( like a likes or dislikes list ) without having to
+              re-render the components that don’t consume that data directly.
+              Creating hooks that take selectors as an argument also helps those
+              of us transitioning from a redux heavy codebase and allows for the
+              re-use of existing code.
+            </p>
+            <div class="blockwrapper">
+              <div class="sourceCode" id="cb7">
+                <pre
+                  class="sourceCode js"
+                ><code class="sourceCode javascript"><a class="sourceLine" id="cb7-1" title="1"><span class="im">export</span> <span class="kw">function</span> <span class="at">useSelector</span>(store<span class="op">,</span> subscriptionKey<span class="op">,</span> selector) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb7-2" title="2">  <span class="va">store</span>.<span class="at">getSubscription</span>(subscriptionKey).<span class="at">subscribe</span>(selector)</a>
+    <a class="sourceLine" id="cb7-3" title="3"><span class="op">}</span></a></code></pre>
+              </div>
+            </div>
+            <p>
+              The code for <code>useSelector</code> is simple, thanks to how we
+              created the <code>DataStore</code>. We simply want to pass it the
+              store we from which we want to read ( in this case
+              <code>USER_STORE</code> ), the key for the subscription we are
+              interested in ( <code>userList</code> ), and the selector function
+              that will be called whenever a new value gets pushed to the
+              stream. We can now reuse our redux selectors with our new data
+              structure!
+            </p>
+            <p>
+              We want to serialize the keys of our user list and only update the
+              <code>UserRender</code> component if those keys change. To do
+              that, we need to first create our user list selector:
+            </p>
+            <div class="blockwrapper">
+              <div class="sourceCode" id="cb8">
+                <pre
+                  class="sourceCode js"
+                ><code class="sourceCode javascript"><a class="sourceLine" id="cb8-1" title="1"><span class="kw">function</span> <span class="at">memoUsers</span>() <span class="op">{</span></a>
+    <a class="sourceLine" id="cb8-2" title="2">  <span class="kw">const</span> cache <span class="op">=</span> <span class="op">{}</span></a>
+    <a class="sourceLine" id="cb8-3" title="3">  <span class="cf">return</span> <span class="kw">function</span>(updateUser) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb8-4" title="4">    <span class="cf">return</span> <span class="kw">function</span>(<span class="dt">userList</span><span class="op">:</span> User[]) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb8-5" title="5">      <span class="kw">const</span> key <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(<span class="va">userList</span>.<span class="at">map</span>(user <span class="kw">=&gt;</span> <span class="va">user</span>.<span class="at">user</span>))</a>
+    <a class="sourceLine" id="cb8-6" title="6">      <span class="cf">if</span> (cache[key]) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb8-7" title="7">        <span class="co">// don&#39;t call to re-render</span></a>
+    <a class="sourceLine" id="cb8-8" title="8">      <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+    <a class="sourceLine" id="cb8-9" title="9">        cache[key] <span class="op">=</span> key</a>
+    <a class="sourceLine" id="cb8-10" title="10">        <span class="at">updateUser</span>(userList)</a>
+    <a class="sourceLine" id="cb8-11" title="11">      <span class="op">}</span></a>
+    <a class="sourceLine" id="cb8-12" title="12">    <span class="op">}</span></a>
+    <a class="sourceLine" id="cb8-13" title="13">  <span class="op">}</span></a>
+    <a class="sourceLine" id="cb8-14" title="14"><span class="op">}</span></a></code></pre>
+              </div>
+            </div>
+            <p>
+              Now, <code>memoUsers</code> can be passed to our
+              <code>useSelector</code> hook and be used in place of our
+              <code>userSubscription</code>.
+            </p>
+            <div class="blockwrapper">
+              <div class="sourceCode" id="cb9">
+                <pre
+                  class="sourceCode js"
+                ><code class="sourceCode javascript"><a class="sourceLine" id="cb9-1" title="1"><span class="co">// in UserRender.jsx</span></a>
+    <a class="sourceLine" id="cb9-2" title="2"></a>
+    <a class="sourceLine" id="cb9-3" title="3"><span class="im">import</span> <span class="op">{</span> useSelector <span class="op">}</span> <span class="im">from</span> <span class="st">&#39;./hooks&#39;</span></a>
+    <a class="sourceLine" id="cb9-4" title="4"></a>
+    <a class="sourceLine" id="cb9-5" title="5"><span class="kw">const</span> USER_STORE <span class="op">=</span> <span class="kw">new</span> <span class="at">DataStore</span>()</a>
+    <a class="sourceLine" id="cb9-6" title="6"><span class="va">USER_STORE</span>.<span class="at">createSubscription</span>(<span class="st">&#39;userList&#39;</span>)</a>
+    <a class="sourceLine" id="cb9-7" title="7"></a>
+    <a class="sourceLine" id="cb9-8" title="8"><span class="kw">const</span> fetchAndStoreUserList <span class="op">=</span> () <span class="kw">=&gt;</span> <span class="op">{</span></a>
+    <a class="sourceLine" id="cb9-9" title="9">  <span class="at">fetchUsers</span>().<span class="at">then</span>(users <span class="kw">=&gt;</span> <span class="va">USER_STORE</span>.<span class="at">setValue</span>(<span class="st">&#39;userList&#39;</span><span class="op">,</span> users))</a>
+    <a class="sourceLine" id="cb9-10" title="10"><span class="op">}</span></a>
+    <a class="sourceLine" id="cb9-11" title="11"></a>
+    <a class="sourceLine" id="cb9-12" title="12"></a>
+    <a class="sourceLine" id="cb9-13" title="13"><span class="kw">function</span> <span class="at">memoUsers</span>() <span class="op">{</span></a>
+    <a class="sourceLine" id="cb9-14" title="14">  <span class="kw">const</span> cache <span class="op">=</span> <span class="op">{}</span></a>
+    <a class="sourceLine" id="cb9-15" title="15">  <span class="cf">return</span> <span class="kw">function</span>(updateUser) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb9-16" title="16">    <span class="cf">return</span> <span class="kw">function</span>(<span class="dt">userList</span><span class="op">:</span> User[]) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb9-17" title="17">      <span class="kw">const</span> key <span class="op">=</span> <span class="va">JSON</span>.<span class="at">stringify</span>(<span class="va">userList</span>.<span class="at">map</span>(user <span class="kw">=&gt;</span> <span class="va">user</span>.<span class="at">user</span>))</a>
+    <a class="sourceLine" id="cb9-18" title="18">      <span class="cf">if</span> (cache[key]) <span class="op">{</span></a>
+    <a class="sourceLine" id="cb9-19" title="19">        <span class="co">// don&#39;t call to re-render</span></a>
+    <a class="sourceLine" id="cb9-20" title="20">      <span class="op">}</span> <span class="cf">else</span> <span class="op">{</span></a>
+    <a class="sourceLine" id="cb9-21" title="21">        cache[key] <span class="op">=</span> key</a>
+    <a class="sourceLine" id="cb9-22" title="22">        <span class="at">updateUser</span>(userList)</a>
+    <a class="sourceLine" id="cb9-23" title="23">      <span class="op">}</span></a>
+    <a class="sourceLine" id="cb9-24" title="24">    <span class="op">}</span></a>
+    <a class="sourceLine" id="cb9-25" title="25">  <span class="op">}</span></a>
+    <a class="sourceLine" id="cb9-26" title="26"><span class="op">}</span></a>
+    <a class="sourceLine" id="cb9-27" title="27"></a>
+    <a class="sourceLine" id="cb9-28" title="28"><span class="kw">const</span> cache <span class="op">=</span> <span class="at">memoUsers</span>()</a>
+    <a class="sourceLine" id="cb9-29" title="29"></a>
+    <a class="sourceLine" id="cb9-30" title="30"><span class="im">export</span> <span class="kw">function</span> <span class="at">UserRender</span>() <span class="op">{</span></a>
+    <a class="sourceLine" id="cb9-31" title="31">  <span class="kw">const</span> [userList<span class="op">,</span> setUserList] <span class="op">=</span> <span class="va">React</span>.<span class="at">useState</span>([])</a>
+    <a class="sourceLine" id="cb9-32" title="32">  <span class="kw">const</span> setCachedUserList <span class="op">=</span> <span class="at">cache</span>(setUserList)</a>
+    <a class="sourceLine" id="cb9-33" title="33">  <span class="at">useSelector</span>(USER_STORE<span class="op">,</span> <span class="st">&#39;userList&#39;</span><span class="op">,</span> setCachedUserList)</a>
+    <a class="sourceLine" id="cb9-34" title="34">  <span class="va">React</span>.<span class="at">useEffect</span>(fetchAndStoreUserList<span class="op">,</span> [])</a>
+    <a class="sourceLine" id="cb9-35" title="35"></a>
+    <a class="sourceLine" id="cb9-36" title="36">  <span class="cf">return</span> <span class="va">userList</span>.<span class="at">map</span>(user <span class="kw">=&gt;</span> <span class="op">&lt;</span>p<span class="op">&gt;{</span><span class="va">user</span>.<span class="at">name</span><span class="op">}</span>&lt;/p<span class="op">&gt;</span>)</a>
+    <a class="sourceLine" id="cb9-37" title="37"><span class="op">}</span></a></code></pre>
+              </div>
+            </div>
+            <p>
+              The <code>UserRender</code> component now only updates if we have
+              added or removed a user from the list or changed the selected
+              user, and not when we change the properties of a particular user.
+              The component itself is simple and the heavy lifting of
+              application data is handled by our <code>DataStore</code>. We
+              didn’t need to create actions and reducers, or use higher order
+              components.
+            </p>
+            <p>
+              You can do more to improve writing to your data store be extending
+              the <code>DataStore</code> object. Extending
+              <code>DataStore</code> should be on a per-use-case basis, as it
+              would be an anti-pattern to add a new method to
+              <code>DataStore</code> for every use case encountered. A better
+              approach would be to create a new object that extends
+              <code>DataStore</code> and adds the methods needed for a
+              particular situation. The key here is that we maintain flexibility
+              with these data structures, since the structure of our data is
+              irrelevant to react, custom data structures should be simple to
+              read and simple to write.
+            </p>
+          </section>
+          <section>
+            <h3>
+              State Management !== Data Management: don’t @ me ( or do, I would
+              love to hear your feedback )
+            </h3>
+            <p>
+              Taking data management outside of react gives us a base for
+              controlling externally triggered component renders. It also allows
+              us to develop patterns that are easily re-used across the
+              application. It takes the burden of caching and manipulating away
+              from react. With hooks, we can easily hook into our custom data
+              structures which allows our components to only consume what they
+              need and react only to updates that are relevant to them.
+            </p>
+            <p>
+              Focusing on how our components consume data across our application
+              prevents brittle architecture by allowing each component to
+              independently pick and choose how and when it reads and writes to
+              a shared data structure. Unlike using context, we don’t have to
+              think about where in the react DOM tree our components are
+              located, or wrapping components in <code>useMemo</code> to
+              optimize render cycles.
+            </p>
+            <p>
+              Efficient data management boils down to simplicity. Can you
+              reliably track the flow of data through you application, are you
+              able to introspect your data, are your components forced to update
+              when data they don’t consume changes? These are questions that
+              should be asked as you build your application. No one-size fits
+              all solution exists for data management, but I hope you will
+              consider simplifying and try some of the concepts talked about
+              here.
+            </p>
+          </section>
+        </section>
+      </article>
+    </div>
+    <script src="blogheader.js"></script>
+    <script data-goatcounter="https://teukka_tech.goatcounter.com/count"
+            async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>

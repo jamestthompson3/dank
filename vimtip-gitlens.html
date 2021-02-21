@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en-US" xml:lang="">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0,viewport-fit=cover">
+    <meta name="author" content="Taylor Thompson" />
+    <meta property="og:title" content="Replicate the basic functionality VSCode's GitLens in 26 lines of lua" />
+    <meta property="og:type" content="article" />
+    <meta property="og:url" content="https://teukka.tech/vimtip-gitlens.html" />
+    <link rel="cannonical" href="https://teukka.tech/vimtip-gitlens.html" />
+    <meta property="og:description" content="improve your neovim + git experience" />
+    <meta name="description" content="improve your neovim + git experience" />
+    <meta property="og:image" content="https://neovim.io/images/logo@2x.png" />
+    <meta name="robots" content="index, follow">
+    <title>💡 5 Minute Neovim Tip: GitLens</title>
+    <link rel="stylesheet" href="./pandocoverride.css" />
+    <link href="tooltip.css" rel="stylesheet" />
+    <link
+      href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
+      rel="stylesheet"
+      />
+
+<script>
+	// Only load on production environment.
+	if (window.location.host !== 'teukka.tech')
+		window.goatcounter = {no_onload: true};
+</script>
+    <!--[if lt IE 9]>
+      <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+    <![endif]-->
+    <style>
+      #img-container {
+        width: 75%;
+        margin: auto;
+      }
+      #img-container img {
+        width: 100%;
+      }
+      @media(max-width: 450px) {
+        #img-container {
+          width: auto;
+          overflow: scroll;
+        }
+        #img-container span {
+          transform: scale(1.5);
+        }
+      }
+    </style>
+  </head>
+  <body>
+    <h2 id="intro">Intro</h2>
+    <p><a href="https://marketplace.visualstudio.com/items?itemName=eamodio.gitlens">GitLens</a> is a VSCode plugin that, among other things, allows you to see the time, commit author, and commit message of the current line. With a little help from to the neovim api and our shell, it we can recreate this functionality in a few lines of lua code.</p>
+    <h2 id="the-result">The Result</h2>
+    <div id="img-container" >
+      <img id="resultImg" src="https://i.imgur.com/87L63Sk.png" alt="gitlens hover" title="see git blame for the current line" />
+    </div>
+    <h2 id="the-code">The Code</h2>
+    <div class="sourceCode" id="cb1"><pre class="sourceCode lua"><code class="sourceCode lua"><span id="cb1-1"><a href="#cb1-1"></a><span class="co">-- in utils.lua</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">local</span> <span class="cn">M</span> <span class="op">=</span> <span class="op">{}</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">local</span> <span class="cn">api</span> <span class="op">=</span> <span class="cn">vim</span><span class="op">.</span><span class="cn">api</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>blameVirtText<span class="op">()</span></span>
+<span id="cb1-4"><a href="#cb1-4"></a>  <span class="kw">local</span> ft <span class="op">=</span> vim<span class="op">.</span>fn<span class="op">.</span>expand<span class="op">(</span><span class="st">&#39;%:h:t&#39;</span><span class="op">)</span> <span class="co">-- get the current file extension</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a>  <span class="cf">if</span> ft <span class="op">==</span> <span class="st">&#39;&#39;</span> <span class="cf">then</span> <span class="co">-- if we are in a scratch buffer or unknown filetype</span></span>
+<span id="cb1-6"><a href="#cb1-6"></a>    <span class="cf">return</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>  <span class="cf">end</span></span>
+<span id="cb1-8"><a href="#cb1-8"></a>  <span class="cf">if</span> ft <span class="op">==</span> <span class="st">&#39;bin&#39;</span> <span class="cf">then</span> <span class="co">-- if we are in nvim&#39;s terminal window</span></span>
+<span id="cb1-9"><a href="#cb1-9"></a>    <span class="cf">return</span></span>
+<span id="cb1-10"><a href="#cb1-10"></a>  <span class="cf">end</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>  api<span class="op">.</span>nvim_buf_clear_namespace<span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">)</span> <span class="co">-- clear out virtual text from namespace 2 (the namespace we will set later)</span></span>
+<span id="cb1-12"><a href="#cb1-12"></a>  <span class="kw">local</span> currFile <span class="op">=</span> vim<span class="op">.</span>fn<span class="op">.</span>expand<span class="op">(</span><span class="st">&#39;%&#39;</span><span class="op">)</span></span>
+<span id="cb1-13"><a href="#cb1-13"></a>  <span class="kw">local</span> line <span class="op">=</span> api<span class="op">.</span>nvim_win_get_cursor<span class="op">(</span><span class="dv">0</span><span class="op">)</span></span>
+<span id="cb1-14"><a href="#cb1-14"></a>  <span class="kw">local</span> blame <span class="op">=</span> vim<span class="op">.</span>fn<span class="op">.</span>system<span class="op">(</span><span class="fu">string.format</span><span class="op">(</span><span class="st">&#39;git blame -c -L %d,%d %s&#39;</span><span class="op">,</span> line<span class="op">[</span><span class="dv">1</span><span class="op">],</span> line<span class="op">[</span><span class="dv">1</span><span class="op">],</span> currFile<span class="op">))</span></span>
+<span id="cb1-15"><a href="#cb1-15"></a>  <span class="kw">local</span> hash <span class="op">=</span> vim<span class="op">.</span>split<span class="op">(</span>blame<span class="op">,</span> <span class="st">&#39;%s&#39;</span><span class="op">)[</span><span class="dv">1</span><span class="op">]</span></span>
+<span id="cb1-16"><a href="#cb1-16"></a>  <span class="kw">local</span> cmd <span class="op">=</span> <span class="fu">string.format</span><span class="op">(</span><span class="st">&quot;git show %s &quot;</span><span class="op">,</span> hash<span class="op">)..</span><span class="st">&quot;--format=&#39;%an | %ar | %s&#39;&quot;</span></span>
+<span id="cb1-17"><a href="#cb1-17"></a>  <span class="cf">if</span> hash <span class="op">==</span> <span class="st">&#39;00000000&#39;</span> <span class="cf">then</span></span>
+<span id="cb1-18"><a href="#cb1-18"></a>    text <span class="op">=</span> <span class="st">&#39;Not Committed Yet&#39;</span></span>
+<span id="cb1-19"><a href="#cb1-19"></a>  <span class="cf">else</span></span>
+<span id="cb1-20"><a href="#cb1-20"></a>    text <span class="op">=</span> vim<span class="op">.</span>fn<span class="op">.</span>system<span class="op">(</span>cmd<span class="op">)</span></span>
+<span id="cb1-21"><a href="#cb1-21"></a>    text <span class="op">=</span> vim<span class="op">.</span>split<span class="op">(</span>text<span class="op">,</span> <span class="st">&#39;</span><span class="sc">\n</span><span class="st">&#39;</span><span class="op">)[</span><span class="dv">1</span><span class="op">]</span></span>
+<span id="cb1-22"><a href="#cb1-22"></a>    <span class="cf">if</span> text<span class="op">:</span><span class="fu">find</span><span class="op">(</span><span class="st">&quot;fatal&quot;</span><span class="op">)</span> <span class="cf">then</span> <span class="co">-- if the call to git show fails</span></span>
+<span id="cb1-23"><a href="#cb1-23"></a>      text <span class="op">=</span> <span class="st">&#39;Not Committed Yet&#39;</span></span>
+<span id="cb1-24"><a href="#cb1-24"></a>    <span class="cf">end</span></span>
+<span id="cb1-25"><a href="#cb1-25"></a>  <span class="cf">end</span></span>
+<span id="cb1-26"><a href="#cb1-26"></a>  api<span class="op">.</span>nvim_buf_set_virtual_text<span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> line<span class="op">[</span><span class="dv">1</span><span class="op">]</span> <span class="op">-</span> <span class="dv">1</span><span class="op">,</span> <span class="op">{{</span> text<span class="op">,</span><span class="st">&#39;GitLens&#39;</span> <span class="op">}},</span> <span class="op">{})</span> <span class="co">-- set virtual text for namespace 2 with the content from git and assign it to the higlight group &#39;GitLens&#39;</span></span>
+<span id="cb1-27"><a href="#cb1-27"></a><span class="cf">end</span></span>
+<span id="cb1-28"><a href="#cb1-28"></a></span>
+<span id="cb1-29"><a href="#cb1-29"></a><span class="kw">function</span> <span class="cn">M</span><span class="op">.</span>clearBlameVirtText<span class="op">()</span> <span class="co">-- important for clearing out the text when our cursor moves</span></span>
+<span id="cb1-30"><a href="#cb1-30"></a>  api<span class="op">.</span>nvim_buf_clear_namespace<span class="op">(</span><span class="dv">0</span><span class="op">,</span> <span class="dv">2</span><span class="op">,</span> <span class="dv">0</span><span class="op">,</span> <span class="op">-</span><span class="dv">1</span><span class="op">)</span></span>
+<span id="cb1-31"><a href="#cb1-31"></a><span class="cf">end</span></span>
+<span id="cb1-32"><a href="#cb1-32"></a></span>
+<span id="cb1-33"><a href="#cb1-33"></a><span class="cf">return</span> <span class="cn">M</span></span></code></pre></div>
+      <pre class="vim" style="width:100%;"><code>&quot; in init.vim
+<span class="st">lua</span> vim.api.nvim_command [[autocmd CursorHold   * lua require&#39;utils&#39;.blameVirtText()]]
+<span class="st">lua</span> vim.api.nvim_command [[autocmd CursorMoved  * lua require&#39;utils&#39;.clearBlameVirtText()]]
+<span class="st">lua</span> vim.api.nvim_command [[autocmd CursorMovedI * lua require&#39;utils&#39;.clearBlameVirtText()]]
+
+hi! link GitLens Comment</code></pre>
+  <br />
+  <div>
+    <h3 class="related" id="related">Related Posts</h3>
+    <div class="related-container">
+      <p onclick="enterPreview(event)" data-href="/luanvim.html#preview" class="rel-article">Lua and Neovim</p>
+      <p onclick="enterPreview(event)" data-href="/vimloop.html#preview" class="rel-article">Working with Libuv in Neovim</p>
+    </div>
+    <div id="preview"></div>
+  </div>
+<script src="./blogheader.js"></script>
+<script data-goatcounter="https://teukka_tech.goatcounter.com/count"
+        async src="//gc.zgo.at/count.js"></script>
+  </body>
+</html>

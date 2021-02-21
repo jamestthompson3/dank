@@ -1,0 +1,117 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="" xml:lang="">
+<head>
+  <meta charset="utf-8" />
+  <meta name="generator" content="pandoc" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0,viewport-fit=cover">
+  <meta name="robots" content="index, follow">
+
+  <meta name="author" content="Taylor Thompson" />
+  <meta name="description" content="In-browser notifications, no server required!" />
+  <meta property="og:title" content="Web notifications in javascript" />
+  <meta property="og:type" content="article" />
+  <meta property="og:url" content="https://teukka.tech/notifications.html" />
+  <link rel="cannonical" href="https://teukka.tech/notifications.html" />
+  <meta property="og:image" content="https://images.unsplash.com/photo-1586957960362-65815d739527?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80" />
+  <title>👋 Browser Notifications</title>
+  <link rel="stylesheet" href="./pandocoverride.css" />
+  <link href="tooltip.css" rel="stylesheet" />
+  <link
+    href="https://fonts.googleapis.com/css?family=B612+Mono&display=swap"
+    rel="stylesheet"
+    />
+  <!--[if lt IE 9]>
+    <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
+  <![endif]-->
+
+<script>
+	// Only load on production environment.
+	if (window.location.host !== 'teukka.tech')
+		window.goatcounter = {no_onload: true};
+</script>
+</head>
+<body>
+<h2 id="let-em-know">Let 'Em Know</h2>
+<p>While notifications are one of the browser features that are often abused and lead to obnoxious spam, there are still use cases where notifications enhance the experience of your web application. Modern browsers (with the exception of iOS Safari), support two types of notifications: <a href="https://developer.mozilla.org/en-US/docs/Web/API/Push_API">push</a>, and <a href="https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API">web</a>. This post discusses <em>only</em> web notifications, since they do not require registration on a server, or the use of a service worker (although they can be used with both). After a short intro on how to set up web notifications, we'll dive into an example where web notifications are a useful addition to your web app.</p>
+<h2 id="getting-started">Getting Started</h2>
+<p>To start using web notifications you must request permissions from the user. Important note: you cannot request notification permissions over insecure connections, which means you must be serving your application over HTTPS or from your localhost. Once you are serving you app over HTTPS or from your localhost, requesting permissions is straight forward:</p>
+<div class="sourceCode" id="cb1"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb1-1"><a href="#cb1-1"></a><span class="kw">&lt;h1&gt;</span>Permission Spam<span class="kw">&lt;/h1&gt;</span></span>
+<span id="cb1-2"><a href="#cb1-2"></a><span class="kw">&lt;p&gt;</span>Your current notification status is: <span class="kw">&lt;span</span><span class="ot"> id=</span><span class="st">&quot;permStatus&quot;</span><span class="kw">&gt;&lt;/span&gt;&lt;/p&gt;</span></span>
+<span id="cb1-3"><a href="#cb1-3"></a></span>
+<span id="cb1-4"><a href="#cb1-4"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb1-5"><a href="#cb1-5"></a><span class="kw">const</span> status <span class="op">=</span> <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&#39;permStatus&#39;</span>)</span>
+<span id="cb1-6"><a href="#cb1-6"></a><span class="kw">const</span> currentPermission <span class="op">=</span> <span class="bu">Notification</span><span class="op">.</span><span class="at">permission</span></span>
+<span id="cb1-7"><a href="#cb1-7"></a>status<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> currentPermission</span>
+<span id="cb1-8"><a href="#cb1-8"></a><span class="cf">if</span> (currentPermission <span class="op">===</span> <span class="st">&#39;denied&#39;</span>) {</span>
+<span id="cb1-9"><a href="#cb1-9"></a>  <span class="bu">Notification</span><span class="op">.</span><span class="fu">requestPermission</span>()<span class="op">.</span><span class="fu">then</span>(result <span class="kw">=&gt;</span> {</span>
+<span id="cb1-10"><a href="#cb1-10"></a>      status<span class="op">.</span><span class="at">textContent</span> <span class="op">=</span> result<span class="op">;</span></span>
+<span id="cb1-11"><a href="#cb1-11"></a>      })</span>
+<span id="cb1-12"><a href="#cb1-12"></a>}</span>
+<span id="cb1-13"><a href="#cb1-13"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>The global <code>Notification</code> object exposes the <code>permission</code> property reflecting the current permission status and the <code>requestPermission</code> function which returns a promise resolving permission status given by the user after being prompted by the browser. In some browsers, such as Firefox 72 and onward, a popup requesting notifications won't be displayed; the promise from <code>requestPermission</code> pends until the user clicks on the icon allowing notifications from their URL bar.</p>
+<h3 id="note-on-above-code">Note on above code</h3>
+<blockquote>
+<p>In the snippet for above, the browser requests permissions as soon as the page is loaded. Additionally, if the user hasn't allowed notification permissions, they will be asked every time they visit the page. This is a <em><em>horrible</em></em> user experience. Nobody wants to be spammed with notifications, especially when no explanation of what type of events will trigger the notifications or how often they will be sent is given. Therefore, it is important that you never request notification permissions before giving an explanation of the notification behavior and after gathering user input for opting in.</p>
+</blockquote>
+<p>For our examples, we will be using a <a href="https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API">Web Worker</a> to manage the notification logic. This has the advantage of being off the main thread, which means that the logic is non-blocking and can be accessed via a global singleton for component based frameworks such as React, allowing all components to trigger notifications. One of the disadvantages of using a web worker for notifications is that the notifications are not triggered if the user closes the tab. To bypass that restriction, the example code will have to be executed in a <a href="serviceworker.html">Service Worker</a>.</p>
+<h2 id="example-long-running-jobs">Example: Long Running Jobs</h2>
+<p>Some applications have long running jobs: processing an uploaded file, preparing data for download, executing a CI / CD pipeline, etc. Web notifications are a good way for users to "click and forget", setting the job in motion and continue to other parts of the application or backgrounding the tab and continuing to browse without having to constantly check the status of their work. When the job has finished, they get a notification that lets them inspect the final output. Let's get started!</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode html"><code class="sourceCode html"><span id="cb2-1"><a href="#cb2-1"></a><span class="co">&lt;!-- index.html --&gt;</span></span>
+<span id="cb2-2"><a href="#cb2-2"></a><span class="kw">&lt;button</span><span class="ot"> onclick=</span><span class="st">&quot;notifyOnDone()&quot;</span><span class="kw">&gt;</span>Notify me when this job finishes<span class="kw">&lt;/button&gt;</span></span>
+<span id="cb2-3"><a href="#cb2-3"></a><span class="kw">&lt;span</span><span class="ot"> id=</span><span class="st">&quot;permErr&quot;</span><span class="ot"> style=</span><span class="st">&quot;display:none; color:red;&quot;</span><span class="kw">&gt;</span>You must allow notifications to subscribe to this job<span class="kw">&lt;/span&gt;</span></span>
+<span id="cb2-4"><a href="#cb2-4"></a></span>
+<span id="cb2-5"><a href="#cb2-5"></a><span class="kw">&lt;script&gt;</span></span>
+<span id="cb2-6"><a href="#cb2-6"></a>  <span class="kw">async</span> <span class="kw">function</span> <span class="fu">notifyOnDone</span>() {</span>
+<span id="cb2-7"><a href="#cb2-7"></a>    <span class="kw">const</span> currentPerms <span class="op">=</span> <span class="bu">Notification</span><span class="op">.</span><span class="at">permission</span></span>
+<span id="cb2-8"><a href="#cb2-8"></a>    <span class="cf">if</span> (currentPerms <span class="op">===</span> <span class="st">&#39;denied&#39;</span> <span class="op">||</span> currentPerms <span class="op">===</span> <span class="st">&#39;default&#39;</span>) {</span>
+<span id="cb2-9"><a href="#cb2-9"></a>      <span class="kw">const</span> result <span class="op">=</span> <span class="cf">await</span> <span class="bu">Notification</span><span class="op">.</span><span class="fu">requestPermission</span>()</span>
+<span id="cb2-10"><a href="#cb2-10"></a>        <span class="cf">if</span> (result <span class="op">===</span> <span class="st">&#39;denied&#39;</span>) {</span>
+<span id="cb2-11"><a href="#cb2-11"></a>          <span class="bu">document</span><span class="op">.</span><span class="fu">getElementById</span>(<span class="st">&quot;permErr&quot;</span>)<span class="op">.</span><span class="at">style</span><span class="op">.</span><span class="at">display</span> <span class="op">=</span> <span class="st">&quot;block&quot;</span></span>
+<span id="cb2-12"><a href="#cb2-12"></a>        }</span>
+<span id="cb2-13"><a href="#cb2-13"></a>    }</span>
+<span id="cb2-14"><a href="#cb2-14"></a>    <span class="kw">const</span> notifierWorker <span class="op">=</span> <span class="kw">new</span> <span class="bu">Worker</span>(<span class="st">&#39;notifier.js&#39;</span>)</span>
+<span id="cb2-15"><a href="#cb2-15"></a>    notifierWorker<span class="op">.</span><span class="fu">postMessage</span>({<span class="dt">jobId</span><span class="op">:</span> <span class="dv">123</span>})</span>
+<span id="cb2-16"><a href="#cb2-16"></a>  }</span>
+<span id="cb2-17"><a href="#cb2-17"></a><span class="kw">&lt;/script&gt;</span></span></code></pre></div>
+<p>Since our examples don't rely on the Push API, we'll implement the checks via long polling in our web worker:</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode javascript"><code class="sourceCode javascript"><span id="cb3-1"><a href="#cb3-1"></a><span class="co">// notifier.js</span></span>
+<span id="cb3-2"><a href="#cb3-2"></a>onmessage <span class="op">=</span> <span class="kw">function</span>(e) {</span>
+<span id="cb3-3"><a href="#cb3-3"></a>  <span class="cf">switch</span> (e<span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">type</span>) {</span>
+<span id="cb3-4"><a href="#cb3-4"></a>    <span class="cf">case</span> <span class="st">&quot;JOB_START&quot;</span><span class="op">:</span></span>
+<span id="cb3-5"><a href="#cb3-5"></a>      watchForJobWithId(e<span class="op">.</span><span class="at">data</span><span class="op">.</span><span class="at">jobId</span>)<span class="op">;</span></span>
+<span id="cb3-6"><a href="#cb3-6"></a>      <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb3-7"><a href="#cb3-7"></a>    <span class="cf">default</span><span class="op">:</span></span>
+<span id="cb3-8"><a href="#cb3-8"></a>      <span class="cf">break</span><span class="op">;</span></span>
+<span id="cb3-9"><a href="#cb3-9"></a>  }</span>
+<span id="cb3-10"><a href="#cb3-10"></a>}<span class="op">;</span></span>
+<span id="cb3-11"><a href="#cb3-11"></a></span>
+<span id="cb3-12"><a href="#cb3-12"></a><span class="kw">function</span> <span class="fu">watchForJobWithId</span>(jobId) {</span>
+<span id="cb3-13"><a href="#cb3-13"></a>  <span class="co">// long polling</span></span>
+<span id="cb3-14"><a href="#cb3-14"></a>  <span class="kw">const</span> pollChanges <span class="op">=</span> <span class="pp">setInterval</span>(() <span class="kw">=&gt;</span> {</span>
+<span id="cb3-15"><a href="#cb3-15"></a>    fetch(<span class="st">&quot;/jobs/completed&quot;</span>)</span>
+<span id="cb3-16"><a href="#cb3-16"></a>      <span class="op">.</span><span class="fu">then</span>(res <span class="kw">=&gt;</span> res<span class="op">.</span><span class="fu">json</span>())</span>
+<span id="cb3-17"><a href="#cb3-17"></a>      <span class="op">.</span><span class="fu">then</span>(({ jobs }) <span class="kw">=&gt;</span> {</span>
+<span id="cb3-18"><a href="#cb3-18"></a>        <span class="kw">const</span> foundJob <span class="op">=</span> jobs<span class="op">.</span><span class="fu">find</span>(job <span class="kw">=&gt;</span> job<span class="op">.</span><span class="at">id</span> <span class="op">===</span> jobId)<span class="op">;</span></span>
+<span id="cb3-19"><a href="#cb3-19"></a>        <span class="cf">if</span> (foundJob) {</span>
+<span id="cb3-20"><a href="#cb3-20"></a>          <span class="kw">const</span> jobDoneNotificiation <span class="op">=</span> <span class="kw">new</span> <span class="bu">Notification</span>(</span>
+<span id="cb3-21"><a href="#cb3-21"></a>            <span class="vs">`Job finished with status: </span><span class="sc">\n${</span>foundJob<span class="op">.</span><span class="at">status</span><span class="sc">}</span><span class="vs">`</span><span class="op">,</span></span>
+<span id="cb3-22"><a href="#cb3-22"></a>            {</span>
+<span id="cb3-23"><a href="#cb3-23"></a>              <span class="dt">body</span><span class="op">:</span> foundJob<span class="op">.</span><span class="at">error</span> <span class="op">?</span> <span class="vs">`Error Code: </span><span class="sc">${</span>foundJob<span class="op">.</span><span class="at">error</span><span class="sc">}</span><span class="vs">`</span> <span class="op">:</span> <span class="st">&quot;&quot;</span></span>
+<span id="cb3-24"><a href="#cb3-24"></a>            }</span>
+<span id="cb3-25"><a href="#cb3-25"></a>          )<span class="op">;</span></span>
+<span id="cb3-26"><a href="#cb3-26"></a>        }</span>
+<span id="cb3-27"><a href="#cb3-27"></a>        <span class="pp">clearInterval</span>(pollChanges)<span class="op">;</span></span>
+<span id="cb3-28"><a href="#cb3-28"></a>      })<span class="op">;</span></span>
+<span id="cb3-29"><a href="#cb3-29"></a>  }<span class="op">,</span> <span class="dv">30</span>_000)<span class="op">;</span></span>
+<span id="cb3-30"><a href="#cb3-30"></a>  <span class="bu">window</span><span class="op">.</span><span class="at">onunload</span> <span class="op">=</span> () <span class="kw">=&gt;</span> pollChanges <span class="op">&amp;&amp;</span> <span class="pp">clearInterval</span>(pollChanges)<span class="op">;</span></span>
+<span id="cb3-31"><a href="#cb3-31"></a>}</span></code></pre></div>
+<p>When users click the subscribe button, our worker polls the backend to see if the job has completed. If the job has finished, the worker triggers the notification with the status and any messages that are attached.</p>
+<h2 id="duly-noted">Duly Noted</h2>
+<p>Finding the line between utility and spam is tricky. When finding use cases for notifications, be sure to offer the users preferences for what type of notifications they want to receive and how often they want to receive them. Well designed notification experiences increase the usability of your app and keep users abreast of important changes, increasing their engagement and satisfaction.</p>
+
+  <script src="./blogheader.js"></script>
+  <script data-goatcounter="https://teukka_tech.goatcounter.com/count"
+          async src="//gc.zgo.at/count.js"></script>
+</body>
+</body>
+</html>

@@ -1,0 +1,274 @@
+/** PANDOC STYLES **/
+@font-face {
+  font-family: system;
+  font-style: normal;
+  font-weight: 300;
+  src: local(".Arial"), local(".Helvetica"), local(".SFNSText-Light"), local(".HelveticaNeueDeskInterface-Light"), local(".LucidaGrandeUI"), local("Ubuntu Light"), local("Segoe UI Light"), local("Roboto-Light"), local("DroidSans"), local("Tahoma");
+  /* font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif; */
+}
+code{white-space: pre-wrap;}
+p code, li code {
+  font-family: monospace;
+  color: #f5ac46;
+  background: #000;
+  padding: 3px;
+  border-radius: 3px;
+}
+span.smallcaps{font-variant: small-caps;}
+span.underline{text-decoration: underline;}
+div.column{display: inline-block; vertical-align: top; width: 50%;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+pre > code.sourceCode { white-space: pre; position: relative; display: flex; flex-direction: column; }
+pre > code.sourceCode > span {  line-height: 1.25; padding: 2px 0px;}
+pre > code.sourceCode > span:empty { height: 1.2em; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+div.sourceCode {
+  margin: 1em 0;
+  filter: invert(100%) hue-rotate(180deg);
+}
+pre.sourceCode {
+  margin: auto;
+  padding: 0px 5px;
+}
+pre.vim, pre.viml {
+  font-family: monospace;
+  color: #f5ac46;
+  padding: 5px;
+  margin: 1rem auto;
+}
+@media screen {
+  div.sourceCode { overflow: auto; }
+}
+@media print {
+  pre > code.sourceCode { white-space: pre-wrap; }
+  pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+{ counter-reset: source-line 0; }
+pre.numberSource code > span
+{ position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+{ content: counter(source-line);
+  position: relative; left: -1em; text-align: right; vertical-align: baseline;
+  border: none; display: inline-block;
+  -webkit-touch-callout: none; -webkit-user-select: none;
+  -khtml-user-select: none; -moz-user-select: none;
+  -ms-user-select: none; user-select: none;
+  padding: 0 4px; width: 4em;
+  color: #aaaaaa;
+}
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+@media screen {
+  pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ef2929; } /* Alert */
+code span.an { color: #8f5902; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #64390b; } /* Attribute */
+code span.bn { color: #0000cf; } /* BaseN */
+code span.cf { color: #204a87; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4e9a06; } /* Char */
+code span.cn { color: #000000; } /* Constant */
+code span.co { color: #8f5902; font-style: italic; } /* Comment */
+code span.cv { color: #8f5902; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #8f5902; font-weight: bold; font-style: italic; } /* Documentation */
+code span.dt { color: #204a87; } /* DataType */
+code span.dv { color: #0000cf; } /* DecVal */
+code span.er { color: #a40000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #0000cf; } /* Float */
+code span.fu { color: #000000; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #8f5902; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #204a87; font-weight: bold; } /* Keyword */
+code span.op { color: #ce5c00; font-weight: bold; } /* Operator */
+code span.ot { color: #8f5902; } /* Other */
+code span.pp { color: #8f5902; font-style: italic; } /* Preprocessor */
+code span.sc { color: #000000; } /* SpecialChar */
+code span.ss { color: #4e9a06; } /* SpecialString */
+code span.st { color: #4e9a06; } /* String */
+code span.va { color: #000000; } /* Variable */
+code span.vs { color: #4e9a06; } /* VerbatimString */
+code span.wa { color: #8f5902; font-weight: bold; font-style: italic; } /* Warning */
+
+/** OVERRIDE BLOG STYLES **/
+h1 {
+  color: white;
+  font-size: 2.25rem;
+  text-align: center;
+}
+
+h1, h2, h3 {
+  font-family: 'B612 Mono', monospace;
+}
+
+body {
+  padding: 0rem 2.5rem;
+  background: #151618;
+  height: auto;
+  overflow-x: hidden;
+  max-width: 100vw;
+  width: 70%;
+  margin: auto;
+}
+
+header {
+  margin: 1rem 0rem 2rem 0rem;
+}
+
+p {
+  color: rgb(209, 206, 199);
+  font-size: 1.15rem;
+  font-family: Arial;
+  line-height: 2rem;
+  margin: 1rem;
+  text-align: justify;
+}
+
+h2 {
+  font-size: 1.5rem;
+  color: #fff;
+  font-weight: bold;
+  margin: 1rem 0rem;
+  padding: 0px 10px;
+}
+
+h3 {
+  color: #fff;
+  font-weight: bold;
+  margin: 1rem 0rem;
+  text-align: center;
+}
+
+h4 {
+  color: #fff;
+  margin: 1rem 0rem;
+  font-weight: bold;
+  text-align: left;
+  width: auto;
+}
+
+pre {
+  border: 1px solid #7b7b7b;
+  border-radius: 5px;
+  overflow: auto;
+}
+
+a {
+  color: skyblue;
+}
+
+li {
+  font-family: monospace;
+  color: rgb(209, 206, 199);
+  padding: 1rem;
+  font-size: 1rem;
+  text-align: justify;
+}
+
+.footer {
+  width: 30%;
+  color: #fff;
+  border: 1px solid #dbdbdb;
+  border-radius: 5px;
+  margin: 3rem auto;
+  text-align: center;
+  cursor: pointer;
+}
+
+.related-container {
+  background-color: #151618;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 0;
+  display: flex;
+  flex-wrap: wrap;
+  width: 100%;
+  z-index: 200;
+}
+
+.related {
+  border-top: double;
+  border-bottom: double;
+  padding: 8px 0px;
+}
+
+.rel-article {
+  border: 1px solid;
+  border-radius: 5px;
+  padding: 8px;
+
+}
+
+.rel-article.active {
+  background: #333;
+  color: rgb(209, 206, 199);
+}
+
+blockquote {
+  background: #333;
+  padding: 12px;
+  border-radius: 5px;
+  border-left: 5px solid #6894db;
+  color: rgb(209, 206, 199);
+}
+
+blockquote pre {
+  display: inline;
+}
+
+blockquote h4 {
+  margin: 0;
+}
+
+blockquote p {
+  line-height: 1.5rem;
+}
+
+.tab {
+  background: #151618;
+  color: #7b7b7b;
+  border: none;
+  min-width: 115px;
+  border-radius: 5px 5px 0px 0px;
+  cursor: pointer;
+}
+
+.tab:active {
+  background: #333;
+  color: #ffc30f;
+}
+
+.tab:hover:not(.selected) {
+  background: #353535;
+}
+
+.tab.selected {
+  border: 2px solid #7b7b7b;
+  border-bottom: 0;
+  position: relative;
+  color: #ffc30f;
+  top: 2px;
+}
+
+[role="tabpanel"] {
+  border: 2px solid #7b7b7b;
+  border-radius: 5px;
+}
+
+[role="tablist"] {
+  width: 235px;
+  padding-left: 20px;
+}
+
+@media(max-width: 485px) {
+  body {
+    padding: 0rem;
+    width: 100%;
+  }
+  pre, .footer {
+    width: auto;
+  }
+  p {
+    line-height: 1.5rem;
+  }
+}
