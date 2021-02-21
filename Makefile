@@ -7,3 +7,7 @@ watch:
 
 build:
 	bash ./build.sh
+
+build_hugo:
+	hugo --minify
+	bash ./build.sh
