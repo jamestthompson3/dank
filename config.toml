@@ -1,0 +1,42 @@
+baseURL = "https://teukka.tech"
+languageCode = "en-us"
+title = "Taylor Thompson's Blog"
+theme = "archie"
+pygmentsstyle = "rrt"
+enableRobotsTXT = true
+
+[params]
+mode = "auto"
+
+[author]
+name = "taylor thompson"
+email = "taylor@teukka.tech"
+
+[[menu.main]]
+name = "Home"
+url = "/"
+weight = 1
+
+[[menu.main]]
+name = "All posts"
+url = "/posts"
+weight = 2
+
+[[menu.main]]
+name = "Knowledge Base"
+url = "/knowledgebase"
+weight = 3
+
+[[menu.main]]
+name = "Tags"
+url = "/tags"
+weight = 4
+
+[related]
+  includeNewer = false
+  threshold = 80
+  toLower = false
+
+  [[related.indices]]
+    name = "tags"
+    weight = 100
