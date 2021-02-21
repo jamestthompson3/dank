@@ -64,10 +64,10 @@
   height: calc(var(--height) * 2);
 }
 .h6 {
-  height: calc(var(--height) * 3)
+  height: calc(var(--height) * 3);
 }
 .h8 {
-  height: calc(var(--height) * 4)
+  height: calc(var(--height) * 4);
 }
 
 /* Padding */
@@ -76,11 +76,6 @@
 }
 .p05 {
   padding: 0.5rem;
-}
-
-/* Margin */
-.mb05 {
-  margin-bottom: 0.5rem;
 }
 
 .transparent {

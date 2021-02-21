@@ -1,6 +1,6 @@
-baseURL = "https://teukka.tech"
+baseURL = "https://teukka.tech/"
 languageCode = "en-us"
-title = "Taylor Thompson's Blog"
+title = "teukka.tech"
 theme = "archie"
 pygmentsstyle = "rrt"
 enableRobotsTXT = true

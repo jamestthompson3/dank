@@ -1,7 +1,7 @@
 #!/bin/bash
 
 UUID=$(cat /proc/sys/kernel/random/uuid)
-rm -f sw-prod.js
-cp sw.js sw-prod.js
-sed -i "s/%VERSION%/$UUID/g" sw-prod.js
+rm -f ./static/sw-prod.js
+cp ./static/sw.js ./static/sw-prod.js
+sed -i "s/%VERSION%/$UUID/g" ./static/sw-prod.js
 echo "Built version: ${UUID}"

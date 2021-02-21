@@ -11,3 +11,9 @@ build:
 build_hugo:
 	hugo --minify
 	bash ./build.sh
+	cp *.html *.xml ./public/
+
+build_dev:
+	cp *.html *.xml ./public/
+	cd ./public && python3 -m http.server
+
