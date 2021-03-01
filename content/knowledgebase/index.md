@@ -22,6 +22,10 @@ My notes are hosted [here](https://notebook.teukka.tech).
 
 | Title                                                                                                           | Author                                   | Rating | Read On    |
 | :-------------------------------------------------------------------------------------------------------------- | :--------------------------------------- | :----- | :--------- |
+| Sing to It: New Stories                                                                                         | Amy Hempel                               | 3      | 2021/02/21 |
+| Amusing Ourselves to Death: Public Discourse in the Age of Show Business                                        | Neil Postman                             | 3      | 2021/01/31 |
+| Rythm of War                                                                                                    | Brandon Sanderson                        | 5      | 2021/01/25 |
+| Oathbringer                                                                                                     | Brandon Sanderson                        | 5      | 2021/01/17 |
 | The Monk of Mokha                                                                                               | Dave Eggers                              | 5      | 2020/12/28 |
 | Words of Radiance                                                                                               | Brandon Sanderson                        | 5      | 2020/12/27 |
 | The Way of Kings                                                                                                | Brandon Sanderson                        | 5      | 2020/12/23 |
