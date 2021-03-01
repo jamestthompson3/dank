@@ -1,6 +1,6 @@
 body {
   color: white;
-  background-color: #151618;
+  background-color: #020303;
 }
 
 ::-moz-selection {
@@ -35,6 +35,11 @@ pre {
 }
 blockquote {
   border-color: var(--darkBorderColor);
+}
+
+sup a {
+  color: var(--darkMaincolor);
+  border: none;
 }
 
 h1,
