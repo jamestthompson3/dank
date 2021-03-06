@@ -59,7 +59,7 @@
   padding: 1rem;
 }
 .h-card {
-  visibility: none;
+  display: none;
 }
 .homepage.link {
   border-radius: var(--radius);
