@@ -1,0 +1,247 @@
+:root {
+  --accent-color: #ffb87a;
+  --main-color: #444d73;
+  --secondary-accent: #be4aff;
+}
+body {
+  background-color: #74b9b9;
+  color: #1c1b1b;
+  font-family: "Nunito Sans", sans-serif;
+  overflow-x: hidden;
+  overflow-y: scroll;
+  -webkit-overflow-scrolling: touch;
+  scroll-snap-type: y proximity;
+}
+
+html,
+body {
+  margin: 0px;
+  padding: 0px;
+  width: 100%;
+  height: 100%;
+}
+
+[type="text-container"] {
+  flex: 0 1 50%;
+}
+
+[type="viz-mount"] {
+  width: 47%;
+}
+
+section {
+  padding: 3rem;
+}
+
+code {
+ background: var(--main-color);
+ color: var(--accent-color);
+ padding: 3px;
+ border-radius: 3px;
+}
+
+h1 {
+  font-size: 2.5rem;
+}
+
+h1,
+h2 {
+  text-shadow: 4px 4px var(--main-color), 3.75px 3.75px var(--main-color),
+    3.5px 3.5px var(--main-color), 3.25px 3.25px var(--main-color),
+    3px 3px var(--main-color), 2.75px 2.75px var(--main-color),
+    2.5px 2.5px var(--main-color), 2.25px 2.25px var(--main-color),
+    2px 2px var(--main-color), 1.75px 1.75px var(--main-color),
+    1.5px 1.5px var(--main-color), 1.25px 1.25px var(--main-color),
+    1px 1px var(--main-color), 0.75px 0.75px var(--main-color),
+    0.5px 0.5px var(--main-color), 0.25px 0.25px var(--main-color),
+    0px 0px var(--main-color);
+  color: var(--accent-color);
+}
+
+ul {
+  list-style: none;
+  padding: 0px;
+}
+
+ul li::before {
+  display: inline-block;
+  margin-right: 0.2rem;
+}
+ul li:nth-child(1)::before {
+  content: "📡";
+}
+
+ul li:nth-child(2)::before {
+  content: "📈";
+}
+
+ul li:nth-child(3)::before {
+  content: "🙅‍♀️";
+}
+
+ul li:nth-child(4)::before {
+  content: "🦔";
+}
+
+a {
+  color: #000;
+  font-weight: bold;
+  background: linear-gradient(
+    to bottom,
+    var(--accent-color) 0%,
+    var(--accent-color) 100%
+  );
+  background-position: 0 100%;
+  background-repeat: repeat-x;
+  background-size: 4px 2px;
+  text-decoration: none;
+  transition: background-size 0.4s;
+}
+
+a:hover {
+  background-size: 4px 50px;
+  color: var(--main-color);
+}
+
+iframe {
+  width: 40%;
+  border: none;
+}
+
+#d3-anchor:hover ~ #d3-link {
+  opacity: 1;
+}
+
+#d3-link {
+  opacity: 0;
+  position: absolute;
+  background: var(--main-color);
+  color: var(--accent-color);
+  margin-top: -30px;
+  margin-left: -62px;
+  transition: opacity 0.5s;
+  padding: 3px;
+  box-shadow: 2px 2px 0px 0px var(--secondary-accent);
+}
+
+#viikset-link {
+  opacity: 0;
+  position: absolute;
+  background: var(--main-color);
+  color: var(--accent-color);
+  margin-top: -30px;
+  margin-left: -72px;
+  transition: opacity 0.5s;
+  padding: 3px;
+  box-shadow: 2px 2px 0px 0px var(--secondary-accent);
+}
+
+#viikset-anchor:hover ~ #viikset-link {
+  opacity: 1;
+}
+
+#vx-link {
+  opacity: 0;
+  position: absolute;
+  background: var(--main-color);
+  color: var(--accent-color);
+  margin-top: -30px;
+  margin-left: -72px;
+  transition: opacity 0.5s;
+  padding: 3px;
+  box-shadow: 2px 2px 0px 0px var(--secondary-accent);
+}
+
+#vx-anchor:hover ~ #vx-link {
+  opacity: 1;
+}
+
+#eac-link {
+  opacity: 0;
+  position: absolute;
+  background: var(--main-color);
+  color: var(--accent-color);
+  margin-top: -30px;
+  margin-left: -132px;
+  transition: opacity 0.5s;
+  padding: 3px;
+  box-shadow: 2px 2px 0px 0px var(--secondary-accent);
+}
+
+#eac-anchor:hover ~ #eac-link {
+  opacity: 1;
+}
+
+#viikset-logo {
+  width: 20%;
+  box-shadow: -23px -20px 0px -4px var(--secondary-accent),
+    18px 20px 0px 0px var(--main-color);
+}
+
+#what-container {
+  flex: 0 1 70%;
+}
+
+.flex {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.space-evenly {
+  justify-content: space-evenly;
+}
+
+.space-between {
+  justify-content: space-between;
+}
+
+.spacer {
+  width: 300px;
+}
+.vspacer {
+  height: 30px;
+}
+
+
+@media(max-width: 800px) {
+  #viikset-logo {
+    width: 35%;
+    margin: auto;
+  }
+  [type="text-container"] {
+    width: 100%;
+    flex: auto;
+  }
+  [type="viz-mount"] {
+    width: 100%;
+  }
+  .small-rev {
+    flex-wrap: wrap-reverse;
+  }
+}
+
+@media(max-width: 485px) {
+  body {
+    height: auto;
+  }
+  section {
+    padding: 1rem;
+  }
+  .small-rev {
+    flex-wrap: wrap-reverse;
+  }
+  [type="text-container"] {
+    width: 100%;
+    flex: auto;
+  }
+  [type="viz-mount"] {
+    width: 100%;
+  }
+  #what-container {
+    flex: 0 1 100%;
+    margin-top: 1rem;
+  }
+  #viikset-logo {
+    width: 300px;
+  }
+}

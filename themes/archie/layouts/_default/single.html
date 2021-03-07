@@ -1,12 +1,14 @@
 {{ define "main" }}
 <main>
-	<article>
+  <br>
+  <br>
+	<article class="h-entry post">
 		<div class="title">
-			<h1 class="title">{{ .Title }}</h1>
-			<div class="meta">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+      <h1 class="title"><a class="p-name u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
+			<div class="dt-published meta ">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
 		</div>
 		{{ if isset .Params "tldr" }}
-		<div class="tldr">
+		<div class="tldr p-summary">
 			<strong>tl;dr:</strong>
 			{{ .Params.tldr }}
 		</div>{{ end }}
@@ -16,7 +18,7 @@
 			<nav class="nav tags">
 				<ul class="tags">
 					{{ range .Params.tags }}
-					<li><a href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
 					{{ end }}
 				</ul>
 			</nav>
@@ -24,7 +26,7 @@
 			{{ end }}
 		</div>
 
-		<section class="body">
+		<section class="body e-content">
 			{{ .Content }}
 		</section>
 

@@ -149,11 +149,15 @@ header {
   display: flex;
   flex-wrap: wrap;
   justify-content: space-between;
-  margin: 1em 0;
+  align-items: center;
+  margin: 1.25em 0;
 }
 
 header .main {
   font-size: 1.5rem;
+}
+header .main .homepage {
+  font-size: 1.15rem;
 }
 h1,
 h2,
@@ -191,7 +195,7 @@ h6::before {
 }
 
 .title h1.title {
-  font-size: 1.5rem;
+  font-size: 1.75rem;
   line-height: 2rem;
 }
 

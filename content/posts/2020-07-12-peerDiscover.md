@@ -1,5 +1,5 @@
 ---
-title: Peer Discover over UDP
+title: Peer Discovery over UDP
 page_title: 👓 Peer Discovery over UDP
 author: Taylor Thompson
 tags: [nodeJS, Rust, systems programming]
