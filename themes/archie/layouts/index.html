@@ -5,7 +5,7 @@
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0,viewport-fit=cover"
-    />
+      />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Personal website of Taylor Thompson" />
@@ -13,7 +13,7 @@
     <meta
       property="og:title"
       content="teukka.tech, a place of fun and wonder"
-    />
+      />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://teukka.tech" />
     <meta property="og:image" content="https://i.imgur.com/EDCK4FQ.jpg" />
@@ -29,18 +29,19 @@
       type="application/opensearchdescription+xml"
       title="teukka.tech"
       href="https://teukka.tech/opensearchdescription.xml"
-    />
-    <!--- micro pub --->
+      />
+    <!--- indie auth --->
     <link rel="authorization_endpoint" href="https://indieauth.com/auth">
-  <!-- web mentions -->
-  <link rel="webmention" href="https://webmention.io/teukka.tech/webmention" />
-  <link rel="pingback" href="https://webmention.io/teukka.tech/xmlrpc" />
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <!-- web mentions -->
+    <link rel="webmention" href="https://webmention.io/teukka.tech/webmention" />
+    <link rel="pingback" href="https://webmention.io/teukka.tech/xmlrpc" />
     <link rel="shortcut icon" href="ico.png" />
     <link rel="manifest" href="manifest.json" />
     <meta
       itemprop="description"
       content="A website full of intersting things"
-    />
+      />
     <link href="reset.css" rel="stylesheet" />
     <link href="style.css" rel="stylesheet" />
     <link href="tooltip.css" rel="stylesheet" />
@@ -49,7 +50,7 @@
       type="application/rss+xml"
       title="taylor thompson's site RSS feed"
       href="https://teukka.tech/index.xml"
-    />
+      />
     <script src="index.js" async defer></script>
     <title>😎😎😎😎</title>
   </head>
@@ -59,9 +60,9 @@
       <div class="homepage info">
         <h1 class="header">Taylor Thompson's homepage</h1>
         <p class="homepage blurb">
-          I'm a web developer based in Helsinki, Finland. I enjoy reading about
-          and writing software. I program mostly in JS, but enjoy trying new
-          languages and concepts!
+        I'm a web developer based in Helsinki, Finland. I enjoy reading about
+        and writing software. I program mostly in JS, but enjoy trying new
+        languages and concepts!
         </p>
       </div>
       <div class="homepage link-container">
@@ -70,137 +71,137 @@
           href="https://github.com/jamestthompson3"
           rel="me"
           target="__blank"
-        >
+          >
           Projects
         </a>
-        <a class="homepage link" href="/posts/">📚 Blog</a>
-        <a
-          class="homepage link"
-          href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
-        >
-          📝 Contact me!</a
-        >
-        <p
-          data-tip="link copied!"
-          class="homepage link"
-          style="cursor: pointer;"
-          id="feed"
-          onclick="copyFeed('feed')"
-        >
-          📃 Follow the RSS feed
-        </p>
-        <a class="homepage link" href="/books.html">Favorite Books</a>
-        <p
-          onclick="copyFeed('reading-list', true)"
-          id="reading-list"
-          data-tip="link copied!"
-          data-link="https://raindrop.io/collection/9007981/feed"
-          class="homepage link"
-          style="cursor: pointer;"
-        >
-          Current Reading List (RSS feed) 📋
-        </p>
-    </section>
-        <div class="h-card">
-          <span class="p-name">Taylor Thompson</span>
-          <span class="u-email">taylor@teukka.tech</span>
-          <a rel="me" class="u-url">https://teukka.tech</a>
-          <span class="p-note">software developer who's eternally curious</span>
-          <img class="u-photo" src="https://kids.kiddle.co/images/thumb/a/a9/Nycticebus_pygmaeus_007.jpg/672px-Nycticebus_pygmaeus_007.jpg" />
-        </div>
-      </div>
-    <section id="other" role="contentinfo">
-      <h2 id="programming-header" class="subheader">
-        Cool Programming articles / videos
-      </h2>
-      <div aria-labelledby="programming-header" class="outlinks container">
-        <div class="outlinks item">
-          <a class="outlinks link" href="https://vimways.org/2018/">vimways</a>
-          <p>great articles about how to improve your vim usage.</p>
-        </div>
-        <div class="outlinks item">
+          <a class="homepage link" href="/posts/">📚 Blog</a>
           <a
-            class="outlinks link"
-            href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ"
+            class="homepage link"
+            href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
+            >
+            📝 Contact me!</a
           >
-            Jon Gjengset
-          </a>
-          <p>
-            explains technologies such as tcp, non-blocking async io, cuncurrent
-            databases, etc. in great detail and using Rust
+          <p
+            data-tip="link copied!"
+            class="homepage link"
+            style="cursor: pointer;"
+            id="feed"
+            onclick="copyFeed('feed')"
+            >
+            📃 Follow the RSS feed
           </p>
-        </div>
-        <div class="outlinks item">
-          <a
-            class="outlinks link"
-            href="https://www.youtube.com/channel/UC3ts8coMP645hZw9JSD3pqQ"
-          >
-            SerenityOS
-          </a>
-          <p>
-            a video series showing how SerenityOS gets built. Useful for
-            learning about systems programming.
+          <a class="homepage link" href="/books.html">Favorite Books</a>
+          <p
+            onclick="copyFeed('reading-list', true)"
+            id="reading-list"
+            data-tip="link copied!"
+            data-link="https://raindrop.io/collection/9007981/feed"
+            class="homepage link"
+            style="cursor: pointer;"
+            >
+            Current Reading List (RSS feed) 📋
           </p>
-        </div>
-      </div>
     </section>
-    <script>
-      const cursor = document.querySelector("#cursor");
-      const body = document.querySelector("body");
-      let start = { x: 0, y: 0 };
+    <div class="h-card">
+      <span class="p-name">Taylor Thompson</span>
+      <span class="u-email">taylor@teukka.tech</span>
+      <a rel="me" class="u-url">https://teukka.tech</a>
+      <span class="p-note">software developer who's eternally curious</span>
+      <img class="u-photo" src="https://kids.kiddle.co/images/thumb/a/a9/Nycticebus_pygmaeus_007.jpg/672px-Nycticebus_pygmaeus_007.jpg" />
+    </div>
+      </div>
+      <section id="other" role="contentinfo">
+        <h2 id="programming-header" class="subheader">
+          Cool Programming articles / videos
+        </h2>
+        <div aria-labelledby="programming-header" class="outlinks container">
+          <div class="outlinks item">
+            <a class="outlinks link" href="https://vimways.org/2018/">vimways</a>
+            <p>great articles about how to improve your vim usage.</p>
+          </div>
+          <div class="outlinks item">
+            <a
+              class="outlinks link"
+              href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ"
+              >
+              Jon Gjengset
+            </a>
+              <p>
+              explains technologies such as tcp, non-blocking async io, cuncurrent
+              databases, etc. in great detail and using Rust
+              </p>
+          </div>
+          <div class="outlinks item">
+            <a
+              class="outlinks link"
+              href="https://www.youtube.com/channel/UC3ts8coMP645hZw9JSD3pqQ"
+              >
+              SerenityOS
+            </a>
+              <p>
+              a video series showing how SerenityOS gets built. Useful for
+              learning about systems programming.
+              </p>
+          </div>
+        </div>
+      </section>
+      <script>
+        const cursor = document.querySelector("#cursor");
+const body = document.querySelector("body");
+let start = { x: 0, y: 0 };
 
-      document.addEventListener("mousemove", bb8move);
-      document.addEventListener("touch", bb8move);
-      document.addEventListener("touchstart", touchStart, false);
-      <!-- document.addEventListener("touchmove", touchMove, false); -->
+document.addEventListener("mousemove", bb8move);
+document.addEventListener("touch", bb8move);
+document.addEventListener("touchstart", touchStart, false);
+<!-- document.addEventListener("touchmove", touchMove, false); -->
 
-      function bb8move({x, pageY}) {
-        cursor.style.left = `${x+ 30}px`;
-        cursor.style.top = `${pageY - 50}px`;
-      }
+function bb8move({x, pageY}) {
+  cursor.style.left = `${x+ 30}px`;
+  cursor.style.top = `${pageY - 50}px`;
+}
 
-      function touchStart(event) {
-        start.x = event.touches[0].pageX;
-        start.y = event.touches[0].pageY;
-      }
+function touchStart(event) {
+  start.x = event.touches[0].pageX;
+  start.y = event.touches[0].pageY;
+}
 
-      function touchMove(event) {
-        offsetX = start.x - event.touches[0].pageX;
-        offsetY = start.y - event.touches[0].pageY;
-      }
-      function copyFeed(id, usedataref){
-        const text = document.getElementById(id)
-        if (!navigator.clipboard) {
-          copyFallback()
-        } else {
-          if (id === 'feed') {
-            navigator.clipboard.writeText(`${location.href}index.xml`)
-        } else {
-          usedataref ? navigator.clipboard.writeText(text.dataset.link) : navigator.clipboard.writeText(text.textContent)
-        }
-        }
-        text.classList.add('tooltip')
-        setTimeout(() => {
-        text.classList.remove('tooltip')
-        }, 600)
-      }
+function touchMove(event) {
+  offsetX = start.x - event.touches[0].pageX;
+  offsetY = start.y - event.touches[0].pageY;
+}
+function copyFeed(id, usedataref){
+  const text = document.getElementById(id)
+  if (!navigator.clipboard) {
+    copyFallback()
+  } else {
+    if (id === 'feed') {
+      navigator.clipboard.writeText(`${location.href}index.xml`)
+    } else {
+      usedataref ? navigator.clipboard.writeText(text.dataset.link) : navigator.clipboard.writeText(text.textContent)
+    }
+  }
+  text.classList.add('tooltip')
+  setTimeout(() => {
+    text.classList.remove('tooltip')
+  }, 600)
+}
 
-      function copyFallback(){
-        const input = document.createElement('textarea')
-        input.value = location.href + "index.xml"
-        input.style.display = "none"
-        document.head.appendChild(input)
-        input.focus()
-        input.select()
-        <!-- input.setSelectionRange(0,9999) -->
-        document.execCommand('copy')
-        document.head.removeChild(input)
-      }
-    </script>
-    <script
-      data-goatcounter="https://teukka_tech.goatcounter.com/count"
-      async
-      src="//gc.zgo.at/count.js"
-    ></script>
+function copyFallback(){
+  const input = document.createElement('textarea')
+  input.value = location.href + "index.xml"
+  input.style.display = "none"
+  document.head.appendChild(input)
+  input.focus()
+  input.select()
+    <!-- input.setSelectionRange(0,9999) -->
+  document.execCommand('copy')
+  document.head.removeChild(input)
+}
+      </script>
+      <script
+        data-goatcounter="https://teukka_tech.goatcounter.com/count"
+        async
+        src="//gc.zgo.at/count.js"
+        ></script>
   </body>
 </html>
