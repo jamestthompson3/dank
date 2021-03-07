@@ -1,0 +1,46 @@
+[
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "morose_automaton",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/535565b2a40f75d2b4806160950a3eee5bf950ced9565318b254144bb9e2288d.png",
+      "url": "https://reddit.com/user/morose_automaton/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/elcw71/using_libuv_inside_neovim/fee2ss7/",
+    "published": "2020-01-14T18:06:55",
+    "wm-received": "2021-03-07T15:15:18Z",
+    "wm-id": 1060585,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/elcw71/fee2ss7",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "content": {
+      "html": "<p>This is a great write-up, thank you!</p>",
+      "text": "This is a great write-up, thank you!"
+    },
+    "in-reply-to": "https://teukka.tech/vimloop.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "justinmk",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/625e7072bf7462155c316542796969481aafd8d0df82d087979d7951393b539f.png",
+      "url": "https://reddit.com/user/justinmk/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/elcw71/using_libuv_inside_neovim/fdhb7ny/",
+    "published": "2020-01-07T17:47:38",
+    "wm-received": "2021-03-07T15:15:22Z",
+    "wm-id": 1060586,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/elcw71/fdhb7ny",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "content": {
+      "html": "<p>Nice! For those who don't know, there are some cool ready-to-go examples in the Nvim docs at <code>:help lua-loop</code>:</p>\n\n<ul><li><code>:help watch-file</code></li>\n<li><code>:help tcp-server</code></li>\n</ul>",
+      "text": "Nice! For those who don't know, there are some cool ready-to-go examples in the Nvim docs at :help lua-loop:\n\n:help watch-file\n:help tcp-server"
+    },
+    "in-reply-to": "https://teukka.tech/vimloop.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  }
+]

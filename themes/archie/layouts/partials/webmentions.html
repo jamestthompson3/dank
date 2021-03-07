@@ -1,0 +1,22 @@
+<div class="webmention">
+{{if isset .Params "aliases" }}
+  {{- range first 1 .Params.aliases }}
+  {{ with (index $.Site.Data.webmentions .) }}
+    <h3>Mentioned around the web</h3>
+    {{ range . }}
+    <div class="webmention-container">
+      <div class="webmention-profile">
+        <img src="{{ .author.photo }}" />
+        <span><a href="{{.author.url}}">{{.author.name}}</a></span>
+      </div>
+      <div class="webmention-content">
+        <i class="comment-date">commented on {{ dateFormat "Jan 2, 2006" .published }}</i>
+        <div>{{.content.html | safeHTML }}</div>
+        <a href="{{.url}}">See original</a>
+      </div>
+    </div>
+    {{ end }}
+  {{ end }}
+  {{ end }}
+{{ end }}
+</div>

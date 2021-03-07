@@ -1,0 +1,179 @@
+[
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "brain_emesis",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/788bff4068aa152c91ffc343578adf36810208ab4ea6aa31c09c5a4666ee0955.png",
+      "url": "https://reddit.com/user/brain_emesis/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/f1vxhl/replicate_the_basic_functionality_vscodes_gitlens/fhosztw/",
+    "published": "2020-02-15T13:18:14",
+    "wm-received": "2021-03-07T15:15:23Z",
+    "wm-id": 1060587,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/f1vxhl/fhosztw",
+    "wm-target": "https://teukka.tech/vimtip-gitlens.html",
+    "content": {
+      "html": "<p>This is really cool, thanks for sharing</p>",
+      "text": "This is really cool, thanks for sharing"
+    },
+    "in-reply-to": "https://teukka.tech/vimtip-gitlens.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "pain666",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/5f9b17afed30814d2187f911dd80f3d41da14cb61000674863e170693a99512b.png",
+      "url": "https://reddit.com/user/pain666/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/f1vxhl/replicate_the_basic_functionality_vscodes_gitlens/fhacben/",
+    "published": "2020-02-11T06:58:20",
+    "wm-received": "2021-03-07T15:15:24Z",
+    "wm-id": 1060588,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/f1vxhl/fhacben",
+    "wm-target": "https://teukka.tech/vimtip-gitlens.html",
+    "content": {
+      "html": "<p>Is there an installable form for this?</p>",
+      "text": "Is there an installable form for this?"
+    },
+    "in-reply-to": "https://teukka.tech/vimtip-gitlens.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "ContentForager",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/a4f07db0ec0ba25e6d2154f859e2f1e65da74cddad5dff06ad39b0c7522696aa.png",
+      "url": "https://reddit.com/user/ContentForager/"
+    },
+    "url": "https://reddit.com/r/mistyfront/comments/f3yzgw/replicate_the_basic_functionality_vscodes_gitlens/fhmmz1g/",
+    "published": "2020-02-14T21:19:40",
+    "wm-received": "2021-03-07T15:15:24Z",
+    "wm-id": 1060589,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/f3yzgw/fhmmz1g",
+    "wm-target": "https://teukka.tech/vimtip-gitlens.html",
+    "content": {
+      "html": "<p><a href=\"https://www.reddit.com/r/neovim/comments/f1vxhl/replicate_the_basic_functionality_vscodes_gitlens/\">Source</a> at <a href=\"https://brid.gy/r/neovim\">/r/neovim</a></p>\n\n<a class=\"u-mention\" href=\"https://teukka.tech/vimtip-gitlens.html\"></a>",
+      "text": "Source at /r/neovim"
+    },
+    "in-reply-to": "https://teukka.tech/vimtip-gitlens.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "pjcj",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/4392876210d4e62ce3e816fdcb389d791a3b8c61a3951f07bc1c7bba618b039c.png",
+      "url": "https://reddit.com/user/pjcj/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/f1vxhl/replicate_the_basic_functionality_vscodes_gitlens/fhaoel1/",
+    "published": "2020-02-11T11:32:18",
+    "wm-received": "2021-03-07T15:15:26Z",
+    "wm-id": 1060590,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/f1vxhl/fhaoel1",
+    "wm-target": "https://teukka.tech/vimtip-gitlens.html",
+    "content": {
+      "html": "<p>Nice!</p>\n\n<p>This one's vimscript and somewhat longer but has been working well for me: <a href=\"https://github.com/APZelos/blamer.nvim\">https://github.com/APZelos/blamer.nvim</a></p>",
+      "text": "Nice!\n\nThis one's vimscript and somewhat longer but has been working well for me: https://github.com/APZelos/blamer.nvim"
+    },
+    "in-reply-to": "https://teukka.tech/vimtip-gitlens.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "the_real_albro",
+      "photo": "https://webmention.io/avatar/styles.redditmedia.com/52e3f714d08b929461ec8a4092b68a8d9b0e9c0f76552e0553c87994146f1b38.png",
+      "url": "https://reddit.com/user/the_real_albro/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/i61cic/neovim_lua_articles/g0xjysj/",
+    "published": "2020-08-09T21:39:42",
+    "wm-received": "2021-03-07T15:15:31Z",
+    "wm-id": 1060593,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/i61cic/g0xjysj",
+    "wm-target": "https://teukka.tech/vimtip-gitlens.html",
+    "content": {
+      "html": "<p>These were saved in my pocket... </p>\n\n<p><a href=\"https://github.com/rafcamlet/nvim-luapad/tree/master/spec\">https://github.com/rafcamlet/nvim-luapad/tree/master/spec</a></p>\n\n<p><a href=\"https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua\">https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua</a></p>\n\n<p><a href=\"https://teukka.tech/luanvim.html\">https://teukka.tech/luanvim.html</a></p>\n\n<a class=\"u-mention\" href=\"https://gabrielpoca.com/2019-11-02-a-little-bit-of-lua-in-your-vim/\"></a>\n<a class=\"u-mention\" href=\"https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/\"></a>\n<a class=\"u-mention\" href=\"https://teukka.tech/vimtip-gitlens.html\"></a>\n<a class=\"u-mention\" href=\"https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua\"></a>",
+      "text": "These were saved in my pocket... \n\nhttps://github.com/rafcamlet/nvim-luapad/tree/master/spec\n\nhttps://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua\n\nhttps://teukka.tech/luanvim.html"
+    },
+    "in-reply-to": "https://teukka.tech/vimtip-gitlens.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "brain_emesis",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/788bff4068aa152c91ffc343578adf36810208ab4ea6aa31c09c5a4666ee0955.png",
+      "url": "https://reddit.com/user/brain_emesis/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/i61cic/neovim_lua_articles/g4maoip/",
+    "published": "2020-09-10T03:21:02",
+    "wm-received": "2021-03-07T15:15:31Z",
+    "wm-id": 1060594,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/i61cic/g4maoip",
+    "wm-target": "https://teukka.tech/vimtip-gitlens.html",
+    "content": {
+      "html": "<p>Another one:  <a href=\"https://github.com/svermeulen/vimpeccable\">svermeulen/vimpeccable</a></p>\n\n<a class=\"u-mention\" href=\"https://gabrielpoca.com/2019-11-02-a-little-bit-of-lua-in-your-vim/\"></a>\n<a class=\"u-mention\" href=\"https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/\"></a>\n<a class=\"u-mention\" href=\"https://teukka.tech/vimtip-gitlens.html\"></a>\n<a class=\"u-mention\" href=\"https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua\"></a>",
+      "text": "Another one:  svermeulen/vimpeccable"
+    },
+    "in-reply-to": "https://teukka.tech/vimtip-gitlens.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "Wolfy87",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/e2ab1db56a12e500f2ae292b9694d0b073754645ebcaf80925bc4f37b276bcfc.png",
+      "url": "https://reddit.com/user/Wolfy87/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/i61cic/neovim_lua_articles/g0tq9gr/",
+    "published": "2020-08-08T20:59:17",
+    "wm-received": "2021-03-07T15:15:33Z",
+    "wm-id": 1060595,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/i61cic/g0tq9gr",
+    "wm-target": "https://teukka.tech/vimtip-gitlens.html",
+    "content": {
+      "html": "<p><a href=\"https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/\">https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/</a></p>\n\n<p>Throwing my own hat into the ring :D</p>\n\n<p>Fennel is a Lisp which I compile to Lua for all of my configuration and plugins.</p>\n\n<a class=\"u-mention\" href=\"https://gabrielpoca.com/2019-11-02-a-little-bit-of-lua-in-your-vim/\"></a>\n<a class=\"u-mention\" href=\"https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/\"></a>\n<a class=\"u-mention\" href=\"https://teukka.tech/vimtip-gitlens.html\"></a>\n<a class=\"u-mention\" href=\"https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua\"></a>",
+      "text": "https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/\n\nThrowing my own hat into the ring :D\n\nFennel is a Lisp which I compile to Lua for all of my configuration and plugins."
+    },
+    "in-reply-to": "https://teukka.tech/vimtip-gitlens.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "eva_kuator",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/99e7791738d395b261de130accbd4ed98677f6a9a51b1dd666057c74d134be04.png",
+      "url": "https://reddit.com/user/eva_kuator/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/i61cic/neovim_lua_articles/",
+    "published": "2020-08-08T15:51:54",
+    "wm-received": "2021-03-07T15:15:37Z",
+    "wm-id": 1060597,
+    "wm-source": "https://brid.gy/post/reddit/yaboykanye/i61cic",
+    "wm-target": "https://teukka.tech/vimtip-gitlens.html",
+    "name": "Neovim lua articles",
+    "content": {
+      "html": "Just a bunch of articles about using lua in neovim config and neovim plugins: \n- https://gabrielpoca.com/2019-11-02-a-little-bit-of-lua-in-your-vim/\n- https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua\n- https://teukka.tech/vimtip-gitlens.html\n- Upd: https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/\n<a href=\"https://gabrielpoca.com/2019-11-02-a-little-bit-of-lua-in-your-vim/\">https://gabrielpoca.com/2019-11-02-a-little-bit-of-lua-in-your-vim/</a>\n<a href=\"https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/\">https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/</a>\n<a href=\"https://teukka.tech/vimtip-gitlens.html\">https://teukka.tech/vimtip-gitlens.html</a>\n<a href=\"https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua\">https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua</a>",
+      "text": "Just a bunch of articles about using lua in neovim config and neovim plugins: \n- https://gabrielpoca.com/2019-11-02-a-little-bit-of-lua-in-your-vim/\n- https://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua\n- https://teukka.tech/vimtip-gitlens.html\n- Upd: https://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/\nhttps://gabrielpoca.com/2019-11-02-a-little-bit-of-lua-in-your-vim/\nhttps://oli.me.uk/neovim-configuration-and-plugins-in-fennel-lisp/\nhttps://teukka.tech/vimtip-gitlens.html\nhttps://www.2n.pl/blog/how-to-write-neovim-plugins-in-lua"
+    },
+    "mention-of": "https://teukka.tech/vimtip-gitlens.html",
+    "wm-property": "mention-of",
+    "wm-private": false
+  }
+]

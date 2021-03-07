@@ -4,9 +4,10 @@ const https = require("https");
 fetchWebmentions().then((webmentions) => {
   webmentions.forEach((webmention) => {
     const slug = webmention["wm-target"]
-      .replace("https:/teukka.tech/", "")
+      .replace("https://teukka.tech/", "")
       .replace(/\/$/, "")
       .replace("/", "--");
+    console.log(slug);
 
     const filename = `${__dirname}/data/webmentions/${slug}.json`;
 

@@ -1,0 +1,69 @@
+[
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "sunzoje",
+      "photo": "https://webmention.io/avatar/styles.redditmedia.com/b5b82c267133411f3d9ba7be52a3a76e8d1d7e5febf6bc3458e5eca845d65b1e.png",
+      "url": "https://reddit.com/user/sunzoje/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/fmkwr9w/",
+    "published": "2020-04-06T11:13:04",
+    "wm-received": "2021-03-07T15:15:27Z",
+    "wm-id": 1060591,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/fvwin5/fmkwr9w",
+    "wm-target": "https://teukka.tech/luanvim.html",
+    "content": {
+      "html": "<p>You've to have <code>lua require'colorizer'.setup()</code> in your init.vim.</p>\n\n<a class=\"u-mention\" href=\"https://neovim.io/doc/user/lua.html\"></a>\n<a class=\"u-mention\" href=\"https://teukka.tech/luanvim.html\"></a>",
+      "text": "You've to have lua require'colorizer'.setup() in your init.vim."
+    },
+    "in-reply-to": "https://teukka.tech/luanvim.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "Godnyx117",
+      "photo": "https://webmention.io/avatar/styles.redditmedia.com/29a9a1f198eb77ed2dff97fef8962be1b8e4544faaabec7ec925e8533a0d3763.png",
+      "url": "https://reddit.com/user/Godnyx117/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/fml9wwf/",
+    "published": "2020-04-06T14:07:29",
+    "wm-received": "2021-03-07T15:15:28Z",
+    "wm-id": 1060592,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/fvwin5/fml9wwf",
+    "wm-target": "https://teukka.tech/luanvim.html",
+    "content": {
+      "html": "<p>WOW MAN!!! I haven't used any lua plug-in but this one seems really interesting! Also I couldn't make any other highlighter work so this will fit perfectly! Thanks to the other guy for helping us out!</p>\n\n<a class=\"u-mention\" href=\"https://neovim.io/doc/user/lua.html\"></a>\n<a class=\"u-mention\" href=\"https://teukka.tech/luanvim.html\"></a>",
+      "text": "WOW MAN!!! I haven't used any lua plug-in but this one seems really interesting! Also I couldn't make any other highlighter work so this will fit perfectly! Thanks to the other guy for helping us out!"
+    },
+    "in-reply-to": "https://teukka.tech/luanvim.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "Paraduxos",
+      "photo": "https://webmention.io/avatar/styles.redditmedia.com/f048e9325f57ef56de666635abad6515013f3592ce36e7c35a84f1f311207b72.png",
+      "url": "https://reddit.com/user/Paraduxos/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/",
+    "published": "2020-04-06T10:39:13",
+    "wm-received": "2021-03-07T15:15:34Z",
+    "wm-id": 1060596,
+    "wm-source": "https://brid.gy/post/reddit/yaboykanye/fvwin5",
+    "wm-target": "https://teukka.tech/luanvim.html",
+    "name": "How to install Lua-based plugin",
+    "content": {
+      "html": "I want to install [https://github.com/norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)\n\nSo I add `Plug 'norcalli/nvim-colorizer.lua'` in my `init.vim` and run `:PlugInstall`\n\nAnd I don't know what to do next.\n\nI tried read [https://neovim.io/doc/user/lua.html](https://neovim.io/doc/user/lua.html) and [https://teukka.tech/luanvim.html](https://teukka.tech/luanvim.html)\n\nBut I'm so confused what I have to do.\n\nAnd these are details what I think it's related.\n\n`$ nvim --version`\n\n`NVIM v0.3.4`\n\n`Build type: Release`\n\n`LuaJIT 2.1.0-beta3`\n\nHere in `neovim`\n\n`:vs $VIMRUNTIME # Show /usr/share/nvim/runtime`\n\n`$ ls -la # Inside runtime folder`\n\n`man.lua`\n\n`vim`\n\n`$ cd vim/ # Inside runtime/vim folder`\n\n`$ ls -la`\n\n`compat.lua`\n\nAnd here my `init.vim` location\n\n`~/.config/nvim$ ls -la`\n\n`init.vim`\n\n`.netrwhist`\n<a href=\"https://github.com/norcalli/nvim-colorizer.lua\">https://github.com/norcalli/nvim-colorizer.lua</a>\n<a href=\"https://neovim.io/doc/user/lua.html\">https://neovim.io/doc/user/lua.html</a>\n<a href=\"https://teukka.tech/luanvim.html\">https://teukka.tech/luanvim.html</a>",
+      "text": "I want to install [https://github.com/norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)\n\nSo I add `Plug 'norcalli/nvim-colorizer.lua'` in my `init.vim` and run `:PlugInstall`\n\nAnd I don't know what to do next.\n\nI tried read [https://neovim.io/doc/user/lua.html](https://neovim.io/doc/user/lua.html) and [https://teukka.tech/luanvim.html](https://teukka.tech/luanvim.html)\n\nBut I'm so confused what I have to do.\n\nAnd these are details what I think it's related.\n\n`$ nvim --version`\n\n`NVIM v0.3.4`\n\n`Build type: Release`\n\n`LuaJIT 2.1.0-beta3`\n\nHere in `neovim`\n\n`:vs $VIMRUNTIME # Show /usr/share/nvim/runtime`\n\n`$ ls -la # Inside runtime folder`\n\n`man.lua`\n\n`vim`\n\n`$ cd vim/ # Inside runtime/vim folder`\n\n`$ ls -la`\n\n`compat.lua`\n\nAnd here my `init.vim` location\n\n`~/.config/nvim$ ls -la`\n\n`init.vim`\n\n`.netrwhist`\nhttps://github.com/norcalli/nvim-colorizer.lua\nhttps://neovim.io/doc/user/lua.html\nhttps://teukka.tech/luanvim.html"
+    },
+    "mention-of": "https://teukka.tech/luanvim.html",
+    "wm-property": "mention-of",
+    "wm-private": false
+  }
+]
