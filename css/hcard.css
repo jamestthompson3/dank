@@ -1,5 +1,6 @@
 .h-card {
   display: flex;
+  flex-wrap: wrap;
   align-items: center;
   width: 45%;
   justify-content: space-evenly;

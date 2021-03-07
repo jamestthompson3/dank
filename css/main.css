@@ -159,6 +159,34 @@ header .main {
 header .main .homepage {
   font-size: 1.15rem;
 }
+
+/* Webmentions */
+
+.webmention .comment-date {
+  color: #797979;
+}
+.webmention .webmention-container {
+  display: flex;
+  justify-content: space-evenly;
+  margin: 1.5rem 0rem;
+  align-items: center;
+}
+
+.webmention .webmention-content {
+  padding: 0.5rem;
+  width: 600px;
+}
+
+.webmention .webmention-profile {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.webmention img {
+  width: 60px;
+  height: 60px;
+}
 h1,
 h2,
 h3,
