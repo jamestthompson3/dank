@@ -1,0 +1,26 @@
+.h-card {
+  display: flex;
+  align-items: center;
+  width: 45%;
+  justify-content: space-evenly;
+}
+.h-card img {
+  width: 85px;
+  height: 60px;
+  border: 3px solid var(--darkMaincolor);
+}
+.h-card .pic-link {
+  text-decoration: none;
+  border-bottom: none;
+}
+
+.h-card .info {
+  display: flex;
+  flex-direction: column;
+}
+
+@media (prefers-color-scheme: light) {
+  .h-card img {
+    border: 3px solid var(--maincolor);
+  }
+}

@@ -1,15 +1,7 @@
 <footer>
-<hr>
-{{- range $index, $key := .Site.Params.Social -}}
-<a class="soc" href="{{ $key.url }}" title="{{ $key.name }}"><i data-feather="{{ $key.icon }}"></i></a>|
-{{- end -}} ⚡️
-	{{ dateFormat "2006" now }} {{ with .Site.Copyright }} {{ . }} | {{ end }} modified <a href="https://github.com/athul/archie">Archie Theme</a> | Built with <a href="https://gohugo.io">Hugo</a>
+  <hr>
+  {{- partial "hcard.html" . -}}
 </footer>
 
-{{- if (isset .Site.Params "social") -}}
-<script>
-      feather.replace()
-</script>
-{{- end -}}
 <script data-goatcounter="https://teukka_tech.goatcounter.com/count"
-        async src="//gc.zgo.at/count.js"></script>
+  async src="//gc.zgo.at/count.js"></script>

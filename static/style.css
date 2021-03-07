@@ -37,6 +37,10 @@
   }
 }
 
+.h-card {
+  display: none;
+}
+
 #root {
   background: linear-gradient(84deg, #246655, #244066, #4b2466, #f2bd39);
   background-size: 800% 800%;
@@ -44,8 +48,6 @@
   -moz-animation: Animate 10s ease infinite;
   animation: Animate 10s ease infinite;
   min-height: 50vh;
-  justify-content: space-around;
-  align-items: center;
   -webkit-overflow-scrolling: touch;
 }
 
@@ -57,9 +59,6 @@
   text-align: center;
   min-width: 80%;
   padding: 1rem;
-}
-.h-card {
-  display: none;
 }
 .homepage.link {
   border-radius: var(--radius);
