@@ -5,7 +5,8 @@
 	<article class="h-entry post">
 		<div class="title">
       <h1 class="title"><a class="p-name u-url" href="{{ .Permalink }}">{{ .Title }}</a></h1>
-			<div class="dt-published meta ">Posted on {{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+			<div class="dt-published meta ">Posted on {{ dateFormat "2006-01-02" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</div>
+      <a rel="author" class="p-author h-card" href="/">taylor thompson</a>
 		</div>
 		{{ if isset .Params "tldr" }}
 		<div class="tldr p-summary">

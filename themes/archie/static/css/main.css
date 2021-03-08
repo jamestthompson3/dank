@@ -108,6 +108,10 @@ figure h4 {
 figure h4::before {
   content: "↳ ";
 }
+/* Microformat author on blog posts */
+.p-author.h-card {
+  display: none;
+}
 
 /* Code blocks */
 code {
