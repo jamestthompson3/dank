@@ -7,7 +7,6 @@ fetchWebmentions().then((webmentions) => {
       .replace("https://teukka.tech/", "")
       .replace(/\/$/, "")
       .replace("/", "--");
-    console.log(slug);
 
     const filename = `${__dirname}/data/webmentions/${slug}.json`;
 
