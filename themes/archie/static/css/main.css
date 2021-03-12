@@ -6,6 +6,7 @@
   --hovercolor: #5e9ed5;
   --darkMaincolor: #ebd987;
   --darkBorderColor: #87ceeb;
+  --mutedColor: #606060;
 }
 html {
   color: #232333;
@@ -203,27 +204,21 @@ h6 {
 
 h1::before {
   color: var(--maincolor);
-  content: "# ";
 }
 h2::before {
   color: var(--maincolor);
-  content: "## ";
 }
 h3::before {
   color: var(--maincolor);
-  content: "### ";
 }
 h4::before {
   color: var(--maincolor);
-  content: "#### ";
 }
 h5::before {
   color: var(--maincolor);
-  content: "##### ";
 }
 h6::before {
   color: var(--maincolor);
-  content: "###### ";
 }
 
 .title h1.title {

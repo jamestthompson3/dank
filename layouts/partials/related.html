@@ -2,7 +2,7 @@
 <h3>See Also</h3>
 <ul>
   {{ range . }}
-  <li><a href="{{ .RelPermalink }}">{{ .Title }}</a></li>
+  <li><a href="{{ .RelPermalink }}">{{ cond (eq (.Title) "") .Params.slug .Title }}</a></li>
   {{ end }}
 </ul>
 {{ end }}

@@ -1,0 +1,33 @@
+.update-header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: 160px;
+  flex-wrap: wrap;
+}
+
+.update-header svg {
+  max-height: 20px;
+}
+
+.update-tags {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.update-tags li::before {
+  content: "#";
+  color: var(--mutedColor);
+}
+
+.update-tags li {
+  text-indent: 0px;
+  color: var(--mutedColor);
+  margin: 0px 5px;
+}
+
+.update-tags a {
+  border-bottom: none;
+}

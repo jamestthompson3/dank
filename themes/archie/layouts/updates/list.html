@@ -1,0 +1,27 @@
+{{ define "main" }}
+{{ if isset .Data "Term" }}
+<h1>Entries tagged - "{{ .Data.Term }}"</h1>
+{{ else }}
+<h1 class="page-title">Feed</h1>
+<hr class="updates-pgbreak"/>
+{{ end }}
+
+	{{- range .Data.Pages -}}
+		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+      <hr/>
+      <div class="update-header">
+        <svg id="i-feed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <circle cx="6" cy="26" r="2" fill="currentColor" />
+          <path d="M4 15 C11 15 17 21 17 28 M4 6 C17 6 26 15 26 28" />
+        </svg>
+        <a href="{{ .RelPermalink }}">{{ dateFormat "Jan 2, 2006" .Date }}</a>
+      </div>
+      <ul class="update-tags">
+        {{ range .Params.tags }}
+        <li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+        {{ end }}
+      </ul>
+      <p>{{ .Content }}</p>
+		{{- end -}}
+	{{- end -}}
+{{ end }}
