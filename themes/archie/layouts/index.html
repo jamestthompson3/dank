@@ -54,18 +54,19 @@
       href="https://teukka.tech/index.xml"
       />
     <script src="index.js" async defer></script>
-    <title>😎😎😎😎</title>
+    <title>👉😎👉 Taylor's Website</title>
   </head>
   <body>
     <img id="cursor" src="bb8_1.svg" alt="cursor_image" />
     <section id="root">
       <div class="homepage info">
         <h1 class="header">Taylor Thompson's homepage</h1>
-        <p class="homepage blurb">
-        I'm a web developer based in Helsinki, Finland. I enjoy reading about
-        and writing software. I program mostly in JS, but enjoy trying new
-        languages and concepts!
-        </p>
+        <div class="homepage blurb">
+          <p style="margin:1rem 0rem;">
+          I live in Helsinki, Finland, and I really like computers and writing software. I also love to read, take photos, and tinker with this website!
+          </p>
+          {{- partial "hcard.html" . -}}
+        </div>
       </div>
       <div class="homepage link-container">
         <a class="homepage link" href="https://github.com/jamestthompson3" rel="me" target="__blank"> Projects </a>
@@ -98,6 +99,7 @@
           </p>
     </section>
       </div>
+      <!-- {{- partial "homefeed.html" . -}} -->
       <section id="other" role="contentinfo">
         <h2 id="programming-header" class="subheader">
           Cool Programming articles / videos
@@ -133,7 +135,6 @@
           </div>
         </div>
       </section>
-       {{- partial "hcard.html" . -}}
       <script>
         const cursor = document.querySelector("#cursor");
 const body = document.querySelector("body");

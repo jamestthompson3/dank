@@ -37,8 +37,9 @@
   }
 }
 
-.h-card {
-  display: none;
+.homefeed {
+  background: #000;
+  color: #ddd;
 }
 
 #root {
@@ -65,16 +66,38 @@
   box-shadow: var(--shadow);
   padding: 1rem;
   background: black;
-  color: white;
+  color: #ddd;
   margin: 0.5rem 0rem;
 }
 .homepage.blurb {
   background: black;
-  color: white;
+  color: #ddd;
   box-shadow: var(--shadow);
   border-radius: var(--radius);
   text-align: center;
   padding: 1rem;
+  display: flex;
+  width: 70%;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  margin: auto;
+}
+.h-card img {
+  width: 85px;
+  height: 60px;
+}
+
+.h-card {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+}
+
+.h-card .info {
+  display: flex;
+  flex-direction: column;
 }
 .homepage.info {
   padding: 1rem;
@@ -96,20 +119,20 @@
 
 #root a {
   background: #000;
-  color: #fff;
+  color: #ddd;
   text-decoration: 1px aquamarine underline;
   font-weight: bold;
   font-family: sans-serif;
 }
 .header {
   font-size: 2.5rem;
-  color: #fff;
+  color: #ddd;
   text-align: center;
   padding: 2rem 5px;
 }
 .subheader {
   font-size: 2rem;
-  color: #fff;
+  color: #ddd;
   background: #000;
   padding: 1rem;
 }
@@ -121,12 +144,12 @@
 }
 .outlinks.link {
   text-decoration: 1px aquamarine underline;
-  color: white;
+  color: #ddd;
 }
 .outlinks.item {
   margin: 0.5rem 0rem;
   background: black;
-  color: white;
+  color: #ddd;
   padding: 1rem;
 }
 

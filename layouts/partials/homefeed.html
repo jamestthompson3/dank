@@ -1,0 +1,8 @@
+<div class="homefeed">
+  <h2>Feed</h2>
+  {{ range .Site.RegularPages }}
+    {{ if in .Site.Params.ShowInMainFeed .Section }}
+      <p>{{ .Summary }}</p>
+    {{ end }}
+  {{ end }}
+</div>
