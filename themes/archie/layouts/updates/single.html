@@ -1,0 +1,21 @@
+{{ define "main" }}
+	<div class="h-entry note">
+			<div class="dt-published meta ">{{ dateFormat "2006-01-02" .Date }}</div>
+		<div class="post-tags">
+			{{ if ne .Type "page" }}
+			{{ if gt .Params.tags 0 }}
+			<nav class="nav tags">
+				<ul class="tags">
+					{{ range .Params.tags }}
+					<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ end }}
+				</ul>
+			</nav>
+			{{ end }}
+			{{ end }}
+		</div>
+		<div class="body e-content">
+			{{ .Content }}
+		</div>
+	</div>
+{{ end }}
