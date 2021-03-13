@@ -3,53 +3,40 @@
   --shadow: 3px 3px 8px #3a3535bf;
   --radius: 5px;
 }
-@-webkit-keyframes Animate {
+@keyframes animatedBackground {
   0% {
-    background-position: 0% 97%;
+    transform: translateX(0%);
   }
   50% {
-    background-position: 100% 4%;
+    transform: translateX(-50%);
   }
   100% {
-    background-position: 0% 97%;
+    transform: translateX(0%);
   }
-}
-@-moz-keyframes Animate {
-  0% {
-    background-position: 0% 97%;
-  }
-  50% {
-    background-position: 100% 4%;
-  }
-  100% {
-    background-position: 0% 97%;
-  }
-}
-@keyframes Animate {
-  0% {
-    background-position: 0% 97%;
-  }
-  50% {
-    background-position: 100% 4%;
-  }
-  100% {
-    background-position: 0% 97%;
-  }
-}
-
-.homefeed {
-  background: #000;
-  color: #ddd;
 }
 
 #root {
   background: linear-gradient(84deg, #246655, #244066, #4b2466, #f2bd39);
-  background-size: 800% 800%;
-  -webkit-animation: Animate 10s ease infinite;
-  -moz-animation: Animate 10s ease infinite;
-  animation: Animate 10s ease infinite;
+  background-repeat: repeat;
+  position: relative;
+  z-index: 0;
+  -webkit-backface-visibility: hidden;
   min-height: 50vh;
   -webkit-overflow-scrolling: touch;
+}
+
+#root:before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  top: 0;
+  left: 0;
+  right: -100%;
+  bottom: 0;
+  background: inherit;
+  -webkit-animation: animatedBackground 15s ease infinite;
+  -moz-animation: animatedBackground 15s ease infinite;
+  animation: animatedBackground 15s ease infinite;
 }
 
 .homepage.link-container {
