@@ -7,41 +7,36 @@ enableRobotsTXT = true
 
 [params]
 mode = "auto"
-ShowInMainFeed = ["updates"]
+ShowInMainFeed = ["updates", "posts"]
 
 
 [author]
 name = "taylor thompson"
 email = "taylor@teukka.tech"
 
-[[menu.main]]
-name = "Home"
-url = "/"
-weight = 1
-
 [[params.redirect]]
 from = "/feed.xml"
 to = "/index.xml"
 
 [[menu.main]]
-name = "All posts"
+name = "Posts"
 url = "/posts"
 weight = 2
 
 [[menu.main]]
 name = "Knowledge Base"
 url = "/knowledgebase"
-weight = 3
+weight = 4
 
 [[menu.main]]
 name = "Tags"
 url = "/tags"
-weight = 4
+weight = 3
 
 [[menu.main]]
 name = "Updates"
 url = "/updates"
-weight = 3
+weight = 2
 
 [related]
   includeNewer = false

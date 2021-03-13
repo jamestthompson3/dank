@@ -174,7 +174,7 @@ header .main .homepage {
   display: flex;
   justify-content: space-evenly;
   margin: 1.5rem 0rem;
-  align-items: center;
+  align-items: flex-start;
 }
 
 .webmention .webmention-content {

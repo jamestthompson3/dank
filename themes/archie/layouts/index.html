@@ -58,10 +58,9 @@
     <title>👉😎👉 Taylor's Website</title>
   </head>
   <body>
-    <img id="cursor" src="bb8_1.svg" alt="cursor_image" />
     <section id="root">
       <div class="homepage info">
-        <h1 class="header">Taylor Thompson's homepage</h1>
+        <h1 class="header">Taylor Thompson's Homepage</h1>
         <div class="homepage blurb">
           <p style="margin:1rem 0rem;">
           I live in Helsinki, Finland, and I really like computers and writing software. I also love to read, take photos, and tinker with this website!
@@ -100,7 +99,7 @@
           </p>
     </section>
       </div>
-      <!-- {{- partial "homefeed.html" . -}} -->
+      {{- partial "homefeed.html" . -}}
       <section id="other" role="contentinfo">
         <h2 id="programming-header" class="subheader">
           Cool Programming articles / videos
@@ -137,29 +136,7 @@
         </div>
       </section>
       <script>
-        const cursor = document.querySelector("#cursor");
 const body = document.querySelector("body");
-let start = { x: 0, y: 0 };
-
-document.addEventListener("mousemove", bb8move);
-document.addEventListener("touch", bb8move);
-document.addEventListener("touchstart", touchStart, false);
-<!-- document.addEventListener("touchmove", touchMove, false); -->
-
-function bb8move({x, pageY}) {
-  cursor.style.left = `${x+ 30}px`;
-  cursor.style.top = `${pageY - 50}px`;
-}
-
-function touchStart(event) {
-  start.x = event.touches[0].pageX;
-  start.y = event.touches[0].pageY;
-}
-
-function touchMove(event) {
-  offsetX = start.x - event.touches[0].pageX;
-  offsetY = start.y - event.touches[0].pageY;
-}
 function copyFeed(id, usedataref){
   const text = document.getElementById(id)
   if (!navigator.clipboard) {

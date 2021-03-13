@@ -1,8 +1,39 @@
-<div class="homefeed">
-  <h2 class="homefeed-title">Feed</h2>
+<div class="homefeed h-entry">
+  <h2 class="homefeed-title">Recent Updates</h2>
   <hr />
-  {{ range .Site.RegularPages }} {{ if in .Site.Params.ShowInMainFeed .Section
-  }}
-  <p>{{ .Summary }}</p>
-  {{ end }} {{ end }}
+  {{ range .Site.RegularPages }} {{ if in .Site.Params.ShowInMainFeed .Section }}
+    <div class="update-container">
+      {{ if in "updates" .Section }}
+      <div class="update-header">
+        <svg id="i-feed" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32"  fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2">
+          <circle cx="6" cy="26" r="2" fill="currentColor" />
+          <path d="M4 15 C11 15 17 21 17 28 M4 6 C17 6 26 15 26 28" />
+        </svg>
+        <ul class="update-tags">
+          {{ range .Params.tags }}
+          <li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+      </div>
+        <p class="e-content">{{ .Content }}</p>
+        <a class="u-uid u-url" href="{{ .RelPermalink }}">{{ dateFormat "Jan 2, 2006 15:04 MST" .Date.Local }}</a>
+        {{ end }}
+        {{ if in "posts" .Section}}
+      <div class="update-header">
+        <svg version="1.1" id="Layer_1" stroke="currentColor" fill="currentColor" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px"
+          viewBox="0 0 92 92" enable-background="new 0 0 92 92" xml:space="preserve">
+          <path id="XMLID_1960_" d="M76,2H16c-2.2,0-4,1.8-4,4v80c0,2.2,1.8,4,4,4h60c2.2,0,4-1.8,4-4V6C80,3.8,78.2,2,76,2z M72,82H20V10h52
+          V82z M28.5,65c0-2.2,1.8-4,4-4h27c2.2,0,4,1.8,4,4s-1.8,4-4,4h-27C30.3,69,28.5,67.2,28.5,65z M29.1,46c0-2.2,1.8-4,4-4h26.3
+          c2.2,0,4,1.8,4,4s-1.8,4-4,4H33.1C30.9,50,29.1,48.2,29.1,46z M29.1,27c0-2.2,1.8-4,4-4h26.3c2.2,0,4,1.8,4,4s-1.8,4-4,4H33.1
+          C30.9,31,29.1,29.2,29.1,27z"/>
+        </svg>
+        <h3 class="kind">Blog Post</h3>
+      </div>
+      <a class="title u-uid u-url" href="{{ .RelPermalink }}">{{ .Title }}</a>
+        <p>{{.Description}}</p>
+        <a class="u-uid u-url" href="{{ .RelPermalink }}">{{ dateFormat "Jan 2, 2006" .Date.Local }}</a>
+        {{ end }}
+      </div>
+    {{ end }}
+  {{ end }}
 </div>

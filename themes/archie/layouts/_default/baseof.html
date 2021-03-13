@@ -5,6 +5,7 @@
         <div class="content">
         {{- partial "head.html" . -}}
         {{- block "main" . }}{{- end }}
+        {{- partial "backlinks.html" . -}}
         {{- partial "related.html" . -}}
         {{- partial "webmentions.html" . -}}
         {{- partial "footer.html" . -}}

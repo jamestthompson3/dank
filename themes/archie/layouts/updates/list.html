@@ -14,7 +14,7 @@
           <circle cx="6" cy="26" r="2" fill="currentColor" />
           <path d="M4 15 C11 15 17 21 17 28 M4 6 C17 6 26 15 26 28" />
         </svg>
-        <a href="{{ .RelPermalink }}">{{ dateFormat "Jan 2, 2006" .Date }}</a>
+        <a href="{{ .RelPermalink }}">{{ dateFormat "Jan 2, 2006 15:04 MST" .Date.Local }}</a>
       </div>
       <ul class="update-tags">
         {{ range .Params.tags }}
