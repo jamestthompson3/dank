@@ -6,9 +6,84 @@
 .homefeed-title {
   text-align: center;
 }
-
+a {
+  color: #999;
+  border-bottom: 1px aquamarine solid;
+  text-decoration: none;
+}
 hr {
   border: 0;
-  border-top: 3px dotted #87ceeb;
-  margin: 1em 0;
+  border-top: 3px dotted #80eaff;
+  width: 60%;
+  margin: 1em auto;
+}
+
+.update-header {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.update-header svg {
+  height: 23px;
+  color: #999;
+}
+
+.update-header .kind {
+  margin: 0rem 1rem;
+  color: #999;
+}
+
+.update-tags {
+  display: flex;
+  justify-content: flex-start;
+  padding-left: 0px;
+  margin: 0px;
+}
+
+.update-tags li::before {
+  content: "#";
+  color: #dbdbdb;
+}
+
+.update-tags li {
+  text-indent: 0px;
+  color: #dbdbdb;
+  margin: 0px 5px;
+}
+
+.update-tags a {
+  border-bottom: none;
+  color: #80eaff;
+}
+.u-uid.u-url {
+  font-size: 12px;
+  color: aquamarine;
+  border-bottom: none;
+  margin: 8px 0px;
+}
+
+.title.u-uid.u-url {
+  font-size: 21px;
+  color: #80eaff;
+}
+.update-container {
+  padding: 2rem 0rem;
+  width: 60%;
+  margin: auto;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-evenly;
+}
+.e-content {
+  padding: 0.5rem 0rem;
+}
+
+@media (max-width: 485px) {
+  .update-container {
+    width: 80%;
+  }
+  hr {
+    width: 80%;
+  }
 }
