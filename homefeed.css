@@ -1,0 +1,14 @@
+.homefeed {
+  background: #000;
+  color: #ddd;
+  padding: 2rem;
+}
+.homefeed-title {
+  text-align: center;
+}
+
+hr {
+  border: 0;
+  border-top: 3px dotted #87ceeb;
+  margin: 1em 0;
+}
