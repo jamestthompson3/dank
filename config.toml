@@ -9,6 +9,10 @@ enableRobotsTXT = true
 mode = "auto"
 ShowInMainFeed = ["updates", "posts"]
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+
 
 [author]
 name = "taylor thompson"
@@ -31,6 +35,11 @@ weight = 4
 [[menu.main]]
 name = "Tags"
 url = "/tags"
+weight = 3
+
+[[menu.main]]
+name = "Bookmarks"
+url = "/bookmarks"
 weight = 3
 
 [[menu.main]]
