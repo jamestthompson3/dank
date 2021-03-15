@@ -110,6 +110,10 @@ a:hover {
 .highlight {
   background-color: #333;
 }
+.page-item.active {
+  background-color: var(--darkMaincolor);
+  color: #000;
+}
 .soc:hover {
   color: black;
 }

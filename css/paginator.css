@@ -12,10 +12,13 @@
 }
 
 .page-item.active a {
-  color: #fff;
   font-weight: bold;
 }
 
 .page-item.disabled a {
   color: #dbdbdb;
+}
+
+.page-item.disabled a:hover {
+  color: #000;
 }
