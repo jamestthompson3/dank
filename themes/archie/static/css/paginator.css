@@ -1,0 +1,21 @@
+.pagination {
+  display: flex;
+  width: 80%;
+  margin: auto;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.page-item {
+  margin: 0px 5px;
+}
+
+.page-item.active a {
+  color: #fff;
+  font-weight: bold;
+}
+
+.page-item.disabled a {
+  color: #dbdbdb;
+}

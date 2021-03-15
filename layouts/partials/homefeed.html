@@ -1,7 +1,9 @@
 <div class="homefeed h-entry">
   <h2 class="homefeed-title">Recent Updates</h2>
   <hr />
-  {{ range .Site.RegularPages }} {{ if in .Site.Params.ShowInMainFeed .Section }}
+  {{ $pages := (.Paginate .Site.RegularPages)}}
+  {{ range $pages.Pages }}
+  {{ if in .Site.Params.ShowInMainFeed .Section }}
     <div class="update-container">
       {{ if in "updates" .Section }}
       <div class="update-header">
@@ -36,4 +38,5 @@
       </div>
     {{ end }}
   {{ end }}
+  {{ template "_internal/pagination.html" . }}
 </div>
