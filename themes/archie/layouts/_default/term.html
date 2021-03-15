@@ -9,7 +9,7 @@
 	{{- range .Data.Pages -}}
 		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
 		<li class="post">
-			<a href="{{ .RelPermalink }}">{{ cond (eq (.Title) "") .Params.slug .Title }}</a> <span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>
+      <a href="{{ .RelPermalink }}">{{ cond (eq (.Title) "") .Params.slug .Title }}</a> {{ if .Date }}<span class="meta">{{ dateFormat "Jan 2, 2006" .Date }}{{ if .Draft }} <span class="draft-label">DRAFT</span> {{ end }}</span>{{ end }}
 		</li>
 		{{- end -}}
 	{{- end -}}
