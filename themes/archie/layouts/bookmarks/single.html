@@ -1,0 +1,16 @@
+{{ define "main" }}
+<div class="h-entry bookmark">
+  <h2 class="title"><a href="{{ .Param "bookmark-of"  }}" target="blank" rel="noopener noreferrer">{{.Title}}</a></h2>
+			{{ if gt .Params.tags 0 }}
+			<nav class="nav tags">
+				<ul class="tags p-category">
+					{{ range .Params.tags }}
+					<li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
+					{{ end }}
+				</ul>
+			</nav>
+			{{ end }}
+  <p>{{.Content}}</p>
+</div>
+
+{{ end }}
