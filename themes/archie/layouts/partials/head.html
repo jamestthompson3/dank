@@ -7,4 +7,10 @@
 		<a href="{{ .URL }}">{{ .Name }}</a>
 		{{ end }}
 	</nav>
+  <div id="fastSearch">
+    <label for="searchInput" style="display:none;">search the blog</label>
+    <input id="searchInput" tabindex="0" placeholder="search 🔍">
+    <ul id="searchResults">
+    </ul>
+  </div>
 </header>
