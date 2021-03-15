@@ -1,5 +1,6 @@
 {{ define "main" }}
 <h1 class="page-title">Bookmarks</h1>
+<h3>Collection of reference materials or articles I've collected</h3>
 	{{- range .Data.Pages -}}
 		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
       <hr/>

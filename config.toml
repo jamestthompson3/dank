@@ -33,11 +33,6 @@ url = "/knowledgebase"
 weight = 4
 
 [[menu.main]]
-name = "Tags"
-url = "/tags"
-weight = 3
-
-[[menu.main]]
 name = "Bookmarks"
 url = "/bookmarks"
 weight = 3
