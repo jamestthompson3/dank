@@ -70,11 +70,7 @@ ul {
   list-style: none;
   padding-left: 2ch;
 }
-ul li {
-  text-indent: -2ch;
-}
 ul li::before {
-  content: "* ";
   font-weight: bold;
 }
 
@@ -130,6 +126,11 @@ pre {
 .highlight pre ::selection {
   background: rgba(255, 255, 255, 0.2);
   color: inherit;
+}
+
+.page-item.active {
+  background-color: var(--maincolor);
+  color: #fff;
 }
 
 pre code {

@@ -1,19 +1,21 @@
 {{ define "main" }}
 <h1 class="page-title">Bookmarks</h1>
 <h3>Collection of reference materials or articles I've collected</h3>
-	{{- range .Data.Pages -}}
-		{{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
+{{ $pages := (.Paginate .Data.Pages) }}
+  {{ range $pages.Pages }}
+    {{- if (not (in (.Site.Params.excludedTypes | default (slice "page")) .Type)) -}}
       <hr/>
       <div class="bookmark-header">
         <svg xmlns="http://www.w3.org/2000/svg"   viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-bookmark"><path d="M19 21l-7-5-7 5V5a2 2 0 0 1 2-2h10a2 2 0 0 1 2 2z"></path></svg>
         <a href="{{ .RelPermalink }}">{{ .Title }}</a>
       </div>
       <ul class="update-tags">
-        {{ range .Params.tags }}
+      {{ range .Params.tags }}
         <li><a class="p-category" href="{{ "/tags/" | relLangURL }}{{ . | urlize }}">{{ . }}</a></li>
-        {{ end }}
-      </ul>
-      <p>{{ .Content }}</p>
-		{{- end -}}
-	{{- end -}}
+      {{ end }}
+     </ul>
+     <p>{{ .Content }}</p>
+    {{ end }}
+  {{ end }}
+  {{ template "_internal/pagination.html" . }}
 {{ end }}
