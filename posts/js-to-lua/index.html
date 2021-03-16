@@ -1,0 +1,71 @@
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>(Nvim) Lua for Javascripters: Spawning Processes</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:image" content><link rel=canonical href=https://teukka.tech/posts/js-to-lua/><link rel=webmention href=https://webmention.io/teukka.tech/webmention><link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc><link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="(Nvim) Lua for Javascripters: Spawning Processes"><meta property="og:description" content="A quick overview on how to handle async processes in luv in Neovim"><meta property="og:type" content="article"><meta property="og:url" content="https://teukka.tech/posts/js-to-lua/"><meta property="article:section" content="posts"><meta property="article:published_time" content="2021-03-16T00:00:00+00:00"><meta property="article:modified_time" content="2021-03-16T00:00:00+00:00"><meta name=twitter:card content="summary"><meta name=twitter:title content="(Nvim) Lua for Javascripters: Spawning Processes"><meta name=twitter:description content="A quick overview on how to handle async processes in luv in Neovim"><link href=https://teukka.tech/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)"><script>window.location.host!=='teukka.tech'&&(window.goatcounter={no_onload:!0})</script></head><body><div class=content><header><div class=main><a class=homepage href=https://teukka.tech/>teukka.tech</a></div><nav><a href=/posts>posts</a>
+<a href=/updates>updates</a>
+<a href=/bookmarks>bookmarks</a>
+<a href=/knowledgebase>knowledge base</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
+<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/js-to-lua/>(Nvim) Lua for Javascripters: Spawning Processes</a></h1><div class="dt-published meta">Posted on 2021-03-16</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/lua>lua</a></li><li><a class=p-category href=/tags/libuv>libuv</a></li><li><a class=p-category href=/tags/neovim>neovim</a></li></ul></nav></div><section class="body e-content"><h2 id=goals>Goals</h2><p>This should be a quick reference guide for those familiar with NodeJS on how to execute the same async tasks in Lua using luv. This is aimed towards use cases inside Neovim, but is not limited to those cases.</p><h2 id=task>Task</h2><p>We want to spawn a child task to convert a markdown document into HTML using <a href=https://pandoc.org/>pandoc</a>. This could be used as part of a publishing flow for a blog, for writing notes, or for implementing a markdown previewer.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#0f0>// in Node we could do it like this:
+</span><span style=color:#0f0></span><span style=color:red>const</span> {spawn} = require(<span style=color:#87ceeb>&#39;child_process&#39;</span>);
+<span style=color:red>const</span> [sourceFile, destinationFile] = process.argv.slice(<span style=color:#f60>2</span>)
+
+<span style=color:red>const</span> convert = spawn(<span style=color:#87ceeb>&#39;pandoc&#39;</span>, [sourceFile, <span style=color:#87ceeb>&#39;--from&#39;</span>, <span style=color:#87ceeb>&#39;gfm&#39;</span>, <span style=color:#87ceeb>&#39;--to&#39;</span>, <span style=color:#87ceeb>&#39;html5&#39;</span>, <span style=color:#87ceeb>&#39;-o&#39;</span>, destinationFile, <span style=color:#87ceeb>&#39;-s&#39;</span>, <span style=color:#87ceeb>&#39;--highlight-style&#39;</span>, <span style=color:#87ceeb>&#39;tango&#39;</span>])
+
+convert.stderr.on(<span style=color:#87ceeb>&#39;data&#39;</span>, (data) =&gt; {
+  console.error(data);
+});
+
+convert.on(<span style=color:#87ceeb>&#39;close&#39;</span>, (code) =&gt; {
+  console.log(<span style=color:#87ceeb>`child process exited with code </span><span style=color:#87ceeb>${</span>code<span style=color:#87ceeb>}</span><span style=color:#87ceeb>`</span>);
+});
+</code></pre></div><p>In Lua, the code looks very similar, but a bit more verbose:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- The same as before, but this time we want to generate the file names </span>
+<span style=color:#0f0>-- based on the file we are currently editing instead of passing them as commandline args</span>
+
+<span style=color:red>function</span> <span style=color:#ff0>convert</span>()
+  <span style=color:#0f0>-- cut off the `.md` part of the file</span>
+  <span style=color:red>local</span> destinationFile = vim.fn.expand(<span style=color:#87ceeb>&#39;%:t:r&#39;</span>)
+  <span style=color:#0f0>-- the name of the file you&#39;re editing</span>
+  <span style=color:red>local</span> sourceFile = api.nvim_buf_get_name(<span style=color:#f60>0</span>)
+  spawn(<span style=color:#87ceeb>&#39;pandoc&#39;</span>, {
+    args = {sourceFile, <span style=color:#87ceeb>&#39;--from&#39;</span>, <span style=color:#87ceeb>&#39;gfm&#39;</span>, <span style=color:#87ceeb>&#39;--to&#39;</span>, <span style=color:#87ceeb>&#39;html5&#39;</span>, <span style=color:#87ceeb>&#39;-o&#39;</span>, string.format(<span style=color:#87ceeb>&#39;%s.html&#39;</span>, destinationFile), <span style=color:#87ceeb>&#39;-s&#39;</span>, <span style=color:#87ceeb>&#39;--highlight-style&#39;</span>, <span style=color:#87ceeb>&#39;tango&#39;</span>},
+  }, 
+  {stdout = <span style=color:red>function</span>()<span style=color:red>end</span>, stderr = <span style=color:red>function</span>(data) print(data) <span style=color:red>end</span>},
+  <span style=color:red>function</span>(code) <span style=color:#0f0>-- we want to call this function when the process is done</span>
+    print(<span style=color:#87ceeb>&#39;child process exited with code &#39;</span> .. string.format(<span style=color:#87ceeb>&#39;%d&#39;</span>, code))
+  <span style=color:red>end</span>)
+<span style=color:red>end</span>
+
+<span style=color:red>function</span> <span style=color:#ff0>spawn</span>(cmd, opts, input, onexit)
+  <span style=color:red>local</span> handle, pid
+  <span style=color:#0f0>-- open an new pipe for stdout</span>
+  <span style=color:red>local</span> stdout = vim.loop.new_pipe(<span style=color:red>false</span>)
+  <span style=color:#0f0>-- open an new pipe for stderr</span>
+  <span style=color:red>local</span> stderr = vim.loop.new_pipe(<span style=color:red>false</span>)
+  handle, pid = vim.loop.spawn(cmd, vim.tbl_extend(<span style=color:#87ceeb>&#34;force&#34;</span>, opts, {stdio = {stdout; stderr;}}), 
+  <span style=color:red>function</span>(code, signal)
+    <span style=color:#0f0>-- call the exit callback with the code and signal</span>
+    onexit(code, signal)
+    <span style=color:#0f0>-- stop reading data to stdout</span>
+    vim.loop.read_stop(stdout)
+    <span style=color:#0f0>-- stop reading data to stderr</span>
+    vim.loop.read_stop(stderr)
+    <span style=color:#0f0>-- safely shutdown child process</span>
+    safe_close(handle)
+    <span style=color:#0f0>-- safely shutdown stdout pipe</span>
+    safe_close(stdout)
+    <span style=color:#0f0>-- safely shutdown stderr pipe</span>
+    safe_close(stderr)
+  <span style=color:red>end</span>)
+  <span style=color:#0f0>-- read child process output to stdout</span>
+  vim.loop.read_start(stdout, input.stdout)
+  <span style=color:#0f0>-- read child process output to stderr</span>
+  vim.loop.read_start(stderr, input.stderr)
+<span style=color:red>end</span>
+
+<span style=color:red>function</span> <span style=color:#ff0>safe_close</span>(handle)
+  <span style=color:red>if</span> not vim.loop.is_closing(handle) <span style=color:red>then</span>
+    vim.loop.close(handle)
+  <span style=color:red>end</span>
+<span style=color:red>end</span>
+</code></pre></div><p>One of the major differences is that in Lua you are responsible for cleaning up both the process handle and any pipes you have open to receive data from that handle. It then becomes useful to create a more generalized <code>spawn</code> function to handle all of these things under the hood, allowing you to just call <code>spawn</code> in a similar manner to the NodeJS API.</p></section></article></main><h3>See Also</h3><ul><li><a href=/posts/2020-01-07-vimloop/>Using LibUV in Neovim</a></li><li><a href=/posts/2020-01-28-vimtip-gitlens/>Neovim Tip, GitLens</a></li><li><a href=/posts/2019-12-19-luanvim/>From init.vim to init.lua</a></li><li><a href=/updates/37805/>37805</a></li><li><a href=/posts/2019-08-25-vimcandothat/>Vim does that already</a></li></ul><div class=webmention></div><script src=/js/fuse.js></script><script src=/js/fastsearch.js></script><footer><hr><div class=h-card><a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.jpg alt="pygmy
+    slow loris, an endangered and beautiful creature"></a><div class=info><span class=p-name>Taylor Thompson</span>
+<a class=u-email href=mailto:taylor@teukka.tech>taylor@teukka.tech</a>
+<a rel=me class=u-url>https://teukka.tech</a>
+<span class=p-note>eternally curious person</span></div></div></footer><script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script></div></body></html>
