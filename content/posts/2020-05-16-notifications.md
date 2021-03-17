@@ -2,7 +2,7 @@
 title: Javascript Quick Tip -- Browser Notifications
 page_title: 👋 Browser Notifications
 author: Taylor Thompson
-tags: [javascript, web development]
+tags: [javascript, webdev]
 keywords: [javascript, notifications, web notifications]
 description: In-browser notifications, no server required!
 images: ["https://images.unsplash.com/photo-1586957960362-65815d739527?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"]

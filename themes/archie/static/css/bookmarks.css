@@ -1,0 +1,9 @@
+.bookmark-header {
+  display: flex;
+  align-items: center;
+}
+
+.bookmark-header svg {
+  max-height: 20px;
+  margin-right: 8px;
+}

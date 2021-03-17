@@ -2,7 +2,7 @@
 title: Build a Better Web with Service Workers
 page_title: 👷 Using Service Workers to Cache Content
 author: Taylor Thompson
-tags: [javascript, service worker, web dev]
+tags: [javascript, service worker, webdev]
 keywords: [service worker, offline web app, offline javascript]
 description: Make a better web experience with service workers.
 images:

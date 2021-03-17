@@ -1,0 +1,64 @@
+#fastSearch {
+  width: 320px;
+  margin: 10px 0px;
+}
+
+#fastSearch input {
+  padding: 4px 10px;
+  font-size: 1em;
+  color: #aaa;
+  font-weight: bold;
+  width: 100%;
+  display: inline-block;
+  background-color: #000;
+  text-align: left;
+  border: 1px solid #dbdbdb;
+}
+
+#fastSearch ul li {
+  text-indent: 0px;
+}
+.sc {
+  color: #80eaff;
+  font-weight: bold;
+  margin: 3px 0px;
+}
+
+#fastSearch ul {
+  width: 320px;
+  position: absolute;
+  margin: 0.1rem 0.8rem;
+}
+
+#searchResults li {
+  list-style: none;
+  margin-left: 0em;
+  background-color: #333;
+  border-bottom: 1px dotted #000;
+}
+#searchResults li:before {
+  content: "";
+}
+#searchResults li .title {
+  font-size: 1.1em;
+  margin-bottom: 10px;
+}
+
+#searchResults {
+  visibility: inherit;
+}
+#searchResults a {
+  text-decoration: none !important;
+  padding: 10px;
+}
+#searchResults a:hover,
+a:focus {
+  outline: 0;
+  background-color: #666;
+  color: #fff;
+}
+
+.result {
+  display: flex;
+  flex-direction: column;
+}

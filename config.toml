@@ -9,6 +9,10 @@ enableRobotsTXT = true
 mode = "auto"
 ShowInMainFeed = ["updates", "posts"]
 
+[outputs]
+  home = ["HTML", "RSS", "JSON"]
+
+
 
 [author]
 name = "taylor thompson"
@@ -19,22 +23,22 @@ from = "/feed.xml"
 to = "/index.xml"
 
 [[menu.main]]
-name = "Posts"
+name = "posts"
 url = "/posts"
 weight = 2
 
 [[menu.main]]
-name = "Knowledge Base"
+name = "knowledge base"
 url = "/knowledgebase"
 weight = 4
 
 [[menu.main]]
-name = "Tags"
-url = "/tags"
+name = "bookmarks"
+url = "/bookmarks"
 weight = 3
 
 [[menu.main]]
-name = "Updates"
+name = "updates"
 url = "/updates"
 weight = 2
 
