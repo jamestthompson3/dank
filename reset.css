@@ -23,10 +23,10 @@ body {
 html,
 body {
   font: inherit;
-  font-family: "Anton", sans-serif;
   margin: 0px;
   padding: 0px;
   width: 100%;
+  font-family: "Tauri Regular", sans-serif;
 }
 
 @media (max-width: 485px) {
