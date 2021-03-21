@@ -12,10 +12,10 @@
        url('../fonts/fira-sans-v10-latin-regular.svg#FiraSans') format('svg'); /* Legacy iOS */
 }
 /* roboto-mono-regular - latin */
-@font-face {  
+@font-face {
   font-family: 'Roboto Mono';
   font-style: normal;
-  font-weight: 400;  
+  font-weight: 400;
   src: url('../fonts/roboto-mono-v12-latin-regular.eot'); /* IE9 Compat Modes */
   src: url('../fonts/roboto-mono-v12-latin-regular.eot?#iefix') format('embedded-opentype'), /* IE6-IE8 */
        url('../fonts/roboto-mono-v12-latin-regular.woff2') format('woff2'), /* Super Modern Browsers */
@@ -35,4 +35,11 @@
        url('../fonts/ibm-plex-mono-v6-latin-500italic.woff') format('woff'), /* Modern Browsers */
        url('../fonts/ibm-plex-mono-v6-latin-500italic.ttf') format('truetype'), /* Safari, Android, iOS */
        url('../fonts/ibm-plex-mono-v6-latin-500italic.svg#IBMPlexMono') format('svg'); /* Legacy iOS */
+}
+
+/* tauri */
+@font-face {
+  font-family: 'Tauri Regular';
+  font-weight: 400;
+  src: local('Tauri-Regular'), url('../fonts/Tauri-Regular.ttf') format('truetype'); /* Safari, Android, iOS */
 }

@@ -112,7 +112,6 @@
   border-bottom: 1px aquamarine solid;
   text-decoration: none;
   font-weight: bold;
-  font-family: sans-serif;
 }
 .header {
   font-size: 2.5rem;
@@ -152,7 +151,7 @@
 /* Setup */
 html {
   /* Change default typefaces here */
-  font-family: monospace;
+  font-family: Roboto Mono;
   font-size: 130.5%;
   -webkit-font-smoothing: antialiased;
 }
@@ -176,7 +175,7 @@ h4,
 h5,
 h6 {
   /* Change heading typefaces here */
-  font-family: monospace;
+  font-family: Fira Sans;
   line-height: 1.5rem;
 }
 h1 {
