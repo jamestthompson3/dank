@@ -366,6 +366,16 @@ svg {
   background: cyan;
   color: royalblue;
 }
+.highlight pre code[class*="language-lua"]::before {
+  content: "Lua";
+  background: #51a0cf;
+  color: black;
+}
+.highlight pre code[class*="language-rust"]::before {
+  content: "Rust";
+  background: #dea584;
+  color: black;
+}
 .highlight pre code[class*="language-md"]::before,
 .highlight pre code[class*="language-md"]::before {
   content: "Markdown";
@@ -375,7 +385,7 @@ svg {
 
 /* Meta */
 .meta {
-  font-size: 0.85rem;
+  color: var(--mutedColor);
 }
 
 @media (max-width: 600px) {
