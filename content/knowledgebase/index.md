@@ -21,6 +21,7 @@ My notes are hosted [here](https://notebook.teukka.tech).
 
 | Title                                                                                                           | Author                                   | Rating | Read On    |
 | :-------------------------------------------------------------------------------------------------------------- | :--------------------------------------- | :----- | :--------- |
+| Our Magnificent Bastard Tongue: The Untold History of English                                                   | John McWhorter                           | 5      | 2021/03/31 |
 | Virtue Hoarders: The Case against the Professional Managerial Class                                             | Catherine Liu                            | 5      | 2021/03/15 |
 | Sing to It: New Stories                                                                                         | Amy Hempel                               | 3      | 2021/02/21 |
 | Amusing Ourselves to Death: Public Discourse in the Age of Show Business                                        | Neil Postman                             | 3      | 2021/01/31 |
