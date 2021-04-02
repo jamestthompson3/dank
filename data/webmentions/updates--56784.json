@@ -1,0 +1,23 @@
+[
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://boffosocko.com/kind/reply/",
+    "published": null,
+    "wm-received": "2021-04-02T18:09:23Z",
+    "wm-id": 1104669,
+    "wm-source": "https://boffosocko.com/kind/reply/",
+    "wm-target": "https://teukka.tech/updates/56784/",
+    "mention-of": "https://teukka.tech/updates/56784/",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://boffosocko.com/kind/reply/"
+    }
+  }
+]
