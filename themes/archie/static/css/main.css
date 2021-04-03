@@ -166,6 +166,15 @@ header .main .homepage {
   font-size: 1.15rem;
 }
 
+/* Utilities */
+
+.-ellipsis {
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  word-wrap: normal;
+}
+
 /* Webmentions */
 
 .webmention .comment-date {
@@ -179,7 +188,6 @@ header .main .homepage {
 }
 
 .webmention .webmention-content {
-  padding: 0.5rem;
   width: 600px;
 }
 
@@ -187,6 +195,13 @@ header .main .homepage {
   display: flex;
   flex-direction: column;
   align-items: center;
+  padding: 0.5rem;
+  width: 150px;
+}
+
+.webmention .webmention-fallback {
+  max-height: 40px;
+  width: 40px;
 }
 
 .webmention img {

@@ -6,7 +6,7 @@ fetchWebmentions().then((webmentions) => {
     const slug = webmention["wm-target"]
       .replace("https://teukka.tech/", "")
       .replace(/\/$/, "")
-      .replace("/", "--");
+      .replace("/", "-");
 
     const filename = `${__dirname}/data/webmentions/${slug}.json`;
 
