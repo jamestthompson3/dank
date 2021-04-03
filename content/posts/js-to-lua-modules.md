@@ -3,6 +3,7 @@ title: "(Nvim) Lua for Javascripters: Module Exports"
 page_title: "(Nvim) Lua for Javascripters: Module Exports"
 author: Taylor Thompson
 tags: [lua, libuv, neovim]
+slug: js-to-lua-modules
 description: A quick overview on exporting lua code as modules
 published: true
 date: 2021-03-31

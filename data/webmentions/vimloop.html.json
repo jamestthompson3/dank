@@ -60,5 +60,26 @@
     "mention-of": "https://teukka.tech/vimloop.html",
     "wm-property": "mention-of",
     "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://wiki.nikitavoloboev.xyz/text-editors/vim",
+    "published": null,
+    "wm-received": "2021-04-03T11:54:38Z",
+    "wm-id": 1105239,
+    "wm-source": "https://wiki.nikitavoloboev.xyz/text-editors/vim",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "mention-of": "https://teukka.tech/vimloop.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://wiki.nikitavoloboev.xyz/text-editors/vim"
+    }
   }
 ]

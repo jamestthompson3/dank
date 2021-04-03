@@ -3,6 +3,7 @@ title: "(Nvim) Lua for Javascripters: Spawning Processes"
 page_title: "(Nvim) Lua for Javascripters: Spawning Processes"
 author: Taylor Thompson
 tags: [lua, libuv, neovim]
+slug: js-to-lua
 description: A quick overview on how to handle async processes in luv in Neovim
 published: true
 date: 2021-03-16

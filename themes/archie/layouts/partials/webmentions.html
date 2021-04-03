@@ -1,5 +1,5 @@
 <div class="webmention">
-  {{ $mentionTitle := or .Title .Slug }}
+  {{ $mentionTitle :=  .Slug }}
   {{ $mentionName := printf "%s-%s" .Type $mentionTitle }}
 {{if or (isset .Params "aliases") (index $.Site.Data.webmentions $mentionName) }}
   <h3>Mentioned around the web</h3>
