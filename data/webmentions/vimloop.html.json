@@ -42,5 +42,23 @@
     "in-reply-to": "https://teukka.tech/vimloop.html",
     "wm-property": "in-reply-to",
     "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://blog.fsouza.dev/prettierd-neovim-format-on-save/",
+    "published": null,
+    "wm-received": "2021-04-03T10:32:00Z",
+    "wm-id": 1105196,
+    "wm-source": "https://blog.fsouza.dev/prettierd-neovim-format-on-save/",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "mention-of": "https://teukka.tech/vimloop.html",
+    "wm-property": "mention-of",
+    "wm-private": false
   }
 ]
