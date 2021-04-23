@@ -48,7 +48,7 @@ nnoremap &lt;leader&gt;c :lua require<span style=color:#87ceeb>&#39;markdown&#39
   <span style=color:red>local</span> stderr = loop.new_pipe(<span style=color:red>false</span>) <span style=color:#0f0>-- create file descriptor for stdout</span>
   handle = loop.spawn(<span style=color:#87ceeb>&#39;rg&#39;</span>, {
     args = {term, <span style=color:#87ceeb>&#39;--vimgrep&#39;</span>, <span style=color:#87ceeb>&#39;--smart-case&#39;</span>},
-    stdio = {stdout,stderr}
+    stdio = {<span style=color:red>nil</span>,stdout,stderr}
   },
   <span style=color:red>function</span>()
     stdout:read_stop()
@@ -84,7 +84,7 @@ nnoremap &lt;leader&gt;c :lua require<span style=color:#87ceeb>&#39;markdown&#39
   <span style=color:red>end</span>
   handle = loop.spawn(<span style=color:#87ceeb>&#39;rg&#39;</span>, {
     args = {term, <span style=color:#87ceeb>&#39;--vimgrep&#39;</span>, <span style=color:#87ceeb>&#39;--smart-case&#39;</span>},
-    stdio = {stdout,stderr}
+    stdio = {<span style=color:red>nil</span>,stdout,stderr}
   },
   <span style=color:red>function</span>()
     stdout:read_stop()
@@ -125,7 +125,7 @@ nnoremap &lt;leader&gt;c :lua require<span style=color:#87ceeb>&#39;markdown&#39
   <span style=color:red>end</span>
   handle = vim.loop.spawn(<span style=color:#87ceeb>&#39;rg&#39;</span>, {
     args = {term, <span style=color:#87ceeb>&#39;--vimgrep&#39;</span>, <span style=color:#87ceeb>&#39;--smart-case&#39;</span>},
-    stdio = {stdout,stderr}
+    stdio = {<span style=color:red>nil</span>,stdout,stderr}
   },
   vim.schedule_wrap(<span style=color:red>function</span>()
     stdout:read_stop()
