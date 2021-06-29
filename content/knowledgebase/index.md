@@ -21,6 +21,9 @@ My notes are hosted [here](https://notebook.teukka.tech).
 
 | Title                                                                                                           | Author                                   | Rating | Read On    |
 | :-------------------------------------------------------------------------------------------------------------- | :--------------------------------------- | :----- | :--------- |
+| As I Walked Out One Midsummer Morning: A Memoir                                                                 | Laurie Lee                               | 4      | 2021/06/25 |
+| The Idea Factory: Bell Labs and the Great Age of American Innovation                                            | Jon Gertner                              | 4      | 2021/06/06 |
+| Work: A Deep History, from the Stone Age to the Age of Robots                                                   | James Suzman                             | 4      | 2021/04/27 |
 | Our Magnificent Bastard Tongue: The Untold History of English                                                   | John McWhorter                           | 5      | 2021/03/31 |
 | Virtue Hoarders: The Case against the Professional Managerial Class                                             | Catherine Liu                            | 5      | 2021/03/15 |
 | Sing to It: New Stories                                                                                         | Amy Hempel                               | 3      | 2021/02/21 |
