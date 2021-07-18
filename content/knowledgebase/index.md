@@ -21,6 +21,7 @@ My notes are hosted [here](https://notebook.teukka.tech).
 
 | Title                                                                                                           | Author                                   | Rating | Read On    |
 | :-------------------------------------------------------------------------------------------------------------- | :--------------------------------------- | :----- | :--------- |
+| Mastering Rust                                                                                                  | Vesa Kaihlavirta                         | 3.5    | 2021/07/18 |
 | As I Walked Out One Midsummer Morning: A Memoir                                                                 | Laurie Lee                               | 4      | 2021/06/25 |
 | The Idea Factory: Bell Labs and the Great Age of American Innovation                                            | Jon Gertner                              | 4      | 2021/06/06 |
 | Work: A Deep History, from the Stone Age to the Age of Robots                                                   | James Suzman                             | 4      | 2021/04/27 |
