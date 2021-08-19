@@ -213,5 +213,26 @@
     "in-reply-to": "https://teukka.tech/vimloop.html",
     "wm-property": "in-reply-to",
     "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://codeutility.org/running-async-lua-function-in-neovim/",
+    "published": null,
+    "wm-received": "2021-08-19T12:18:38Z",
+    "wm-id": 1250030,
+    "wm-source": "https://codeutility.org/running-async-lua-function-in-neovim/",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "mention-of": "https://teukka.tech/vimloop.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://codeutility.org/running-async-lua-function-in-neovim/"
+    }
   }
 ]
