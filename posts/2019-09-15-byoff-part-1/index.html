@@ -1,10 +1,71 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>✨ Basic Components</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:image" content><link rel=canonical href=https://teukka.tech/posts/2019-09-15-byoff-part-1/><link rel=webmention href=https://webmention.io/teukka.tech/webmention><link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc><link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="Build Your Own Frontend Framework Part 1"><meta property="og:description" content="Setting up basic components in our framework"><meta property="og:type" content="article"><meta property="og:url" content="https://teukka.tech/posts/2019-09-15-byoff-part-1/"><meta property="og:image" content="https://images.unsplash.com/photo-1501686637-b7aa9c48a882?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-09-15T00:00:00+00:00"><meta property="article:modified_time" content="2019-09-15T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://images.unsplash.com/photo-1501686637-b7aa9c48a882?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"><meta name=twitter:title content="Build Your Own Frontend Framework Part 1"><meta name=twitter:description content="Setting up basic components in our framework"><link href=https://teukka.tech/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)"><script>window.location.host!=='teukka.tech'&&(window.goatcounter={no_onload:!0})</script></head><body><div class=content><header><div class=main><a class=homepage href=https://teukka.tech/>teukka.tech</a></div><nav><a href=/posts>posts</a>
+<!doctype html><html><head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge"><title>✨ Basic Components</title><meta name=viewport content="width=device-width,initial-scale=1">
+<meta property="og:image" content>
+<link rel=canonical href=https://teukka.tech/posts/2019-09-15-byoff-part-1/>
+<link rel=webmention href=https://webmention.io/teukka.tech/webmention>
+<link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc>
+<link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="Build Your Own Frontend Framework Part 1">
+<meta property="og:description" content="Setting up basic components in our framework">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://teukka.tech/posts/2019-09-15-byoff-part-1/"><meta property="og:image" content="https://images.unsplash.com/photo-1501686637-b7aa9c48a882?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-09-15T00:00:00+00:00">
+<meta property="article:modified_time" content="2019-09-15T00:00:00+00:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://images.unsplash.com/photo-1501686637-b7aa9c48a882?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=675&q=80">
+<meta name=twitter:title content="Build Your Own Frontend Framework Part 1">
+<meta name=twitter:description content="Setting up basic components in our framework">
+<link href=https://teukka.tech/css/fonts.css rel=stylesheet>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)">
+<script>window.location.host!=='teukka.tech'&&(window.goatcounter={no_onload:!0})</script>
+</head>
+<body>
+<div class=content><header>
+<div class=main>
+<a class=homepage href=https://teukka.tech/>teukka.tech</a>
+</div>
+<nav>
+<a href=/posts>posts</a>
 <a href=/updates>updates</a>
 <a href=/bookmarks>bookmarks</a>
-<a href=/knowledgebase>knowledge base</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
-<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2019-09-15-byoff-part-1/>Build Your Own Frontend Framework Part 1</a></h1><div class="dt-published meta">Posted on 2019-09-15</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/webdev>webdev</a></li><li><a class=p-category href=/tags/javascript>javascript</a></li><li><a class=p-category href=/tags/learning>learning</a></li></ul></nav></div><section class="body e-content"><h2 id=part-one-basic-component>Part One, Basic Component</h2><p>Components will be the basic building blocks of our frontend framework. Components will allow modular composition and encapsulation.
+<a href=/knowledgebase>knowledge base</a>
+</nav>
+<div id=fastSearch>
+<label for=searchInput style=display:none>search the blog</label>
+<input id=searchInput tabindex=0 placeholder="search 🔍">
+<ul id=searchResults>
+</ul>
+</div>
+</header>
+<main>
+<br>
+<br>
+<article class="h-entry post">
+<div class=title>
+<h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2019-09-15-byoff-part-1/>Build Your Own Frontend Framework Part 1</a></h1>
+<div class="dt-published meta">Posted on 2019-09-15</div>
+<a rel=author class="p-author h-card" href=/>taylor thompson</a>
+</div>
+<div class=post-tags>
+<nav class="nav tags">
+<ul class=tags>
+<li><a class=p-category href=/tags/webdev>webdev</a></li>
+<li><a class=p-category href=/tags/javascript>javascript</a></li>
+<li><a class=p-category href=/tags/learning>learning</a></li>
+</ul>
+</nav>
+</div>
+<section class="body e-content">
+<h2 id=part-one-basic-component>Part One, Basic Component</h2>
+<p>Components will be the basic building blocks of our frontend framework. Components will allow modular composition and encapsulation.
 The first component implementation will be rather naive, but that&rsquo;s alright since its implementation will evolve over time.
-Let&rsquo;s start with creating a <code>Component</code> class:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:red>const</span> COOL_COMPONENT = Symbol(<span style=color:#87ceeb>&#34;component&#34;</span>);
+Let&rsquo;s start with creating a <code>Component</code> class:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:red>const</span> COOL_COMPONENT = Symbol(<span style=color:#87ceeb>&#34;component&#34;</span>);
 
 <span style=color:red>class</span> Component {
   constructor(element, args = {}) {
@@ -13,19 +74,24 @@ Let&rsquo;s start with creating a <code>Component</code> class:</p><div class=hi
     <span style=color:red>this</span>.args = args;
   }
 }
-</code></pre></div><p>Breaking this down:</p><p><code>const COOL_COMPONENT = Symbol('component')</code></p><p>This creates a unique representation for our component type, and will help identify component instances as they get passed around our framework.
+</code></pre></div><p>Breaking this down:</p>
+<p><code>const COOL_COMPONENT = Symbol('component')</code></p>
+<p>This creates a unique representation for our component type, and will help identify component instances as they get passed around our framework.
 The component takes an element type and some arguments which we&rsquo;ll handle a bit later. The constructor also creates a new element which we&rsquo;ll mount on the DOM with a <code>mount</code> function.
-Now that we have a very basic component, we need a way to mount it to the DOM. Starting with a naive implementation, we can do something like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:red>function</span> renderToDOM(id, component) {
+Now that we have a very basic component, we need a way to mount it to the DOM. Starting with a naive implementation, we can do something like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:red>function</span> renderToDOM(id, component) {
   <span style=color:red>const</span> root = document.querySelector(<span style=color:#87ceeb>`#</span><span style=color:#87ceeb>${</span>id<span style=color:#87ceeb>}</span><span style=color:#87ceeb>`</span>);
   root.appendChild(Component.el);
 }
-</code></pre></div><p>With this code, we can create components and mount them to the DOM. Let&rsquo;s start building!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;div id=<span style=color:#87ceeb>&#34;root&#34;</span>&gt;&lt;/div&gt;
+</code></pre></div><p>With this code, we can create components and mount them to the DOM. Let&rsquo;s start building!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;div id=<span style=color:#87ceeb>&#34;root&#34;</span>&gt;&lt;/div&gt;
 &lt;script&gt;
   <span style=color:red>const</span> div = <span style=color:red>new</span> Component(<span style=color:#87ceeb>&#34;div&#34;</span>);
   renderToDOM(<span style=color:#87ceeb>&#34;root&#34;</span>, div);
 &lt;/script&gt;
 </code></pre></div><p>This is quite boring, so let&rsquo;s add the ability to style our components and render sub components, or <code>children</code>.
-To do this, we will add a couple more methods to our <code>Component</code> class. We&rsquo;ll start with the <code>mount</code> method:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#0f0>// inside Component class
+To do this, we will add a couple more methods to our <code>Component</code> class. We&rsquo;ll start with the <code>mount</code> method:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#0f0>// inside Component class
 </span><span style=color:#0f0></span>mount() {
   Object.entries(<span style=color:red>this</span>.args.style).forEach(([styleKey, styleValue]) =&gt; {
     <span style=color:red>this</span>.el.style[styleKey] = styleValue
@@ -33,7 +99,8 @@ To do this, we will add a couple more methods to our <code>Component</code> clas
 }
 </code></pre></div><p>In the <code>mount</code> method, we take a style object passed to the component in <code>args</code> and append the component&rsquo;s element with the given style property.
 While this currently doesn&rsquo;t allow us to style components with css selectors, it does allow for simple inline styling that will help us troubleshoot components.
-For our component to render children, we need to add a <code>render</code> method which will take children components as an argument and correctly render them out to the DOM.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#0f0>// inside of Component class
+For our component to render children, we need to add a <code>render</code> method which will take children components as an argument and correctly render them out to the DOM.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:#0f0>// inside of Component class
 </span><span style=color:#0f0></span>render(children) {
   <span style=color:red>if</span> (!Array.isArray(children)) {
     <span style=color:red>throw</span> <span style=color:red>new</span> Error(<span style=color:#87ceeb>&#39;Children must be an array!&#39;</span>)
@@ -52,7 +119,9 @@ For our component to render children, we need to add a <code>render</code> metho
     <span style=color:red>return</span> <span style=color:red>this</span>
   })
 }
-</code></pre></div><p>When given an array of children, <code>render</code> iterates through the array and checks if the child is a component. If it is, then it adds it to another array of components to be appended, if the child is a string, it is appended as a text node to the current component.</p><p>Putting all these pieces together looks like this:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:red>const</span> COOL_COMPONENT = Symbol(<span style=color:#87ceeb>&#34;component&#34;</span>);
+</code></pre></div><p>When given an array of children, <code>render</code> iterates through the array and checks if the child is a component. If it is, then it adds it to another array of components to be appended, if the child is a string, it is appended as a text node to the current component.</p>
+<p>Putting all these pieces together looks like this:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:red>const</span> COOL_COMPONENT = Symbol(<span style=color:#87ceeb>&#34;component&#34;</span>);
 
 <span style=color:red>class</span> Component {
   constructor(element, args = {}) {
@@ -85,7 +154,7 @@ For our component to render children, we need to add a <code>render</code> metho
     });
   }
 }
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#0f0>&lt;!--- index.html ----&gt;</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#0f0>&lt;!--- index.html ----&gt;</span>
 &lt;div id=<span style=color:#87ceeb>&#34;root&#34;</span>&gt;&lt;/div&gt;
 &lt;script&gt;
   <span style=color:red>const</span> div = <span style=color:red>new</span> Component(<span style=color:#87ceeb>&#34;div&#34;</span>, {
@@ -98,7 +167,8 @@ For our component to render children, we need to add a <code>render</code> metho
 
   renderToDOM(<span style=color:#87ceeb>&#34;root&#34;</span>, div);
 &lt;/script&gt;
-</code></pre></div><p>One last thing to do for our basic component is to add event listeners. We can do this in the <code>mount</code> method of our comonent:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>
+</code></pre></div><p>One last thing to do for our basic component is to add event listeners. We can do this in the <code>mount</code> method of our comonent:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js>
 mount() {
   Object.entries(<span style=color:red>this</span>.args.style).forEach(([styleKey, styleValue]) =&gt; {
     <span style=color:red>this</span>.el.style[styleKey] = styleValue
@@ -110,12 +180,39 @@ mount() {
     })
   }
 }
-</code></pre></div><p>Now we can pass an array of events and their respective handler functions to our component with the <code>on</code> argument.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:red>const</span> div = <span style=color:red>new</span> Component(<span style=color:#87ceeb>&#34;div&#34;</span>, {
+</code></pre></div><p>Now we can pass an array of events and their respective handler functions to our component with the <code>on</code> argument.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:red>const</span> div = <span style=color:red>new</span> Component(<span style=color:#87ceeb>&#34;div&#34;</span>, {
   style: { height: <span style=color:#87ceeb>&#34;300px&#34;</span>, width: <span style=color:#87ceeb>&#34;300px&#34;</span>, background: <span style=color:#87ceeb>&#34;papayawhip&#34;</span> },
   on: [{ click: () =&gt; console.log(<span style=color:#87ceeb>&#34;Hello there&#34;</span>) }],
 });
-</code></pre></div><p>With that, we have a basic component that can be styled and have event listeners attached to it. Next time we&rsquo;ll continue iterating on this component to improve the api and extending it to handle things like class names and asynchronous actions.</p></section></article></main><h3>See Also</h3><ul><li><a href=/posts/2019-09-09-build-your-own-frontend-framework/>Build Your Own Frontend Framework, Introduction</a></li><li><a href=/bookmarks/94/>De Morgan's Laws</a></li><li><a href=/bookmarks/91/>How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code</a></li><li><a href=/bookmarks/249/>Why using `_.chain` is a mistake.</a></li></ul><div class=webmention><h3>Mentioned around the web</h3></div><script src=/js/fuse.js></script><script src=/js/fastsearch.js></script><footer><hr><div class=h-card><a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.jpg alt="pygmy
-    slow loris, an endangered and beautiful creature"></a><div class=info><span class=p-name>Taylor Thompson</span>
+</code></pre></div><p>With that, we have a basic component that can be styled and have event listeners attached to it. Next time we&rsquo;ll continue iterating on this component to improve the api and extending it to handle things like class names and asynchronous actions.</p>
+</section>
+</article>
+</main>
+<h3>See Also</h3>
+<ul>
+<li><a href=/posts/2019-09-09-build-your-own-frontend-framework/>Build Your Own Frontend Framework, Introduction</a></li>
+<li><a href=/bookmarks/94/>De Morgan's Laws</a></li>
+<li><a href=/bookmarks/91/>How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code</a></li>
+<li><a href=/bookmarks/249/>Why using `_.chain` is a mistake.</a></li>
+</ul>
+<div class=webmention>
+<h3>Mentioned around the web</h3>
+</div>
+<script src=/js/fuse.js></script>
+<script src=/js/fastsearch.js></script><footer>
+<hr><div class=h-card>
+<a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.jpg alt="pygmy
+    slow loris, an endangered and beautiful creature"></a>
+<div class=info>
+<span class=p-name>Taylor Thompson</span>
 <a class=u-email href=mailto:taylor@teukka.tech>taylor@teukka.tech</a>
 <a rel=me class=u-url>https://teukka.tech</a>
-<span class=p-note>eternally curious person</span></div></div></footer><script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script></div></body></html>
+<span class=p-note>eternally curious person</span>
+</div>
+</div>
+</footer>
+<script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script>
+</div>
+</body>
+</html>

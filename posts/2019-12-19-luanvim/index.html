@@ -1,11 +1,86 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>🌑 Lua and Neovim</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:image" content><link rel=canonical href=https://teukka.tech/posts/2019-12-19-luanvim/><link rel=webmention href=https://webmention.io/teukka.tech/webmention><link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc><link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="From init.vim to init.lua"><meta property="og:description" content="Learn how to integrate lua into your vim configuration"><meta property="og:type" content="article"><meta property="og:url" content="https://teukka.tech/posts/2019-12-19-luanvim/"><meta property="og:image" content="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=696&q=80"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-12-16T00:00:00+00:00"><meta property="article:modified_time" content="2019-12-16T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=696&q=80"><meta name=twitter:title content="From init.vim to init.lua"><meta name=twitter:description content="Learn how to integrate lua into your vim configuration"><link href=https://teukka.tech/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)"><script>window.location.host!=='teukka.tech'&&(window.goatcounter={no_onload:!0})</script></head><body><div class=content><header><div class=main><a class=homepage href=https://teukka.tech/>teukka.tech</a></div><nav><a href=/posts>posts</a>
+<!doctype html><html><head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge"><title>🌑 Lua and Neovim</title><meta name=viewport content="width=device-width,initial-scale=1">
+<meta property="og:image" content>
+<link rel=canonical href=https://teukka.tech/posts/2019-12-19-luanvim/>
+<link rel=webmention href=https://webmention.io/teukka.tech/webmention>
+<link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc>
+<link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="From init.vim to init.lua">
+<meta property="og:description" content="Learn how to integrate lua into your vim configuration">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://teukka.tech/posts/2019-12-19-luanvim/"><meta property="og:image" content="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=696&q=80"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2019-12-16T00:00:00+00:00">
+<meta property="article:modified_time" content="2019-12-16T00:00:00+00:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://images.unsplash.com/photo-1484589065579-248aad0d8b13?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=696&q=80">
+<meta name=twitter:title content="From init.vim to init.lua">
+<meta name=twitter:description content="Learn how to integrate lua into your vim configuration">
+<link href=https://teukka.tech/css/fonts.css rel=stylesheet>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)">
+<script>window.location.host!=='teukka.tech'&&(window.goatcounter={no_onload:!0})</script>
+</head>
+<body>
+<div class=content><header>
+<div class=main>
+<a class=homepage href=https://teukka.tech/>teukka.tech</a>
+</div>
+<nav>
+<a href=/posts>posts</a>
 <a href=/updates>updates</a>
 <a href=/bookmarks>bookmarks</a>
-<a href=/knowledgebase>knowledge base</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
-<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2019-12-19-luanvim/>From init.vim to init.lua</a></h1><div class="dt-published meta">Posted on 2019-12-16</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/nvim>nvim</a></li><li><a class=p-category href=/tags/lua>lua</a></li><li><a class=p-category href=/tags/neovim>neovim</a></li></ul></nav></div><section class="body e-content"><h2 id=why-lua>Why Lua?</h2><p>Neovim has an embedded lua 5.1 runtime which is used to create faster and more powerful extensions of your favorite editor. In the <a href=https://neovim.io/charter/>Neovim charter</a>, it lists one of its goals as developing a first-class lua scripting alternative to VimL. One of the reasons for doing this is that VimL is a slow interpreted language with almost no optimizations. Much of the time spent in vim startup and in actions from plugins that can block the main loop in the editor is in parsing and executing vimscript. A great explanation of this can be found in Neovim lead maintainer, Justin M. Keyes' talk, <a href="https://www.youtube.com/watch?v=Bt-vmPC_-Ho">We can have nice things</a>.</p><p>With the recent introduction of the built-in LSP client in the master branch written in lua, I became more interested in the possibilities lua has to offer and began trying to use lua in Neovim. I have never written lua before and have not seen very many guides on how to utilize the lua runtime in Neovim, so I want to illustrate the process of learning how to take advantage of the powerful scripting capabilities that are available in the Neovim runtime. Given that my experience is still very basic, these examples will also be quite small, but I hope that it can be a good jumping off point for those interested in using lua more in extending Neovim.</p><h2 id=getting-started>Getting Started</h2><p>One of the first things I was confused about was how to use lua code inside of vim and vimscript. Luckily, the documentation in <code>:h lua</code> gives a few examples of how lua can be used in the editor. I recommend reading it for an in-depth explanation of how Neovim treats lua and the sourcing of lua files. Here&rsquo;s a high-level overview of different approaches to executing lua code in your editor:</p><ul><li>From the vim command line, you can run <code>:lua &lt;yourCodeHere></code>. This is useful for keybindings, commands, and other one-off execution cases.</li><li>Inside of a VimL file, you can demarcate lua code with the following code fencing:</li></ul><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml>lua &lt;&lt; EOF
+<a href=/knowledgebase>knowledge base</a>
+</nav>
+<div id=fastSearch>
+<label for=searchInput style=display:none>search the blog</label>
+<input id=searchInput tabindex=0 placeholder="search 🔍">
+<ul id=searchResults>
+</ul>
+</div>
+</header>
+<main>
+<br>
+<br>
+<article class="h-entry post">
+<div class=title>
+<h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2019-12-19-luanvim/>From init.vim to init.lua</a></h1>
+<div class="dt-published meta">Posted on 2019-12-16</div>
+<a rel=author class="p-author h-card" href=/>taylor thompson</a>
+</div>
+<div class=post-tags>
+<nav class="nav tags">
+<ul class=tags>
+<li><a class=p-category href=/tags/nvim>nvim</a></li>
+<li><a class=p-category href=/tags/lua>lua</a></li>
+<li><a class=p-category href=/tags/neovim>neovim</a></li>
+</ul>
+</nav>
+</div>
+<section class="body e-content">
+<h2 id=why-lua>Why Lua?</h2>
+<p>Neovim has an embedded lua 5.1 runtime which is used to create faster and more powerful extensions of your favorite editor. In the <a href=https://neovim.io/charter/>Neovim charter</a>, it lists one of its goals as developing a first-class lua scripting alternative to VimL. One of the reasons for doing this is that VimL is a slow interpreted language with almost no optimizations. Much of the time spent in vim startup and in actions from plugins that can block the main loop in the editor is in parsing and executing vimscript. A great explanation of this can be found in Neovim lead maintainer, Justin M. Keyes' talk, <a href="https://www.youtube.com/watch?v=Bt-vmPC_-Ho">We can have nice things</a>.</p>
+<p>With the recent introduction of the built-in LSP client in the master branch written in lua, I became more interested in the possibilities lua has to offer and began trying to use lua in Neovim. I have never written lua before and have not seen very many guides on how to utilize the lua runtime in Neovim, so I want to illustrate the process of learning how to take advantage of the powerful scripting capabilities that are available in the Neovim runtime. Given that my experience is still very basic, these examples will also be quite small, but I hope that it can be a good jumping off point for those interested in using lua more in extending Neovim.</p>
+<h2 id=getting-started>Getting Started</h2>
+<p>One of the first things I was confused about was how to use lua code inside of vim and vimscript. Luckily, the documentation in <code>:h lua</code> gives a few examples of how lua can be used in the editor. I recommend reading it for an in-depth explanation of how Neovim treats lua and the sourcing of lua files. Here&rsquo;s a high-level overview of different approaches to executing lua code in your editor:</p>
+<ul>
+<li>From the vim command line, you can run <code>:lua &lt;yourCodeHere></code>. This is useful for keybindings, commands, and other one-off execution cases.</li>
+<li>Inside of a VimL file, you can demarcate lua code with the following code fencing:</li>
+</ul>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml>lua &lt;&lt; EOF
 -- your lua code here
 EOF
-</code></pre></div><ul><li>Inside of a VimL file you can use the <code>lua</code> keyword to execute commands similar to the first example. (i.e. <code>lua &lt;yourCodeHere></code>).</li></ul><p>One important note here is that Neovim will look for lua code in the <code>runtimepath</code> you&rsquo;ve set in your settings. Additionally, it will append your runtimepath with <code>/lua/?.lua</code> and <code>/lua/?/init.lua</code> so it is common practice to see a <code>/lua</code> sub-directory inside <code>.nvim</code>. For more detailed information about where Neovim looks for lua code, check out <code>:h lua-require</code>.</p><h2 id=your-first-function>Your First Function</h2><p>Porting your <code>init.vim</code> to lua can be a big undertaking, so it&rsquo;s best to start small. For the first example, we&rsquo;ll create a function which creates a scratch buffer.</p><p>This function will live in a file we&rsquo;ll call <code>tools</code>, so create it in the <code>lua</code> directory in your nvim config: <code>~/.config/nvim/lua/tools.lua</code>. Once we&rsquo;ve created the file, we&rsquo;ll fill it out with some boilerplate:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in tools.lua</span>
+</code></pre></div><ul>
+<li>Inside of a VimL file you can use the <code>lua</code> keyword to execute commands similar to the first example. (i.e. <code>lua &lt;yourCodeHere></code>).</li>
+</ul>
+<p>One important note here is that Neovim will look for lua code in the <code>runtimepath</code> you&rsquo;ve set in your settings. Additionally, it will append your runtimepath with <code>/lua/?.lua</code> and <code>/lua/?/init.lua</code> so it is common practice to see a <code>/lua</code> sub-directory inside <code>.nvim</code>. For more detailed information about where Neovim looks for lua code, check out <code>:h lua-require</code>.</p>
+<h2 id=your-first-function>Your First Function</h2>
+<p>Porting your <code>init.vim</code> to lua can be a big undertaking, so it&rsquo;s best to start small. For the first example, we&rsquo;ll create a function which creates a scratch buffer.</p>
+<p>This function will live in a file we&rsquo;ll call <code>tools</code>, so create it in the <code>lua</code> directory in your nvim config: <code>~/.config/nvim/lua/tools.lua</code>. Once we&rsquo;ve created the file, we&rsquo;ll fill it out with some boilerplate:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in tools.lua</span>
 
 <span style=color:red>local</span> M = {}
 
@@ -13,7 +88,8 @@ EOF
 <span style=color:red>end</span>
 
 <span style=color:red>return</span> M
-</code></pre></div><p>Using the table <code>M</code> here allows us to keep things out of the global scope and to use only what we need when calling the function from nvim. We&rsquo;ll be using the neovim API to make a scratch buffer, so let&rsquo;s create a shorthand for it in our <code>tools.lua</code> file:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in tools.lua</span>
+</code></pre></div><p>Using the table <code>M</code> here allows us to keep things out of the global scope and to use only what we need when calling the function from nvim. We&rsquo;ll be using the neovim API to make a scratch buffer, so let&rsquo;s create a shorthand for it in our <code>tools.lua</code> file:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in tools.lua</span>
 <span style=color:red>local</span> api = vim.api
 
 <span style=color:red>local</span> M = {}
@@ -22,7 +98,8 @@ EOF
 <span style=color:red>end</span>
 
 <span style=color:red>return</span> M
-</code></pre></div><p>We can create a new buffer with the <code>enew</code> command, and the neovim API gives us a way to call nvim commands from lua:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in tools.lua</span>
+</code></pre></div><p>We can create a new buffer with the <code>enew</code> command, and the neovim API gives us a way to call nvim commands from lua:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in tools.lua</span>
 <span style=color:red>local</span> api = vim.api
 
 <span style=color:red>local</span> M = {}
@@ -32,7 +109,8 @@ EOF
 <span style=color:red>end</span>
 
 <span style=color:red>return</span> M
-</code></pre></div><p>Next, we want to set some buffer options so that our scratch buffer isn&rsquo;t listed in the buffer list and doesn&rsquo;t have a swapfile created for it:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in tools.lua</span>
+</code></pre></div><p>Next, we want to set some buffer options so that our scratch buffer isn&rsquo;t listed in the buffer list and doesn&rsquo;t have a swapfile created for it:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in tools.lua</span>
 <span style=color:red>local</span> api = vim.api
 
 <span style=color:red>local</span> M = {}
@@ -45,18 +123,25 @@ EOF
 <span style=color:red>end</span>
 
 <span style=color:red>return</span> M
-</code></pre></div><p>That is all we need to create the scratch buffer! Now let&rsquo;s use it in our <code>init.vim</code>:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=color:#0f0>&#34; in init.vim</span>
+</code></pre></div><p>That is all we need to create the scratch buffer! Now let&rsquo;s use it in our <code>init.vim</code>:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=color:#0f0>&#34; in init.vim</span>
 
 command! Scratch lua require<span style=color:#87ceeb>&#39;tools&#39;</span>.makeScratch()
-</code></pre></div><p>Now a scratch buffer is created by running the command <code>:Scratch</code>.</p><p>You can port your <code>init.vim</code> to lua one function at a time, and if you get stuck, you can always use <code>vim.api.nvim_command</code>! When looking for help, make sure to check out <code>:h api</code>, and <code>:h lua</code>.</p><h2 id=using-vlua>Using v:lua</h2><p>The variable <code>v:lua</code> can be used to call lua functions from within vimscript. A great use case for this is accessing the LSP client&rsquo;s omnifunc. If you wanted to use the LSP completion for Rust, you may have something like this in your configuration:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=color:#0f0>&#34; in init.vim</span>
+</code></pre></div><p>Now a scratch buffer is created by running the command <code>:Scratch</code>.</p>
+<p>You can port your <code>init.vim</code> to lua one function at a time, and if you get stuck, you can always use <code>vim.api.nvim_command</code>! When looking for help, make sure to check out <code>:h api</code>, and <code>:h lua</code>.</p>
+<h2 id=using-vlua>Using v:lua</h2>
+<p>The variable <code>v:lua</code> can be used to call lua functions from within vimscript. A great use case for this is accessing the LSP client&rsquo;s omnifunc. If you wanted to use the LSP completion for Rust, you may have something like this in your configuration:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=color:#0f0>&#34; in init.vim</span>
 lua &lt;&lt; EOF
   local nvim_lsp = require <span style=color:#87ceeb>&#39;nvim_lsp&#39;</span>
   nvim_lsp.rust_analyzer.setup({})
 EOF
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=color:#0f0>&#34; in ftplugin/rust.vim</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=color:#0f0>&#34; in ftplugin/rust.vim</span>
 
 set omnifunc=v:lua.vim.lsp.omnifunc
-</code></pre></div><h2 id=interop-with-vimfn>Interop With vim.fn</h2><p>It is useful to have access to vimscript functions from inside of lua, especially when interacting with autoloaded functions or functions provided by plugins. In this example, we will have an autocmd that will execute the vimscript function, <code>tools#loadCscope</code> when the <code>VimEnter</code> event happens.</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=color:#0f0>&#34; in autoload/tools.vim</span>
+</code></pre></div><h2 id=interop-with-vimfn>Interop With vim.fn</h2>
+<p>It is useful to have access to vimscript functions from inside of lua, especially when interacting with autoloaded functions or functions provided by plugins. In this example, we will have an autocmd that will execute the vimscript function, <code>tools#loadCscope</code> when the <code>VimEnter</code> event happens.</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=color:#0f0>&#34; in autoload/tools.vim</span>
 
 <span style=color:red>function</span>! tools#loadCscope() abort
   try
@@ -64,7 +149,7 @@ set omnifunc=v:lua.vim.lsp.omnifunc
   catch <span style=color:#87ceeb>/^Vim\%((\a\+)\)\=:E/</span>
   endtry
 <span style=color:red>endfunction</span>
-</code></pre></div><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in file that you source, such as init.lua</span>
+</code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in file that you source, such as init.lua</span>
 
 <span style=color:red>function</span> <span style=color:#ff0>sourceCScope</span>()
   vim.fn[<span style=color:#87ceeb>&#39;tools#loadCscope&#39;</span>]() <span style=color:#0f0>-- no arguments needed</span>
@@ -89,10 +174,48 @@ set omnifunc=v:lua.vim.lsp.omnifunc
 }
 
 nvim_create_augroups(autocmds)
-</code></pre></div></section></article></main><h3>See Also</h3><ul><li><a href=/posts/2019-08-25-vimcandothat/>Vim does that already</a></li></ul><div class=webmention><h3>Mentioned around the web</h3><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/styles.redditmedia.com/b5b82c267133411f3d9ba7be52a3a76e8d1d7e5febf6bc3458e5eca845d65b1e.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/sunzoje/>sunzoje</a></span></div><div class=webmention-content><i class=comment-date>commented on Apr 6, 2020 <a href=https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/fmkwr9w/>see original</a></i><div><p>You've to have <code>lua require'colorizer'.setup()</code> in your init.vim.</p><a class=u-mention href=https://neovim.io/doc/user/lua.html></a><a class=u-mention href=https://teukka.tech/luanvim.html></a></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/styles.redditmedia.com/29a9a1f198eb77ed2dff97fef8962be1b8e4544faaabec7ec925e8533a0d3763.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/Godnyx117/>Godnyx117</a></span></div><div class=webmention-content><i class=comment-date>commented on Apr 6, 2020 <a href=https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/fml9wwf/>see original</a></i><div><p>WOW MAN!!! I haven't used any lua plug-in but this one seems really interesting! Also I couldn't make any other highlighter work so this will fit perfectly! Thanks to the other guy for helping us out!</p><a class=u-mention href=https://neovim.io/doc/user/lua.html></a><a class=u-mention href=https://teukka.tech/luanvim.html></a></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/styles.redditmedia.com/f048e9325f57ef56de666635abad6515013f3592ce36e7c35a84f1f311207b72.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/Paraduxos/>Paraduxos</a></span></div><div class=webmention-content><i class=comment-date>commented on Apr 6, 2020 <a href=https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/>see original</a></i><div>I want to install [https://github.com/norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
+</code></pre></div>
+</section>
+</article>
+</main>
+<h3>See Also</h3>
+<ul>
+<li><a href=/posts/2019-08-25-vimcandothat/>Vim does that already</a></li>
+</ul>
+<div class=webmention>
+<h3>Mentioned around the web</h3>
+<div class=webmention-container>
+<div class="webmention-profile -ellipsis">
+<img src=https://webmention.io/avatar/styles.redditmedia.com/b5b82c267133411f3d9ba7be52a3a76e8d1d7e5febf6bc3458e5eca845d65b1e.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/sunzoje/>sunzoje</a></span>
+</div>
+<div class=webmention-content>
+<i class=comment-date>commented on Apr 6, 2020 <a href=https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/fmkwr9w/>see original</a></i>
+<div><p>You've to have <code>lua require'colorizer'.setup()</code> in your init.vim.</p>
+<a class=u-mention href=https://neovim.io/doc/user/lua.html></a>
+<a class=u-mention href=https://teukka.tech/luanvim.html></a></div>
+</div>
+</div>
+<div class=webmention-container>
+<div class="webmention-profile -ellipsis">
+<img src=https://webmention.io/avatar/styles.redditmedia.com/29a9a1f198eb77ed2dff97fef8962be1b8e4544faaabec7ec925e8533a0d3763.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/Godnyx117/>Godnyx117</a></span>
+</div>
+<div class=webmention-content>
+<i class=comment-date>commented on Apr 6, 2020 <a href=https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/fml9wwf/>see original</a></i>
+<div><p>WOW MAN!!! I haven't used any lua plug-in but this one seems really interesting! Also I couldn't make any other highlighter work so this will fit perfectly! Thanks to the other guy for helping us out!</p>
+<a class=u-mention href=https://neovim.io/doc/user/lua.html></a>
+<a class=u-mention href=https://teukka.tech/luanvim.html></a></div>
+</div>
+</div>
+<div class=webmention-container>
+<div class="webmention-profile -ellipsis">
+<img src=https://webmention.io/avatar/styles.redditmedia.com/f048e9325f57ef56de666635abad6515013f3592ce36e7c35a84f1f311207b72.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/Paraduxos/>Paraduxos</a></span>
+</div>
+<div class=webmention-content>
+<i class=comment-date>commented on Apr 6, 2020 <a href=https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/>see original</a></i>
+<div>I want to install [https://github.com/norcalli/nvim-colorizer.lua](https://github.com/norcalli/nvim-colorizer.lua)
 So I add `Plug 'norcalli/nvim-colorizer.lua'` in my `init.vim` and run `:PlugInstall`
 And I don't know what to do next.
 I tried read [https://neovim.io/doc/user/lua.html](https://neovim.io/doc/user/lua.html) and [https://teukka.tech/luanvim.html](https://teukka.tech/luanvim.html)
@@ -116,8 +239,41 @@ And here my `init.vim` location
 `.netrwhist`
 <a href=https://github.com/norcalli/nvim-colorizer.lua>https://github.com/norcalli/nvim-colorizer.lua</a>
 <a href=https://neovim.io/doc/user/lua.html>https://neovim.io/doc/user/lua.html</a>
-<a href=https://teukka.tech/luanvim.html>https://teukka.tech/luanvim.html</a></div><p>Mentioned on <a href=https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/>https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/</a></p></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg><span><a href></a></span></div><div class=webmention-content><p>Mentioned on <a href=https://scrapbox.io/uki00a/Neovim%E3%81%A8Lua%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6>https://scrapbox.io/uki00a/Neovim%E3%81%A8Lua%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6</a></p></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg><span><a href></a></span></div><div class=webmention-content><p>Mentioned on <a href=https://scrapbox.io/tamago324vim/Lua_%E3%81%A7%E3%81%AE_Neovim_%E3%81%AE%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9>https://scrapbox.io/tamago324vim/Lua_%E3%81%A7%E3%81%AE_Neovim_%E3%81%AE%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9</a></p></div></div></div><script src=/js/fuse.js></script><script src=/js/fastsearch.js></script><footer><hr><div class=h-card><a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.jpg alt="pygmy
-    slow loris, an endangered and beautiful creature"></a><div class=info><span class=p-name>Taylor Thompson</span>
+<a href=https://teukka.tech/luanvim.html>https://teukka.tech/luanvim.html</a></div>
+<p> Mentioned on <a href=https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/>https://reddit.com/r/neovim/comments/fvwin5/how_to_install_luabased_plugin/</a></p>
+</div>
+</div>
+<div class=webmention-container>
+<div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg>
+<span><a href></a></span>
+</div>
+<div class=webmention-content>
+<p> Mentioned on <a href=https://scrapbox.io/uki00a/Neovim%E3%81%A8Lua%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6>https://scrapbox.io/uki00a/Neovim%E3%81%A8Lua%E3%82%B5%E3%83%9D%E3%83%BC%E3%83%88%E3%81%AB%E3%81%A4%E3%81%84%E3%81%A6</a></p>
+</div>
+</div>
+<div class=webmention-container>
+<div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg>
+<span><a href></a></span>
+</div>
+<div class=webmention-content>
+<p> Mentioned on <a href=https://scrapbox.io/tamago324vim/Lua_%E3%81%A7%E3%81%AE_Neovim_%E3%81%AE%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9>https://scrapbox.io/tamago324vim/Lua_%E3%81%A7%E3%81%AE_Neovim_%E3%81%AE%E3%83%97%E3%83%A9%E3%82%B0%E3%82%A4%E3%83%B3%E3%81%AE%E6%9B%B8%E3%81%8D%E6%96%B9</a></p>
+</div>
+</div>
+</div>
+<script src=/js/fuse.js></script>
+<script src=/js/fastsearch.js></script><footer>
+<hr><div class=h-card>
+<a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.jpg alt="pygmy
+    slow loris, an endangered and beautiful creature"></a>
+<div class=info>
+<span class=p-name>Taylor Thompson</span>
 <a class=u-email href=mailto:taylor@teukka.tech>taylor@teukka.tech</a>
 <a rel=me class=u-url>https://teukka.tech</a>
-<span class=p-note>eternally curious person</span></div></div></footer><script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script></div></body></html>
+<span class=p-note>eternally curious person</span>
+</div>
+</div>
+</footer>
+<script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script>
+</div>
+</body>
+</html>

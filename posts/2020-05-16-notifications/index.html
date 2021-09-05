@@ -1,8 +1,70 @@
-<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>👋 Browser Notifications</title><meta name=viewport content="width=device-width,initial-scale=1"><meta property="og:image" content><link rel=canonical href=https://teukka.tech/posts/2020-05-16-notifications/><link rel=webmention href=https://webmention.io/teukka.tech/webmention><link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc><link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="Javascript Quick Tip -- Browser Notifications"><meta property="og:description" content="In-browser notifications, no server required!"><meta property="og:type" content="article"><meta property="og:url" content="https://teukka.tech/posts/2020-05-16-notifications/"><meta property="og:image" content="https://images.unsplash.com/photo-1586957960362-65815d739527?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-05-16T00:00:00+00:00"><meta property="article:modified_time" content="2020-05-16T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://images.unsplash.com/photo-1586957960362-65815d739527?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"><meta name=twitter:title content="Javascript Quick Tip -- Browser Notifications"><meta name=twitter:description content="In-browser notifications, no server required!"><link href=https://teukka.tech/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)"><script>window.location.host!=='teukka.tech'&&(window.goatcounter={no_onload:!0})</script></head><body><div class=content><header><div class=main><a class=homepage href=https://teukka.tech/>teukka.tech</a></div><nav><a href=/posts>posts</a>
+<!doctype html><html><head>
+<meta charset=utf-8>
+<meta http-equiv=x-ua-compatible content="IE=edge"><title>👋 Browser Notifications</title><meta name=viewport content="width=device-width,initial-scale=1">
+<meta property="og:image" content>
+<link rel=canonical href=https://teukka.tech/posts/2020-05-16-notifications/>
+<link rel=webmention href=https://webmention.io/teukka.tech/webmention>
+<link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc>
+<link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="Javascript Quick Tip -- Browser Notifications">
+<meta property="og:description" content="In-browser notifications, no server required!">
+<meta property="og:type" content="article">
+<meta property="og:url" content="https://teukka.tech/posts/2020-05-16-notifications/"><meta property="og:image" content="https://images.unsplash.com/photo-1586957960362-65815d739527?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80"><meta property="article:section" content="posts">
+<meta property="article:published_time" content="2020-05-16T00:00:00+00:00">
+<meta property="article:modified_time" content="2020-05-16T00:00:00+00:00">
+<meta name=twitter:card content="summary_large_image">
+<meta name=twitter:image content="https://images.unsplash.com/photo-1586957960362-65815d739527?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1351&q=80">
+<meta name=twitter:title content="Javascript Quick Tip -- Browser Notifications">
+<meta name=twitter:description content="In-browser notifications, no server required!">
+<link href=https://teukka.tech/css/fonts.css rel=stylesheet>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css>
+<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)">
+<script>window.location.host!=='teukka.tech'&&(window.goatcounter={no_onload:!0})</script>
+</head>
+<body>
+<div class=content><header>
+<div class=main>
+<a class=homepage href=https://teukka.tech/>teukka.tech</a>
+</div>
+<nav>
+<a href=/posts>posts</a>
 <a href=/updates>updates</a>
 <a href=/bookmarks>bookmarks</a>
-<a href=/knowledgebase>knowledge base</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
-<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2020-05-16-notifications/>Javascript Quick Tip -- Browser Notifications</a></h1><div class="dt-published meta">Posted on 2020-05-16</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/javascript>javascript</a></li><li><a class=p-category href=/tags/webdev>webdev</a></li></ul></nav></div><section class="body e-content"><h2 id=let-em-know>Let &lsquo;Em Know</h2><p>While notifications are one of the browser features that are often abused and lead to obnoxious spam, there are still use cases where notifications enhance the experience of your web application. Modern browsers (with the exception of iOS Safari), support two types of notifications: <a href=https://developer.mozilla.org/en-US/docs/Web/API/Push_API>push</a>, and <a href=https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API>web</a>. This post discusses <em>only</em> web notifications, since they do not require registration on a server, or the use of a service worker (although they can be used with both). After a short intro on how to set up web notifications, we&rsquo;ll dive into an example where web notifications are a useful addition to your web app.</p><h2 id=getting-started>Getting Started</h2><p>To start using web notifications you must request permissions from the user. Important note: you cannot request notification permissions over insecure connections, which means you must be serving your application over HTTPS or from your localhost. Once you are serving you app over HTTPS or from your localhost, requesting permissions is straight forward:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;h1&gt;Permission Spam&lt;/h1&gt;
+<a href=/knowledgebase>knowledge base</a>
+</nav>
+<div id=fastSearch>
+<label for=searchInput style=display:none>search the blog</label>
+<input id=searchInput tabindex=0 placeholder="search 🔍">
+<ul id=searchResults>
+</ul>
+</div>
+</header>
+<main>
+<br>
+<br>
+<article class="h-entry post">
+<div class=title>
+<h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2020-05-16-notifications/>Javascript Quick Tip -- Browser Notifications</a></h1>
+<div class="dt-published meta">Posted on 2020-05-16</div>
+<a rel=author class="p-author h-card" href=/>taylor thompson</a>
+</div>
+<div class=post-tags>
+<nav class="nav tags">
+<ul class=tags>
+<li><a class=p-category href=/tags/javascript>javascript</a></li>
+<li><a class=p-category href=/tags/webdev>webdev</a></li>
+</ul>
+</nav>
+</div>
+<section class="body e-content">
+<h2 id=let-em-know>Let &lsquo;Em Know</h2>
+<p>While notifications are one of the browser features that are often abused and lead to obnoxious spam, there are still use cases where notifications enhance the experience of your web application. Modern browsers (with the exception of iOS Safari), support two types of notifications: <a href=https://developer.mozilla.org/en-US/docs/Web/API/Push_API>push</a>, and <a href=https://developer.mozilla.org/en-US/docs/Web/API/Notifications_API>web</a>. This post discusses <em>only</em> web notifications, since they do not require registration on a server, or the use of a service worker (although they can be used with both). After a short intro on how to set up web notifications, we&rsquo;ll dive into an example where web notifications are a useful addition to your web app.</p>
+<h2 id=getting-started>Getting Started</h2>
+<p>To start using web notifications you must request permissions from the user. Important note: you cannot request notification permissions over insecure connections, which means you must be serving your application over HTTPS or from your localhost. Once you are serving you app over HTTPS or from your localhost, requesting permissions is straight forward:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html>&lt;h1&gt;Permission Spam&lt;/h1&gt;
 &lt;p&gt;Your current notification status is: &lt;span id=<span style=color:#87ceeb>&#34;permStatus&#34;</span>&gt;&lt;/span&gt;&lt;/p&gt;
 
 &lt;script&gt;
@@ -15,7 +77,15 @@
     });
   }
 &lt;/script&gt;
-</code></pre></div><p>The global <code>Notification</code> object exposes the <code>permission</code> property reflecting the current permission status and the <code>requestPermission</code> function which returns a promise resolving permission status given by the user after being prompted by the browser. In some browsers, such as Firefox 72 and onward, a popup requesting notifications won&rsquo;t be displayed; the promise from <code>requestPermission</code> pends until the user clicks on the icon allowing notifications from their URL bar.</p><h3 id=note-on-above-code>Note on above code</h3><blockquote><p>In the snippet for above, the browser requests permissions as soon as the page is loaded. Additionally, if the user hasn&rsquo;t allowed notification permissions, they will be asked every time they visit the page. This is a <em><em>horrible</em></em> user experience. Nobody wants to be spammed with notifications, especially when no explanation of what type of events will trigger the notifications or how often they will be sent is given. Therefore, it is important that you never request notification permissions before giving an explanation of the notification behavior and after gathering user input for opting in.</p></blockquote><p>For our examples, we will be using a <a href=https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API>Web Worker</a> to manage the notification logic. This has the advantage of being off the main thread, which means that the logic is non-blocking and can be accessed via a global singleton for component based frameworks such as React, allowing all components to trigger notifications. One of the disadvantages of using a web worker for notifications is that the notifications are not triggered if the user closes the tab. To bypass that restriction, the example code will have to be executed in a <a href=serviceworker.html>Service Worker</a>.</p><h2 id=example-long-running-jobs>Example: Long Running Jobs</h2><p>Some applications have long running jobs: processing an uploaded file, preparing data for download, executing a CI / CD pipeline, etc. Web notifications are a good way for users to &ldquo;click and forget&rdquo;, setting the job in motion and continue to other parts of the application or backgrounding the tab and continuing to browse without having to constantly check the status of their work. When the job has finished, they get a notification that lets them inspect the final output. Let&rsquo;s get started!</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#0f0>&lt;!-- index.html --&gt;</span>
+</code></pre></div><p>The global <code>Notification</code> object exposes the <code>permission</code> property reflecting the current permission status and the <code>requestPermission</code> function which returns a promise resolving permission status given by the user after being prompted by the browser. In some browsers, such as Firefox 72 and onward, a popup requesting notifications won&rsquo;t be displayed; the promise from <code>requestPermission</code> pends until the user clicks on the icon allowing notifications from their URL bar.</p>
+<h3 id=note-on-above-code>Note on above code</h3>
+<blockquote>
+<p>In the snippet for above, the browser requests permissions as soon as the page is loaded. Additionally, if the user hasn&rsquo;t allowed notification permissions, they will be asked every time they visit the page. This is a <em><em>horrible</em></em> user experience. Nobody wants to be spammed with notifications, especially when no explanation of what type of events will trigger the notifications or how often they will be sent is given. Therefore, it is important that you never request notification permissions before giving an explanation of the notification behavior and after gathering user input for opting in.</p>
+</blockquote>
+<p>For our examples, we will be using a <a href=https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API>Web Worker</a> to manage the notification logic. This has the advantage of being off the main thread, which means that the logic is non-blocking and can be accessed via a global singleton for component based frameworks such as React, allowing all components to trigger notifications. One of the disadvantages of using a web worker for notifications is that the notifications are not triggered if the user closes the tab. To bypass that restriction, the example code will have to be executed in a <a href=serviceworker.html>Service Worker</a>.</p>
+<h2 id=example-long-running-jobs>Example: Long Running Jobs</h2>
+<p>Some applications have long running jobs: processing an uploaded file, preparing data for download, executing a CI / CD pipeline, etc. Web notifications are a good way for users to &ldquo;click and forget&rdquo;, setting the job in motion and continue to other parts of the application or backgrounding the tab and continuing to browse without having to constantly check the status of their work. When the job has finished, they get a notification that lets them inspect the final output. Let&rsquo;s get started!</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=color:#0f0>&lt;!-- index.html --&gt;</span>
 &lt;button onclick=<span style=color:#87ceeb>&#34;notifyOnDone()&#34;</span>&gt;Notify me when this job finishes&lt;/button&gt;
 &lt;span id=<span style=color:#87ceeb>&#34;permErr&#34;</span> style=<span style=color:#87ceeb>&#34;display:none; color:red;&#34;</span>&gt;You must allow notifications to subscribe to this job&lt;/span&gt;
 &lt;script&gt;
@@ -31,7 +101,8 @@
     notifierWorker.postMessage({ jobId: <span style=color:#f60>123</span> });
   }
 &lt;/script&gt;
-</code></pre></div><p>Since our examples don&rsquo;t rely on the Push API, we&rsquo;ll implement the checks via long polling in our web worker:</p><div class=highlight><pre style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#0f0>// notifier.js
+</code></pre></div><p>Since our examples don&rsquo;t rely on the Push API, we&rsquo;ll implement the checks via long polling in our web worker:</p>
+<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=color:#0f0>// notifier.js
 </span><span style=color:#0f0></span>onmessage = <span style=color:red>function</span> (e) {
   <span style=color:red>switch</span> (e.data.type) {
     <span style=color:red>case</span> <span style=color:#87ceeb>&#34;JOB_START&#34;</span>:
@@ -62,8 +133,40 @@
   }, <span style=color:#f60>30_000</span>);
   window.onunload = () =&gt; pollChanges &amp;&amp; clearInterval(pollChanges);
 }
-</code></pre></div><p>When users click the subscribe button, our worker polls the backend to see if the job has completed. If the job has finished, the worker triggers the notification with the status and any messages that are attached.</p><h2 id=duly-noted>Duly Noted</h2><p>Finding the line between utility and spam is tricky. When finding use cases for notifications, be sure to offer the users preferences for what type of notifications they want to receive and how often they want to receive them. Well designed notification experiences increase the usability of your app and keep users abreast of important changes, increasing their engagement and satisfaction.</p></section></article></main><h3>See Also</h3><ul><li><a href=/posts/2020-03-07-serviceworker/>Build a Better Web with Service Workers</a></li><li><a href=/posts/2020-02-01-proxies/>A Brief Look at Javascript Proxies</a></li><li><a href=/posts/2019-10-01-byoff-part-2/>Build Your Own Frontend Framework Part 2, Data Fetching</a></li><li><a href=/posts/2019-09-15-byoff-part-1/>Build Your Own Frontend Framework Part 1</a></li><li><a href=/posts/2019-09-09-build-your-own-frontend-framework/>Build Your Own Frontend Framework, Introduction</a></li><li><a href=/bookmarks/94/>De Morgan's Laws</a></li><li><a href=/bookmarks/91/>How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code</a></li><li><a href=/bookmarks/249/>Why using `_.chain` is a mistake.</a></li></ul><div class=webmention><h3>Mentioned around the web</h3></div><script src=/js/fuse.js></script><script src=/js/fastsearch.js></script><footer><hr><div class=h-card><a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.jpg alt="pygmy
-    slow loris, an endangered and beautiful creature"></a><div class=info><span class=p-name>Taylor Thompson</span>
+</code></pre></div><p>When users click the subscribe button, our worker polls the backend to see if the job has completed. If the job has finished, the worker triggers the notification with the status and any messages that are attached.</p>
+<h2 id=duly-noted>Duly Noted</h2>
+<p>Finding the line between utility and spam is tricky. When finding use cases for notifications, be sure to offer the users preferences for what type of notifications they want to receive and how often they want to receive them. Well designed notification experiences increase the usability of your app and keep users abreast of important changes, increasing their engagement and satisfaction.</p>
+</section>
+</article>
+</main>
+<h3>See Also</h3>
+<ul>
+<li><a href=/posts/2020-03-07-serviceworker/>Build a Better Web with Service Workers</a></li>
+<li><a href=/posts/2020-02-01-proxies/>A Brief Look at Javascript Proxies</a></li>
+<li><a href=/posts/2019-10-01-byoff-part-2/>Build Your Own Frontend Framework Part 2, Data Fetching</a></li>
+<li><a href=/posts/2019-09-15-byoff-part-1/>Build Your Own Frontend Framework Part 1</a></li>
+<li><a href=/posts/2019-09-09-build-your-own-frontend-framework/>Build Your Own Frontend Framework, Introduction</a></li>
+<li><a href=/bookmarks/94/>De Morgan's Laws</a></li>
+<li><a href=/bookmarks/91/>How JavaScript works: inside the V8 engine + 5 tips on how to write optimized code</a></li>
+<li><a href=/bookmarks/249/>Why using `_.chain` is a mistake.</a></li>
+</ul>
+<div class=webmention>
+<h3>Mentioned around the web</h3>
+</div>
+<script src=/js/fuse.js></script>
+<script src=/js/fastsearch.js></script><footer>
+<hr><div class=h-card>
+<a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.jpg alt="pygmy
+    slow loris, an endangered and beautiful creature"></a>
+<div class=info>
+<span class=p-name>Taylor Thompson</span>
 <a class=u-email href=mailto:taylor@teukka.tech>taylor@teukka.tech</a>
 <a rel=me class=u-url>https://teukka.tech</a>
-<span class=p-note>eternally curious person</span></div></div></footer><script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script></div></body></html>
+<span class=p-note>eternally curious person</span>
+</div>
+</div>
+</footer>
+<script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script>
+</div>
+</body>
+</html>
