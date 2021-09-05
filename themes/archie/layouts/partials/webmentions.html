@@ -1,22 +1,18 @@
 <div class="webmention">
-{{if isset .Params "aliases" }}
-  {{- range first 1 .Params.aliases }}
-  {{ with (index $.Site.Data.webmentions .) }}
-    <h3>Mentioned around the web</h3>
-    {{ range . }}
-    <div class="webmention-container">
-      <div class="webmention-profile">
-        <img src="{{ .author.photo }}" />
-        <span><a href="{{.author.url}}">{{.author.name}}</a></span>
-      </div>
-      <div class="webmention-content">
-        <i class="comment-date">commented on {{ dateFormat "Jan 2, 2006" .published }}</i>
-        <div>{{.content.html | safeHTML }}</div>
-        <a href="{{.url}}">See original</a>
-      </div>
-    </div>
+  {{ $mentionTitle :=  .Slug }}
+  {{ $mentionName := printf "%s-%s" .Type $mentionTitle }}
+{{if or (isset .Params "aliases") (index $.Site.Data.webmentions $mentionName) }}
+  <h3>Mentioned around the web</h3>
+  {{ if isset .Params "aliases"}}
+    {{- range first 1 .Params.aliases }}
+      {{ range (index $.Site.Data.webmentions .) }}
+        {{ partial "mention.html"  . }}
+      {{ end }}
     {{ end }}
-  {{ end }}
+  {{ else }}
+    {{ range (index $.Site.Data.webmentions $mentionName) }}
+      {{ partial "mention.html"  . }}
+    {{ end }}
   {{ end }}
 {{ end }}
 </div>

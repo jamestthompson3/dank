@@ -1,7 +1,6 @@
 ---
 title: Knowledge Base
 author: Taylor Thompson
-tags: [learning, reading]
 description: A free-form collection of notes, essays, and book reviews.
 ---
 
@@ -22,7 +21,12 @@ My notes are hosted [here](https://notebook.teukka.tech).
 
 | Title                                                                                                           | Author                                   | Rating | Read On    |
 | :-------------------------------------------------------------------------------------------------------------- | :--------------------------------------- | :----- | :--------- |
-| Virtue Hoarders: The Case against the Professional Managerial Class                                             | Catherine Lius                           | 5      | 2021/03/15 |
+| Mastering Rust                                                                                                  | Vesa Kaihlavirta                         | 3.5    | 2021/07/18 |
+| As I Walked Out One Midsummer Morning: A Memoir                                                                 | Laurie Lee                               | 4      | 2021/06/25 |
+| The Idea Factory: Bell Labs and the Great Age of American Innovation                                            | Jon Gertner                              | 4      | 2021/06/06 |
+| Work: A Deep History, from the Stone Age to the Age of Robots                                                   | James Suzman                             | 4      | 2021/04/27 |
+| Our Magnificent Bastard Tongue: The Untold History of English                                                   | John McWhorter                           | 5      | 2021/03/31 |
+| Virtue Hoarders: The Case against the Professional Managerial Class                                             | Catherine Liu                            | 5      | 2021/03/15 |
 | Sing to It: New Stories                                                                                         | Amy Hempel                               | 3      | 2021/02/21 |
 | Amusing Ourselves to Death: Public Discourse in the Age of Show Business                                        | Neil Postman                             | 3      | 2021/01/31 |
 | Rythm of War                                                                                                    | Brandon Sanderson                        | 5      | 2021/01/25 |
@@ -33,6 +37,7 @@ My notes are hosted [here](https://notebook.teukka.tech).
 | Mind Management, Not Time Management: Productivity When Creativity Matters (Getting Art Done Book 2)            | David Kadavy                             | 4      | 2020/11/22 |
 | The Metaphysical Elements of Ethics                                                                             | Immanuel Kant                            | 3      | 2020/10/19 |
 | The Making of a Manger: What to Do When Everyone Looks To You                                                   | Julie Zhou                               | 4      | 2020/10/14 |
+| Deep Work                                                                                                       | Cal Newport                              | 5      | 2020/09/27 |
 | The Hard Thing About Hard Things                                                                                | Ben Horowitz                             | 4      | 2020/08/26 |
 | The Cuckoo's Egg                                                                                                | Clifford Stoll                           | 4      | 2020/08/13 |
 | King Leopold's Ghost                                                                                            | Adam Hochshild                           | 4      | 2020/08/04 |
@@ -43,7 +48,7 @@ My notes are hosted [here](https://notebook.teukka.tech).
 | Lies My Teacher Told Me: Everything your American History Textbook Got Wrong                                    | James W. Loewen                          | 5      | 2020/06/28 |
 | Why We Sleep: Unlocking the Power of Sleep and Dreams                                                           | Matthew Walker                           | 5      | 2020/06/28 |
 | The Philosophy of Walking                                                                                       | Fredric Gros, Clifford Harper, John Howe | 2      | 2020/05/30 |
-| [Zen and the Art of Motorcycle Maintenence](/knowledgebase/zaamm)                                               | Robert Pirsig                            | 5      | 2020/05/23 |
+| Zen and the Art of Motorcycle Maintenence                                                                       | Robert Pirsig                            | 5      | 2020/05/23 |
 | Shape Up: Stop Running in Circles and Ship Work that Matters                                                    | Ryan Singer                              | 3      | 2020/05/04 |
 | a definition and criticism of cybercommunism                                                                    | Tere Vadén and Juha Suoranta             | 2      | 2020/01/03 |
 | The Science of Managing Our Digital Stuff                                                                       | Ofer Bergman                             | 5      | 2020/05/02 |

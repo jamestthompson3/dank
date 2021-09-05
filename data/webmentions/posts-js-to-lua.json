@@ -1,0 +1,20 @@
+[
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://links.martyoeh.me/daily?day=20210317",
+    "published": null,
+    "wm-received": "2021-04-03T12:01:03Z",
+    "wm-id": 1105280,
+    "wm-source": "https://links.martyoeh.me/daily?day=20210317",
+    "wm-target": "https://teukka.tech/posts/js-to-lua/",
+    "mention-of": "https://teukka.tech/posts/js-to-lua/",
+    "wm-property": "mention-of",
+    "wm-private": false
+  }
+]

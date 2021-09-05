@@ -175,5 +175,26 @@
     "mention-of": "https://teukka.tech/vimtip-gitlens.html",
     "wm-property": "mention-of",
     "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://reposhub.com/linux/system-utilities/ttys3-nvim-blamer-lua.html",
+    "published": null,
+    "wm-received": "2021-04-03T12:00:09Z",
+    "wm-id": 1105279,
+    "wm-source": "https://reposhub.com/linux/system-utilities/ttys3-nvim-blamer-lua.html",
+    "wm-target": "https://teukka.tech/vimtip-gitlens.html",
+    "mention-of": "https://teukka.tech/vimtip-gitlens.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://reposhub.com/linux/system-utilities/ttys3-nvim-blamer-lua.html"
+    }
   }
 ]

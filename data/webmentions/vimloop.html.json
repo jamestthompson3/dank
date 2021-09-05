@@ -42,5 +42,197 @@
     "in-reply-to": "https://teukka.tech/vimloop.html",
     "wm-property": "in-reply-to",
     "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://blog.fsouza.dev/prettierd-neovim-format-on-save/",
+    "published": null,
+    "wm-received": "2021-04-03T10:32:00Z",
+    "wm-id": 1105196,
+    "wm-source": "https://blog.fsouza.dev/prettierd-neovim-format-on-save/",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "mention-of": "https://teukka.tech/vimloop.html",
+    "wm-property": "mention-of",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://wiki.nikitavoloboev.xyz/text-editors/vim",
+    "published": null,
+    "wm-received": "2021-04-03T11:54:38Z",
+    "wm-id": 1105239,
+    "wm-source": "https://wiki.nikitavoloboev.xyz/text-editors/vim",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "mention-of": "https://teukka.tech/vimloop.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://wiki.nikitavoloboev.xyz/text-editors/vim"
+    }
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "mhartington",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/7bbcf4116c21452a0f6ead0af576240b84a2f34d8d7b1a8c61e1ebdac37a91c3.png",
+      "url": "https://reddit.com/user/mhartington/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gweyj8b/",
+    "published": "2021-04-30T11:52:12",
+    "wm-received": "2021-07-01T17:28:14Z",
+    "wm-id": 1207249,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/n1r9tt/gweyj8b",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "content": {
+      "html": "<p>As someone who's come from the node world, where libuv is the core API, I can agree. It's quite good and a smart move by the core team</p>\n\n<p>EDIT: Would love to checkout the file watch feature you mentioned!</p>\n\n<a class=\"u-mention\" href=\"https://teukka.tech/vimloop.html\"></a>",
+      "text": "As someone who's come from the node world, where libuv is the core API, I can agree. It's quite good and a smart move by the core team\n\nEDIT: Would love to checkout the file watch feature you mentioned!"
+    },
+    "in-reply-to": "https://teukka.tech/vimloop.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "trieu1912",
+      "photo": "https://webmention.io/avatar/styles.redditmedia.com/17f133250e3bc1fdce3588881125c443da55fb041ad9706626c54927e78ca437.png",
+      "url": "https://reddit.com/user/trieu1912/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gweubza/",
+    "published": "2021-04-30T11:08:51",
+    "wm-received": "2021-07-01T17:28:14Z",
+    "wm-id": 1207250,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/n1r9tt/gweubza",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "content": {
+      "html": "<p>yeah I agree.\nI just play with that library when i try to do something on my statusline.\n<a href=\"https://neovim.discourse.group/t/showcase-animation-statusline/457\">https://neovim.discourse.group/t/showcase-animation-statusline/457</a></p>\n\n<p>libuv with lua is not too difficult and the concept is similar to another language so at least I can understand it:)</p>\n\n<a class=\"u-mention\" href=\"https://teukka.tech/vimloop.html\"></a>",
+      "text": "yeah I agree.\nI just play with that library when i try to do something on my statusline.\nhttps://neovim.discourse.group/t/showcase-animation-statusline/457\n\nlibuv with lua is not too difficult and the concept is similar to another language so at least I can understand it:)"
+    },
+    "in-reply-to": "https://teukka.tech/vimloop.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "folke",
+      "photo": "https://webmention.io/avatar/styles.redditmedia.com/66007ba8fcefecc88c77bc3a902f422d1ef8c5b656ef5a5d48a60a8e0386ecc7.png",
+      "url": "https://reddit.com/user/folke/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gwf0oay/",
+    "published": "2021-04-30T12:15:03",
+    "wm-received": "2021-07-01T17:28:15Z",
+    "wm-id": 1207251,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/n1r9tt/gwf0oay",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "content": {
+      "html": "<p>Sweet! Looking forward to try that out 🙂</p>\n\n<a class=\"u-mention\" href=\"https://teukka.tech/vimloop.html\"></a>",
+      "text": "Sweet! Looking forward to try that out 🙂"
+    },
+    "in-reply-to": "https://teukka.tech/vimloop.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "shxfee",
+      "photo": "https://webmention.io/avatar/www.redditstatic.com/386ee3f7c2b76ba08ec93b358c367df619d4d4c8772125ea28a9babb910a0b5d.png",
+      "url": "https://reddit.com/user/shxfee/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gwf0t9x/",
+    "published": "2021-04-30T12:16:26",
+    "wm-received": "2021-07-01T17:28:16Z",
+    "wm-id": 1207252,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/n1r9tt/gwf0t9x",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "content": {
+      "html": "<p>+1 for the article</p>\n\n<a class=\"u-mention\" href=\"https://teukka.tech/vimloop.html\"></a>",
+      "text": "+1 for the article"
+    },
+    "in-reply-to": "https://teukka.tech/vimloop.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "PawarShubham3007",
+      "photo": "https://webmention.io/avatar/styles.redditmedia.com/2977d7c4f7fb8cf48991c79e6ecc9e6cadb213432ae31d3cfb9277833ef19e80.png",
+      "url": "https://reddit.com/user/PawarShubham3007/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gwff7a2/",
+    "published": "2021-04-30T14:19:37",
+    "wm-received": "2021-07-01T17:28:17Z",
+    "wm-id": 1207253,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/n1r9tt/gwff7a2",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "content": {
+      "html": "<p>Wow! Didn't even know this was possible</p>\n\n<a class=\"u-mention\" href=\"https://teukka.tech/vimloop.html\"></a>",
+      "text": "Wow! Didn't even know this was possible"
+    },
+    "in-reply-to": "https://teukka.tech/vimloop.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "chakrihacker",
+      "photo": "https://webmention.io/avatar/styles.redditmedia.com/0a4a8634f51fc2142b297a57176f9a0f492900aed84d833d3fb2ed8e5831a0c9.png",
+      "url": "https://reddit.com/user/chakrihacker/"
+    },
+    "url": "https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gweumsz/",
+    "published": "2021-04-30T11:11:43",
+    "wm-received": "2021-07-01T17:28:17Z",
+    "wm-id": 1207254,
+    "wm-source": "https://brid.gy/comment/reddit/yaboykanye/n1r9tt/gweumsz",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "content": {
+      "html": "<p>Good one</p>\n\n<a class=\"u-mention\" href=\"https://teukka.tech/vimloop.html\"></a>",
+      "text": "Good one"
+    },
+    "in-reply-to": "https://teukka.tech/vimloop.html",
+    "wm-property": "in-reply-to",
+    "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://codeutility.org/running-async-lua-function-in-neovim/",
+    "published": null,
+    "wm-received": "2021-08-19T12:18:38Z",
+    "wm-id": 1250030,
+    "wm-source": "https://codeutility.org/running-async-lua-function-in-neovim/",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "mention-of": "https://teukka.tech/vimloop.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://codeutility.org/running-async-lua-function-in-neovim/"
+    }
   }
 ]
