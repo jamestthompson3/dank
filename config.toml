@@ -33,9 +33,14 @@ url = "/knowledgebase"
 weight = 4
 
 [[menu.main]]
+name = "photos"
+url = "/photos"
+weight = 3
+
+[[menu.main]]
 name = "bookmarks"
 url = "/bookmarks"
-weight = 3
+weight = 4
 
 [[menu.main]]
 name = "updates"
