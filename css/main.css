@@ -80,6 +80,7 @@ img {
   max-width: 100%;
 }
 
+
 figure {
   box-sizing: border-box;
   display: inline-block;
@@ -105,6 +106,16 @@ figure h4 {
 figure h4::before {
   content: "↳ ";
 }
+
+
+/* Image Gallery */
+.gallery {
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center;
+}
+
 /* Microformat author on blog posts */
 .p-author.h-card {
   display: none;
