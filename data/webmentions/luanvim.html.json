@@ -101,5 +101,26 @@
     "mention-of": "https://teukka.tech/luanvim.html",
     "wm-property": "mention-of",
     "wm-private": false
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://xiaket.github.io/2021/pensieve-2107.html",
+    "published": null,
+    "wm-received": "2021-09-05T21:38:43Z",
+    "wm-id": 1263065,
+    "wm-source": "https://xiaket.github.io/2021/pensieve-2107.html",
+    "wm-target": "https://teukka.tech/luanvim.html",
+    "mention-of": "https://teukka.tech/luanvim.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://xiaket.github.io/2021/pensieve-2107.html"
+    }
   }
 ]
