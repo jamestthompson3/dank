@@ -1,25 +1,23 @@
-<!-- The shortcode functionality - in layouts/shortcodes/img.html -->
 <div class="picture">
   {{ if .Get "caption"}}
   <figure>
   {{ end }}
     <picture
      title="{{ .Get "alt" }}">
-      <!-- Large screens -->
+      <!-- TODO: Figure out if I want to handle different screen sizes -->
+      <!-- media="(min-width: 535px)" -->
       <source
-        media="(min-width: 535px)"
         srcset="{{ .Get "src" }}.{{ .Get "type" }}"
         >
       <!-- <!-1- Small screens -1-> -->
       <!-- <source -->
       <!--   media="(max-width: 534px)" -->
-      <!--   data-original-set="{{ .Get "src" }}-sm.{{ .Get "type" }} 1x, -->
+      <!--   srcset="{{ .Get "src" }}.{{ .Get "type" }} 1x, -->
       <!--           {{ .Get "src" }}-sm@2x.{{ .Get "type" }} 2x"> -->
       <!-- Fallback -->
       <img
-        data-original="{{ .Get "src" }}.{{ .Get "type" }}"
-        data-original-set="{{ .Get "src" }}@2x.{{ .Get "type" }} 2x"
-        alt="{{ .Get "alt" }}"{{ if .Get "caption"}} class="img-fluid figure-img"{{ end }}>
+        src="{{ .Get "src" }}.{{ .Get "type" }}"
+        alt="{{ .Get "alt" }}"{{ if .Get "caption"}} {{ end }}>
     </picture>
   {{ if .Get "caption"}}
     <figcaption>{{ .Get "caption" }}</figcaption>
