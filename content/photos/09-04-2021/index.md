@@ -1,8 +1,10 @@
 ---
-title: Espoo Central Park, Sept. 4 2021
+title: Espoo Central Park
 author: Taylor Thompson
 tags: []
-description: Mycology that I found interesting.
+images: ["/images/IMG_1841.webp"]
+date: 2021-09-04
+description: Mushrooms that I found interesting.
 ---
 
 {{< img src="/images/IMG_1830" type="webp" alt="blueish purple mushroom" caption="Blueish purple mushroom" >}}
