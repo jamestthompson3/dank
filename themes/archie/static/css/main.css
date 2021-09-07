@@ -116,6 +116,8 @@ figure h4::before {
   align-items: center;
 }
 
+.gallery p:empty {display:none;}
+
 /* Microformat author on blog posts */
 .p-author.h-card {
   display: none;
