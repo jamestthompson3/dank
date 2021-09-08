@@ -16,6 +16,7 @@
       <!--           {{ .Get "src" }}-sm@2x.{{ .Get "type" }} 2x"> -->
       <!-- Fallback -->
       <img
+        class="u-photo"
         src="{{ .Get "src" }}.{{ .Get "type" }}"
         alt="{{ .Get "alt" }}"{{ if .Get "caption"}} {{ end }}>
     </picture>
