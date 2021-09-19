@@ -234,5 +234,26 @@
     "rels": {
       "canonical": "https://codeutility.org/running-async-lua-function-in-neovim/"
     }
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://java.iitter.com/p/18/246.html",
+    "published": null,
+    "wm-received": "2021-09-19T08:33:01Z",
+    "wm-id": 1272105,
+    "wm-source": "https://java.iitter.com/p/18/246.html",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "mention-of": "https://teukka.tech/vimloop.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://java.iitter.com/p/18/246.html"
+    }
   }
 ]

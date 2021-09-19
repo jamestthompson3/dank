@@ -122,5 +122,26 @@
     "rels": {
       "canonical": "https://xiaket.github.io/2021/pensieve-2107.html"
     }
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://java.iitter.com/p/18/246.html",
+    "published": null,
+    "wm-received": "2021-09-19T08:31:56Z",
+    "wm-id": 1272104,
+    "wm-source": "https://java.iitter.com/p/18/246.html",
+    "wm-target": "https://teukka.tech/luanvim.html",
+    "mention-of": "https://teukka.tech/luanvim.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://java.iitter.com/p/18/246.html"
+    }
   }
 ]
