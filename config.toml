@@ -7,7 +7,7 @@ enableRobotsTXT = true
 
 [params]
 mode = "auto"
-ShowInMainFeed = ["updates", "posts"]
+ShowInMainFeed = ["updates", "posts", "photos"]
 
 [outputs]
   home = ["HTML", "RSS", "JSON"]
