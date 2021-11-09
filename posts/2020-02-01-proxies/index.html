@@ -115,7 +115,7 @@ postRequest.then((res) =&gt; res.json()).then(console.log);
   }
   validateWith(schema) {
     <span style=color:red>const</span> self = <span style=color:red>this</span>; <span style=color:#0f0>// Added to prevent confusion with &#39;this&#39; when nesting calls
-</span><span style=color:#0f0></span>    <span style=color:red>return</span> accessInterceptor(<span style=color:red>function</span> (<span style=color:#f60>_</span>, schemaPath) {
+</span><span style=color:#0f0></span>    <span style=color:red>return</span> accessInterceptor(<span style=color:red>function</span> (_, schemaPath) {
       <span style=color:red>if</span> (!(schemaPath <span style=color:red>in</span> schema)) {
         <span style=color:#0f0>// custom defined error
 </span><span style=color:#0f0></span>        <span style=color:red>throw</span> <span style=color:red>new</span> PathNotInSchemaError(
@@ -125,7 +125,7 @@ postRequest.then((res) =&gt; res.json()).then(console.log);
         );
       }
       <span style=color:red>return</span> (specifier) =&gt;
-        accessInterceptor(<span style=color:red>function</span> (<span style=color:#f60>_</span>, method) {
+        accessInterceptor(<span style=color:red>function</span> (_, method) {
           <span style=color:red>const</span> supportedMethods = schema[schemaPath].methods;
           <span style=color:red>if</span> (!supportedMethods.includes(method)) {
             <span style=color:red>throw</span> <span style=color:red>new</span> MethodNotSupportedError(
