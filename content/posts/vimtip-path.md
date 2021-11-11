@@ -5,7 +5,8 @@ author: Taylor Thompson
 tags: [neovim, vim, lua, productivity]
 description: Easily set your vim path per project and get only the files you want.
 keywords: [neovim, vim, path, project path, fd]
-images: ["https://neovim.io/images/logo@2x.png"]
+images:
+ - "https://neovim.io/images/logo@2x.png"
 date: 2021-11-11
 loc: vimtip-path
 ---
