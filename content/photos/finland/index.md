@@ -2,7 +2,7 @@
 title: Finland
 author: Taylor Thompson
 tags: []
-images: ["/images/farmington.webp"]
+images: ["/images/saimaa_boat.webp"]
 date: 2021-09-07
 description: General Finland appreciation album :)
 ---
