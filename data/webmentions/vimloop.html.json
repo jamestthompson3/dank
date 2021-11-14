@@ -255,5 +255,26 @@
     "rels": {
       "canonical": "https://java.iitter.com/p/18/246.html"
     }
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://www.python2.net/questions-1812892.htm",
+    "published": null,
+    "wm-received": "2021-11-13T21:52:10Z",
+    "wm-id": 1304718,
+    "wm-source": "https://www.python2.net/questions-1812892.htm",
+    "wm-target": "https://teukka.tech/vimloop.html",
+    "mention-of": "https://teukka.tech/vimloop.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://www.python2.net/questions-1812892.htm"
+    }
   }
 ]

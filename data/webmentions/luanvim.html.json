@@ -143,5 +143,26 @@
     "rels": {
       "canonical": "https://java.iitter.com/p/18/246.html"
     }
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "",
+      "photo": "",
+      "url": ""
+    },
+    "url": "https://b.hatena.ne.jp/entry/s/teukka.tech/luanvim.html",
+    "published": null,
+    "wm-received": "2021-11-13T22:00:50Z",
+    "wm-id": 1304719,
+    "wm-source": "https://b.hatena.ne.jp/entry/s/teukka.tech/luanvim.html",
+    "wm-target": "https://teukka.tech/luanvim.html",
+    "mention-of": "https://teukka.tech/luanvim.html",
+    "wm-property": "mention-of",
+    "wm-private": false,
+    "rels": {
+      "canonical": "https://b.hatena.ne.jp/entry/s/teukka.tech/luanvim.html"
+    }
   }
 ]
