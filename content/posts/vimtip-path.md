@@ -6,7 +6,7 @@ tags: [neovim, vim, lua, productivity]
 description: Easily set your vim path per project and get only the files you want.
 keywords: [neovim, vim, path, project path, fd]
 images:
- - "https://neovim.io/images/logo@2x.png"
+  - "https://neovim.io/images/logo@2x.png"
 date: 2021-11-11
 loc: vimtip-path
 ---
@@ -40,3 +40,19 @@ vim.o.path = table.concat(vim.fn.systemlist("fd . --type d"),",")
 Since `fd` will respect your `.gitignore` file, the above code will set every directory currently
 tracked by git in your path, ensuring that you can access your project files without having to deal
 with slowdowns caused by vim looking inside of directories such as `node_modules`.
+
+To speed things up when you open a directory in a path that is not currently tracked by git, you
+can use the following snippet:
+
+```lua
+
+local setPath = function()
+  if gitBranch() ~= "" then
+    return table.concat(vim.fn.systemlist("fd . --type d --hidden -E .git -E .yarn"),",") .. table.concat(vim.fn.systemlist("fd --type f --max-depth 1"), ",") -- grab both the dirs and the top level files
+  else
+    return vim.o.path
+  end
+end
+
+vim.o.path = setPath()
+```
