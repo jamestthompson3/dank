@@ -48,7 +48,7 @@ can use the following snippet:
 
 local setPath = function()
   if gitBranch() ~= "" then
-    return table.concat(vim.fn.systemlist("fd . --type d --hidden -E .git -E .yarn"),",,") .. "," .. table.concat(vim.fn.systemlist("fd --type f --max-depth 1"), ","):gsub("./", "") -- grab both the dirs and the top level files
+    return ".," .. table.concat(vim.fn.systemlist("fd . --type d --hidden -E .git -E .yarn"),","):gsub("%./", "") .. "," .. table.concat(vim.fn.systemlist("fd --type f --max-depth 1"), ","):gsub("%./", "") -- grab both the dirs and the top level filesystem
   else
     return vim.o.path
   end
