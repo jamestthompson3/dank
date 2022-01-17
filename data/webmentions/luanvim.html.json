@@ -164,5 +164,27 @@
     "rels": {
       "canonical": "https://b.hatena.ne.jp/entry/s/teukka.tech/luanvim.html"
     }
+  },
+  {
+    "type": "entry",
+    "author": {
+      "type": "card",
+      "name": "Leexiaopa",
+      "photo": "https://webmention.io/avatar/pbs.twimg.com/93787a81cd2308bc63ce781dad510fda1d9813aedf1391128508029afaff4b24.jpg",
+      "url": "https://twitter.com/Leexiaopa"
+    },
+    "url": "https://twitter.com/Leexiaopa/status/1482749253093294080",
+    "published": "2022-01-16T16:19:04+00:00",
+    "wm-received": "2022-01-16T23:44:04Z",
+    "wm-id": 1333107,
+    "wm-source": "https://brid.gy/post/twitter/jamestthompson3/1482749253093294080",
+    "wm-target": "https://teukka.tech/luanvim.html",
+    "content": {
+      "html": "<a href=\"https://teukka.tech/luanvim.html\">teukka.tech/luanvim.html</a>",
+      "text": "teukka.tech/luanvim.html"
+    },
+    "mention-of": "https://teukka.tech/luanvim.html",
+    "wm-property": "mention-of",
+    "wm-private": false
   }
 ]
