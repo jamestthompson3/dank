@@ -1,383 +1,163 @@
-<!doctype html><html><head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge"><title>🔁 Using LibUV in Neovim</title><meta name=viewport content="width=device-width,initial-scale=1">
-<link rel=canonical href=https://teukka.tech/posts/2020-01-07-vimloop/>
-<link rel=webmention href=https://webmention.io/teukka.tech/webmention>
-<link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc>
-<link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="Using LibUV in Neovim">
-<meta property="og:description" content="Learn how to use LibUV to create async vim actions">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://teukka.tech/posts/2020-01-07-vimloop/"><meta property="og:image" content="https://images.unsplash.com/photo-1567429159658-8c4f96a3d756?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2020-01-07T00:00:00+00:00">
-<meta property="article:modified_time" content="2020-01-07T00:00:00+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://images.unsplash.com/photo-1567429159658-8c4f96a3d756?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80">
-<meta name=twitter:title content="Using LibUV in Neovim">
-<meta name=twitter:description content="Learn how to use LibUV to create async vim actions">
-<link href=https://teukka.tech/css/fonts.css rel=stylesheet>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)">
-<script>window.location.host!=='teukka.tech'&&(window.goatcounter={no_onload:!0})</script>
-</head>
-<body>
-<div class=content><header>
-<div class=main>
-<a class=homepage href=https://teukka.tech/>teukka.tech</a>
-</div>
-<nav>
-<a href=/posts>posts</a>
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>🔁 Using LibUV in Neovim</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel=canonical href=https://teukka.tech/posts/2020-01-07-vimloop/><link rel=webmention href=https://webmention.io/teukka.tech/webmention><link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc><link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="Using LibUV in Neovim"><meta property="og:description" content="Learn how to use LibUV to create async vim actions"><meta property="og:type" content="article"><meta property="og:url" content="https://teukka.tech/posts/2020-01-07-vimloop/"><meta property="og:image" content="https://images.unsplash.com/photo-1567429159658-8c4f96a3d756?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"><meta property="article:section" content="posts"><meta property="article:published_time" content="2020-01-07T00:00:00+00:00"><meta property="article:modified_time" content="2020-01-07T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://images.unsplash.com/photo-1567429159658-8c4f96a3d756?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=634&q=80"><meta name=twitter:title content="Using LibUV in Neovim"><meta name=twitter:description content="Learn how to use LibUV to create async vim actions"><link href=https://teukka.tech/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)"><script>window.location.host!=="teukka.tech"&&(window.goatcounter={no_onload:!0})</script></head><body><div class=content><header><div class=main><a class=homepage href=https://teukka.tech/>teukka.tech</a></div><nav><a href=/posts>posts</a>
 <a href=/updates>updates</a>
 <a href=/photos>photos</a>
 <a href=/bookmarks>bookmarks</a>
-<a href=/knowledgebase>knowledge base</a>
-</nav>
-<div id=fastSearch>
-<label for=searchInput style=display:none>search the blog</label>
-<input id=searchInput tabindex=0 placeholder="search 🔍">
-<ul id=searchResults>
-</ul>
-</div>
-</header>
-<main>
-<br>
-<br>
-<article class="h-entry post">
-<div class=title>
-<h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2020-01-07-vimloop/>Using LibUV in Neovim</a></h1>
-<div class="dt-published meta">Posted on 2020-01-07</div>
-<a rel=author class="p-author h-card" href=/>taylor thompson</a>
-</div>
-<div class=post-tags>
-<nav class="nav tags">
-<ul class=tags>
-<li><a class=p-category href=/tags/lua>lua</a></li>
-<li><a class=p-category href=/tags/neovim>neovim</a></li>
-<li><a class=p-category href=/tags/libuv>libuv</a></li>
-</ul>
-</nav>
-</div>
-<section class="body e-content">
-<h2 id=off-the-main-loop-async-actions-within-neovim>Off The Main Loop: Async Actions within Neovim</h2>
-<p>Neovim embeds the libuv library in the editor and exposes lua (and to some extent vimscript through the <code>jobstart</code> function) bindings for interacting with the library&rsquo;s API. This allows actions in the editor to happen asynchronously, keeping the main editor loop clear for user input. What this means practically for users is that actions which take a long time such as grepping through large projects, generating ctags, or linting can now be done in the background without blocking the user&rsquo;s ability to keep editing text.</p>
-<p>Let&rsquo;s explore how to use the libuv lua bindings in Neovim to create useful asynchronous actions. I will cover two examples: using the <a href=https://pandoc.org>pandoc</a> program to convert a markdown file to html, and using <a href=https://github.com/BurntSushi/ripgrep>ripgrep</a> to search within a project. Both of these examples use the libuv bindings differently, but still illustrate well the capabilities of libuv inside Neovim.</p>
-<h2 id=first-example-convert-markdown-files-with-pandoc>First Example: Convert Markdown Files with Pandoc</h2>
-<p>Pandoc is a powerful tool for converting files into and different formats. I write many Markdown documents and it is useful to convert them into HTML for my blog. In order to do this in an asynchronous way, we will use <code>vim.loop</code> from Neovim&rsquo;s lua library. I would recommend going through the documentation on <code>vim.loop</code> as you code along with this post. Let&rsquo;s start by creating a basic lua function outline in our <code>packagepath</code>:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in ~/.config/nvim/lua/markdown.lua</span>
-<span style=color:red>local</span> M = {}
-<span style=color:red>local</span> loop = vim.loop
-<span style=color:red>local</span> api = vim.api
-
-<span style=color:red>function</span> M.<span style=color:#ff0>convertFile</span>()
-  <span style=color:red>local</span> shortname = vim.fn.expand(<span style=color:#87ceeb>&#39;%:t:r&#39;</span>)
-  <span style=color:red>local</span> fullname = api.nvim_buf_get_name(<span style=color:#f60>0</span>)
- <span style=color:#0f0>-- loop logic goes here</span>
-<span style=color:red>end</span>
-
-<span style=color:red>return</span> M
-</code></pre></div><p>In this snippet, we first get the shortened name of the file (i.e. <code>vimlooppost</code> in <code>vimlooppost.md</code>), and the full name of the file (i.e. <code>~/blog/posts/vimlooppost.md</code>). We will use both of these variables later when we spawn the pandoc process. In order to get a better understanding of what <code>vim.loop.spawn</code> does, let&rsquo;s head over to the <a href=https://github.com/luvit/luv/blob/master/docs.md#uvspawnfile-options-onexit>libuv documentation</a>. Here we can see that it takes an options table, an <code>onexit</code> callback, and returns the processId and the handle of the spawned process. Using this information, let&rsquo;s build out the rest of the <code>convertFile</code> function:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua>
-<span style=color:#0f0>-- in ~/.config/nvim/lua/markdown.lua</span>
-<span style=color:red>local</span> M = {}
-<span style=color:red>local</span> loop = vim.loop
-<span style=color:red>local</span> api = vim.api
-
-<span style=color:red>function</span> M.<span style=color:#ff0>convertFile</span>()
-  <span style=color:red>local</span> shortname = vim.fn.expand(<span style=color:#87ceeb>&#39;%:t:r&#39;</span>)
-  <span style=color:red>local</span> fullname = api.nvim_buf_get_name(<span style=color:#f60>0</span>)
-  handle = vim.loop.spawn(<span style=color:#87ceeb>&#39;pandoc&#39;</span>, {
-    args = {fullname, <span style=color:#87ceeb>&#39;--to=html5&#39;</span>, <span style=color:#87ceeb>&#39;-o&#39;</span>, string.format(<span style=color:#87ceeb>&#39;%s.html&#39;</span>, shortname), <span style=color:#87ceeb>&#39;-s&#39;</span>, <span style=color:#87ceeb>&#39;--highlight-style&#39;</span>, <span style=color:#87ceeb>&#39;tango&#39;</span>, <span style=color:#87ceeb>&#39;-c&#39;</span>, <span style=color:#87ceeb>&#39;--css=pandoc.css&#39;</span>}
-  },
-  <span style=color:red>function</span>()
-    print(<span style=color:#87ceeb>&#39;DOCUMENT CONVERSION COMPLETE&#39;</span>)
-    handle:close()
-  <span style=color:red>end</span>
-  )
-<span style=color:red>end</span>
-
-<span style=color:red>return</span> M
-</code></pre></div><p>Pandoc receives as arguments the strings listed in the <code>args</code> table, and when the process finishes, we echo a success message and close the handle. Using this in our vimrc is as simple as:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=color:#0f0>&#34; in ftplug/markdown.vim</span>
-
-nnoremap &lt;leader&gt;c :lua require<span style=color:#87ceeb>&#39;markdown&#39;</span>.convertFile()&lt;CR&gt;
-</code></pre></div><h2 id=second-example-async-grep>Second Example: Async Grep</h2>
-<p>Much like in the first example, we will be relying on an external program to do the heavy lifting, ripgrep. Unlike in the first example, we don&rsquo;t only want to kick off a background process, but also use the values generated in this process inside of Neovim. For that, we will need to pass a set of file descriptors to <code>vim.loop.spawn</code>:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in ~/.config/nvim/lua/tools.lua</span>
-<span style=color:red>local</span> M = {}
-<span style=color:red>local</span> loop = vim.loop
-<span style=color:red>local</span> api = vim.api
-
-
-<span style=color:red>function</span> M.<span style=color:#ff0>asyncGrep</span>(term)
-  <span style=color:red>local</span> stdout = loop.new_pipe(<span style=color:red>false</span>) <span style=color:#0f0>-- create file descriptor for stdout</span>
-  <span style=color:red>local</span> stderr = loop.new_pipe(<span style=color:red>false</span>) <span style=color:#0f0>-- create file descriptor for stdout</span>
-  handle = loop.spawn(<span style=color:#87ceeb>&#39;rg&#39;</span>, {
-    args = {term, <span style=color:#87ceeb>&#39;--vimgrep&#39;</span>, <span style=color:#87ceeb>&#39;--smart-case&#39;</span>},
-    stdio = {<span style=color:red>nil</span>,stdout,stderr}
-  },
-  <span style=color:red>function</span>()
-    stdout:read_stop()
-    stderr:read_stop()
-    stdout:close()
-    stderr:close()
-    handle:close()
-  <span style=color:red>end</span>
-  )
-  loop.read_start(stdout, onread) <span style=color:#0f0>-- TODO implement onread handler</span>
-  loop.read_start(stderr, onread)
-<span style=color:red>end</span>
-<span style=color:red>return</span> M
-</code></pre></div><p>Our function, <code>asyncGrep</code> will take a search term as an argument which it then passes to <code>ripgrep</code> in the <code>loop.spawn</code> call. After the process is spawned, we need to start reading the output into our file descriptors, which will then call the <code>onread</code> callback which we have yet to implement. Let&rsquo;s implement the <code>onread</code> callback now:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in tools.lua</span>
-<span style=color:red>local</span> results = {}
-<span style=color:red>local</span> <span style=color:red>function</span> <span style=color:#ff0>onread</span>(err, data)
-  <span style=color:red>if</span> err <span style=color:red>then</span>
-    <span style=color:#0f0>-- print(&#39;ERROR: &#39;, err)</span>
-    <span style=color:#0f0>-- TODO handle err</span>
-  <span style=color:red>end</span>
-  <span style=color:red>if</span> data <span style=color:red>then</span>
-    table.insert(results, data)
-  <span style=color:red>end</span>
-<span style=color:red>end</span>
-</code></pre></div><p>The <code>onread</code> callback takes data written to our file descriptor by the <code>ripgrep</code> process and appends a table called <code>results</code>. We now want to add functionality to our <code>asyncGrep</code> function that will allow us to use these results to set the quickfix list:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:red>function</span> M.<span style=color:#ff0>asyncGrep</span>(term)
-  <span style=color:red>local</span> stdout = loop.new_pipe(<span style=color:red>false</span>) <span style=color:#0f0>-- create file descriptor for stdout</span>
-  <span style=color:red>local</span> stderr = loop.new_pipe(<span style=color:red>false</span>) <span style=color:#0f0>-- create file descriptor for stdout</span>
-  <span style=color:red>local</span> <span style=color:red>function</span> <span style=color:#ff0>setQF</span>()
-    vim.fn.setqflist({}, <span style=color:#87ceeb>&#39;r&#39;</span>, {title = <span style=color:#87ceeb>&#39;Search Results&#39;</span>, lines = results})
-    api.nvim_command(<span style=color:#87ceeb>&#39;cwindow&#39;</span>)
-    <span style=color:red>local</span> count = #results
-    <span style=color:red>for</span> i=<span style=color:#f60>0</span>, count <span style=color:red>do</span> results[i]=<span style=color:red>nil</span> <span style=color:red>end</span> <span style=color:#0f0>-- clear the table for next search</span>
-  <span style=color:red>end</span>
-  handle = loop.spawn(<span style=color:#87ceeb>&#39;rg&#39;</span>, {
-    args = {term, <span style=color:#87ceeb>&#39;--vimgrep&#39;</span>, <span style=color:#87ceeb>&#39;--smart-case&#39;</span>},
-    stdio = {<span style=color:red>nil</span>,stdout,stderr}
-  },
-  <span style=color:red>function</span>()
-    stdout:read_stop()
-    stderr:read_stop()
-    stdout:close()
-    stderr:close()
-    handle:close()
-    setQF()
-  <span style=color:red>end</span>
-  )
-  loop.read_start(stdout, onread) <span style=color:#0f0>-- TODO implement onread handler</span>
-  loop.read_start(stderr, onread)
-<span style=color:red>end</span>
-</code></pre></div><p>If you run this function, you will encounter this error message: <code>lua/tools.lua:122: E5560: vimL function must not be called in a lua loop callback</code>. In order for any vim functions to be called within a lua loop callback, they need to be wrapped in <code>vim.schedule_wrap</code>. Wrapping vim functions in <code>vim.schedule_wrap</code> is necessary since it schedules the callbacks to be invoked when it is safe, bridging the gap between the libuv event loop and the internal Neovim main loop. To learn more about <code>vim.schedule_wrap</code>, check out <code>:h schedule_wrap</code>. Let&rsquo;s fix this error and see what our function looks like when it&rsquo;s all put together:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=color:#0f0>-- in ~/.config/nvim/lua/tools.lua</span>
-<span style=color:red>local</span> M = {}
-<span style=color:red>local</span> loop = vim.loop
-<span style=color:red>local</span> api = vim.api
-<span style=color:red>local</span> results = {}
-
-<span style=color:red>local</span> <span style=color:red>function</span> <span style=color:#ff0>onread</span>(err, data)
-  <span style=color:red>if</span> err <span style=color:red>then</span>
-    <span style=color:#0f0>-- print(&#39;ERROR: &#39;, err)</span>
-    <span style=color:#0f0>-- TODO handle err</span>
-  <span style=color:red>end</span>
-  <span style=color:red>if</span> data <span style=color:red>then</span>
-    table.insert(results, data)
-  <span style=color:red>end</span>
-<span style=color:red>end</span>
-
-<span style=color:red>function</span> M.<span style=color:#ff0>asyncGrep</span>(term)
-  <span style=color:red>local</span> stdout = vim.loop.new_pipe(<span style=color:red>false</span>)
-  <span style=color:red>local</span> stderr = vim.loop.new_pipe(<span style=color:red>false</span>)
-  <span style=color:red>local</span> <span style=color:red>function</span> <span style=color:#ff0>setQF</span>()
-    vim.fn.setqflist({}, <span style=color:#87ceeb>&#39;r&#39;</span>, {title = <span style=color:#87ceeb>&#39;Search Results&#39;</span>, lines = results})
-    api.nvim_command(<span style=color:#87ceeb>&#39;cwindow&#39;</span>)
-    <span style=color:red>local</span> count = #results
-    <span style=color:red>for</span> i=<span style=color:#f60>0</span>, count <span style=color:red>do</span> results[i]=<span style=color:red>nil</span> <span style=color:red>end</span> <span style=color:#0f0>-- clear the table for the next search</span>
-  <span style=color:red>end</span>
-  handle = vim.loop.spawn(<span style=color:#87ceeb>&#39;rg&#39;</span>, {
-    args = {term, <span style=color:#87ceeb>&#39;--vimgrep&#39;</span>, <span style=color:#87ceeb>&#39;--smart-case&#39;</span>},
-    stdio = {<span style=color:red>nil</span>,stdout,stderr}
-  },
-  vim.schedule_wrap(<span style=color:red>function</span>()
-    stdout:read_stop()
-    stderr:read_stop()
-    stdout:close()
-    stderr:close()
-    handle:close()
-    setQF()
-  <span style=color:red>end</span>
-  )
-  )
-  vim.loop.read_start(stdout, onread)
-  vim.loop.read_start(stderr, onread)
-<span style=color:red>end</span>
-
-<span style=color:red>return</span> M
-</code></pre></div><p>Let&rsquo;s use this newly created async function in our vimrc:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=color:#0f0>&#34; in init.vim</span>
-command! -nargs=+ -complete=dir -bar Grep lua require<span style=color:#87ceeb>&#39;tools&#39;</span>.asyncGrep(&lt;q-args&gt;)
-</code></pre></div><p>Now we can call <code>:Grep searchTerm</code> and get results without blocking the main editor loop!</p>
-<h2 id=whats-next>What&rsquo;s Next?</h2>
-<p>Having libuv bindings in Neovim unlocks a lot of potential for extending the functionality of your editor. The ability to asynchronously spawn other process can be used for linting, file watching, formatting, and much more. Free yourself from main loop blockage and try experimenting with <code>vim.loop</code>.</p>
-</section>
-</article>
-</main>
-<h3>See Also</h3>
-<ul>
-<li><a href=/posts/2019-12-19-luanvim/>From init.vim to init.lua</a></li>
-<li><a href=/posts/2019-08-25-vimcandothat/>Vim does that already</a></li>
-</ul>
-<div class=webmention>
-<h3>Mentioned around the web</h3>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis">
-<img src=https://webmention.io/avatar/www.redditstatic.com/535565b2a40f75d2b4806160950a3eee5bf950ced9565318b254144bb9e2288d.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/morose_automaton/>morose_automaton</a></span>
-</div>
-<div class=webmention-content>
-<i class=comment-date>commented on Jan 14, 2020 <a href=https://reddit.com/r/neovim/comments/elcw71/using_libuv_inside_neovim/fee2ss7/>see original</a></i>
-<div><p>This is a great write-up, thank you!</p></div>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis">
-<img src=https://webmention.io/avatar/www.redditstatic.com/625e7072bf7462155c316542796969481aafd8d0df82d087979d7951393b539f.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/justinmk/>justinmk</a></span>
-</div>
-<div class=webmention-content>
-<i class=comment-date>commented on Jan 7, 2020 <a href=https://reddit.com/r/neovim/comments/elcw71/using_libuv_inside_neovim/fdhb7ny/>see original</a></i>
-<div><p>Nice! For those who don't know, there are some cool ready-to-go examples in the Nvim docs at <code>:help lua-loop</code>:</p>
-<ul><li><code>:help watch-file</code></li>
-<li><code>:help tcp-server</code></li>
-</ul></div>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg>
-<span><a href></a></span>
-</div>
-<div class=webmention-content>
-<p> Mentioned on <a href=https://blog.fsouza.dev/prettierd-neovim-format-on-save/>https://blog.fsouza.dev/prettierd-neovim-format-on-save/</a></p>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg>
-<span><a href></a></span>
-</div>
-<div class=webmention-content>
-<p> Mentioned on <a href=https://wiki.nikitavoloboev.xyz/text-editors/vim>https://wiki.nikitavoloboev.xyz/text-editors/vim</a></p>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis">
-<img src=https://webmention.io/avatar/www.redditstatic.com/7bbcf4116c21452a0f6ead0af576240b84a2f34d8d7b1a8c61e1ebdac37a91c3.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/mhartington/>mhartington</a></span>
-</div>
-<div class=webmention-content>
-<i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gweyj8b/>see original</a></i>
-<div><p>As someone who's come from the node world, where libuv is the core API, I can agree. It's quite good and a smart move by the core team</p>
-<p>EDIT: Would love to checkout the file watch feature you mentioned!</p>
-<a class=u-mention href=https://teukka.tech/vimloop.html></a></div>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis">
-<img src=https://webmention.io/avatar/styles.redditmedia.com/17f133250e3bc1fdce3588881125c443da55fb041ad9706626c54927e78ca437.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/trieu1912/>trieu1912</a></span>
-</div>
-<div class=webmention-content>
-<i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gweubza/>see original</a></i>
-<div><p>yeah I agree.
+<a href=/knowledgebase>knowledge base</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
+<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2020-01-07-vimloop/>Using LibUV in Neovim</a></h1><div class="dt-published meta">Posted on 2020-01-07</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/lua>lua</a></li><li><a class=p-category href=/tags/neovim>neovim</a></li><li><a class=p-category href=/tags/libuv>libuv</a></li></ul></nav></div><section class="body e-content"><h2 id=off-the-main-loop-async-actions-within-neovim>Off The Main Loop: Async Actions within Neovim</h2><p>Neovim embeds the libuv library in the editor and exposes lua (and to some extent vimscript through the <code>jobstart</code> function) bindings for interacting with the library&rsquo;s API. This allows actions in the editor to happen asynchronously, keeping the main editor loop clear for user input. What this means practically for users is that actions which take a long time such as grepping through large projects, generating ctags, or linting can now be done in the background without blocking the user&rsquo;s ability to keep editing text.</p><p>Let&rsquo;s explore how to use the libuv lua bindings in Neovim to create useful asynchronous actions. I will cover two examples: using the <a href=https://pandoc.org>pandoc</a> program to convert a markdown file to html, and using <a href=https://github.com/BurntSushi/ripgrep>ripgrep</a> to search within a project. Both of these examples use the libuv bindings differently, but still illustrate well the capabilities of libuv inside Neovim.</p><h2 id=first-example-convert-markdown-files-with-pandoc>First Example: Convert Markdown Files with Pandoc</h2><p>Pandoc is a powerful tool for converting files into and different formats. I write many Markdown documents and it is useful to convert them into HTML for my blog. In order to do this in an asynchronous way, we will use <code>vim.loop</code> from Neovim&rsquo;s lua library. I would recommend going through the documentation on <code>vim.loop</code> as you code along with this post. Let&rsquo;s start by creating a basic lua function outline in our <code>packagepath</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#0f0>-- in ~/.config/nvim/lua/markdown.lua</span>
+</span></span><span style=display:flex><span><span style=color:red>local</span> M = {}
+</span></span><span style=display:flex><span><span style=color:red>local</span> loop = vim.loop
+</span></span><span style=display:flex><span><span style=color:red>local</span> api = vim.api
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:red>function</span> M.<span style=color:#ff0>convertFile</span>()
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> shortname = vim.fn.expand(<span style=color:#87ceeb>&#39;%:t:r&#39;</span>)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> fullname = api.nvim_buf_get_name(<span style=color:#f60>0</span>)
+</span></span><span style=display:flex><span> <span style=color:#0f0>-- loop logic goes here</span>
+</span></span><span style=display:flex><span><span style=color:red>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:red>return</span> M
+</span></span></code></pre></div><p>In this snippet, we first get the shortened name of the file (i.e. <code>vimlooppost</code> in <code>vimlooppost.md</code>), and the full name of the file (i.e. <code>~/blog/posts/vimlooppost.md</code>). We will use both of these variables later when we spawn the pandoc process. In order to get a better understanding of what <code>vim.loop.spawn</code> does, let&rsquo;s head over to the <a href=https://github.com/luvit/luv/blob/master/docs.md#uvspawnfile-options-onexit>libuv documentation</a>. Here we can see that it takes an options table, an <code>onexit</code> callback, and returns the processId and the handle of the spawned process. Using this information, let&rsquo;s build out the rest of the <code>convertFile</code> function:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:#0f0>-- in ~/.config/nvim/lua/markdown.lua</span>
+</span></span><span style=display:flex><span><span style=color:red>local</span> M = {}
+</span></span><span style=display:flex><span><span style=color:red>local</span> loop = vim.loop
+</span></span><span style=display:flex><span><span style=color:red>local</span> api = vim.api
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:red>function</span> M.<span style=color:#ff0>convertFile</span>()
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> shortname = vim.fn.expand(<span style=color:#87ceeb>&#39;%:t:r&#39;</span>)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> fullname = api.nvim_buf_get_name(<span style=color:#f60>0</span>)
+</span></span><span style=display:flex><span>  handle = vim.loop.spawn(<span style=color:#87ceeb>&#39;pandoc&#39;</span>, {
+</span></span><span style=display:flex><span>    args = {fullname, <span style=color:#87ceeb>&#39;--to=html5&#39;</span>, <span style=color:#87ceeb>&#39;-o&#39;</span>, string.format(<span style=color:#87ceeb>&#39;%s.html&#39;</span>, shortname), <span style=color:#87ceeb>&#39;-s&#39;</span>, <span style=color:#87ceeb>&#39;--highlight-style&#39;</span>, <span style=color:#87ceeb>&#39;tango&#39;</span>, <span style=color:#87ceeb>&#39;-c&#39;</span>, <span style=color:#87ceeb>&#39;--css=pandoc.css&#39;</span>}
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  <span style=color:red>function</span>()
+</span></span><span style=display:flex><span>    print(<span style=color:#87ceeb>&#39;DOCUMENT CONVERSION COMPLETE&#39;</span>)
+</span></span><span style=display:flex><span>    handle:close()
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span><span style=color:red>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:red>return</span> M
+</span></span></code></pre></div><p>Pandoc receives as arguments the strings listed in the <code>args</code> table, and when the process finishes, we echo a success message and close the handle. Using this in our vimrc is as simple as:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=display:flex><span><span style=color:#0f0>&#34; in ftplug/markdown.vim</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>nnoremap &lt;leader&gt;c :lua require<span style=color:#87ceeb>&#39;markdown&#39;</span>.convertFile()&lt;CR&gt;
+</span></span></code></pre></div><h2 id=second-example-async-grep>Second Example: Async Grep</h2><p>Much like in the first example, we will be relying on an external program to do the heavy lifting, ripgrep. Unlike in the first example, we don&rsquo;t only want to kick off a background process, but also use the values generated in this process inside of Neovim. For that, we will need to pass a set of file descriptors to <code>vim.loop.spawn</code>:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#0f0>-- in ~/.config/nvim/lua/tools.lua</span>
+</span></span><span style=display:flex><span><span style=color:red>local</span> M = {}
+</span></span><span style=display:flex><span><span style=color:red>local</span> loop = vim.loop
+</span></span><span style=display:flex><span><span style=color:red>local</span> api = vim.api
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:red>function</span> M.<span style=color:#ff0>asyncGrep</span>(term)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> stdout = loop.new_pipe(<span style=color:red>false</span>) <span style=color:#0f0>-- create file descriptor for stdout</span>
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> stderr = loop.new_pipe(<span style=color:red>false</span>) <span style=color:#0f0>-- create file descriptor for stdout</span>
+</span></span><span style=display:flex><span>  handle = loop.spawn(<span style=color:#87ceeb>&#39;rg&#39;</span>, {
+</span></span><span style=display:flex><span>    args = {term, <span style=color:#87ceeb>&#39;--vimgrep&#39;</span>, <span style=color:#87ceeb>&#39;--smart-case&#39;</span>},
+</span></span><span style=display:flex><span>    stdio = {<span style=color:red>nil</span>,stdout,stderr}
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  <span style=color:red>function</span>()
+</span></span><span style=display:flex><span>    stdout:read_stop()
+</span></span><span style=display:flex><span>    stderr:read_stop()
+</span></span><span style=display:flex><span>    stdout:close()
+</span></span><span style=display:flex><span>    stderr:close()
+</span></span><span style=display:flex><span>    handle:close()
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span>  loop.read_start(stdout, onread) <span style=color:#0f0>-- TODO implement onread handler</span>
+</span></span><span style=display:flex><span>  loop.read_start(stderr, onread)
+</span></span><span style=display:flex><span><span style=color:red>end</span>
+</span></span><span style=display:flex><span><span style=color:red>return</span> M
+</span></span></code></pre></div><p>Our function, <code>asyncGrep</code> will take a search term as an argument which it then passes to <code>ripgrep</code> in the <code>loop.spawn</code> call. After the process is spawned, we need to start reading the output into our file descriptors, which will then call the <code>onread</code> callback which we have yet to implement. Let&rsquo;s implement the <code>onread</code> callback now:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#0f0>-- in tools.lua</span>
+</span></span><span style=display:flex><span><span style=color:red>local</span> results = {}
+</span></span><span style=display:flex><span><span style=color:red>local</span> <span style=color:red>function</span> <span style=color:#ff0>onread</span>(err, data)
+</span></span><span style=display:flex><span>  <span style=color:red>if</span> err <span style=color:red>then</span>
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- print(&#39;ERROR: &#39;, err)</span>
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- TODO handle err</span>
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span>  <span style=color:red>if</span> data <span style=color:red>then</span>
+</span></span><span style=display:flex><span>    table.insert(results, data)
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span><span style=color:red>end</span>
+</span></span></code></pre></div><p>The <code>onread</code> callback takes data written to our file descriptor by the <code>ripgrep</code> process and appends a table called <code>results</code>. We now want to add functionality to our <code>asyncGrep</code> function that will allow us to use these results to set the quickfix list:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:red>function</span> M.<span style=color:#ff0>asyncGrep</span>(term)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> stdout = loop.new_pipe(<span style=color:red>false</span>) <span style=color:#0f0>-- create file descriptor for stdout</span>
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> stderr = loop.new_pipe(<span style=color:red>false</span>) <span style=color:#0f0>-- create file descriptor for stdout</span>
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> <span style=color:red>function</span> <span style=color:#ff0>setQF</span>()
+</span></span><span style=display:flex><span>    vim.fn.setqflist({}, <span style=color:#87ceeb>&#39;r&#39;</span>, {title = <span style=color:#87ceeb>&#39;Search Results&#39;</span>, lines = results})
+</span></span><span style=display:flex><span>    api.nvim_command(<span style=color:#87ceeb>&#39;cwindow&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:red>local</span> count = #results
+</span></span><span style=display:flex><span>    <span style=color:red>for</span> i=<span style=color:#f60>0</span>, count <span style=color:red>do</span> results[i]=<span style=color:red>nil</span> <span style=color:red>end</span> <span style=color:#0f0>-- clear the table for next search</span>
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span>  handle = loop.spawn(<span style=color:#87ceeb>&#39;rg&#39;</span>, {
+</span></span><span style=display:flex><span>    args = {term, <span style=color:#87ceeb>&#39;--vimgrep&#39;</span>, <span style=color:#87ceeb>&#39;--smart-case&#39;</span>},
+</span></span><span style=display:flex><span>    stdio = {<span style=color:red>nil</span>,stdout,stderr}
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  <span style=color:red>function</span>()
+</span></span><span style=display:flex><span>    stdout:read_stop()
+</span></span><span style=display:flex><span>    stderr:read_stop()
+</span></span><span style=display:flex><span>    stdout:close()
+</span></span><span style=display:flex><span>    stderr:close()
+</span></span><span style=display:flex><span>    handle:close()
+</span></span><span style=display:flex><span>    setQF()
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span>  loop.read_start(stdout, onread) <span style=color:#0f0>-- TODO implement onread handler</span>
+</span></span><span style=display:flex><span>  loop.read_start(stderr, onread)
+</span></span><span style=display:flex><span><span style=color:red>end</span>
+</span></span></code></pre></div><p>If you run this function, you will encounter this error message: <code>lua/tools.lua:122: E5560: vimL function must not be called in a lua loop callback</code>. In order for any vim functions to be called within a lua loop callback, they need to be wrapped in <code>vim.schedule_wrap</code>. Wrapping vim functions in <code>vim.schedule_wrap</code> is necessary since it schedules the callbacks to be invoked when it is safe, bridging the gap between the libuv event loop and the internal Neovim main loop. To learn more about <code>vim.schedule_wrap</code>, check out <code>:h schedule_wrap</code>. Let&rsquo;s fix this error and see what our function looks like when it&rsquo;s all put together:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#0f0>-- in ~/.config/nvim/lua/tools.lua</span>
+</span></span><span style=display:flex><span><span style=color:red>local</span> M = {}
+</span></span><span style=display:flex><span><span style=color:red>local</span> loop = vim.loop
+</span></span><span style=display:flex><span><span style=color:red>local</span> api = vim.api
+</span></span><span style=display:flex><span><span style=color:red>local</span> results = {}
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:red>local</span> <span style=color:red>function</span> <span style=color:#ff0>onread</span>(err, data)
+</span></span><span style=display:flex><span>  <span style=color:red>if</span> err <span style=color:red>then</span>
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- print(&#39;ERROR: &#39;, err)</span>
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- TODO handle err</span>
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span>  <span style=color:red>if</span> data <span style=color:red>then</span>
+</span></span><span style=display:flex><span>    table.insert(results, data)
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span><span style=color:red>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:red>function</span> M.<span style=color:#ff0>asyncGrep</span>(term)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> stdout = vim.loop.new_pipe(<span style=color:red>false</span>)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> stderr = vim.loop.new_pipe(<span style=color:red>false</span>)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> <span style=color:red>function</span> <span style=color:#ff0>setQF</span>()
+</span></span><span style=display:flex><span>    vim.fn.setqflist({}, <span style=color:#87ceeb>&#39;r&#39;</span>, {title = <span style=color:#87ceeb>&#39;Search Results&#39;</span>, lines = results})
+</span></span><span style=display:flex><span>    api.nvim_command(<span style=color:#87ceeb>&#39;cwindow&#39;</span>)
+</span></span><span style=display:flex><span>    <span style=color:red>local</span> count = #results
+</span></span><span style=display:flex><span>    <span style=color:red>for</span> i=<span style=color:#f60>0</span>, count <span style=color:red>do</span> results[i]=<span style=color:red>nil</span> <span style=color:red>end</span> <span style=color:#0f0>-- clear the table for the next search</span>
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span>  handle = vim.loop.spawn(<span style=color:#87ceeb>&#39;rg&#39;</span>, {
+</span></span><span style=display:flex><span>    args = {term, <span style=color:#87ceeb>&#39;--vimgrep&#39;</span>, <span style=color:#87ceeb>&#39;--smart-case&#39;</span>},
+</span></span><span style=display:flex><span>    stdio = {<span style=color:red>nil</span>,stdout,stderr}
+</span></span><span style=display:flex><span>  },
+</span></span><span style=display:flex><span>  vim.schedule_wrap(<span style=color:red>function</span>()
+</span></span><span style=display:flex><span>    stdout:read_stop()
+</span></span><span style=display:flex><span>    stderr:read_stop()
+</span></span><span style=display:flex><span>    stdout:close()
+</span></span><span style=display:flex><span>    stderr:close()
+</span></span><span style=display:flex><span>    handle:close()
+</span></span><span style=display:flex><span>    setQF()
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span>  )
+</span></span><span style=display:flex><span>  vim.loop.read_start(stdout, onread)
+</span></span><span style=display:flex><span>  vim.loop.read_start(stderr, onread)
+</span></span><span style=display:flex><span><span style=color:red>end</span>
+</span></span><span style=display:flex><span>
+</span></span><span style=display:flex><span><span style=color:red>return</span> M
+</span></span></code></pre></div><p>Let&rsquo;s use this newly created async function in our vimrc:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-vim data-lang=vim><span style=display:flex><span><span style=color:#0f0>&#34; in init.vim</span>
+</span></span><span style=display:flex><span>command! -nargs=+ -complete=dir -bar Grep lua require<span style=color:#87ceeb>&#39;tools&#39;</span>.asyncGrep(&lt;q-args&gt;)
+</span></span></code></pre></div><p>Now we can call <code>:Grep searchTerm</code> and get results without blocking the main editor loop!</p><h2 id=whats-next>What&rsquo;s Next?</h2><p>Having libuv bindings in Neovim unlocks a lot of potential for extending the functionality of your editor. The ability to asynchronously spawn other process can be used for linting, file watching, formatting, and much more. Free yourself from main loop blockage and try experimenting with <code>vim.loop</code>.</p></section></article></main><h3>See Also</h3><ul><li><a href=/posts/2019-12-19-luanvim/>From init.vim to init.lua</a></li><li><a href=/posts/2019-08-25-vimcandothat/>Vim does that already</a></li></ul><div class=webmention><h3>Mentioned around the web</h3><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/www.redditstatic.com/535565b2a40f75d2b4806160950a3eee5bf950ced9565318b254144bb9e2288d.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/morose_automaton/>morose_automaton</a></span></div><div class=webmention-content><i class=comment-date>commented on Jan 14, 2020 <a href=https://reddit.com/r/neovim/comments/elcw71/using_libuv_inside_neovim/fee2ss7/>see original</a></i><div><p>This is a great write-up, thank you!</p></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/www.redditstatic.com/625e7072bf7462155c316542796969481aafd8d0df82d087979d7951393b539f.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/justinmk/>justinmk</a></span></div><div class=webmention-content><i class=comment-date>commented on Jan 7, 2020 <a href=https://reddit.com/r/neovim/comments/elcw71/using_libuv_inside_neovim/fdhb7ny/>see original</a></i><div><p>Nice! For those who don't know, there are some cool ready-to-go examples in the Nvim docs at <code>:help lua-loop</code>:</p><ul><li><code>:help watch-file</code></li><li><code>:help tcp-server</code></li></ul></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg><span><a href></a></span></div><div class=webmention-content><p>Mentioned on <a href=https://blog.fsouza.dev/prettierd-neovim-format-on-save/>https://blog.fsouza.dev/prettierd-neovim-format-on-save/</a></p></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg><span><a href></a></span></div><div class=webmention-content><p>Mentioned on <a href=https://wiki.nikitavoloboev.xyz/text-editors/vim>https://wiki.nikitavoloboev.xyz/text-editors/vim</a></p></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/www.redditstatic.com/7bbcf4116c21452a0f6ead0af576240b84a2f34d8d7b1a8c61e1ebdac37a91c3.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/mhartington/>mhartington</a></span></div><div class=webmention-content><i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gweyj8b/>see original</a></i><div><p>As someone who's come from the node world, where libuv is the core API, I can agree. It's quite good and a smart move by the core team</p><p>EDIT: Would love to checkout the file watch feature you mentioned!</p><a class=u-mention href=https://teukka.tech/vimloop.html></a></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/styles.redditmedia.com/17f133250e3bc1fdce3588881125c443da55fb041ad9706626c54927e78ca437.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/trieu1912/>trieu1912</a></span></div><div class=webmention-content><i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gweubza/>see original</a></i><div><p>yeah I agree.
 I just play with that library when i try to do something on my statusline.
-<a href=https://neovim.discourse.group/t/showcase-animation-statusline/457>https://neovim.discourse.group/t/showcase-animation-statusline/457</a></p>
-<p>libuv with lua is not too difficult and the concept is similar to another language so at least I can understand it:)</p>
-<a class=u-mention href=https://teukka.tech/vimloop.html></a></div>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis">
-<img src=https://webmention.io/avatar/styles.redditmedia.com/66007ba8fcefecc88c77bc3a902f422d1ef8c5b656ef5a5d48a60a8e0386ecc7.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/folke/>folke</a></span>
-</div>
-<div class=webmention-content>
-<i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gwf0oay/>see original</a></i>
-<div><p>Sweet! Looking forward to try that out 🙂</p>
-<a class=u-mention href=https://teukka.tech/vimloop.html></a></div>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis">
-<img src=https://webmention.io/avatar/www.redditstatic.com/386ee3f7c2b76ba08ec93b358c367df619d4d4c8772125ea28a9babb910a0b5d.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/shxfee/>shxfee</a></span>
-</div>
-<div class=webmention-content>
-<i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gwf0t9x/>see original</a></i>
-<div><p>+1 for the article</p>
-<a class=u-mention href=https://teukka.tech/vimloop.html></a></div>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis">
-<img src=https://webmention.io/avatar/styles.redditmedia.com/2977d7c4f7fb8cf48991c79e6ecc9e6cadb213432ae31d3cfb9277833ef19e80.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/PawarShubham3007/>PawarShubham3007</a></span>
-</div>
-<div class=webmention-content>
-<i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gwff7a2/>see original</a></i>
-<div><p>Wow! Didn't even know this was possible</p>
-<a class=u-mention href=https://teukka.tech/vimloop.html></a></div>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis">
-<img src=https://webmention.io/avatar/styles.redditmedia.com/0a4a8634f51fc2142b297a57176f9a0f492900aed84d833d3fb2ed8e5831a0c9.png alt="author's profile picture">
-<span><a href=https://reddit.com/user/chakrihacker/>chakrihacker</a></span>
-</div>
-<div class=webmention-content>
-<i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gweumsz/>see original</a></i>
-<div><p>Good one</p>
-<a class=u-mention href=https://teukka.tech/vimloop.html></a></div>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg>
-<span><a href></a></span>
-</div>
-<div class=webmention-content>
-<p> Mentioned on <a href=https://codeutility.org/running-async-lua-function-in-neovim/>https://codeutility.org/running-async-lua-function-in-neovim/</a></p>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg>
-<span><a href></a></span>
-</div>
-<div class=webmention-content>
-<p> Mentioned on <a href=https://java.iitter.com/p/18/246.html>https://java.iitter.com/p/18/246.html</a></p>
-</div>
-</div>
-<div class=webmention-container>
-<div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg>
-<span><a href></a></span>
-</div>
-<div class=webmention-content>
-<p> Mentioned on <a href=https://www.python2.net/questions-1812892.htm>https://www.python2.net/questions-1812892.htm</a></p>
-</div>
-</div>
-</div>
-<script src=/js/fuse.js></script>
-<script src=/js/fastsearch.js></script><footer>
-<hr><div class=h-card>
-<a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.webp alt="pygmy
-    slow loris, an endangered and beautiful creature"></a>
-<div class=info>
-<span class=p-name>Taylor Thompson</span>
+<a href=https://neovim.discourse.group/t/showcase-animation-statusline/457>https://neovim.discourse.group/t/showcase-animation-statusline/457</a></p><p>libuv with lua is not too difficult and the concept is similar to another language so at least I can understand it:)</p><a class=u-mention href=https://teukka.tech/vimloop.html></a></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/styles.redditmedia.com/66007ba8fcefecc88c77bc3a902f422d1ef8c5b656ef5a5d48a60a8e0386ecc7.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/folke/>folke</a></span></div><div class=webmention-content><i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gwf0oay/>see original</a></i><div><p>Sweet! Looking forward to try that out 🙂</p><a class=u-mention href=https://teukka.tech/vimloop.html></a></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/www.redditstatic.com/386ee3f7c2b76ba08ec93b358c367df619d4d4c8772125ea28a9babb910a0b5d.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/shxfee/>shxfee</a></span></div><div class=webmention-content><i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gwf0t9x/>see original</a></i><div><p>+1 for the article</p><a class=u-mention href=https://teukka.tech/vimloop.html></a></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/styles.redditmedia.com/2977d7c4f7fb8cf48991c79e6ecc9e6cadb213432ae31d3cfb9277833ef19e80.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/PawarShubham3007/>PawarShubham3007</a></span></div><div class=webmention-content><i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gwff7a2/>see original</a></i><div><p>Wow! Didn't even know this was possible</p><a class=u-mention href=https://teukka.tech/vimloop.html></a></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><img src=https://webmention.io/avatar/styles.redditmedia.com/0a4a8634f51fc2142b297a57176f9a0f492900aed84d833d3fb2ed8e5831a0c9.png alt="author's profile picture">
+<span><a href=https://reddit.com/user/chakrihacker/>chakrihacker</a></span></div><div class=webmention-content><i class=comment-date>commented on Apr 30, 2021 <a href=https://reddit.com/r/neovim/comments/n1r9tt/access_to_libuv_is_one_of_the_best_things_about/gweumsz/>see original</a></i><div><p>Good one</p><a class=u-mention href=https://teukka.tech/vimloop.html></a></div></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg><span><a href></a></span></div><div class=webmention-content><p>Mentioned on <a href=https://codeutility.org/running-async-lua-function-in-neovim/>https://codeutility.org/running-async-lua-function-in-neovim/</a></p></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg><span><a href></a></span></div><div class=webmention-content><p>Mentioned on <a href=https://java.iitter.com/p/18/246.html>https://java.iitter.com/p/18/246.html</a></p></div></div><div class=webmention-container><div class="webmention-profile -ellipsis"><svg class="webmention-fallback" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" stroke="currentcolor" fill="currentcolor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg><span><a href></a></span></div><div class=webmention-content><p>Mentioned on <a href=https://www.python2.net/questions-1812892.htm>https://www.python2.net/questions-1812892.htm</a></p></div></div></div><script src=/js/fuse.js></script>
+<script src=/js/fastsearch.js></script><footer><hr><div class=h-card><a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.webp alt="pygmy
+    slow loris, an endangered and beautiful creature"></a><div class=info><span class=p-name>Taylor Thompson</span>
 <a class=u-email href=mailto:taylor@teukka.tech>taylor@teukka.tech</a>
 <a rel=me class=u-url>https://teukka.tech</a>
-<span class=p-note>eternally curious person</span>
-</div>
-</div>
-<small>&copy; taylor thompson</small>
-</footer>
-<script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script>
-</div>
-</body>
-</html>
+<span class=p-note>eternally curious person</span></div></div><small>&copy; taylor thompson</small></footer><script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script></div></body></html>

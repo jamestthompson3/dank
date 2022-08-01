@@ -1,76 +1,13 @@
-<!doctype html><html><head>
-<meta charset=utf-8>
-<meta http-equiv=x-ua-compatible content="IE=edge"><title>⌨️ Vim does that already</title><meta name=viewport content="width=device-width,initial-scale=1">
-<link rel=canonical href=https://teukka.tech/posts/2019-08-25-vimcandothat/>
-<link rel=webmention href=https://webmention.io/teukka.tech/webmention>
-<link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc>
-<link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="Vim does that already">
-<meta property="og:description" content="Exploring some of the built in functionality of Vim you may not know exists">
-<meta property="og:type" content="article">
-<meta property="og:url" content="https://teukka.tech/posts/2019-08-25-vimcandothat/"><meta property="og:image" content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9f%2FVimlogo.svg%2F1200px-Vimlogo.svg.png&f=1&nofb=1"><meta property="article:section" content="posts">
-<meta property="article:published_time" content="2019-08-25T00:00:00+00:00">
-<meta property="article:modified_time" content="2019-08-25T00:00:00+00:00">
-<meta name=twitter:card content="summary_large_image">
-<meta name=twitter:image content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9f%2FVimlogo.svg%2F1200px-Vimlogo.svg.png&f=1&nofb=1">
-<meta name=twitter:title content="Vim does that already">
-<meta name=twitter:description content="Exploring some of the built in functionality of Vim you may not know exists">
-<link href=https://teukka.tech/css/fonts.css rel=stylesheet>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css>
-<link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)">
-<script>window.location.host!=='teukka.tech'&&(window.goatcounter={no_onload:!0})</script>
-</head>
-<body>
-<div class=content><header>
-<div class=main>
-<a class=homepage href=https://teukka.tech/>teukka.tech</a>
-</div>
-<nav>
-<a href=/posts>posts</a>
+<!doctype html><html><head><meta charset=utf-8><meta http-equiv=x-ua-compatible content="IE=edge"><title>⌨️ Vim does that already</title><meta name=viewport content="width=device-width,initial-scale=1"><link rel=canonical href=https://teukka.tech/posts/2019-08-25-vimcandothat/><link rel=webmention href=https://webmention.io/teukka.tech/webmention><link rel=pingback href=https://webmention.io/teukka.tech/xmlrpc><link rel=micropub href=http://pub.teukka.tech/micropub/main><meta property="og:title" content="Vim does that already"><meta property="og:description" content="Exploring some of the built in functionality of Vim you may not know exists"><meta property="og:type" content="article"><meta property="og:url" content="https://teukka.tech/posts/2019-08-25-vimcandothat/"><meta property="og:image" content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9f%2FVimlogo.svg%2F1200px-Vimlogo.svg.png&f=1&nofb=1"><meta property="article:section" content="posts"><meta property="article:published_time" content="2019-08-25T00:00:00+00:00"><meta property="article:modified_time" content="2019-08-25T00:00:00+00:00"><meta name=twitter:card content="summary_large_image"><meta name=twitter:image content="https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fupload.wikimedia.org%2Fwikipedia%2Fcommons%2Fthumb%2F9%2F9f%2FVimlogo.svg%2F1200px-Vimlogo.svg.png&f=1&nofb=1"><meta name=twitter:title content="Vim does that already"><meta name=twitter:description content="Exploring some of the built in functionality of Vim you may not know exists"><link href=https://teukka.tech/css/fonts.css rel=stylesheet><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/main.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/paginator.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/hcard.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/updates.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/fastsearch.css><link rel=stylesheet type=text/css media=screen href=https://teukka.tech/css/bookmarks.css><link rel=stylesheet type=text/css href=https://teukka.tech/css/dark.css media="(prefers-color-scheme: dark)"><script>window.location.host!=="teukka.tech"&&(window.goatcounter={no_onload:!0})</script></head><body><div class=content><header><div class=main><a class=homepage href=https://teukka.tech/>teukka.tech</a></div><nav><a href=/posts>posts</a>
 <a href=/updates>updates</a>
 <a href=/photos>photos</a>
 <a href=/bookmarks>bookmarks</a>
-<a href=/knowledgebase>knowledge base</a>
-</nav>
-<div id=fastSearch>
-<label for=searchInput style=display:none>search the blog</label>
-<input id=searchInput tabindex=0 placeholder="search 🔍">
-<ul id=searchResults>
-</ul>
-</div>
-</header>
-<main>
-<br>
-<br>
-<article class="h-entry post">
-<div class=title>
-<h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2019-08-25-vimcandothat/>Vim does that already</a></h1>
-<div class="dt-published meta">Posted on 2019-08-25</div>
-<a rel=author class="p-author h-card" href=/>taylor thompson</a>
-</div>
-<div class=post-tags>
-<nav class="nav tags">
-<ul class=tags>
-<li><a class=p-category href=/tags/vim>vim</a></li>
-<li><a class=p-category href=/tags/neovim>neovim</a></li>
-<li><a class=p-category href=/tags/productivity>productivity</a></li>
-</ul>
-</nav>
-</div>
-<section class="body e-content">
-<h2 id=power-to-productivity>Power to Productivity</h2>
-<p>Vim is a powerful tool which helps you stay productive and spend less time doing the mechanical work of coding.
-For many, Vim seems archaic, under-featured, or even intimidating. I hope to illustrate that Vim none of those things, but is in fact a great editor for nearly every development environment.</p>
-<p>I want to focus on three common tasks where Vim helps you be more productive without leaving your editor. These tasks are: navigation between files, and searching / replacing.
-No Vim experience is necessary for this post, but it definitely helps if you are at least familiar with the basics through <code>vimtutor</code>.</p>
-<h2 id=navigation-between-files>Navigation Between Files</h2>
-<p>One of the most common and time consuming activities we do as developers every day is jump between files.
+<a href=/knowledgebase>knowledge base</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
+<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2019-08-25-vimcandothat/>Vim does that already</a></h1><div class="dt-published meta">Posted on 2019-08-25</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/vim>vim</a></li><li><a class=p-category href=/tags/neovim>neovim</a></li><li><a class=p-category href=/tags/productivity>productivity</a></li></ul></nav></div><section class="body e-content"><h2 id=power-to-productivity>Power to Productivity</h2><p>Vim is a powerful tool which helps you stay productive and spend less time doing the mechanical work of coding.
+For many, Vim seems archaic, under-featured, or even intimidating. I hope to illustrate that Vim none of those things, but is in fact a great editor for nearly every development environment.</p><p>I want to focus on three common tasks where Vim helps you be more productive without leaving your editor. These tasks are: navigation between files, and searching / replacing.
+No Vim experience is necessary for this post, but it definitely helps if you are at least familiar with the basics through <code>vimtutor</code>.</p><h2 id=navigation-between-files>Navigation Between Files</h2><p>One of the most common and time consuming activities we do as developers every day is jump between files.
 If you are using a more traditional text editor such as VSCode, Sublime Text, or Atom, chances are you spend more time that you would like
-scanning through your directory tree trying to find the right file. With Vim, the secret to file navigation begins with <code>set path</code>.</p>
-<p>The <code>path</code> is where Vim searches for files when executing the various search commands. By default on Unix-like systems, it is <code>.,/usr/include,,</code>. Let&rsquo;s break this down a bit. The first <code>.</code> indicates that Vim should include files relative to the current file&rsquo;s directory.
+scanning through your directory tree trying to find the right file. With Vim, the secret to file navigation begins with <code>set path</code>.</p><p>The <code>path</code> is where Vim searches for files when executing the various search commands. By default on Unix-like systems, it is <code>.,/usr/include,,</code>. Let&rsquo;s break this down a bit. The first <code>.</code> indicates that Vim should include files relative to the current file&rsquo;s directory.
 Directories that should be searched are separated by commas, so the next place Vim will look by default is the <code>/usr/include/</code> directory.
 This directory typically contains headers so it can be useful if you are doing C and C++ programming. The final sequence of <code>,,</code> instructs Vim to search in the current directory.
 Out of the box, we are able to search a large part of our project. What if we wanted to search downward recursively through our project?
@@ -79,71 +16,33 @@ To ensure that Vim finds all of our project files when we search for them, we us
 The asterisks represent wildcards, with <code>*</code> matching 0 or more characters and <code>**</code> matching only directories. By setting your path to <code>set path=.,,,**</code>, you can ensure that Vim will search all our project files.
 One caveat to this is that by default <code>**</code> only searches 30 directories deep, so if you have an extremely nested directory structure, you can increase that limit, see <code>:h starstar</code> for more details.
 Now that we have our path correctly set, it&rsquo;s time to navigate! Vim has a built in keybinding for jumping to the file under your cursor, and it is <code>gf</code>. We tell Vim which file endings it should add by using <code>set suffixesadd</code>.
-So for frontend web development, you might have something in your <code>vimrc</code> that looks like this: <code>au! BufNewFile,BufRead *.js,*.jsx suffixesadd+=.js,.jsx</code>. This allows us to jump to files with endings <code>.js and .jsx</code>.</p>
-<p>In practice it looks like this:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=color:red>import</span> { someFunction } from <span style=color:#87ceeb>&#34;./utils&#34;</span>;
-</code></pre></div><p>Placing your cursor in normal mode on <code>./utils</code> and pressing <code>gf</code> should take
-you to the <code>utils.js</code> file!</p>
-<p>This is just the tip of the iceberg of what Vim can do when it comes to searching through your code, for a more in-depth take on this, I would recommend the blog post, <a href=https://vimways.org/2018/death-by-a-thousand-files/>death by a thousand files</a>.
+So for frontend web development, you might have something in your <code>vimrc</code> that looks like this: <code>au! BufNewFile,BufRead *.js,*.jsx suffixesadd+=.js,.jsx</code>. This allows us to jump to files with endings <code>.js and .jsx</code>.</p><p>In practice it looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>import</span> { someFunction } from <span style=color:#87ceeb>&#34;./utils&#34;</span>;
+</span></span></code></pre></div><p>Placing your cursor in normal mode on <code>./utils</code> and pressing <code>gf</code> should take
+you to the <code>utils.js</code> file!</p><p>This is just the tip of the iceberg of what Vim can do when it comes to searching through your code, for a more in-depth take on this, I would recommend the blog post, <a href=https://vimways.org/2018/death-by-a-thousand-files/>death by a thousand files</a>.
 I want to show one more useful command that benefits from having set our <code>path</code> to search downward recursively and that is <code>find</code>. With <code>find</code>, Vim will search for a file and then open it for editing if the file is found. We can also use
-<code>*</code> wildcard expansion and tab completion if we have the <code>wildmenu</code> setting on.</p>
-<p>For example, typing: <code>:find N*C*.jsx</code> and pressing tab would expand to <code>NavigationContainer.jsx</code>. You could also type <code>Navigation</code> and tab to expand all the options that Vim finds in the current path. Just like that, you can fuzzy search through your project without any additional configuration or plugins.
+<code>*</code> wildcard expansion and tab completion if we have the <code>wildmenu</code> setting on.</p><p>For example, typing: <code>:find N*C*.jsx</code> and pressing tab would expand to <code>NavigationContainer.jsx</code>. You could also type <code>Navigation</code> and tab to expand all the options that Vim finds in the current path. Just like that, you can fuzzy search through your project without any additional configuration or plugins.
 Sometimes, there are directories in the project which we would like to ignore, such as <code>node_modules</code>, <code>target</code>, and <code>dist</code>. Vim determines which files to ignore via the <code>wildignore</code> setting.
-A sample <code>wildignore</code> may look like this: <code>set wildignore=*/dist*/*,*/target/*,*/builds/*,*/node_modules/*</code>. Vim will no longer include these directories in it&rsquo;s path.</p>
-<h2 id=find-and-replace>Find and Replace</h2>
-<p>By default, Vim ships with <code>vimgrep</code> which allows you to search for strings within files. Vim also comes with the <code>grep</code> command which allows you to search
-using an external grep tool. I personally use <a href=https://github.com/BurntSushi/ripgrep>ripgrep</a>, a grep tool that is focused on speed and respects my <code>.gitignore</code> file by default.</p>
-<p>To enable Vim to use ripgrep ( or any other grep program ) as a backend to the <code>grep</code> command, you need to set the grep program in your vimrc:</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml>set grepprg=rg --smart-case --vimgrep
-</code></pre></div><p>Now you have your search results loaded in the quickfix menu, and can leverage a Vim built-in plugin, <code>cfilter</code>. To add it, simply run <code>:packadd cfilter</code> and Vim will load the plugin for use. <code>cfilter</code> filters through entries in the quickfix list via regex.</p>
-<p>If you have search results that look like this:</p>
-<pre tabindex=0><code>datastructures.html|623| 30:        mixpanel.track(&quot;data structures loaded&quot;);
-index.html|61| 26:          &lt;a href=&quot;./datastructures.html&quot;
+A sample <code>wildignore</code> may look like this: <code>set wildignore=*/dist*/*,*/target/*,*/builds/*,*/node_modules/*</code>. Vim will no longer include these directories in it&rsquo;s path.</p><h2 id=find-and-replace>Find and Replace</h2><p>By default, Vim ships with <code>vimgrep</code> which allows you to search for strings within files. Vim also comes with the <code>grep</code> command which allows you to search
+using an external grep tool. I personally use <a href=https://github.com/BurntSushi/ripgrep>ripgrep</a>, a grep tool that is focused on speed and respects my <code>.gitignore</code> file by default.</p><p>To enable Vim to use ripgrep ( or any other grep program ) as a backend to the <code>grep</code> command, you need to set the grep program in your vimrc:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=display:flex><span>set grepprg=rg --smart-case --vimgrep
+</span></span></code></pre></div><p>Now you have your search results loaded in the quickfix menu, and can leverage a Vim built-in plugin, <code>cfilter</code>. To add it, simply run <code>:packadd cfilter</code> and Vim will load the plugin for use. <code>cfilter</code> filters through entries in the quickfix list via regex.</p><p>If you have search results that look like this:</p><pre tabindex=0><code>datastructures.html|623| 30:        mixpanel.track(&#34;data structures loaded&#34;);
+index.html|61| 26:          &lt;a href=&#34;./datastructures.html&#34;
 index.html|62| 19:            &gt;Data Structure Memes For Edgy JavaScript Teens&lt;/a
-_site/index.js|64| 28:           import { customStructure } from './datstructures'
-_site/utils.js|64| 28:           import { customStructure } from 'custom/datstructures'
+_site/index.js|64| 28:           import { customStructure } from &#39;./datstructures&#39;
+_site/utils.js|64| 28:           import { customStructure } from &#39;custom/datstructures&#39;
 </code></pre><p>If you want to only keep the search results from the JavaScript files, you run this command: <code>:Cfilter! html</code>. This keeps everything except matches that contain
-<code>html</code> in the quickfix list. If you wanted only to keep only the third match, you run <code>:Cfilter Memes</code> and it keeps only matches containing <code>Memes</code>.</p>
-<p>One more useful command when using the quickfix list is <code>:cfdo</code>. It allows you to execute whatever command you give it across the entire quickfix list.
-For example, if you wanted to search and replace you could do it like this:</p>
-<p>search for the phrase, &lsquo;data structures&rsquo;:</p>
-<p><code>:grep! 'data structures'</code></p>
-<p>view results:</p>
-<pre tabindex=0><code>datastructures.html|279| 15:              Data Structures
+<code>html</code> in the quickfix list. If you wanted only to keep only the third match, you run <code>:Cfilter Memes</code> and it keeps only matches containing <code>Memes</code>.</p><p>One more useful command when using the quickfix list is <code>:cfdo</code>. It allows you to execute whatever command you give it across the entire quickfix list.
+For example, if you wanted to search and replace you could do it like this:</p><p>search for the phrase, &lsquo;data structures&rsquo;:</p><p><code>:grep! 'data structures'</code></p><p>view results:</p><pre tabindex=0><code>datastructures.html|279| 15:              Data Structures
 datastructures.html|574| 26:              with these data structures, since the structure of our data is
 datastructures.html|575| 43:              irrelevant to react, custom data structures should be simple to
-datastructures.html|623| 25:        mixpanel.track(&quot;data structures loaded&quot;);
-</code></pre><p>change &lsquo;structures&rsquo; to singular &lsquo;structure&rsquo; and save every file:</p>
-<p><code>:cfdo s/ures/ure | update</code></p>
-<p>The <code>| update</code> part of that last command tells Vim to save the changes after it executes the replace. If you wanted to check your changes
-before saving, you leave that part off. You still have to save every file manually if you choose this option.</p>
-<h2 id=grep-tips>Grep tips</h2>
-<p>Vim makes finding and replacing throughout a large codebase fast and easy. To make it even faster and easier, here are some things for your <code>vimrc</code>.</p>
-<div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml>set grepprg=rg\ --smart-case\ --vimgrep <span style=color:#0f0>&#34; set grep program to ripgrep with smartcase flag. You can set it to anything you like.</span>
-<span style=color:#0f0>
-</span><span style=color:#0f0>&#34; creates a :SearchProject command, makes it so you don&#39;t have to escape strings in ripgrep, will tab compete with directories in path.</span>
-command! -nargs=+ -complete=dir -bar SearchProject execute <span style=color:#87ceeb>&#39;silent! grep!&#39;</span>.&lt;q-args&gt;.<span style=color:#87ceeb>&#39; | cwindow&#39;</span>
-</code></pre></div><p>I hope that this post helps improve your Vim experience!</p>
-</section>
-</article>
-</main>
-<div class=webmention>
-</div>
-<script src=/js/fuse.js></script>
-<script src=/js/fastsearch.js></script><footer>
-<hr><div class=h-card>
-<a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.webp alt="pygmy
-    slow loris, an endangered and beautiful creature"></a>
-<div class=info>
-<span class=p-name>Taylor Thompson</span>
+datastructures.html|623| 25:        mixpanel.track(&#34;data structures loaded&#34;);
+</code></pre><p>change &lsquo;structures&rsquo; to singular &lsquo;structure&rsquo; and save every file:</p><p><code>:cfdo s/ures/ure | update</code></p><p>The <code>| update</code> part of that last command tells Vim to save the changes after it executes the replace. If you wanted to check your changes
+before saving, you leave that part off. You still have to save every file manually if you choose this option.</p><h2 id=grep-tips>Grep tips</h2><p>Vim makes finding and replacing throughout a large codebase fast and easy. To make it even faster and easier, here are some things for your <code>vimrc</code>.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-viml data-lang=viml><span style=display:flex><span>set grepprg=rg\ --smart-case\ --vimgrep <span style=color:#0f0>&#34; set grep program to ripgrep with smartcase flag. You can set it to anything you like.</span>
+</span></span><span style=display:flex><span><span style=color:#0f0>
+</span></span></span><span style=display:flex><span><span style=color:#0f0>&#34; creates a :SearchProject command, makes it so you don&#39;t have to escape strings in ripgrep, will tab compete with directories in path.</span>
+</span></span><span style=display:flex><span>command! -nargs=+ -complete=dir -bar SearchProject execute <span style=color:#87ceeb>&#39;silent! grep!&#39;</span>.&lt;q-args&gt;.<span style=color:#87ceeb>&#39; | cwindow&#39;</span>
+</span></span></code></pre></div><p>I hope that this post helps improve your Vim experience!</p></section></article></main><div class=webmention></div><script src=/js/fuse.js></script>
+<script src=/js/fastsearch.js></script><footer><hr><div class=h-card><a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.webp alt="pygmy
+    slow loris, an endangered and beautiful creature"></a><div class=info><span class=p-name>Taylor Thompson</span>
 <a class=u-email href=mailto:taylor@teukka.tech>taylor@teukka.tech</a>
 <a rel=me class=u-url>https://teukka.tech</a>
-<span class=p-note>eternally curious person</span>
-</div>
-</div>
-<small>&copy; taylor thompson</small>
-</footer>
-<script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script>
-</div>
-</body>
-</html>
+<span class=p-note>eternally curious person</span></div></div><small>&copy; taylor thompson</small></footer><script data-goatcounter=https://teukka_tech.goatcounter.com/count async src=//gc.zgo.at/count.js></script></div></body></html>
