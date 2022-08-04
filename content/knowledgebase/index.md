@@ -9,11 +9,6 @@ description: A free-form collection of notes, essays, and book reviews.
 ---
 
 <div style="height: 1rem;"></div>
-### Notes
-
-My notes are hosted [here](https://notebook.teukka.tech).
-
-<div style="height: 2rem;"></div>
 
 ### Reading
 
