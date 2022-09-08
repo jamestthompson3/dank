@@ -7,7 +7,6 @@ header {
   margin: 1rem 0rem 2rem 0rem;
 }
 
-
 .blockwrapper {
   width: 100%;
   overflow: auto;
@@ -25,21 +24,23 @@ header {
 
 .blog-post {
   background: #151618;
-  font-family: 'B612 Mono', monospace;
+  font-family: "B612 Mono", monospace;
 }
-.blog-post, section {
+.blog-post,
+section {
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: space-around;
   width: 70%;
 }
-.blog-post, article {
+.blog-post,
+article {
   width: 100%;
 }
 
-
-.blog-post, p {
+.blog-post,
+p {
   color: rgb(209, 206, 199);
   font-size: 1rem;
   font-family: Arial;
@@ -48,14 +49,16 @@ header {
   text-align: justify;
 }
 
-.blog-post, li {
+.blog-post,
+li {
   color: rgb(209, 206, 199);
   font-size: 1rem;
   line-height: 2rem;
   margin: 1rem;
   text-align: justify;
 }
-.blog-post, a {
+.blog-post,
+a {
   color: skyblue;
 }
 
@@ -77,7 +80,8 @@ header {
   background: inherit !important;
 }
 
-.blog-post, pre {
+.blog-post,
+pre {
   margin: 1rem 0rem;
   text-align: left;
   width: 100%;
@@ -91,7 +95,8 @@ header {
   border-radius: 3px;
 }
 
-.blog-post, h3 {
+.blog-post,
+h3 {
   font-size: 2rem;
   color: #45b3ff;
   margin: 1rem 0rem;
@@ -99,24 +104,28 @@ header {
   text-align: left;
   width: 100%;
 }
-.blog-post, h4 {
+.blog-post,
+h4 {
   color: #fff;
   margin: 1rem 0rem;
   font-weight: bold;
   text-align: left;
   width: 100%;
 }
-.blog-post, h2 {
+.blog-post,
+h2 {
   font-size: 1.5rem;
   color: #fff;
   font-weight: bold;
   margin: 1rem 0rem;
   padding: 0px 10px;
 }
-.blog-post, figure {
+.blog-post,
+figure {
   margin: 1rem 0rem;
 }
-.blog-post, figcaption {
+.blog-post,
+figcaption {
   color: #dbdbdb;
   font-weight: bold;
   font-size: 12px;
@@ -131,16 +140,19 @@ body > .mainwrapper {
 }
 
 /* smaller screens */
-@media(max-width: 450px) {
-  .blog-post, p {
+@media (max-width: 450px) {
+  .blog-post,
+  p {
     margin: 1rem 1rem;
     overflow-x: hidden;
   }
-  .blog-post, section {
+  .blog-post,
+  section {
     width: 100%;
     overflow-x: hidden;
   }
-  .blog-post, figure {
+  .blog-post,
+  figure {
     max-width: 350px;
     margin: auto;
   }
@@ -159,6 +171,3 @@ body > .mainwrapper {
     width: 100%;
   }
 }
-
-
-
