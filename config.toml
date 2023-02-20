@@ -28,19 +28,9 @@ url = "/posts"
 weight = 2
 
 [[menu.main]]
-name = "knowledge base"
-url = "/knowledgebase"
-weight = 4
-
-[[menu.main]]
 name = "photos"
 url = "/photos"
 weight = 3
-
-[[menu.main]]
-name = "bookmarks"
-url = "/bookmarks"
-weight = 4
 
 [[menu.main]]
 name = "updates"
