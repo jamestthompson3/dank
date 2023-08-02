@@ -1,11 +1,11 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en" prefix="og:http://ogp.me/ns#">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type" />
     <meta
       name="viewport"
       content="width=device-width, initial-scale=1.0, maximum-scale=3.0, minimum-scale=1.0,viewport-fit=cover"
-      />
+    />
     <meta name="mobile-web-app-capable" content="yes" />
     <meta name="robots" content="index, follow" />
     <meta name="description" content="Personal website of Taylor Thompson" />
@@ -13,7 +13,7 @@
     <meta
       property="og:title"
       content="teukka.tech, a place of fun and wonder"
-      />
+    />
     <meta property="og:type" content="website" />
     <meta property="og:url" content="https://teukka.tech" />
     <meta property="og:image" content="https://i.imgur.com/EDCK4FQ.jpg" />
@@ -29,23 +29,29 @@
       type="application/opensearchdescription+xml"
       title="teukka.tech"
       href="https://teukka.tech/opensearchdescription.xml"
-      />
+    />
     <!--- indie auth --->
-    <link rel="authorization_endpoint" href="https://indieauth.com/auth">
-    <link rel="token_endpoint" href="https://tokens.indieauth.com/token">
+    <link rel="authorization_endpoint" href="https://indieauth.com/auth" />
+    <link rel="token_endpoint" href="https://tokens.indieauth.com/token" />
     <!--- Micropub -->
-    <link rel="micropub" href="https://hugo-micropub-jamestthompson3.vercel.app/api/main">
+    <link
+      rel="micropub"
+      href="https://hugo-micropub-jamestthompson3.vercel.app/api/main"
+    />
     <!-- Microsub -->
-    <link rel="microsub" href="https://aperture.p3k.io/microsub/625">
+    <link rel="microsub" href="https://aperture.p3k.io/microsub/625" />
     <!-- web mentions -->
-    <link rel="webmention" href="https://webmention.io/teukka.tech/webmention" />
+    <link
+      rel="webmention"
+      href="https://webmention.io/teukka.tech/webmention"
+    />
     <link rel="pingback" href="https://webmention.io/teukka.tech/xmlrpc" />
     <link rel="shortcut icon" href="ico.png" />
     <link rel="manifest" href="manifest.json" />
     <meta
       itemprop="description"
       content="A website full of intersting things"
-      />
+    />
     <link href="{{ .Site.BaseURL }}css/reset.css" rel="stylesheet" />
     <link href="{{ .Site.BaseURL }}css/style.css" rel="stylesheet" />
     <link href="{{ .Site.BaseURL }}css/tooltip.css" rel="stylesheet" />
@@ -57,7 +63,7 @@
       type="application/rss+xml"
       title="taylor thompson's site RSS feed"
       href="https://teukka.tech/index.xml"
-      />
+    />
     <script src="index.js" async defer></script>
     <title>👉😎👉 Taylor's Website</title>
   </head>
@@ -66,105 +72,116 @@
       <div class="homepage info">
         <h1 class="header">Taylor Thompson's Homepage</h1>
         <div class="homepage blurb">
-          <p style="margin:1rem 0rem;">
-          I live in Helsinki, Finland, and I really like computers and writing software. I also love to read, take photos, and tinker with this website!
+          <p style="margin: 1rem 0rem">
+            I live in Helsinki, Finland, and I really like computers and writing
+            software. I also love to read, take photos, and tinker with this
+            website!
           </p>
           {{- partial "hcard.html" . -}}
         </div>
       </div>
       <div class="homepage link-container">
-        <a class="homepage link" href="https://github.com/jamestthompson3" rel="me" target="__blank"> Projects </a>
+        <a
+          class="homepage link"
+          href="https://github.com/jamestthompson3"
+          rel="me"
+          target="__blank"
+        >
+          Projects
+        </a>
         <a class="homepage link" href="/photos/">📷 Photos</a>
-          <a class="homepage link" href="/posts/">📚 Blog</a>
-          <a
-            class="homepage link"
-            href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
-            >
-            📝 Contact me!</a
-          >
-          <p
-            data-tip="link copied!"
-            class="homepage link"
-            style="cursor: pointer;"
-            id="feed"
-            onclick="copyFeed('feed')"
-            >
-            📃 Follow the RSS feed
-          </p>
-          <a class="homepage link" href="/books.html">Favorite Books</a>
-    </section>
+        <a class="homepage link" href="/posts/">📚 Blog</a>
+        <a
+          class="homepage link"
+          href="mailto:taylor@teukka.tech?subject=Greetings from the Web!"
+        >
+          📝 Contact me!</a
+        >
+        <p
+          data-tip="link copied!"
+          class="homepage link"
+          style="cursor: pointer"
+          id="feed"
+          onclick="copyFeed('feed')"
+        >
+          📃 Follow the RSS feed
+        </p>
+        <a class="homepage link" href="/books.html">Favorite Books</a>
       </div>
-      {{- partial "homefeed.html" . -}}
-      <section id="other" role="contentinfo">
-        <h2 id="programming-header" class="subheader">
-          Cool Programming articles / videos
-        </h2>
-        <div aria-labelledby="programming-header" class="outlinks container">
-          <div class="outlinks item">
-            <a class="outlinks link" href="https://vimways.org/2018/">vimways</a>
-            <p>great articles about how to improve your vim usage.</p>
-          </div>
-          <div class="outlinks item">
-            <a
-              class="outlinks link"
-              href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ"
-              >
-              Jon Gjengset
-            </a>
-              <p>
-              explains technologies such as tcp, non-blocking async io, cuncurrent
-              databases, etc. in great detail and using Rust
-              </p>
-          </div>
-          <div class="outlinks item">
-            <a
-              class="outlinks link"
-              href="https://www.youtube.com/channel/UC3ts8coMP645hZw9JSD3pqQ"
-              >
-              SerenityOS
-            </a>
-              <p>
-              a video series showing how SerenityOS gets built. Useful for
-              learning about systems programming.
-              </p>
-          </div>
+    </section>
+    {{- partial "homefeed.html" . -}}
+    <section id="other" role="contentinfo">
+      <h2 id="programming-header" class="subheader">
+        Cool Programming articles / videos
+      </h2>
+      <div aria-labelledby="programming-header" class="outlinks container">
+        <div class="outlinks item">
+          <a class="outlinks link" href="https://vimways.org/2018/">vimways</a>
+          <p>great articles about how to improve your vim usage.</p>
         </div>
-      </section>
-      <script>
-const body = document.querySelector("body");
-function copyFeed(id, usedataref){
-  const text = document.getElementById(id)
-  if (!navigator.clipboard) {
-    copyFallback()
-  } else {
-    if (id === 'feed') {
-      navigator.clipboard.writeText(`${location.href}index.xml`)
-    } else {
-      usedataref ? navigator.clipboard.writeText(text.dataset.link) : navigator.clipboard.writeText(text.textContent)
-    }
-  }
-  text.classList.add('tooltip')
-  setTimeout(() => {
-    text.classList.remove('tooltip')
-  }, 600)
-}
+        <div class="outlinks item">
+          <a
+            class="outlinks link"
+            href="https://www.youtube.com/channel/UC_iD0xppBwwsrM9DegC5cQQ"
+          >
+            Jon Gjengset
+          </a>
+          <p>
+            explains technologies such as tcp, non-blocking async io, cuncurrent
+            databases, etc. in great detail and using Rust
+          </p>
+        </div>
+        <div class="outlinks item">
+          <a
+            class="outlinks link"
+            href="https://www.youtube.com/channel/UC3ts8coMP645hZw9JSD3pqQ"
+          >
+            SerenityOS
+          </a>
+          <p>
+            a video series showing how SerenityOS gets built. Useful for
+            learning about systems programming.
+          </p>
+        </div>
+      </div>
+    </section>
+    <script>
+      const body = document.querySelector("body");
+      function copyFeed(id, usedataref) {
+        const text = document.getElementById(id);
+        if (!navigator.clipboard) {
+          copyFallback();
+        } else {
+          if (id === "feed") {
+            navigator.clipboard.writeText(`${location.href}index.xml`);
+          } else {
+            usedataref
+              ? navigator.clipboard.writeText(text.dataset.link)
+              : navigator.clipboard.writeText(text.textContent);
+          }
+        }
+        text.classList.add("tooltip");
+        setTimeout(() => {
+          text.classList.remove("tooltip");
+        }, 600);
+      }
 
-function copyFallback(){
-  const input = document.createElement('textarea')
-  input.value = location.href + "index.xml"
-  input.style.display = "none"
-  document.head.appendChild(input)
-  input.focus()
-  input.select()
-    <!-- input.setSelectionRange(0,9999) -->
-  document.execCommand('copy')
-  document.head.removeChild(input)
-}
-      </script>
-      <script
-        data-goatcounter="https://teukka_tech.goatcounter.com/count"
-        async
-        src="//gc.zgo.at/count.js"
-        ></script>
+      function copyFallback() {
+        const input = document.createElement("textarea");
+        input.value = location.href + "index.xml";
+        input.style.display = "none";
+        document.head.appendChild(input);
+        input.focus();
+        input.select();
+        <!-- input.setSelectionRange(0,9999) -->
+        document.execCommand("copy");
+        document.head.removeChild(input);
+      }
+    </script>
+    <script
+      data-goatcounter="https://teukka_tech.goatcounter.com/count"
+      async
+      src="//gc.zgo.at/count.js"
+    ></script>
   </body>
 </html>
