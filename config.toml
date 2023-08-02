@@ -12,8 +12,6 @@ ShowInMainFeed = ["updates", "posts", "photos"]
 [outputs]
   home = ["HTML", "RSS", "JSON"]
 
-
-
 [author]
 name = "taylor thompson"
 email = "taylor@teukka.tech"
