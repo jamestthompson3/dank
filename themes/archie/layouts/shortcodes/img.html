@@ -2,7 +2,7 @@
   {{ if .Get "caption"}}
   <figure>
   {{ end }}
-    <picture
+  <a href="{{ .Get "src" }}.{{ .Get "type" }}"><picture
      title="{{ .Get "alt" }}">
       <!-- TODO: Figure out if I want to handle different screen sizes -->
       <!-- media="(min-width: 535px)" -->
@@ -20,6 +20,7 @@
         src="{{ .Get "src" }}.{{ .Get "type" }}"
         alt="{{ .Get "alt" }}"{{ if .Get "caption"}} {{ end }}>
     </picture>
+  </a>
   {{ if .Get "caption"}}
     <figcaption>{{ .Get "caption" }}</figcaption>
   </figure>
