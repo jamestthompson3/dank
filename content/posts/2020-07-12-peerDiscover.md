@@ -35,11 +35,12 @@ Members of multicast groups listening for incoming traffic will first bind their
 To start multicasting over UDP requires only a few lines of code. For this post, we'll create a small program which sends a username to members of a multicast group. First, we want to set up a listener for other peers sending data to the multicast group. To do this, we need to bind the UDP socket to an available interface and join the multicast group:
 
 ```rust
+use std::io::Error;
 use std::net::{Ipv4Addr, SocketAddrV4, UdpSocket};
 
 static MULTI_CAST_ADDR: Ipv4Addr = Ipv4Addr::new(224, 0, 0, 1);
 
-pub fn listen() {
+pub fn listen() -> Result<(), Error> {
   let socket_address: SocketAddrV4 = SocketAddrV4::new(Ipv4Addr::new(0, 0, 0, 0), 9778);
   let bind_addr = Ipv4Addr::new(0, 0, 0, 0);
   let socket = UdpSocket::bind(socket_address)?;
@@ -72,7 +73,7 @@ function listen() {
 Now time for the logic for receiving the multicast group data. Luckily, whether the data coming from the multicast group or from a direct connection, the code the same.
 
 ```rust
-pub fn listen() -> Result<()> {
+pub fn listen() -> Result<(), Error> {
     let socket_address: SocketAddrV4 = SocketAddrV4::new(Ipv4Addr::new(0, 0, 0, 0), 9778);
     let bind_addr = Ipv4Addr::new(0, 0, 0, 0);
     let socket = UdpSocket::bind(socket_address)?;
@@ -113,19 +114,19 @@ use std::net::{Ipv4Addr, SocketAddrV4, UdpSocket};
 
 static MULTI_CAST_ADDR: Ipv4Addr = Ipv4Addr::new(224, 0, 0, 1);
 
-pub fn cast() -> Result<()> {
+pub fn cast() -> Result<(), Error> {
     let socket_address: SocketAddrV4 = SocketAddrV4::new(Ipv4Addr::new(0, 0, 0, 0), 0);
     let socket = UdpSocket::bind(socket_address)?;
     socket.connect(SocketAddrV4::new(MULTI_CAST_ADDR, 9778))?;
     // Don't send messages to yourself.
     // In this case self discovery is for human developers, not machines.
     socket.set_multicast_loop_v4(false)?;
-    let data = String::from("{\"username\": \"test\"}")
-     loop {
+    let data = String::from("{\"username\": \"test\"}");
+    loop {
         socket.send(data.as_bytes())?;
         thread::sleep(time::Duration::from_secs(2));
     }
-    Ok(())
+}
 ```
 
 ```js
@@ -150,10 +151,10 @@ To test our peer discovery functions, you need two computers connected to the sa
 use std::thread;
 
 fn main() {
-  thread::spawn(||{
-      listen();
+    thread::spawn(|| {
+        let _ = listen();
     });
-  cast();
+    let _ = cast();
 }
 ```
 
@@ -175,39 +176,47 @@ main();
 That's it! If you run the program on two different computers on the same subnet, or two docker containers in the same docker network, you can observe the peers are able to discover each other's username and IP Address. The final code output:
 
 ```rust
+use std::io::Error;
 use std::net::{Ipv4Addr, SocketAddrV4, UdpSocket};
-use std::thread;
+use std::{thread, time};
 
 static MULTI_CAST_ADDR: Ipv4Addr = Ipv4Addr::new(224, 0, 0, 1);
 
-pub fn listen() {
-  let socket_address: SocketAddrV4 = SocketAddrV4::new(Ipv4Addr::new(0, 0, 0, 0), 9778);
-  let bind_addr = Ipv4Addr::new(0, 0, 0, 0);
-  let socket = UdpSocket::bind(socket_address)?;
-  println!("Listening on: {}", socket.local_addr().unwrap());
-  socket.join_multicast_v4(&MULTI_CAST_ADDR, &bind_addr)?;
+pub fn listen() -> Result<(), Error> {
+    let socket_address: SocketAddrV4 = SocketAddrV4::new(Ipv4Addr::new(0, 0, 0, 0), 9778);
+    let bind_addr = Ipv4Addr::new(0, 0, 0, 0);
+    let socket = UdpSocket::bind(socket_address)?;
+    println!("Listening on: {}", socket.local_addr().unwrap());
+    socket.join_multicast_v4(&MULTI_CAST_ADDR, &bind_addr)?;
+    loop {
+        // set up message buffer with size of 120 bytes
+        let mut buf = [0; 120];
+        let (data, origin) = socket.recv_from(&mut buf)?;
+        let buf = &mut buf[..data];
+        let message = String::from_utf8(buf.to_vec()).unwrap();
+        println!("server got: {} from {}", message, origin);
+    }
 }
 
-pub fn cast() -> Result<()> {
-  let socket_address: SocketAddrV4 = SocketAddrV4::new(Ipv4Addr::new(0, 0, 0, 0), 0);
-  let socket = UdpSocket::bind(socket_address)?;
-  socket.connect(SocketAddrV4::new(MULTI_CAST_ADDR, 9778))?;
-  // Don't send messages to yourself.
-  // In this case self discovery is for human developers, not machines.
-  socket.set_multicast_loop_v4(false)?;
-  let data = String::from("{\"username\": \"test\"}")
-   loop {
-    socket.send(data.as_bytes())?;
-    thread::sleep(time::Duration::from_secs(2));
-  }
-  Ok(())
+pub fn cast() -> Result<(), Error> {
+    let socket_address: SocketAddrV4 = SocketAddrV4::new(Ipv4Addr::new(0, 0, 0, 0), 0);
+    let socket = UdpSocket::bind(socket_address)?;
+    socket.connect(SocketAddrV4::new(MULTI_CAST_ADDR, 9778))?;
+    // Don't send messages to yourself.
+    // In this case self discovery is for human developers, not machines.
+    socket.set_multicast_loop_v4(false)?;
+    let data = String::from("{\"username\": \"test\"}");
+    loop {
+        socket.send(data.as_bytes())?;
+        thread::sleep(time::Duration::from_secs(2));
+    }
 }
 
 fn main() {
-  thread::spawn(||{
-      listen();
+    thread::spawn(|| {
+        let _ = listen();
     });
-  cast();
+    let _ = cast();
 }
 ```
 
