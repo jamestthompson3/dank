@@ -10,12 +10,6 @@ jobs:
     steps:
       - name: Check out repository
         uses: actions/checkout@master
-
-      - name: Set up Node.js
-        uses: actions/setup-node@master
-        with:
-          node-version: 20.x
-
       - name: Fetch webmentions
         env:
           WEBMENTIONS_TOKEN: ${{ secrets.WEBMENTIONS_TOKEN }}
