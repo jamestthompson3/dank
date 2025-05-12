@@ -1,6 +1,6 @@
 ---
 title: Vim does that already
-published: true
+published: 2019-08-25
 page_title: ⌨️ Vim does that already
 description: Exploring some of the built in functionality of Vim you may not know exists
 tags: [vim, neovim, productivity]

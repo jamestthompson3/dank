@@ -5,7 +5,7 @@ author: Taylor Thompson
 tags: [lua, libuv, neovim]
 slug: js-to-lua
 description: A quick overview on how to handle async processes in luv in Neovim
-published: true
+published: 2021-03-16
 date: 2021-03-16
 ---
 ## Goals

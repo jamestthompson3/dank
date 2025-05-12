@@ -9,7 +9,7 @@ images:
     "https://images.unsplash.com/photo-1504917595217-d4dc5ebe6122?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=1050&q=80",
   ]
 description: Introduction to the frontend framework project
-published: true
+published: 2019-09-09
 loc: frontendintro
 aliases:
   - frameworkintro.html
