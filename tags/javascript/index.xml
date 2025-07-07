@@ -8,16 +8,20 @@
 &lt;p>Components will be the basic building blocks of our frontend framework. Components will allow modular composition and encapsulation.
 The first component implementation will be rather naive, but that&amp;rsquo;s alright since its implementation will evolve over time.
 Let&amp;rsquo;s start with creating a &lt;code>Component&lt;/code> class:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f00">const&lt;/span> COOL_COMPONENT = Symbol(&lt;span style="color:#87ceeb">&amp;#34;component&amp;#34;&lt;/span>);
+&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">COOL_COMPONENT&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">Symbol&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;component&amp;#34;&lt;/span>);
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#f00">class&lt;/span> Component {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> constructor(element, args = {}) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f00">this&lt;/span>.$$typeof = COOL_COMPONENT;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f00">this&lt;/span>.el = document.createElement(element);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#f00">this&lt;/span>.args = args;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Component&lt;/span> {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">constructor&lt;/span>(&lt;span style="color:#a6e22e">element&lt;/span>, &lt;span style="color:#a6e22e">args&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {}) {
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">$$typeof&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">COOL_COMPONENT&lt;/span>;
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">el&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">createElement&lt;/span>(&lt;span style="color:#a6e22e">element&lt;/span>);
+&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">args&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">args&lt;/span>;
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
 &lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Breaking this down:&lt;/p></description></item><item><title>Build Your Own Frontend Framework, Introduction</title><link>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</link><pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</guid><description>&lt;p>Welcome to build your own frontend framework project! I will be coding this live on my &lt;a href="https://www.twitch.tv/slower_loris">twitch stream&lt;/a>.
+&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Breaking this down:&lt;/p>
+&lt;p>&lt;code>const COOL_COMPONENT = Symbol('component')&lt;/code>&lt;/p>
+&lt;p>This creates a unique representation for our component type, and will help identify component instances as they get passed around our framework.
+The component takes an element type and some arguments which we&amp;rsquo;ll handle a bit later. The constructor also creates a new element which we&amp;rsquo;ll mount on the DOM with a &lt;code>mount&lt;/code> function.
+Now that we have a very basic component, we need a way to mount it to the DOM. Starting with a naive implementation, we can do something like this:&lt;/p></description></item><item><title>Build Your Own Frontend Framework, Introduction</title><link>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</link><pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</guid><description>&lt;p>Welcome to build your own frontend framework project! I will be coding this live on my &lt;a href="https://www.twitch.tv/slower_loris">twitch stream&lt;/a>.
 Blog posts will come after the streams.&lt;/p>
 &lt;h2 id="goals">Goals&lt;/h2>
 &lt;ul>
