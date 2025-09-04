@@ -1,36 +1,36 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning on teukka.tech</title><link>https://teukka.tech/tags/learning/</link><description>Recent content in Learning on teukka.tech</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://teukka.tech/tags/learning/index.xml" rel="self" type="application/rss+xml"/><item><title>Build Your Own Frontend Framework Part 1</title><link>https://teukka.tech/posts/2019-09-15-byoff-part-1/</link><pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-15-byoff-part-1/</guid><description>&lt;h2 id="part-one-basic-component">Part One, Basic Component&lt;/h2>
-&lt;p>Components will be the basic building blocks of our frontend framework. Components will allow modular composition and encapsulation.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Learning on teukka.tech</title><link>https://teukka.tech/tags/learning/</link><description>Recent content in Learning on teukka.tech</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Sun, 15 Sep 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://teukka.tech/tags/learning/index.xml" rel="self" type="application/rss+xml"/><item><title>Build Your Own Frontend Framework Part 1</title><link>https://teukka.tech/posts/2019-09-15-byoff-part-1/</link><pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-15-byoff-part-1/</guid><description>&lt;h2 id="part-one-basic-component"&gt;Part One, Basic Component&lt;/h2&gt;
+&lt;p&gt;Components will be the basic building blocks of our frontend framework. Components will allow modular composition and encapsulation.
 The first component implementation will be rather naive, but that&amp;rsquo;s alright since its implementation will evolve over time.
-Let&amp;rsquo;s start with creating a &lt;code>Component&lt;/code> class:&lt;/p>
-&lt;div class="highlight">&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;">&lt;code class="language-js" data-lang="js">&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">const&lt;/span> &lt;span style="color:#a6e22e">COOL_COMPONENT&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">Symbol&lt;/span>(&lt;span style="color:#e6db74">&amp;#34;component&amp;#34;&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>&lt;span style="color:#66d9ef">class&lt;/span> &lt;span style="color:#a6e22e">Component&lt;/span> {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#a6e22e">constructor&lt;/span>(&lt;span style="color:#a6e22e">element&lt;/span>, &lt;span style="color:#a6e22e">args&lt;/span> &lt;span style="color:#f92672">=&lt;/span> {}) {
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">$$typeof&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">COOL_COMPONENT&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">el&lt;/span> &lt;span style="color:#f92672">=&lt;/span> document.&lt;span style="color:#a6e22e">createElement&lt;/span>(&lt;span style="color:#a6e22e">element&lt;/span>);
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> &lt;span style="color:#66d9ef">this&lt;/span>.&lt;span style="color:#a6e22e">args&lt;/span> &lt;span style="color:#f92672">=&lt;/span> &lt;span style="color:#a6e22e">args&lt;/span>;
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span> }
-&lt;/span>&lt;/span>&lt;span style="display:flex;">&lt;span>}
-&lt;/span>&lt;/span>&lt;/code>&lt;/pre>&lt;/div>&lt;p>Breaking this down:&lt;/p>
-&lt;p>&lt;code>const COOL_COMPONENT = Symbol('component')&lt;/code>&lt;/p>
-&lt;p>This creates a unique representation for our component type, and will help identify component instances as they get passed around our framework.
-The component takes an element type and some arguments which we&amp;rsquo;ll handle a bit later. The constructor also creates a new element which we&amp;rsquo;ll mount on the DOM with a &lt;code>mount&lt;/code> function.
-Now that we have a very basic component, we need a way to mount it to the DOM. Starting with a naive implementation, we can do something like this:&lt;/p></description></item><item><title>Build Your Own Frontend Framework, Introduction</title><link>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</link><pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</guid><description>&lt;p>Welcome to build your own frontend framework project! I will be coding this live on my &lt;a href="https://www.twitch.tv/slower_loris">twitch stream&lt;/a>.
-Blog posts will come after the streams.&lt;/p>
-&lt;h2 id="goals">Goals&lt;/h2>
-&lt;ul>
-&lt;li>Become more familiar with some of the concepts that power modern frontend frameworks.&lt;/li>
-&lt;li>Gain a deeper understanding of some of the challenges that arise in creating a JavaScript framework.&lt;/li>
-&lt;li>Get better at writing JavaScript.&lt;/li>
-&lt;li>See how different frameworks solve common problems.&lt;/li>
-&lt;/ul>
-&lt;h2 id="non-goals">Non Goals&lt;/h2>
-&lt;ul>
-&lt;li>Build a production ready, competitive framework.&lt;/li>
-&lt;li>Build a clone of {insert_popular_framework_here}.&lt;/li>
-&lt;li>Cover all edge / business cases ( though we&amp;rsquo;ll try to cover most! ).&lt;/li>
-&lt;/ul>
-&lt;h2 id="format">Format&lt;/h2>
-&lt;p>I code when I have time / motivation. For the livestream, I don&amp;rsquo;t have a set format, and the focus area of the stream depends on what challenges I run into while coding.
+Let&amp;rsquo;s start with creating a &lt;code&gt;Component&lt;/code&gt; class:&lt;/p&gt;
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;COOL_COMPONENT&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Symbol&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;component&amp;#34;&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Component&lt;/span&gt; {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;constructor&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;element&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;args&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {}) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;this&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;$$typeof&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;COOL_COMPONENT&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;this&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;el&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; document.&lt;span style="color:#a6e22e"&gt;createElement&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;element&lt;/span&gt;);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;this&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;args&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;args&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Breaking this down:&lt;/p&gt;
+&lt;p&gt;&lt;code&gt;const COOL_COMPONENT = Symbol('component')&lt;/code&gt;&lt;/p&gt;
+&lt;p&gt;This creates a unique representation for our component type, and will help identify component instances as they get passed around our framework.
+The component takes an element type and some arguments which we&amp;rsquo;ll handle a bit later. The constructor also creates a new element which we&amp;rsquo;ll mount on the DOM with a &lt;code&gt;mount&lt;/code&gt; function.
+Now that we have a very basic component, we need a way to mount it to the DOM. Starting with a naive implementation, we can do something like this:&lt;/p&gt;</description></item><item><title>Build Your Own Frontend Framework, Introduction</title><link>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</link><pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</guid><description>&lt;p&gt;Welcome to build your own frontend framework project! I will be coding this live on my &lt;a href="https://www.twitch.tv/slower_loris"&gt;twitch stream&lt;/a&gt;.
+Blog posts will come after the streams.&lt;/p&gt;
+&lt;h2 id="goals"&gt;Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Become more familiar with some of the concepts that power modern frontend frameworks.&lt;/li&gt;
+&lt;li&gt;Gain a deeper understanding of some of the challenges that arise in creating a JavaScript framework.&lt;/li&gt;
+&lt;li&gt;Get better at writing JavaScript.&lt;/li&gt;
+&lt;li&gt;See how different frameworks solve common problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="non-goals"&gt;Non Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Build a production ready, competitive framework.&lt;/li&gt;
+&lt;li&gt;Build a clone of {insert_popular_framework_here}.&lt;/li&gt;
+&lt;li&gt;Cover all edge / business cases ( though we&amp;rsquo;ll try to cover most! ).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="format"&gt;Format&lt;/h2&gt;
+&lt;p&gt;I code when I have time / motivation. For the livestream, I don&amp;rsquo;t have a set format, and the focus area of the stream depends on what challenges I run into while coding.
 Blog posts will be more structured and focused since they will be written after the stream. They will also include supplimentary materials if necessary. After the project is complete,
-I hope to compile the blog posts to be more cohesive and structured.&lt;/p></description></item></channel></rss>
+I hope to compile the blog posts to be more cohesive and structured.&lt;/p&gt;</description></item></channel></rss>

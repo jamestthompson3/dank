@@ -1,20 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frontend on teukka.tech</title><link>https://teukka.tech/tags/frontend/</link><description>Recent content in Frontend on teukka.tech</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 10 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://teukka.tech/tags/frontend/index.xml" rel="self" type="application/rss+xml"/><item><title>Build Your Own Frontend Framework Part 2, Data Fetching</title><link>https://teukka.tech/posts/2019-10-01-byoff-part-2/</link><pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-10-01-byoff-part-2/</guid><description>&lt;h2 id="part-two-data-fetching-on-mount">Part Two, Data Fetching on Mount&lt;/h2>
-&lt;p>Asynchronous actions are essential in any modern web application. The ability to fetch data from some service and display it to users is an important part of building a framework to support these applications. In order for our components to do this, we need to refactor. Our component calls &lt;code>mount&lt;/code> when we want to render it on the page, but this function only serves to attach styles and event handlers to the component, not fetch data asynchronously. To accommodate actions taken after our component has been defined, but before it is actually rendered, we need a new method: &lt;code>componentDidMount&lt;/code>.&lt;/p></description></item><item><title>Build Your Own Frontend Framework, Introduction</title><link>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</link><pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</guid><description>&lt;p>Welcome to build your own frontend framework project! I will be coding this live on my &lt;a href="https://www.twitch.tv/slower_loris">twitch stream&lt;/a>.
-Blog posts will come after the streams.&lt;/p>
-&lt;h2 id="goals">Goals&lt;/h2>
-&lt;ul>
-&lt;li>Become more familiar with some of the concepts that power modern frontend frameworks.&lt;/li>
-&lt;li>Gain a deeper understanding of some of the challenges that arise in creating a JavaScript framework.&lt;/li>
-&lt;li>Get better at writing JavaScript.&lt;/li>
-&lt;li>See how different frameworks solve common problems.&lt;/li>
-&lt;/ul>
-&lt;h2 id="non-goals">Non Goals&lt;/h2>
-&lt;ul>
-&lt;li>Build a production ready, competitive framework.&lt;/li>
-&lt;li>Build a clone of {insert_popular_framework_here}.&lt;/li>
-&lt;li>Cover all edge / business cases ( though we&amp;rsquo;ll try to cover most! ).&lt;/li>
-&lt;/ul>
-&lt;h2 id="format">Format&lt;/h2>
-&lt;p>I code when I have time / motivation. For the livestream, I don&amp;rsquo;t have a set format, and the focus area of the stream depends on what challenges I run into while coding.
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>Frontend on teukka.tech</title><link>https://teukka.tech/tags/frontend/</link><description>Recent content in Frontend on teukka.tech</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Thu, 10 Oct 2019 00:00:00 +0000</lastBuildDate><atom:link href="https://teukka.tech/tags/frontend/index.xml" rel="self" type="application/rss+xml"/><item><title>Build Your Own Frontend Framework Part 2, Data Fetching</title><link>https://teukka.tech/posts/2019-10-01-byoff-part-2/</link><pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-10-01-byoff-part-2/</guid><description>&lt;h2 id="part-two-data-fetching-on-mount"&gt;Part Two, Data Fetching on Mount&lt;/h2&gt;
+&lt;p&gt;Asynchronous actions are essential in any modern web application. The ability to fetch data from some service and display it to users is an important part of building a framework to support these applications. In order for our components to do this, we need to refactor. Our component calls &lt;code&gt;mount&lt;/code&gt; when we want to render it on the page, but this function only serves to attach styles and event handlers to the component, not fetch data asynchronously. To accommodate actions taken after our component has been defined, but before it is actually rendered, we need a new method: &lt;code&gt;componentDidMount&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Build Your Own Frontend Framework, Introduction</title><link>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</link><pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</guid><description>&lt;p&gt;Welcome to build your own frontend framework project! I will be coding this live on my &lt;a href="https://www.twitch.tv/slower_loris"&gt;twitch stream&lt;/a&gt;.
+Blog posts will come after the streams.&lt;/p&gt;
+&lt;h2 id="goals"&gt;Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Become more familiar with some of the concepts that power modern frontend frameworks.&lt;/li&gt;
+&lt;li&gt;Gain a deeper understanding of some of the challenges that arise in creating a JavaScript framework.&lt;/li&gt;
+&lt;li&gt;Get better at writing JavaScript.&lt;/li&gt;
+&lt;li&gt;See how different frameworks solve common problems.&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="non-goals"&gt;Non Goals&lt;/h2&gt;
+&lt;ul&gt;
+&lt;li&gt;Build a production ready, competitive framework.&lt;/li&gt;
+&lt;li&gt;Build a clone of {insert_popular_framework_here}.&lt;/li&gt;
+&lt;li&gt;Cover all edge / business cases ( though we&amp;rsquo;ll try to cover most! ).&lt;/li&gt;
+&lt;/ul&gt;
+&lt;h2 id="format"&gt;Format&lt;/h2&gt;
+&lt;p&gt;I code when I have time / motivation. For the livestream, I don&amp;rsquo;t have a set format, and the focus area of the stream depends on what challenges I run into while coding.
 Blog posts will be more structured and focused since they will be written after the stream. They will also include supplimentary materials if necessary. After the project is complete,
-I hope to compile the blog posts to be more cohesive and structured.&lt;/p></description></item></channel></rss>
+I hope to compile the blog posts to be more cohesive and structured.&lt;/p&gt;</description></item></channel></rss>
