@@ -33,7 +33,12 @@ weight = 3
 [[menu.main]]
 name = "updates"
 url = "/updates"
-weight = 2
+weight = 4
+
+[[menu.main]]
+name = "rss feeds"
+url = "/feeds"
+weight = 5
 
 [related]
   includeNewer = false

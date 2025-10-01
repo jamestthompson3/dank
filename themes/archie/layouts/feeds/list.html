@@ -1,0 +1,17 @@
+{{ define "main" }}
+<h1 class="page-title">RSS Feeds</h1>
+
+<ul class="posts" style="width: 70%; margin: auto">
+  {{ range sort .Site.Data.rssfeeds.list "title" }}
+  <!--prettier-ignore-->
+  <li style="margin: 0.75rem 0; font-size: 1.7rem; display: flex; align-items: center;">
+    {{ if (eq .imgData "") }}
+      <div style="text-align: center; margin: 0 0.45rem; height: 40px; width: 40px;">📜</div>
+    {{ else }}
+    <img style="margin: 0 0.45rem; border: none;" height="40" width="40" src="data:{{ .imgData }}" />
+    {{ end }}
+    <a href="{{ .site_url}}">{{ .title }}</a>
+</li>
+  {{ end }}
+</ul>
+{{ end }}

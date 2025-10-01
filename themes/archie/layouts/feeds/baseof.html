@@ -1,0 +1,11 @@
+<!doctype html>
+<html>
+  {{- partial "header.html" . -}}
+  <body>
+    <!--prettier-ignore-->
+    {{- partial "head.html" . -}}
+        {{- block "main" . }}{{- end }}
+        {{- partial "webmentions.html" . -}}
+        {{- partial "footer.html" . -}}
+  </body>
+</html>
