@@ -5,7 +5,7 @@
   header.style.height = "40px";
   header.style.zIndex = "9999";
   header.innerHTML =
-    "<h4 style='padding: 0px 8px; font-size: 1rem;'><a href='/'>← Back to Home</a></h4>";
+    "<a href='/'><h4 class='home-link'>← Back to Home</h4></a>";
   header.ariaLabel = "back";
   header.role = "button";
   header.style.fontFamily = "monospace";
