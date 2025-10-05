@@ -19,7 +19,7 @@ jobs:
         env:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
           COMMIT_MSG: |
-            Fetch webmentions
+            Fetch RSS feeds
             skip-checks: true
         run: |
           git config user.email "taylor@teukka.tech"
