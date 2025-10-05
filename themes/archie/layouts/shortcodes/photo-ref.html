@@ -1,0 +1,19 @@
+<div class="picture">
+  {{ if .Get "caption"}}
+  <figure>
+  {{ end }}
+  <a href="{{ .Get "ref" }}"><picture
+     title="{{ .Get "alt" }}">
+      <source
+        srcset="{{ .Get "src" }}.{{ .Get "type" }}">
+      <img
+        class="u-photo"
+        src="{{ .Get "src" }}.{{ .Get "type" }}"
+        alt="{{ .Get "alt" }}"{{ if .Get "caption"}} {{ end }}>
+    </picture>
+  </a>
+  {{ if .Get "caption"}}
+    <figcaption>{{ .Get "caption" }}</figcaption>
+  </figure>
+  {{ end }}
+</div>

@@ -7,5 +7,5 @@ date: 2023-04-07
 description: Spring Adventures!
 ---
 
-{{< img src="/images/IMG_3360" type="webp" alt="Two men standing on a wooden pathway under giant redwood trees." caption="Muir Woods, California." >}}
-{{< img src="/images/IMG_3359" type="webp" alt="Panorama view over the Golden Gate, California." caption="View from the Marin Headlands, California." >}}
+{{< photo-page-ref ref="/photos/spring-23/individual/IMG_3360" src="/images/IMG_3360" type="webp" alt="Two men standing on a wooden pathway under giant redwood trees." caption="Muir Woods, California." >}}
+{{< photo-page-ref ref="/photos/spring-23/individual/IMG_3359" src="/images/IMG_3359" type="webp" alt="Panorama view over the Golden Gate, California." caption="View from the Marin Headlands, California." >}}

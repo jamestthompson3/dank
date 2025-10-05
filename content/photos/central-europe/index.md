@@ -9,9 +9,9 @@ description: Pictures from Central Europe, Fall 2019
 
 In Fall 2019, I took a trip around Central Europe. I visited Austria, Slovakia, Hungary, and Germany.
 
-{{< img src="/images/villagealps" type="webp" alt="A village at the foot of a mountain. Snow is powdered down the mountain, but does not reach the village which sits on the side of a lake, just after a forest." caption="Village in the German alps." >}}
-{{< img src="/images/berchtesgaden" type="webp" alt="Panorama overlooking the town of Berchtesgaden, Germany. The Watzmann peak is visible in the background and covered in snow." caption="Berchtesgaden, Germany." >}}
-{{< img src="/images/skylinebudapest" type="webp" alt="Sunset the skyline of Buda in Budapest. Overlooks an old buildings with copper colored roofs with the Danube in the background." caption="Budapest Skyline" >}}
+{{< photo-page-ref ref="/photos/central-europe/individual/villagealps" src="/images/villagealps" type="webp" alt="A village at the foot of a mountain. Snow is powdered down the mountain, but does not reach the village which sits on the side of a lake, just after a forest." caption="Village in the German alps." >}}
+{{< photo-page-ref ref="/photos/central-europe/individual/berchtesgaden" src="/images/berchtesgaden" type="webp" alt="Panorama overlooking the town of Berchtesgaden, Germany. The Watzmann peak is visible in the background and covered in snow." caption="Berchtesgaden, Germany." >}}
+{{< photo-page-ref ref="/photos/central-europe/individual/skylinebudapest" src="/images/skylinebudapest" type="webp" alt="Sunset the skyline of Buda in Budapest. Overlooks an old buildings with copper colored roofs with the Danube in the background." caption="Budapest Skyline" >}}
 {{< img src="/images/wallbudapest" type="webp" alt="Mosaic inlay on a brick wall. Two angels holding a seal." caption="Wall in Budapest." >}}
 {{< img src="/images/workingman" type="webp" alt="Man at Work statue. A bronze cast statue of a man peering out of a manhole." caption="Man at Work. Bratislava" >}}
 {{< img src="/images/bluechurch" type="webp" alt="Blue church fo St. Elsabeth at twighlight." caption="Church of St. Elisabeth. Bratislava." >}}
