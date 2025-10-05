@@ -2,68 +2,68 @@
 <a href=/photos>photos</a>
 <a href=/updates>updates</a>
 <a href=/feeds>rss feeds</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
-<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/js-to-lua/>(Nvim) Lua for Javascripters: Spawning Processes</a></h1><div class="dt-published meta">Posted on 2021-03-16</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/lua>lua</a></li><li><a class=p-category href=/tags/libuv>libuv</a></li><li><a class=p-category href=/tags/neovim>neovim</a></li></ul></nav></div><section class="body e-content"><h2 id=goals>Goals</h2><p>This should be a quick reference guide for those familiar with NodeJS on how to execute the same async tasks in Lua using luv. This is aimed towards use cases inside Neovim, but is not limited to those cases.</p><h2 id=task>Task</h2><p>We want to spawn a child task to convert a markdown document into HTML using <a href=https://pandoc.org/>pandoc</a>. This could be used as part of a publishing flow for a blog, for writing notes, or for implementing a markdown previewer.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// in Node we could do it like this:
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> {<span style=color:#a6e22e>spawn</span>} <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#39;child_process&#39;</span>);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> [<span style=color:#a6e22e>sourceFile</span>, <span style=color:#a6e22e>destinationFile</span>] <span style=color:#f92672>=</span> <span style=color:#a6e22e>process</span>.<span style=color:#a6e22e>argv</span>.<span style=color:#a6e22e>slice</span>(<span style=color:#ae81ff>2</span>)
+<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/js-to-lua/>(Nvim) Lua for Javascripters: Spawning Processes</a></h1><div class="dt-published meta">Posted on 2021-03-16</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/lua>lua</a></li><li><a class=p-category href=/tags/libuv>libuv</a></li><li><a class=p-category href=/tags/neovim>neovim</a></li></ul></nav></div><section class="body e-content"><h2 id=goals>Goals</h2><p>This should be a quick reference guide for those familiar with NodeJS on how to execute the same async tasks in Lua using luv. This is aimed towards use cases inside Neovim, but is not limited to those cases.</p><h2 id=task>Task</h2><p>We want to spawn a child task to convert a markdown document into HTML using <a href=https://pandoc.org/>pandoc</a>. This could be used as part of a publishing flow for a blog, for writing notes, or for implementing a markdown previewer.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#0f0>// in Node we could do it like this:
+</span></span></span><span style=display:flex><span><span style=color:#0f0></span><span style=color:red>const</span> {spawn} = require(<span style=color:#87ceeb>&#39;child_process&#39;</span>);
+</span></span><span style=display:flex><span><span style=color:red>const</span> [sourceFile, destinationFile] = process.argv.slice(<span style=color:#f60>2</span>)
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>convert</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>spawn</span>(<span style=color:#e6db74>&#39;pandoc&#39;</span>, [<span style=color:#a6e22e>sourceFile</span>, <span style=color:#e6db74>&#39;--from&#39;</span>, <span style=color:#e6db74>&#39;gfm&#39;</span>, <span style=color:#e6db74>&#39;--to&#39;</span>, <span style=color:#e6db74>&#39;html5&#39;</span>, <span style=color:#e6db74>&#39;-o&#39;</span>, <span style=color:#a6e22e>destinationFile</span>, <span style=color:#e6db74>&#39;-s&#39;</span>, <span style=color:#e6db74>&#39;--highlight-style&#39;</span>, <span style=color:#e6db74>&#39;tango&#39;</span>])
+</span></span><span style=display:flex><span><span style=color:red>const</span> convert = spawn(<span style=color:#87ceeb>&#39;pandoc&#39;</span>, [sourceFile, <span style=color:#87ceeb>&#39;--from&#39;</span>, <span style=color:#87ceeb>&#39;gfm&#39;</span>, <span style=color:#87ceeb>&#39;--to&#39;</span>, <span style=color:#87ceeb>&#39;html5&#39;</span>, <span style=color:#87ceeb>&#39;-o&#39;</span>, destinationFile, <span style=color:#87ceeb>&#39;-s&#39;</span>, <span style=color:#87ceeb>&#39;--highlight-style&#39;</span>, <span style=color:#87ceeb>&#39;tango&#39;</span>])
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>convert</span>.<span style=color:#a6e22e>stderr</span>.<span style=color:#a6e22e>on</span>(<span style=color:#e6db74>&#39;data&#39;</span>, (<span style=color:#a6e22e>data</span>) =&gt; {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>error</span>(<span style=color:#a6e22e>data</span>);
+</span></span><span style=display:flex><span>convert.stderr.on(<span style=color:#87ceeb>&#39;data&#39;</span>, (data) =&gt; {
+</span></span><span style=display:flex><span>  console.error(data);
 </span></span><span style=display:flex><span>});
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>convert</span>.<span style=color:#a6e22e>on</span>(<span style=color:#e6db74>&#39;close&#39;</span>, (<span style=color:#a6e22e>code</span>) =&gt; {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>`child process exited with code </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>code</span><span style=color:#e6db74>}</span><span style=color:#e6db74>`</span>);
+</span></span><span style=display:flex><span>convert.on(<span style=color:#87ceeb>&#39;close&#39;</span>, (code) =&gt; {
+</span></span><span style=display:flex><span>  console.log(<span style=color:#87ceeb>`child process exited with code </span><span style=color:#87ceeb>${</span>code<span style=color:#87ceeb>}</span><span style=color:#87ceeb>`</span>);
 </span></span><span style=display:flex><span>});
-</span></span></code></pre></div><p>In Lua, the code looks very similar, but a bit more verbose:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#75715e>-- The same as before, but this time we want to generate the file names </span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- based on the file we are currently editing instead of passing them as commandline args</span>
+</span></span></code></pre></div><p>In Lua, the code looks very similar, but a bit more verbose:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#0f0>-- The same as before, but this time we want to generate the file names </span>
+</span></span><span style=display:flex><span><span style=color:#0f0>-- based on the file we are currently editing instead of passing them as commandline args</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>convert</span>()
-</span></span><span style=display:flex><span>  <span style=color:#75715e>-- cut off the `.md` part of the file</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>local</span> destinationFile <span style=color:#f92672>=</span> vim.fn.expand(<span style=color:#e6db74>&#39;%:t:r&#39;</span>)
-</span></span><span style=display:flex><span>  <span style=color:#75715e>-- the name of the file you&#39;re editing</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>local</span> sourceFile <span style=color:#f92672>=</span> api.nvim_buf_get_name(<span style=color:#ae81ff>0</span>)
-</span></span><span style=display:flex><span>  spawn(<span style=color:#e6db74>&#39;pandoc&#39;</span>, {
-</span></span><span style=display:flex><span>    args <span style=color:#f92672>=</span> {sourceFile, <span style=color:#e6db74>&#39;--from&#39;</span>, <span style=color:#e6db74>&#39;gfm&#39;</span>, <span style=color:#e6db74>&#39;--to&#39;</span>, <span style=color:#e6db74>&#39;html5&#39;</span>, <span style=color:#e6db74>&#39;-o&#39;</span>, string.format(<span style=color:#e6db74>&#39;%s.html&#39;</span>, destinationFile), <span style=color:#e6db74>&#39;-s&#39;</span>, <span style=color:#e6db74>&#39;--highlight-style&#39;</span>, <span style=color:#e6db74>&#39;tango&#39;</span>},
+</span></span><span style=display:flex><span><span style=color:red>function</span> <span style=color:#ff0>convert</span>()
+</span></span><span style=display:flex><span>  <span style=color:#0f0>-- cut off the `.md` part of the file</span>
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> destinationFile = vim.fn.expand(<span style=color:#87ceeb>&#39;%:t:r&#39;</span>)
+</span></span><span style=display:flex><span>  <span style=color:#0f0>-- the name of the file you&#39;re editing</span>
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> sourceFile = api.nvim_buf_get_name(<span style=color:#f60>0</span>)
+</span></span><span style=display:flex><span>  spawn(<span style=color:#87ceeb>&#39;pandoc&#39;</span>, {
+</span></span><span style=display:flex><span>    args = {sourceFile, <span style=color:#87ceeb>&#39;--from&#39;</span>, <span style=color:#87ceeb>&#39;gfm&#39;</span>, <span style=color:#87ceeb>&#39;--to&#39;</span>, <span style=color:#87ceeb>&#39;html5&#39;</span>, <span style=color:#87ceeb>&#39;-o&#39;</span>, string.format(<span style=color:#87ceeb>&#39;%s.html&#39;</span>, destinationFile), <span style=color:#87ceeb>&#39;-s&#39;</span>, <span style=color:#87ceeb>&#39;--highlight-style&#39;</span>, <span style=color:#87ceeb>&#39;tango&#39;</span>},
 </span></span><span style=display:flex><span>  }, 
-</span></span><span style=display:flex><span>  {stdout <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>()<span style=color:#66d9ef>end</span>, stderr <span style=color:#f92672>=</span> <span style=color:#66d9ef>function</span>(data) print(data) <span style=color:#66d9ef>end</span>},
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>function</span>(code) <span style=color:#75715e>-- we want to call this function when the process is done</span>
-</span></span><span style=display:flex><span>    print(<span style=color:#e6db74>&#39;child process exited with code &#39;</span> <span style=color:#f92672>..</span> string.format(<span style=color:#e6db74>&#39;%d&#39;</span>, code))
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>end</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>  {stdout = <span style=color:red>function</span>()<span style=color:red>end</span>, stderr = <span style=color:red>function</span>(data) print(data) <span style=color:red>end</span>},
+</span></span><span style=display:flex><span>  <span style=color:red>function</span>(code) <span style=color:#0f0>-- we want to call this function when the process is done</span>
+</span></span><span style=display:flex><span>    print(<span style=color:#87ceeb>&#39;child process exited with code &#39;</span> .. string.format(<span style=color:#87ceeb>&#39;%d&#39;</span>, code))
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>)
+</span></span><span style=display:flex><span><span style=color:red>end</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>spawn</span>(cmd, opts, input, onexit)
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>local</span> handle, pid
-</span></span><span style=display:flex><span>  <span style=color:#75715e>-- open an new pipe for stdout</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>local</span> stdout <span style=color:#f92672>=</span> vim.loop.new_pipe(<span style=color:#66d9ef>false</span>)
-</span></span><span style=display:flex><span>  <span style=color:#75715e>-- open an new pipe for stderr</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>local</span> stderr <span style=color:#f92672>=</span> vim.loop.new_pipe(<span style=color:#66d9ef>false</span>)
-</span></span><span style=display:flex><span>  handle, pid <span style=color:#f92672>=</span> vim.loop.spawn(cmd, vim.tbl_extend(<span style=color:#e6db74>&#34;force&#34;</span>, opts, {stdio <span style=color:#f92672>=</span> {stdout; stderr;}}), 
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>function</span>(code, signal)
-</span></span><span style=display:flex><span>    <span style=color:#75715e>-- call the exit callback with the code and signal</span>
+</span></span><span style=display:flex><span><span style=color:red>function</span> <span style=color:#ff0>spawn</span>(cmd, opts, input, onexit)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> handle, pid
+</span></span><span style=display:flex><span>  <span style=color:#0f0>-- open an new pipe for stdout</span>
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> stdout = vim.loop.new_pipe(<span style=color:red>false</span>)
+</span></span><span style=display:flex><span>  <span style=color:#0f0>-- open an new pipe for stderr</span>
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> stderr = vim.loop.new_pipe(<span style=color:red>false</span>)
+</span></span><span style=display:flex><span>  handle, pid = vim.loop.spawn(cmd, vim.tbl_extend(<span style=color:#87ceeb>&#34;force&#34;</span>, opts, {stdio = {stdout; stderr;}}), 
+</span></span><span style=display:flex><span>  <span style=color:red>function</span>(code, signal)
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- call the exit callback with the code and signal</span>
 </span></span><span style=display:flex><span>    onexit(code, signal)
-</span></span><span style=display:flex><span>    <span style=color:#75715e>-- stop reading data to stdout</span>
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- stop reading data to stdout</span>
 </span></span><span style=display:flex><span>    vim.loop.read_stop(stdout)
-</span></span><span style=display:flex><span>    <span style=color:#75715e>-- stop reading data to stderr</span>
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- stop reading data to stderr</span>
 </span></span><span style=display:flex><span>    vim.loop.read_stop(stderr)
-</span></span><span style=display:flex><span>    <span style=color:#75715e>-- safely shutdown child process</span>
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- safely shutdown child process</span>
 </span></span><span style=display:flex><span>    safe_close(handle)
-</span></span><span style=display:flex><span>    <span style=color:#75715e>-- safely shutdown stdout pipe</span>
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- safely shutdown stdout pipe</span>
 </span></span><span style=display:flex><span>    safe_close(stdout)
-</span></span><span style=display:flex><span>    <span style=color:#75715e>-- safely shutdown stderr pipe</span>
+</span></span><span style=display:flex><span>    <span style=color:#0f0>-- safely shutdown stderr pipe</span>
 </span></span><span style=display:flex><span>    safe_close(stderr)
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>end</span>)
-</span></span><span style=display:flex><span>  <span style=color:#75715e>-- read child process output to stdout</span>
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>)
+</span></span><span style=display:flex><span>  <span style=color:#0f0>-- read child process output to stdout</span>
 </span></span><span style=display:flex><span>  vim.loop.read_start(stdout, input.stdout)
-</span></span><span style=display:flex><span>  <span style=color:#75715e>-- read child process output to stderr</span>
+</span></span><span style=display:flex><span>  <span style=color:#0f0>-- read child process output to stderr</span>
 </span></span><span style=display:flex><span>  vim.loop.read_start(stderr, input.stderr)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span><span style=color:red>end</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>safe_close</span>(handle)
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>if</span> <span style=color:#f92672>not</span> vim.loop.is_closing(handle) <span style=color:#66d9ef>then</span>
+</span></span><span style=display:flex><span><span style=color:red>function</span> <span style=color:#ff0>safe_close</span>(handle)
+</span></span><span style=display:flex><span>  <span style=color:red>if</span> not vim.loop.is_closing(handle) <span style=color:red>then</span>
 </span></span><span style=display:flex><span>    vim.loop.close(handle)
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>end</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>
+</span></span><span style=display:flex><span><span style=color:red>end</span>
 </span></span></code></pre></div><p>One of the major differences is that in Lua you are responsible for cleaning up both the process handle and any pipes you have open to receive data from that handle. It then becomes useful to create a more generalized <code>spawn</code> function to handle all of these things under the hood, allowing you to just call <code>spawn</code> in a similar manner to the NodeJS API.</p></section></article></main><h3>See Also</h3><ul><li><a href=/posts/2020-01-07-vimloop/>Using LibUV in Neovim</a></li><li><a href=/posts/2020-01-28-vimtip-gitlens/>Neovim Tip, GitLens</a></li><li><a href=/posts/2019-12-19-luanvim/>From init.vim to init.lua</a></li><li><a href=/updates/37805/>37805</a></li><li><a href=/posts/2019-08-25-vimcandothat/>Vim does that already</a></li></ul><div class=webmention><h3>Mentioned around the web</h3><div class=webmention-container><div class="webmention-profile -ellipsis"><svg class="webmention-fallback" viewBox="0 0 24 24" stroke="currentColor" fill="currentColor"><path d="M17 7H7A1 1 0 007 9H17a1 1 0 000-2zm0 4H7a1 1 0 000 2H17a1 1 0 000-2zm2-9H5A3 3 0 002 5V15a3 3 0 003 3H16.59l3.7 3.71A1 1 0 0021 22a.84.84.0 00.38-.08A1 1 0 0022 21V5A3 3 0 0019 2zm1 16.59-2.29-2.3A1 1 0 0017 16H5a1 1 0 01-1-1V5A1 1 0 015 4H19a1 1 0 011 1z"/></svg>
 <span><a href></a></span></div><div class=webmention-content><p>Mentioned on <a href="https://links.martyoeh.me/daily?day=20210317">https://links.martyoeh.me/daily?day=20210317</a></p></div></div></div><script src=/js/fuse.js></script><script src=/js/fastsearch.js></script><footer><hr><div class=h-card><a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.webp alt="pygmy
     slow loris, an endangered and beautiful creature"></a><div class=info><span class=p-name>Taylor Thompson</span>

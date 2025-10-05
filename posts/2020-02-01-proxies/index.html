@@ -2,110 +2,110 @@
 <a href=/photos>photos</a>
 <a href=/updates>updates</a>
 <a href=/feeds>rss feeds</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
-<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2020-02-01-proxies/>A Brief Look at Javascript Proxies</a></h1><div class="dt-published meta">Posted on 2020-02-01</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/javascript>javascript</a></li><li><a class=p-category href=/tags/webdev>webdev</a></li><li><a class=p-category href=/tags/es6>es6</a></li></ul></nav></div><section class="body e-content"><h2 id=proxies>Proxies</h2><p>Javascript Proxies are a powerful concept in ES6. They give developers more control over JS objects, paving the way for declarative API design. I am going to show some examples of how use proxies to extend the functionality of traditional Javascript objects and why they are useful in understanding the flow of data inside your programs.</p><h2 id=microservice-client>Microservice Client</h2><p>The first example comes from a request management client that uses a JSON schema to validate incoming requests and route them to other services. The code for its implementation is <a href=https://github.com/jamestthompson3/micro-manager>here</a>. Proxies are valuable in this context since our request client&rsquo;s API reflects our schema, thus allowing the schema to serve as both validation and documentation. Another advantage to schema driven API definitions is that automated tools are able to generate and update the schemas based on microservice API docs, minimizing the work needed to stay in sync with other services to which we are making requests.</p><h3 id=designing-the-api>Designing The API</h3><p>Since this a client for managing requests to different microservices, we want the API to reflect the supported HTTP methods and service name of each URL. A call to a posts service looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>mySchema</span> <span style=color:#f92672>=</span> {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>posts</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>methods</span><span style=color:#f92672>:</span> [<span style=color:#e6db74>&#34;get&#34;</span>, <span style=color:#e6db74>&#34;post&#34;</span>],
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>path</span><span style=color:#f92672>:</span> <span style=color:#a6e22e>template</span>(<span style=color:#e6db74>&#34;/&#34;</span>),
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>bodyValidator</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;updateProduct&#34;</span>,
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;object&#34;</span>,
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>properties</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>title</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;string&#34;</span> },
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>author</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;string&#34;</span> },
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>content</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;string&#34;</span> },
+<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2020-02-01-proxies/>A Brief Look at Javascript Proxies</a></h1><div class="dt-published meta">Posted on 2020-02-01</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/javascript>javascript</a></li><li><a class=p-category href=/tags/webdev>webdev</a></li><li><a class=p-category href=/tags/es6>es6</a></li></ul></nav></div><section class="body e-content"><h2 id=proxies>Proxies</h2><p>Javascript Proxies are a powerful concept in ES6. They give developers more control over JS objects, paving the way for declarative API design. I am going to show some examples of how use proxies to extend the functionality of traditional Javascript objects and why they are useful in understanding the flow of data inside your programs.</p><h2 id=microservice-client>Microservice Client</h2><p>The first example comes from a request management client that uses a JSON schema to validate incoming requests and route them to other services. The code for its implementation is <a href=https://github.com/jamestthompson3/micro-manager>here</a>. Proxies are valuable in this context since our request client&rsquo;s API reflects our schema, thus allowing the schema to serve as both validation and documentation. Another advantage to schema driven API definitions is that automated tools are able to generate and update the schemas based on microservice API docs, minimizing the work needed to stay in sync with other services to which we are making requests.</p><h3 id=designing-the-api>Designing The API</h3><p>Since this a client for managing requests to different microservices, we want the API to reflect the supported HTTP methods and service name of each URL. A call to a posts service looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>const</span> mySchema = {
+</span></span><span style=display:flex><span>  posts: {
+</span></span><span style=display:flex><span>    methods: [<span style=color:#87ceeb>&#34;get&#34;</span>, <span style=color:#87ceeb>&#34;post&#34;</span>],
+</span></span><span style=display:flex><span>    path: template(<span style=color:#87ceeb>&#34;/&#34;</span>),
+</span></span><span style=display:flex><span>    bodyValidator: {
+</span></span><span style=display:flex><span>      id: <span style=color:#87ceeb>&#34;updateProduct&#34;</span>,
+</span></span><span style=display:flex><span>      type: <span style=color:#87ceeb>&#34;object&#34;</span>,
+</span></span><span style=display:flex><span>      properties: {
+</span></span><span style=display:flex><span>        title: { type: <span style=color:#87ceeb>&#34;string&#34;</span> },
+</span></span><span style=display:flex><span>        author: { type: <span style=color:#87ceeb>&#34;string&#34;</span> },
+</span></span><span style=display:flex><span>        content: { type: <span style=color:#87ceeb>&#34;string&#34;</span> },
 </span></span><span style=display:flex><span>      },
 </span></span><span style=display:flex><span>    },
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>paramsValidator</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;sortBy&#34;</span>,
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;object&#34;</span>,
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>properties</span><span style=color:#f92672>:</span> {
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> { <span style=color:#a6e22e>type</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;string&#34;</span> },
+</span></span><span style=display:flex><span>    paramsValidator: {
+</span></span><span style=display:flex><span>      id: <span style=color:#87ceeb>&#34;sortBy&#34;</span>,
+</span></span><span style=display:flex><span>      type: <span style=color:#87ceeb>&#34;object&#34;</span>,
+</span></span><span style=display:flex><span>      properties: {
+</span></span><span style=display:flex><span>        id: { type: <span style=color:#87ceeb>&#34;string&#34;</span> },
 </span></span><span style=display:flex><span>      },
 </span></span><span style=display:flex><span>    },
 </span></span><span style=display:flex><span>  },
 </span></span><span style=display:flex><span>};
-</span></span><span style=display:flex><span><span style=color:#75715e>// The Manager class shown in the next example, request adaptors are not covered in this post
-</span></span></span><span style=display:flex><span><span style=color:#75715e>// but more information can be found in the repo link above.
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>postsClient</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>Manager</span>(
-</span></span><span style=display:flex><span>  <span style=color:#e6db74>&#34;http://posts.some-service.net&#34;</span>,
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>axiosAdapter</span>
-</span></span><span style=display:flex><span>).<span style=color:#a6e22e>validateWith</span>(<span style=color:#a6e22e>mySchema</span>);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>getRequest</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>myclient</span>.<span style=color:#a6e22e>posts</span>().<span style=color:#a6e22e>get</span>({ <span style=color:#a6e22e>sortBy</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;newest&#34;</span> });
+</span></span><span style=display:flex><span><span style=color:#0f0>// The Manager class shown in the next example, request adaptors are not covered in this post
+</span></span></span><span style=display:flex><span><span style=color:#0f0>// but more information can be found in the repo link above.
+</span></span></span><span style=display:flex><span><span style=color:#0f0></span><span style=color:red>const</span> postsClient = <span style=color:red>new</span> Manager(
+</span></span><span style=display:flex><span>  <span style=color:#87ceeb>&#34;http://posts.some-service.net&#34;</span>,
+</span></span><span style=display:flex><span>  axiosAdapter
+</span></span><span style=display:flex><span>).validateWith(mySchema);
+</span></span><span style=display:flex><span><span style=color:red>const</span> getRequest = myclient.posts().get({ sortBy: <span style=color:#87ceeb>&#34;newest&#34;</span> });
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>getRequest</span>.<span style=color:#a6e22e>then</span>((<span style=color:#a6e22e>res</span>) =&gt; <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>json</span>()).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>);
+</span></span><span style=display:flex><span>getRequest.then((res) =&gt; res.json()).then(console.log);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>postRequest</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>myclient</span>.<span style=color:#a6e22e>posts</span>().<span style=color:#a6e22e>post</span>({
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>title</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;why proxies are cool&#34;</span>,
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>author</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;taylor thompson&#34;</span>,
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>content</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;proxies are cool because they give you superpowers.&#34;</span>,
+</span></span><span style=display:flex><span><span style=color:red>const</span> postRequest = myclient.posts().post({
+</span></span><span style=display:flex><span>  title: <span style=color:#87ceeb>&#34;why proxies are cool&#34;</span>,
+</span></span><span style=display:flex><span>  author: <span style=color:#87ceeb>&#34;taylor thompson&#34;</span>,
+</span></span><span style=display:flex><span>  content: <span style=color:#87ceeb>&#34;proxies are cool because they give you superpowers.&#34;</span>,
 </span></span><span style=display:flex><span>});
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>postRequest</span>.<span style=color:#a6e22e>then</span>((<span style=color:#a6e22e>res</span>) =&gt; <span style=color:#a6e22e>res</span>.<span style=color:#a6e22e>json</span>()).<span style=color:#a6e22e>then</span>(<span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>);
-</span></span></code></pre></div><p>The question then becomes, &ldquo;how does our request client reflect the schema without manually typing out all the fields?&rdquo;. This is where proxies come in to play. Let&rsquo;s look at a stripped down implementation of the <code>Manager</code> class:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>class</span> <span style=color:#a6e22e>Manager</span> {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>constructor</span>(<span style=color:#a6e22e>baseURL</span>, <span style=color:#a6e22e>adaptor</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>baseURL</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>baseURL</span>;
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>this</span>.<span style=color:#a6e22e>adaptor</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>adaptor</span>;
+</span></span><span style=display:flex><span>postRequest.then((res) =&gt; res.json()).then(console.log);
+</span></span></code></pre></div><p>The question then becomes, &ldquo;how does our request client reflect the schema without manually typing out all the fields?&rdquo;. This is where proxies come in to play. Let&rsquo;s look at a stripped down implementation of the <code>Manager</code> class:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>class</span> Manager {
+</span></span><span style=display:flex><span>  constructor(baseURL, adaptor) {
+</span></span><span style=display:flex><span>    <span style=color:red>this</span>.baseURL = baseURL;
+</span></span><span style=display:flex><span>    <span style=color:red>this</span>.adaptor = adaptor;
 </span></span><span style=display:flex><span>  }
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>validateWith</span>(<span style=color:#a6e22e>schema</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>self</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>this</span>; <span style=color:#75715e>// Added to prevent confusion with &#39;this&#39; when nesting calls
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>accessInterceptor</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>_</span>, <span style=color:#a6e22e>schemaPath</span>) {
-</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span>(<span style=color:#a6e22e>schemaPath</span> <span style=color:#66d9ef>in</span> <span style=color:#a6e22e>schema</span>)) {
-</span></span><span style=display:flex><span>        <span style=color:#75715e>// custom defined error
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>        <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>PathNotInSchemaError</span>(
-</span></span><span style=display:flex><span>          <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>schemaPath</span><span style=color:#e6db74>}</span><span style=color:#e6db74> not in schema.\n valid paths are\n [</span><span style=color:#e6db74>${</span>Object.<span style=color:#a6e22e>keys</span>(
-</span></span><span style=display:flex><span>            <span style=color:#a6e22e>schema</span>
-</span></span><span style=display:flex><span>          )<span style=color:#e6db74>}</span><span style=color:#e6db74>]`</span>
+</span></span><span style=display:flex><span>  validateWith(schema) {
+</span></span><span style=display:flex><span>    <span style=color:red>const</span> self = <span style=color:red>this</span>; <span style=color:#0f0>// Added to prevent confusion with &#39;this&#39; when nesting calls
+</span></span></span><span style=display:flex><span><span style=color:#0f0></span>    <span style=color:red>return</span> accessInterceptor(<span style=color:red>function</span> (_, schemaPath) {
+</span></span><span style=display:flex><span>      <span style=color:red>if</span> (!(schemaPath <span style=color:red>in</span> schema)) {
+</span></span><span style=display:flex><span>        <span style=color:#0f0>// custom defined error
+</span></span></span><span style=display:flex><span><span style=color:#0f0></span>        <span style=color:red>throw</span> <span style=color:red>new</span> PathNotInSchemaError(
+</span></span><span style=display:flex><span>          <span style=color:#87ceeb>`</span><span style=color:#87ceeb>${</span>schemaPath<span style=color:#87ceeb>}</span><span style=color:#87ceeb> not in schema.\n valid paths are\n [</span><span style=color:#87ceeb>${</span>Object.keys(
+</span></span><span style=display:flex><span>            schema
+</span></span><span style=display:flex><span>          )<span style=color:#87ceeb>}</span><span style=color:#87ceeb>]`</span>
 </span></span><span style=display:flex><span>        );
 </span></span><span style=display:flex><span>      }
-</span></span><span style=display:flex><span>      <span style=color:#66d9ef>return</span> (<span style=color:#a6e22e>specifier</span>) =&gt;
-</span></span><span style=display:flex><span>        <span style=color:#a6e22e>accessInterceptor</span>(<span style=color:#66d9ef>function</span> (<span style=color:#a6e22e>_</span>, <span style=color:#a6e22e>method</span>) {
-</span></span><span style=display:flex><span>          <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>supportedMethods</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>schema</span>[<span style=color:#a6e22e>schemaPath</span>].<span style=color:#a6e22e>methods</span>;
-</span></span><span style=display:flex><span>          <span style=color:#66d9ef>if</span> (<span style=color:#f92672>!</span><span style=color:#a6e22e>supportedMethods</span>.<span style=color:#a6e22e>includes</span>(<span style=color:#a6e22e>method</span>)) {
-</span></span><span style=display:flex><span>            <span style=color:#66d9ef>throw</span> <span style=color:#66d9ef>new</span> <span style=color:#a6e22e>MethodNotSupportedError</span>(
-</span></span><span style=display:flex><span>              <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>method</span><span style=color:#e6db74>}</span><span style=color:#e6db74> not supported in </span><span style=color:#e6db74>${</span><span style=color:#a6e22e>schemaPath</span><span style=color:#e6db74>}</span><span style=color:#e6db74>.\n supported methods are \n [</span><span style=color:#e6db74>${</span>Object.<span style=color:#a6e22e>values</span>(
-</span></span><span style=display:flex><span>                <span style=color:#a6e22e>supportedMethods</span>
-</span></span><span style=display:flex><span>              )<span style=color:#e6db74>}</span><span style=color:#e6db74>]`</span>
+</span></span><span style=display:flex><span>      <span style=color:red>return</span> (specifier) =&gt;
+</span></span><span style=display:flex><span>        accessInterceptor(<span style=color:red>function</span> (_, method) {
+</span></span><span style=display:flex><span>          <span style=color:red>const</span> supportedMethods = schema[schemaPath].methods;
+</span></span><span style=display:flex><span>          <span style=color:red>if</span> (!supportedMethods.includes(method)) {
+</span></span><span style=display:flex><span>            <span style=color:red>throw</span> <span style=color:red>new</span> MethodNotSupportedError(
+</span></span><span style=display:flex><span>              <span style=color:#87ceeb>`</span><span style=color:#87ceeb>${</span>method<span style=color:#87ceeb>}</span><span style=color:#87ceeb> not supported in </span><span style=color:#87ceeb>${</span>schemaPath<span style=color:#87ceeb>}</span><span style=color:#87ceeb>.\n supported methods are \n [</span><span style=color:#87ceeb>${</span>Object.values(
+</span></span><span style=display:flex><span>                supportedMethods
+</span></span><span style=display:flex><span>              )<span style=color:#87ceeb>}</span><span style=color:#87ceeb>]`</span>
 </span></span><span style=display:flex><span>            );
 </span></span><span style=display:flex><span>          }
 </span></span><span style=display:flex><span>        });
-</span></span><span style=display:flex><span>      <span style=color:#75715e>// continued below
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>      <span style=color:#75715e>// ...
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>    });
+</span></span><span style=display:flex><span>      <span style=color:#0f0>// continued below
+</span></span></span><span style=display:flex><span><span style=color:#0f0></span>      <span style=color:#0f0>// ...
+</span></span></span><span style=display:flex><span><span style=color:#0f0></span>    });
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>accessInterceptor</span>(<span style=color:#a6e22e>interceptor</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>new</span> Proxy(
+</span></span><span style=display:flex><span><span style=color:red>function</span> accessInterceptor(interceptor) {
+</span></span><span style=display:flex><span>  <span style=color:red>return</span> <span style=color:red>new</span> Proxy(
 </span></span><span style=display:flex><span>    {},
 </span></span><span style=display:flex><span>    {
-</span></span><span style=display:flex><span>      <span style=color:#a6e22e>get</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>property</span>) {
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>interceptor</span>(<span style=color:#a6e22e>target</span>, <span style=color:#a6e22e>property</span>);
+</span></span><span style=display:flex><span>      get(target, property) {
+</span></span><span style=display:flex><span>        <span style=color:red>return</span> interceptor(target, property);
 </span></span><span style=display:flex><span>      },
 </span></span><span style=display:flex><span>    }
 </span></span><span style=display:flex><span>  );
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>Much of the heavy lifting in the <code>Manager</code> class is performed by the <code>accessInterceptor</code> function. It takes a function as an argument and returns a proxy. The interceptor function is called by the proxy whenever we try to access a property of the target object (which in this case is just an empty object). Using the interceptors on property access allows the object to dynamically take whatever shape we want, which in snippet above, is <code>managerClassInstance.schemaPath.httpMethod</code>. Because the first interceptor function checks whether or not the property attempting to be accessed is defined in the provided schema, if we were to try and access a non-existent property on the example schema like <code>users</code>, the <code>Manager</code> class instance throws a <code>PathNotInSchemaError</code>.</p><p>By using the <code>accessInterceptor</code> function, we are able to chain methods according to our schema. If our schema changes, the methods available on the <code>Manager</code> class instance also change. This enforces parity between our code and our documentation (in this case the schemas are self documenting).</p><h2 id=object-access-interception>Object Access Interception</h2><p>Being able to introspect the activity of your data structures is useful. For example, if you want to trace all the <code>get</code> and <code>set</code> operations on an object, proxies are here to help:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dataStore</span> <span style=color:#f92672>=</span> {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>users</span><span style=color:#f92672>:</span> [
-</span></span><span style=display:flex><span>    { <span style=color:#a6e22e>username</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;user123&#34;</span>, <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;3a34cb03s&#34;</span> },
-</span></span><span style=display:flex><span>    { <span style=color:#a6e22e>username</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;tester456&#34;</span>, <span style=color:#a6e22e>id</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;6kj77acv9&#34;</span> },
+</span></span></code></pre></div><p>Much of the heavy lifting in the <code>Manager</code> class is performed by the <code>accessInterceptor</code> function. It takes a function as an argument and returns a proxy. The interceptor function is called by the proxy whenever we try to access a property of the target object (which in this case is just an empty object). Using the interceptors on property access allows the object to dynamically take whatever shape we want, which in snippet above, is <code>managerClassInstance.schemaPath.httpMethod</code>. Because the first interceptor function checks whether or not the property attempting to be accessed is defined in the provided schema, if we were to try and access a non-existent property on the example schema like <code>users</code>, the <code>Manager</code> class instance throws a <code>PathNotInSchemaError</code>.</p><p>By using the <code>accessInterceptor</code> function, we are able to chain methods according to our schema. If our schema changes, the methods available on the <code>Manager</code> class instance also change. This enforces parity between our code and our documentation (in this case the schemas are self documenting).</p><h2 id=object-access-interception>Object Access Interception</h2><p>Being able to introspect the activity of your data structures is useful. For example, if you want to trace all the <code>get</code> and <code>set</code> operations on an object, proxies are here to help:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>const</span> dataStore = {
+</span></span><span style=display:flex><span>  users: [
+</span></span><span style=display:flex><span>    { username: <span style=color:#87ceeb>&#34;user123&#34;</span>, id: <span style=color:#87ceeb>&#34;3a34cb03s&#34;</span> },
+</span></span><span style=display:flex><span>    { username: <span style=color:#87ceeb>&#34;tester456&#34;</span>, id: <span style=color:#87ceeb>&#34;6kj77acv9&#34;</span> },
 </span></span><span style=display:flex><span>  ],
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>posts</span><span style=color:#f92672>:</span> [{ <span style=color:#a6e22e>title</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;some cool post&#34;</span>, <span style=color:#a6e22e>desc</span><span style=color:#f92672>:</span> <span style=color:#e6db74>&#34;a great post about javascript&#34;</span> }],
-</span></span><span style=display:flex><span>  <span style=color:#75715e>//....
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>};
+</span></span><span style=display:flex><span>  posts: [{ title: <span style=color:#87ceeb>&#34;some cool post&#34;</span>, desc: <span style=color:#87ceeb>&#34;a great post about javascript&#34;</span> }],
+</span></span><span style=display:flex><span>  <span style=color:#0f0>//....
+</span></span></span><span style=display:flex><span><span style=color:#0f0></span>};
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>handler</span> <span style=color:#f92672>=</span> {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>get</span>(...<span style=color:#a6e22e>args</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;%cGETTING WITH: %o&#34;</span>, <span style=color:#e6db74>&#34;color: purple;&#34;</span>, ...<span style=color:#a6e22e>args</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>Reflect</span>.<span style=color:#a6e22e>get</span>(...<span style=color:#a6e22e>args</span>);
+</span></span><span style=display:flex><span><span style=color:red>const</span> handler = {
+</span></span><span style=display:flex><span>  get(...args) {
+</span></span><span style=display:flex><span>    console.log(<span style=color:#87ceeb>&#34;%cGETTING WITH: %o&#34;</span>, <span style=color:#87ceeb>&#34;color: purple;&#34;</span>, ...args);
+</span></span><span style=display:flex><span>    <span style=color:red>return</span> Reflect.get(...args);
 </span></span><span style=display:flex><span>  },
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>set</span>(...<span style=color:#a6e22e>args</span>) {
-</span></span><span style=display:flex><span>    <span style=color:#a6e22e>console</span>.<span style=color:#a6e22e>log</span>(<span style=color:#e6db74>&#34;%cSETTING WITH: %o&#34;</span>, <span style=color:#e6db74>&#34;color: blue;&#34;</span>, ...<span style=color:#a6e22e>args</span>);
-</span></span><span style=display:flex><span>    <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>Reflect</span>.<span style=color:#a6e22e>set</span>(...<span style=color:#a6e22e>args</span>);
+</span></span><span style=display:flex><span>  set(...args) {
+</span></span><span style=display:flex><span>    console.log(<span style=color:#87ceeb>&#34;%cSETTING WITH: %o&#34;</span>, <span style=color:#87ceeb>&#34;color: blue;&#34;</span>, ...args);
+</span></span><span style=display:flex><span>    <span style=color:red>return</span> Reflect.set(...args);
 </span></span><span style=display:flex><span>  },
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dataStoreWithTracingEnabled</span> <span style=color:#f92672>=</span> <span style=color:#66d9ef>new</span> Proxy(<span style=color:#a6e22e>dataStore</span>, <span style=color:#a6e22e>handler</span>);
-</span></span></code></pre></div><p>In this example, when you assign or access property values to the <code>dataStoreWithTracingEnabled</code> variable, you see the target, property, value, and receiver in the console. If you set the new property <code>onlineStatus</code> by <code>dataStoreWithTracingEnabled.onlineStatus = 'busy'</code>, you see the following in your console:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span> - Our message:
+</span></span><span style=display:flex><span><span style=color:red>const</span> dataStoreWithTracingEnabled = <span style=color:red>new</span> Proxy(dataStore, handler);
+</span></span></code></pre></div><p>In this example, when you assign or access property values to the <code>dataStoreWithTracingEnabled</code> variable, you see the target, property, value, and receiver in the console. If you set the new property <code>onlineStatus</code> by <code>dataStoreWithTracingEnabled.onlineStatus = 'busy'</code>, you see the following in your console:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-txt data-lang=txt><span style=display:flex><span> - Our message:
 </span></span><span style=display:flex><span> SETTING WITH:
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span> - the target (the datastore object):

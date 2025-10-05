@@ -2,68 +2,68 @@
 <a href=/photos>photos</a>
 <a href=/updates>updates</a>
 <a href=/feeds>rss feeds</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
-<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/js-to-lua-modules/>(Nvim) Lua for Javascripters: Module Exports</a></h1><div class="dt-published meta">Posted on 2021-03-31</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/lua>lua</a></li><li><a class=p-category href=/tags/libuv>libuv</a></li><li><a class=p-category href=/tags/neovim>neovim</a></li></ul></nav></div><section class="body e-content"><h2 id=goals>Goals</h2><p>This aims to be quick reference guide on lua module exports compared to JavaScript module exports.</p><h2 id=task>Task</h2><p>We want to export a series of module scoped functions in both JavaScript and Lua. This guide also show side by side comparisons on writing a file to a specific directory and deleting a file from the same directory.</p><p>In this quick tip, we will use CommonJS as the format for the JavaScript modules since it more closely resembles Lua modules in its construction.</p><p>To export modules in NodeJS we would write:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#75715e>// filesystemUtils.js
-</span></span></span><span style=display:flex><span><span style=color:#75715e></span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>util</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;util&#34;</span>)
+<input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/js-to-lua-modules/>(Nvim) Lua for Javascripters: Module Exports</a></h1><div class="dt-published meta">Posted on 2021-03-31</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/lua>lua</a></li><li><a class=p-category href=/tags/libuv>libuv</a></li><li><a class=p-category href=/tags/neovim>neovim</a></li></ul></nav></div><section class="body e-content"><h2 id=goals>Goals</h2><p>This aims to be quick reference guide on lua module exports compared to JavaScript module exports.</p><h2 id=task>Task</h2><p>We want to export a series of module scoped functions in both JavaScript and Lua. This guide also show side by side comparisons on writing a file to a specific directory and deleting a file from the same directory.</p><p>In this quick tip, we will use CommonJS as the format for the JavaScript modules since it more closely resembles Lua modules in its construction.</p><p>To export modules in NodeJS we would write:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#0f0>// filesystemUtils.js
+</span></span></span><span style=display:flex><span><span style=color:#0f0></span>
+</span></span><span style=display:flex><span><span style=color:red>const</span> util = require(<span style=color:#87ceeb>&#34;util&#34;</span>)
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>readFile</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>promisify</span>(<span style=color:#a6e22e>fs</span>.<span style=color:#a6e22e>readFile</span>);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>writeFile</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>promisify</span>(<span style=color:#a6e22e>fs</span>.<span style=color:#a6e22e>writeFile</span>);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>readDir</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>promisify</span>(<span style=color:#a6e22e>fs</span>.<span style=color:#a6e22e>readdir</span>);
-</span></span><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>deleteFile</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>util</span>.<span style=color:#a6e22e>promisify</span>(<span style=color:#a6e22e>fs</span>.<span style=color:#a6e22e>unlink</span>);
+</span></span><span style=display:flex><span><span style=color:red>const</span> readFile = util.promisify(fs.readFile);
+</span></span><span style=display:flex><span><span style=color:red>const</span> writeFile = util.promisify(fs.writeFile);
+</span></span><span style=display:flex><span><span style=color:red>const</span> readDir = util.promisify(fs.readdir);
+</span></span><span style=display:flex><span><span style=color:red>const</span> deleteFile = util.promisify(fs.unlink);
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>writeDataFile</span>(<span style=color:#a6e22e>name</span>, <span style=color:#a6e22e>data</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dataDir</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getDataDir</span>();
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>filePath</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>dataDir</span><span style=color:#e6db74>}${</span><span style=color:#a6e22e>name</span><span style=color:#e6db74>}</span><span style=color:#e6db74>.json`</span>;
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>writeFile</span>(<span style=color:#a6e22e>filePath</span>, <span style=color:#a6e22e>JSON</span>.<span style=color:#a6e22e>stringify</span>(<span style=color:#a6e22e>data</span>));
+</span></span><span style=display:flex><span><span style=color:red>function</span> writeDataFile(name, data) {
+</span></span><span style=display:flex><span>  <span style=color:red>const</span> dataDir = getDataDir();
+</span></span><span style=display:flex><span>  <span style=color:red>const</span> filePath = <span style=color:#87ceeb>`</span><span style=color:#87ceeb>${</span>dataDir<span style=color:#87ceeb>}${</span>name<span style=color:#87ceeb>}</span><span style=color:#87ceeb>.json`</span>;
+</span></span><span style=display:flex><span>  <span style=color:red>return</span> writeFile(filePath, JSON.stringify(data));
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>deleteDataFile</span>(<span style=color:#a6e22e>name</span>) {
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>dataDir</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>getDataDir</span>();
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>const</span> <span style=color:#a6e22e>filePath</span> <span style=color:#f92672>=</span> <span style=color:#e6db74>`</span><span style=color:#e6db74>${</span><span style=color:#a6e22e>dataDir</span><span style=color:#e6db74>}${</span><span style=color:#a6e22e>name</span><span style=color:#e6db74>}</span><span style=color:#e6db74>.json`</span>;
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> <span style=color:#a6e22e>deleteFile</span>(<span style=color:#a6e22e>filePath</span>);
+</span></span><span style=display:flex><span><span style=color:red>function</span> deleteDataFile(name) {
+</span></span><span style=display:flex><span>  <span style=color:red>const</span> dataDir = getDataDir();
+</span></span><span style=display:flex><span>  <span style=color:red>const</span> filePath = <span style=color:#87ceeb>`</span><span style=color:#87ceeb>${</span>dataDir<span style=color:#87ceeb>}${</span>name<span style=color:#87ceeb>}</span><span style=color:#87ceeb>.json`</span>;
+</span></span><span style=display:flex><span>  <span style=color:red>return</span> deleteFile(filePath);
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>module</span>.<span style=color:#a6e22e>exports</span> <span style=color:#f92672>=</span> {
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>writeDataFile</span>,
-</span></span><span style=display:flex><span>  <span style=color:#a6e22e>deleteDataFile</span>
+</span></span><span style=display:flex><span>module.exports = {
+</span></span><span style=display:flex><span>  writeDataFile,
+</span></span><span style=display:flex><span>  deleteDataFile
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>Where <code>writeDataFile</code> and <code>deleteDataFile</code> are the function being exported. We could them access them by requiring the <code>filesystemUtils</code> module:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#66d9ef>const</span> <span style=color:#a6e22e>fs_utils</span> <span style=color:#f92672>=</span> <span style=color:#a6e22e>require</span>(<span style=color:#e6db74>&#34;./filesystemUtils&#34;</span>)
+</span></span></code></pre></div><p>Where <code>writeDataFile</code> and <code>deleteDataFile</code> are the function being exported. We could them access them by requiring the <code>filesystemUtils</code> module:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>const</span> fs_utils = require(<span style=color:#87ceeb>&#34;./filesystemUtils&#34;</span>)
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#a6e22e>fs_utils</span>.<span style=color:#a6e22e>writeDataFile</span>(<span style=color:#e6db74>&#34;test&#34;</span>)
-</span></span><span style=display:flex><span><span style=color:#a6e22e>fs_utils</span>.<span style=color:#a6e22e>deleteDataFile</span>(<span style=color:#e6db74>&#34;test&#34;</span>)
-</span></span></code></pre></div><p>In Lua, the syntax is quite similar:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#75715e>-- filesystemUtils.lua</span>
+</span></span><span style=display:flex><span>fs_utils.writeDataFile(<span style=color:#87ceeb>&#34;test&#34;</span>)
+</span></span><span style=display:flex><span>fs_utils.deleteDataFile(<span style=color:#87ceeb>&#34;test&#34;</span>)
+</span></span></code></pre></div><p>In Lua, the syntax is quite similar:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#0f0>-- filesystemUtils.lua</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>local</span> M <span style=color:#f92672>=</span> {} <span style=color:#75715e>-- initialize an empty table (or object in JS terms)</span>
+</span></span><span style=display:flex><span><span style=color:red>local</span> M = {} <span style=color:#0f0>-- initialize an empty table (or object in JS terms)</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- re-assign functions for convienience</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>local</span> uv <span style=color:#f92672>=</span> vim.loop
+</span></span><span style=display:flex><span><span style=color:#0f0>-- re-assign functions for convienience</span>
+</span></span><span style=display:flex><span><span style=color:red>local</span> uv = vim.loop
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#75715e>-- assign the function to a key of the same name in the table</span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>M</span>.<span style=color:#a6e22e>deleteDataFile</span>(name)
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>local</span> dataDir <span style=color:#f92672>=</span> getDataDir()
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>local</span> filePath <span style=color:#f92672>=</span> dataDir <span style=color:#f92672>..</span> name <span style=color:#f92672>..</span> <span style=color:#e6db74>&#34;.json&#34;</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> uv.fs_unlink(filePath)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span><span style=color:#0f0>-- assign the function to a key of the same name in the table</span>
+</span></span><span style=display:flex><span><span style=color:red>function</span> M.<span style=color:#ff0>deleteDataFile</span>(name)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> dataDir = getDataDir()
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> filePath = dataDir .. name .. <span style=color:#87ceeb>&#34;.json&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:red>return</span> uv.fs_unlink(filePath)
+</span></span><span style=display:flex><span><span style=color:red>end</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>function</span> <span style=color:#a6e22e>M</span>.<span style=color:#a6e22e>writeDataFile</span>(name, data)
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>local</span> dataDir <span style=color:#f92672>=</span> getDataDir()
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>local</span> filePath <span style=color:#f92672>=</span> dataDir <span style=color:#f92672>..</span> name <span style=color:#f92672>..</span> <span style=color:#e6db74>&#34;.json&#34;</span>
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>return</span> uv.fs_open(filePath, <span style=color:#66d9ef>function</span> (err, fd)
-</span></span><span style=display:flex><span>      <span style=color:#66d9ef>if</span> (err) <span style=color:#66d9ef>then</span> <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>end</span>
-</span></span><span style=display:flex><span>      uv.fs_write(fd, data, <span style=color:#66d9ef>function</span>(err, bytes_written)
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>if</span> (err) <span style=color:#66d9ef>then</span> <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>end</span>
-</span></span><span style=display:flex><span>        uv.fs_close(fd, <span style=color:#66d9ef>function</span>(err)
-</span></span><span style=display:flex><span>          <span style=color:#66d9ef>if</span> (err) <span style=color:#66d9ef>then</span> <span style=color:#66d9ef>return</span> <span style=color:#66d9ef>end</span>
-</span></span><span style=display:flex><span>        <span style=color:#66d9ef>end</span>)
-</span></span><span style=display:flex><span>      <span style=color:#66d9ef>end</span>)
-</span></span><span style=display:flex><span>  <span style=color:#66d9ef>end</span>)
-</span></span><span style=display:flex><span><span style=color:#66d9ef>end</span>
+</span></span><span style=display:flex><span><span style=color:red>function</span> M.<span style=color:#ff0>writeDataFile</span>(name, data)
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> dataDir = getDataDir()
+</span></span><span style=display:flex><span>  <span style=color:red>local</span> filePath = dataDir .. name .. <span style=color:#87ceeb>&#34;.json&#34;</span>
+</span></span><span style=display:flex><span>  <span style=color:red>return</span> uv.fs_open(filePath, <span style=color:red>function</span> (err, fd)
+</span></span><span style=display:flex><span>      <span style=color:red>if</span> (err) <span style=color:red>then</span> <span style=color:red>return</span> <span style=color:red>end</span>
+</span></span><span style=display:flex><span>      uv.fs_write(fd, data, <span style=color:red>function</span>(err, bytes_written)
+</span></span><span style=display:flex><span>        <span style=color:red>if</span> (err) <span style=color:red>then</span> <span style=color:red>return</span> <span style=color:red>end</span>
+</span></span><span style=display:flex><span>        uv.fs_close(fd, <span style=color:red>function</span>(err)
+</span></span><span style=display:flex><span>          <span style=color:red>if</span> (err) <span style=color:red>then</span> <span style=color:red>return</span> <span style=color:red>end</span>
+</span></span><span style=display:flex><span>        <span style=color:red>end</span>)
+</span></span><span style=display:flex><span>      <span style=color:red>end</span>)
+</span></span><span style=display:flex><span>  <span style=color:red>end</span>)
+</span></span><span style=display:flex><span><span style=color:red>end</span>
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span><span style=color:#66d9ef>return</span> M <span style=color:#75715e>-- This line exports the table</span>
-</span></span></code></pre></div><p>We can then use these functions in other code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:#66d9ef>local</span> fs_utils <span style=color:#f92672>=</span> require(<span style=color:#e6db74>&#34;filesystemUtils&#34;</span>)
+</span></span><span style=display:flex><span><span style=color:red>return</span> M <span style=color:#0f0>-- This line exports the table</span>
+</span></span></code></pre></div><p>We can then use these functions in other code:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-lua data-lang=lua><span style=display:flex><span><span style=color:red>local</span> fs_utils = require(<span style=color:#87ceeb>&#34;filesystemUtils&#34;</span>)
 </span></span><span style=display:flex><span>
-</span></span><span style=display:flex><span>fs_utils.writeDataFile(<span style=color:#e6db74>&#34;test&#34;</span>)
-</span></span><span style=display:flex><span>fs_utils.deleteDataFile(<span style=color:#e6db74>&#34;test&#34;</span>)
+</span></span><span style=display:flex><span>fs_utils.writeDataFile(<span style=color:#87ceeb>&#34;test&#34;</span>)
+</span></span><span style=display:flex><span>fs_utils.deleteDataFile(<span style=color:#87ceeb>&#34;test&#34;</span>)
 </span></span></code></pre></div><p>Using modules in lua helps keep the global scope clean and makes it easier to refactor and reorganize code.</p></section></article></main><h3>See Also</h3><ul><li><a href=/posts/js-to-lua/>(Nvim) Lua for Javascripters: Spawning Processes</a></li><li><a href=/posts/2020-01-07-vimloop/>Using LibUV in Neovim</a></li><li><a href=/posts/2020-01-28-vimtip-gitlens/>Neovim Tip, GitLens</a></li><li><a href=/posts/2019-12-19-luanvim/>From init.vim to init.lua</a></li><li><a href=/updates/39029/>39029</a></li><li><a href=/updates/37805/>37805</a></li><li><a href=/posts/2019-08-25-vimcandothat/>Vim does that already</a></li></ul><div class=webmention></div><script src=/js/fuse.js></script><script src=/js/fastsearch.js></script><footer><hr><div class=h-card><a class=pic-link href=https://en.wikipedia.org/wiki/Pygmy_slow_loris><img class=u-photo src=https://teukka.tech/Nycticebus_pygmaeus_002.webp alt="pygmy
     slow loris, an endangered and beautiful creature"></a><div class=info><span class=p-name>Taylor Thompson</span>
 <a class=u-email href=mailto:taylor@teukka.tech>taylor@teukka.tech</a>

@@ -2,20 +2,16 @@
 &lt;p&gt;Components will be the basic building blocks of our frontend framework. Components will allow modular composition and encapsulation.
 The first component implementation will be rather naive, but that&amp;rsquo;s alright since its implementation will evolve over time.
 Let&amp;rsquo;s start with creating a &lt;code&gt;Component&lt;/code&gt; class:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#272822;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;const&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;COOL_COMPONENT&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Symbol&lt;/span&gt;(&lt;span style="color:#e6db74"&gt;&amp;#34;component&amp;#34;&lt;/span&gt;);
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f00"&gt;const&lt;/span&gt; COOL_COMPONENT = Symbol(&lt;span style="color:#87ceeb"&gt;&amp;#34;component&amp;#34;&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#66d9ef"&gt;class&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;Component&lt;/span&gt; {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#a6e22e"&gt;constructor&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;element&lt;/span&gt;, &lt;span style="color:#a6e22e"&gt;args&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; {}) {
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;this&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;$$typeof&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;COOL_COMPONENT&lt;/span&gt;;
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;this&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;el&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; document.&lt;span style="color:#a6e22e"&gt;createElement&lt;/span&gt;(&lt;span style="color:#a6e22e"&gt;element&lt;/span&gt;);
-&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#66d9ef"&gt;this&lt;/span&gt;.&lt;span style="color:#a6e22e"&gt;args&lt;/span&gt; &lt;span style="color:#f92672"&gt;=&lt;/span&gt; &lt;span style="color:#a6e22e"&gt;args&lt;/span&gt;;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f00"&gt;class&lt;/span&gt; Component {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; constructor(element, args = {}) {
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f00"&gt;this&lt;/span&gt;.$$typeof = COOL_COMPONENT;
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f00"&gt;this&lt;/span&gt;.el = document.createElement(element);
+&lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; &lt;span style="color:#f00"&gt;this&lt;/span&gt;.args = args;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; }
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;}
-&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Breaking this down:&lt;/p&gt;
-&lt;p&gt;&lt;code&gt;const COOL_COMPONENT = Symbol('component')&lt;/code&gt;&lt;/p&gt;
-&lt;p&gt;This creates a unique representation for our component type, and will help identify component instances as they get passed around our framework.
-The component takes an element type and some arguments which we&amp;rsquo;ll handle a bit later. The constructor also creates a new element which we&amp;rsquo;ll mount on the DOM with a &lt;code&gt;mount&lt;/code&gt; function.
-Now that we have a very basic component, we need a way to mount it to the DOM. Starting with a naive implementation, we can do something like this:&lt;/p&gt;</description></item><item><title>Build Your Own Frontend Framework, Introduction</title><link>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</link><pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</guid><description>&lt;p&gt;Welcome to build your own frontend framework project! I will be coding this live on my &lt;a href="https://www.twitch.tv/slower_loris"&gt;twitch stream&lt;/a&gt;.
+&lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;p&gt;Breaking this down:&lt;/p&gt;</description></item><item><title>Build Your Own Frontend Framework, Introduction</title><link>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</link><pubDate>Mon, 09 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-09-build-your-own-frontend-framework/</guid><description>&lt;p&gt;Welcome to build your own frontend framework project! I will be coding this live on my &lt;a href="https://www.twitch.tv/slower_loris"&gt;twitch stream&lt;/a&gt;.
 Blog posts will come after the streams.&lt;/p&gt;
 &lt;h2 id="goals"&gt;Goals&lt;/h2&gt;
 &lt;ul&gt;
