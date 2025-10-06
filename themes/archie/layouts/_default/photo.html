@@ -1,0 +1,36 @@
+{{ define "main" }}
+  <article class="photo-single">
+    <h1 class="title">{{.Title}}</h1>
+    <div class="photo-meta">
+      {{ if .Date }}
+        <time datetime="{{ .Date.Format "2006-01-02" }}">{{ .Date.Format "January 2, 2006" }}</time>
+      {{ end }}
+      {{ if .Params.tags }}
+        <ul class="tags">
+          {{ range .Params.tags }}
+            <li><a href="/tags/{{ . | urlize }}" class="p-category">{{ . }}</a></li>
+          {{ end }}
+        </ul>
+      {{ end }}
+    </div>
+    
+    <div class="photo-content">
+      {{.Content}}
+    </div>
+    
+    {{ if .Params.description }}
+      <div class="photo-description">
+        <p>{{.Params.description}}</p>
+      </div>
+    {{ end }}
+    
+    <nav class="photo-navigation">
+      {{ with .PrevInSection }}
+        <a href="{{ .Permalink }}" class="prev-photo">← prev</a>
+      {{ end }}
+      {{ with .NextInSection }}
+        <a href="{{ .Permalink }}" class="next-photo">next →</a>
+      {{ end }}
+    </nav>
+  </article>
+{{ end }}

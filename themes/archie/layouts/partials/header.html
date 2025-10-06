@@ -25,7 +25,7 @@
   <link rel="webmention" href="https://webmention.io/teukka.tech/webmention" />
   <link rel="pingback" href="https://webmention.io/teukka.tech/xmlrpc" />
     <!--- Micropub -->
-  <link rel="micropub" href="http://pub.teukka.tech/micropub/main">
+  <link rel="micropub" href="http://pub.teukka.tech/micropub">
 
 	{{- template "_internal/opengraph.html" . -}}
 	{{- template "_internal/twitter_cards.html" . -}}
@@ -42,6 +42,7 @@
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/updates.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/fastsearch.css" />
 	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/bookmarks.css" />
+	<link rel="stylesheet" type="text/css" media="screen" href="{{ .Site.BaseURL }}css/photos.css" />
 	{{- if or (eq .Site.Params.mode "auto") (eq .Site.Params.mode "dark") -}}
 		<link rel="stylesheet" type="text/css" href="{{ .Site.BaseURL }}css/dark.css" {{ if eq .Site.Params.mode "auto" }}media="(prefers-color-scheme: dark)"{{ end }} />
 	{{ end }}
