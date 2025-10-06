@@ -1,31 +1,20 @@
-<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>teukka.tech</title><link>https://teukka.tech/</link><description>Recent content on teukka.tech</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 26 Sep 2025 06:44:09 +0000</lastBuildDate><atom:link href="https://teukka.tech/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://teukka.tech/updates/26090644/</link><pubDate>Fri, 26 Sep 2025 06:44:09 +0000</pubDate><guid>https://teukka.tech/updates/26090644/</guid><description>&lt;p&gt;The internet has given us a drastically lower threshold to seeing ourselves as cringe, but cringe is always the first step in becoming better at something.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/14092050/</link><pubDate>Sun, 14 Sep 2025 20:50:35 +0000</pubDate><guid>https://teukka.tech/updates/14092050/</guid><description>&lt;p&gt;Starting to build microblogging tools for friends again&amp;hellip;&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/05092007/</link><pubDate>Fri, 05 Sep 2025 20:07:50 +0000</pubDate><guid>https://teukka.tech/updates/05092007/</guid><description>&lt;p&gt;Testing to see if my new deployment setup works&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/04092106/</link><pubDate>Thu, 04 Sep 2025 21:06:22 +0000</pubDate><guid>https://teukka.tech/updates/04092106/</guid><description>&lt;p&gt;I want to create RSS feeds that aren&amp;rsquo;t just for blogs or long-form content so I can control the feed. Or maybe that&amp;rsquo;s just the @ protocol&amp;hellip;&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/04092028/</link><pubDate>Thu, 04 Sep 2025 20:28:50 +0000</pubDate><guid>https://teukka.tech/updates/04092028/</guid><description>&lt;p&gt;Reviving micropub updates on my blog!&lt;/p&gt;</description></item><item><title>Stockholm on Film</title><link>https://teukka.tech/photos/stockholm-on-film/</link><pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/stockholm-on-film/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
+<?xml version="1.0" encoding="utf-8" standalone="yes"?><rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom"><channel><title>teukka.tech</title><link>https://teukka.tech/</link><description>Recent content on teukka.tech</description><generator>Hugo</generator><language>en-us</language><lastBuildDate>Fri, 26 Sep 2025 06:44:09 +0000</lastBuildDate><atom:link href="https://teukka.tech/index.xml" rel="self" type="application/rss+xml"/><item><title/><link>https://teukka.tech/updates/26090644/</link><pubDate>Fri, 26 Sep 2025 06:44:09 +0000</pubDate><guid>https://teukka.tech/updates/26090644/</guid><description>&lt;p&gt;The internet has given us a drastically lower threshold to seeing ourselves as cringe, but cringe is always the first step in becoming better at something.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/14092050/</link><pubDate>Sun, 14 Sep 2025 20:50:35 +0000</pubDate><guid>https://teukka.tech/updates/14092050/</guid><description>&lt;p&gt;Starting to build microblogging tools for friends again&amp;hellip;&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/05092007/</link><pubDate>Fri, 05 Sep 2025 20:07:50 +0000</pubDate><guid>https://teukka.tech/updates/05092007/</guid><description>&lt;p&gt;Testing to see if my new deployment setup works&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/04092106/</link><pubDate>Thu, 04 Sep 2025 21:06:22 +0000</pubDate><guid>https://teukka.tech/updates/04092106/</guid><description>&lt;p&gt;I want to create RSS feeds that aren&amp;rsquo;t just for blogs or long-form content so I can control the feed. Or maybe that&amp;rsquo;s just the @ protocol&amp;hellip;&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/04092028/</link><pubDate>Thu, 04 Sep 2025 20:28:50 +0000</pubDate><guid>https://teukka.tech/updates/04092028/</guid><description>&lt;p&gt;Reviving micropub updates on my blog!&lt;/p&gt;</description></item><item><title>A stranger who asked if I could take his picture</title><link>https://teukka.tech/photos/stockholm-on-film/stranger/</link><pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/stockholm-on-film/stranger/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/stockholm-on-film/individual/riddarholmen-church"&gt;&lt;picture
- title="Looking up at Riddarholmen Church from the ground."&gt;
- &lt;source
- srcset="https://teukka.tech/images/Riddarholmen-Church.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/Riddarholmen-Church.webp"
- alt="Looking up at Riddarholmen Church from the ground." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Riddarholmen Church.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/stockholm-on-film/individual/stranger"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/stranger.webp"&gt;&lt;picture
  title="An older man staring into the camera."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/stranger.webp"&gt;
+ srcset="https://teukka.tech/images/stranger.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/stranger.webp"
@@ -36,16 +25,23 @@
  &lt;figcaption&gt;A stranger who asked if I could take his picture.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>On the water</title><link>https://teukka.tech/photos/stockholm-on-film/on-the-water/</link><pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/stockholm-on-film/on-the-water/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/stockholm-on-film/individual/on-the-water"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/on-the-water.webp"&gt;&lt;picture
  title="Looking out towards Birger Jarls torn from Stadshusbron"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/on-the-water.webp"&gt;
+ srcset="https://teukka.tech/images/on-the-water.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/on-the-water.webp"
@@ -56,16 +52,50 @@
  &lt;figcaption&gt;On the water.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Riddarholmen Church</title><link>https://teukka.tech/photos/stockholm-on-film/riddarholmen-church/</link><pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/stockholm-on-film/riddarholmen-church/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/stockholm-on-film/individual/sunset"&gt;&lt;picture
- title="Looking out towards Stockholm at sunset."&gt;
+ &lt;a href="https://teukka.tech/images/Riddarholmen-Church.webp"&gt;&lt;picture
+ title="Looking up at Riddarholmen Church from the ground."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/sunset.webp"&gt;
+ srcset="https://teukka.tech/images/Riddarholmen-Church.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/Riddarholmen-Church.webp"
+ alt="Looking up at Riddarholmen Church from the ground." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Riddarholmen Church.&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Sunset</title><link>https://teukka.tech/photos/stockholm-on-film/sunset/</link><pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/stockholm-on-film/sunset/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/sunset.webp"&gt;&lt;picture
+ title="Looking out towards Stockholm at sunset."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/sunset.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/sunset.webp"
@@ -76,16 +106,23 @@
  &lt;figcaption&gt;Sunset&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Sunset ride</title><link>https://teukka.tech/photos/stockholm-on-film/hot-air-ballons/</link><pubDate>Mon, 12 May 2025 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/stockholm-on-film/hot-air-ballons/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/stockholm-on-film/individual/hot-air-ballons"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/hot-air-ballons.webp"&gt;&lt;picture
  title="Looking out towards Stockholm at sunset with hot air ballons in the foreground."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/hot-air-ballons.webp"&gt;
+ srcset="https://teukka.tech/images/hot-air-ballons.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/hot-air-ballons.webp"
@@ -96,256 +133,25 @@
  &lt;figcaption&gt;Sunset ride.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Fixing a Leaky Moccamaster</title><link>https://teukka.tech/posts/fixing-a-moccamaster/</link><pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/fixing-a-moccamaster/</guid><description>&lt;h2 id="the-problem"&gt;The Problem&lt;/h2&gt;
+&lt;/div&gt;</description></item><item><title>Fixing a Leaky Moccamaster</title><link>https://teukka.tech/posts/fixing-a-moccamaster/</link><pubDate>Sat, 08 Jun 2024 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/fixing-a-moccamaster/</guid><description>&lt;h2 id="the-problem"&gt;The Problem&lt;/h2&gt;
 &lt;p&gt;I recently purchased a moccamaster second hand and found that it leaked from the heating element at the bottom of the machine. Searching online, I found a few different ideas on how to address the problem, but most of them involved replacing the copper heating element.
-I reached out to Moccamaster and they told me to contact my local distributor, which I did, but heard nothing back. I got tired of waiting and decided to try and fix it myself.&lt;/p&gt;</description></item><item><title>Misc. 35mm Film Photos</title><link>https://teukka.tech/photos/misc-35mm/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
+I reached out to Moccamaster and they told me to contact my local distributor, which I did, but heard nothing back. I got tired of waiting and decided to try and fix it myself.&lt;/p&gt;</description></item><item><title>Awakening</title><link>https://teukka.tech/photos/pch/img_3731/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3731/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/misc-35mm/individual/9120026-2"&gt;&lt;picture
- title="Winter light coming through a window with maroon drapes. A cup of tea resting on a windowsill."&gt;
- &lt;source
- srcset="https://teukka.tech/images/9120026-2.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/9120026-2.webp"
- alt="Winter light coming through a window with maroon drapes. A cup of tea resting on a windowsill." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Quiet cup of tea&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/misc-35mm/individual/9120035"&gt;&lt;picture
- title="Valley near Berchtesgaden, Germany. View of mountiains in the background, clouds filling the midground. Winter"&gt;
- &lt;source
- srcset="https://teukka.tech/images/9120035.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/9120035.webp"
- alt="Valley near Berchtesgaden, Germany. View of mountiains in the background, clouds filling the midground. Winter" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Winter new Berchtesgaden, Germany&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/misc-35mm/individual/9120020"&gt;&lt;picture
- title="Winter in Pyhä, Finland. Snow covered lean-tos in the foreground."&gt;
- &lt;source
- srcset="https://teukka.tech/images/9120020.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/9120020.webp"
- alt="Winter in Pyhä, Finland. Snow covered lean-tos in the foreground." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Winter hike, Finland&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/misc-35mm/individual/9110034"&gt;&lt;picture
- title="Heather plant growing next to a rock."&gt;
- &lt;source
- srcset="https://teukka.tech/images/9110034.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/9110034.webp"
- alt="Heather plant growing next to a rock." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Wild Heather, Scotland&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/misc-35mm/individual/9110018"&gt;&lt;picture
- title="Signpost on a mountain top, pointing towards Brandebengut"&gt;
- &lt;source
- srcset="https://teukka.tech/images/9110018.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/9110018.webp"
- alt="Signpost on a mountain top, pointing towards Brandebengut" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Signpost on top of Gamskarkogel, Austria&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/misc-35mm/individual/9110019"&gt;&lt;picture
- title="Cross on a mountain top, Austria. Sea of mountains in the background."&gt;
- &lt;source
- srcset="https://teukka.tech/images/9110019.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/9110019.webp"
- alt="Cross on a mountain top, Austria. Sea of mountains in the background." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Top of the mountain. Austria&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/misc-35mm/individual/9110007"&gt;&lt;picture
- title="Wall with a graffito say, &amp;#39;perestroika&amp;#39; on it."&gt;
- &lt;source
- srcset="https://teukka.tech/images/9110007.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/9110007.webp"
- alt="Wall with a graffito say, &amp;#39;perestroika&amp;#39; on it." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Section of the Berlin Wall&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/misc-35mm/individual/9110006"&gt;&lt;picture
- title="Wall with a white bird in front of a yellow sun and a skyblue background"&gt;
- &lt;source
- srcset="https://teukka.tech/images/9110006.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/9110006.webp"
- alt="Wall with a white bird in front of a yellow sun and a skyblue background" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Section of the Berlin Wall&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/misc-35mm/individual/9110032"&gt;&lt;picture
- title="Looking up towards the sky through the branches of a large dead tree."&gt;
- &lt;source
- srcset="https://teukka.tech/images/9110032.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/9110032.webp"
- alt="Looking up towards the sky through the branches of a large dead tree." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Skeleton of a giant, Scotland&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>PCH Road Trip 2023</title><link>https://teukka.tech/photos/pch/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3728"&gt;&lt;picture
- title="Looking up from the forest floor through a canopy of redwood trees. The early morning light from a fall day is shining through"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_3728.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_3728.webp"
- alt="Looking up from the forest floor through a canopy of redwood trees. The early morning light from a fall day is shining through" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Redwoods&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3722"&gt;&lt;picture
- title="A large painted statue of Paul Bunyan and his blue ox, Blue."&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_3722.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_3722.webp"
- alt="A large painted statue of Paul Bunyan and his blue ox, Blue." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Paul Bunyan and Blue&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3723"&gt;&lt;picture
- title="Looking upward at a large stature of Paul Bunyan&amp;#39;s ox, Blue"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_3723.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_3723.webp"
- alt="Looking upward at a large stature of Paul Bunyan&amp;#39;s ox, Blue" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Blue&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3731"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_3731.webp"&gt;&lt;picture
  title="A mushroom starting to rise out of the ground underneath forest floor detritus"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3731.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3731.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_3731.webp"
@@ -356,36 +162,50 @@ I reached out to Moccamaster and they told me to contact my local distributor, w
  &lt;figcaption&gt;Awakening&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Blue</title><link>https://teukka.tech/photos/pch/img_3723/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3723/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3729"&gt;&lt;picture
- title="A mushroom growing in a carpet of dead redwood leaves"&gt;
+ &lt;a href="https://teukka.tech/images/IMG_3723.webp"&gt;&lt;picture
+ title="Looking upward at a large stature of Paul Bunyan&amp;#39;s ox, Blue"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3729.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3723.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
- src="https://teukka.tech/images/IMG_3729.webp"
- alt="A mushroom growing in a carpet of dead redwood leaves" &gt;
+ src="https://teukka.tech/images/IMG_3723.webp"
+ alt="Looking upward at a large stature of Paul Bunyan&amp;#39;s ox, Blue" &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
  
- &lt;figcaption&gt;Fall&lt;/figcaption&gt;
+ &lt;figcaption&gt;Blue&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Early Morning</title><link>https://teukka.tech/photos/pch/img_3732/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3732/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3732"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_3732.webp"&gt;&lt;picture
  title="A grey blue mushroom almost fully emerged from a carpet of dead redwood leaves"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3732.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3732.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_3732.webp"
@@ -396,96 +216,50 @@ I reached out to Moccamaster and they told me to contact my local distributor, w
  &lt;figcaption&gt;Early Morning&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Fall</title><link>https://teukka.tech/photos/pch/img_3729/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3729/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3725"&gt;&lt;picture
- title="Looking over the Pacific Ocean from a rocky cliff. Reeds and trees in the foreground."&gt;
+ &lt;a href="https://teukka.tech/images/IMG_3729.webp"&gt;&lt;picture
+ title="A mushroom growing in a carpet of dead redwood leaves"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3725.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3729.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
- src="https://teukka.tech/images/IMG_3725.webp"
- alt="Looking over the Pacific Ocean from a rocky cliff. Reeds and trees in the foreground." &gt;
+ src="https://teukka.tech/images/IMG_3729.webp"
+ alt="A mushroom growing in a carpet of dead redwood leaves" &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
  
- &lt;figcaption&gt;View of the Pacific - Klamath, California&lt;/figcaption&gt;
+ &lt;figcaption&gt;Fall&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Morning - Sausalito, California</title><link>https://teukka.tech/photos/pch/img_3706/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3706/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3716"&gt;&lt;picture
- title="Panoramic view of the Point Reyes Lighthouse. Cliffs and stairs in the foreground"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_3716.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_3716.webp"
- alt="Panoramic view of the Point Reyes Lighthouse. Cliffs and stairs in the foreground" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Point Reyes Lighthouse&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3717"&gt;&lt;picture
- title="A dilapidated building on the edge of a cliff overlooking the Pacific Ocean"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_3717.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_3717.webp"
- alt="A dilapidated building on the edge of a cliff overlooking the Pacific Ocean" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Point Reyes Lighthouse - Support Building&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3710"&gt;&lt;picture
- title="View of the Pacific Ocean. Sand dunes and vegetation in the foreground"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_3710.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_3710.webp"
- alt="View of the Pacific Ocean. Sand dunes and vegetation in the foreground" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Point Reyes&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/pch/individual/img_3706"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_3706.webp"&gt;&lt;picture
  title="Early morning view of the SF Bay in Sausalito."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3706.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3706.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_3706.webp"
@@ -496,15 +270,428 @@ I reached out to Moccamaster and they told me to contact my local distributor, w
  &lt;figcaption&gt;Morning - Sausalito, California&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Summer 2023</title><link>https://teukka.tech/photos/summer-23/</link><pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-23/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Paul Bunyan and Blue</title><link>https://teukka.tech/photos/pch/img_3722/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3722/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/summer-23/individual/img_3420"&gt;&lt;picture
- title="St. Paul&amp;#39;s cathedral in the background, garden flowers in the foreground."&gt;
+ &lt;a href="https://teukka.tech/images/IMG_3722.webp"&gt;&lt;picture
+ title="A large painted statue of Paul Bunyan and his blue ox, Blue."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3420.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3722.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_3722.webp"
+ alt="A large painted statue of Paul Bunyan and his blue ox, Blue." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Paul Bunyan and Blue&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Point Reyes</title><link>https://teukka.tech/photos/pch/img_3710/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3710/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_3710.webp"&gt;&lt;picture
+ title="View of the Pacific Ocean. Sand dunes and vegetation in the foreground"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_3710.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_3710.webp"
+ alt="View of the Pacific Ocean. Sand dunes and vegetation in the foreground" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Point Reyes&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Point Reyes Lighthouse</title><link>https://teukka.tech/photos/pch/img_3716/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3716/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_3716.webp"&gt;&lt;picture
+ title="Panoramic view of the Point Reyes Lighthouse. Cliffs and stairs in the foreground"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_3716.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_3716.webp"
+ alt="Panoramic view of the Point Reyes Lighthouse. Cliffs and stairs in the foreground" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Point Reyes Lighthouse&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Point Reyes Lighthouse - Support Building</title><link>https://teukka.tech/photos/pch/img_3717/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3717/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_3717.webp"&gt;&lt;picture
+ title="A dilapidated building on the edge of a cliff overlooking the Pacific Ocean"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_3717.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_3717.webp"
+ alt="A dilapidated building on the edge of a cliff overlooking the Pacific Ocean" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Point Reyes Lighthouse - Support Building&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Quiet cup of tea</title><link>https://teukka.tech/photos/misc-35mm/9120026-2/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/9120026-2/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/9120026-2.webp"&gt;&lt;picture
+ title="Winter light coming through a window with maroon drapes. A cup of tea resting on a windowsill."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/9120026-2.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/9120026-2.webp"
+ alt="Winter light coming through a window with maroon drapes. A cup of tea resting on a windowsill." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Quiet cup of tea&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Redwoods</title><link>https://teukka.tech/photos/pch/img_3728/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3728/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_3728.webp"&gt;&lt;picture
+ title="Looking up from the forest floor through a canopy of redwood trees. The early morning light from a fall day is shining through"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_3728.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_3728.webp"
+ alt="Looking up from the forest floor through a canopy of redwood trees. The early morning light from a fall day is shining through" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Redwoods&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Section of the Berlin Wall</title><link>https://teukka.tech/photos/misc-35mm/9110006/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/9110006/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/9110006.webp"&gt;&lt;picture
+ title="Wall with a white bird in front of a yellow sun and a skyblue background"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/9110006.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/9110006.webp"
+ alt="Wall with a white bird in front of a yellow sun and a skyblue background" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Section of the Berlin Wall&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Section of the Berlin Wall</title><link>https://teukka.tech/photos/misc-35mm/9110007/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/9110007/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/9110007.webp"&gt;&lt;picture
+ title="Wall with a graffito say, &amp;#39;perestroika&amp;#39; on it."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/9110007.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/9110007.webp"
+ alt="Wall with a graffito say, &amp;#39;perestroika&amp;#39; on it." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Section of the Berlin Wall&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Signpost on top of Gamskarkogel, Austria</title><link>https://teukka.tech/photos/misc-35mm/9110018/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/9110018/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/9110018.webp"&gt;&lt;picture
+ title="Signpost on a mountain top, pointing towards Brandebengut"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/9110018.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/9110018.webp"
+ alt="Signpost on a mountain top, pointing towards Brandebengut" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Signpost on top of Gamskarkogel, Austria&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Skeleton of a giant, Scotland</title><link>https://teukka.tech/photos/misc-35mm/9110032/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/9110032/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/9110032.webp"&gt;&lt;picture
+ title="Looking up towards the sky through the branches of a large dead tree."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/9110032.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/9110032.webp"
+ alt="Looking up towards the sky through the branches of a large dead tree." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Skeleton of a giant, Scotland&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Top of the mountain. Austria</title><link>https://teukka.tech/photos/misc-35mm/9110019/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/9110019/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/9110019.webp"&gt;&lt;picture
+ title="Cross on a mountain top, Austria. Sea of mountains in the background."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/9110019.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/9110019.webp"
+ alt="Cross on a mountain top, Austria. Sea of mountains in the background." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Top of the mountain. Austria&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>View of the Pacific - Klamath, California</title><link>https://teukka.tech/photos/pch/img_3725/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/pch/img_3725/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_3725.webp"&gt;&lt;picture
+ title="Looking over the Pacific Ocean from a rocky cliff. Reeds and trees in the foreground."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_3725.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_3725.webp"
+ alt="Looking over the Pacific Ocean from a rocky cliff. Reeds and trees in the foreground." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;View of the Pacific - Klamath, California&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Wild Heather, Scotland</title><link>https://teukka.tech/photos/misc-35mm/9110034/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/9110034/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/9110034.webp"&gt;&lt;picture
+ title="Heather plant growing next to a rock."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/9110034.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/9110034.webp"
+ alt="Heather plant growing next to a rock." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Wild Heather, Scotland&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Winter hike, Finland</title><link>https://teukka.tech/photos/misc-35mm/9120020/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/9120020/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/9120020.webp"&gt;&lt;picture
+ title="Winter in Pyhä, Finland. Snow covered lean-tos in the foreground."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/9120020.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/9120020.webp"
+ alt="Winter in Pyhä, Finland. Snow covered lean-tos in the foreground." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Winter hike, Finland&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Winter new Berchtesgaden, Germany</title><link>https://teukka.tech/photos/misc-35mm/9120035/</link><pubDate>Thu, 02 Nov 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/misc-35mm/9120035/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/9120035.webp"&gt;&lt;picture
+ title="Valley near Berchtesgaden, Germany. View of mountiains in the background, clouds filling the midground. Winter"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/9120035.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/9120035.webp"
+ alt="Valley near Berchtesgaden, Germany. View of mountiains in the background, clouds filling the midground. Winter" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Winter new Berchtesgaden, Germany&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>St. Paul's, London</title><link>https://teukka.tech/photos/summer-23/img_3420/</link><pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-23/img_3420/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_3420.webp"&gt;&lt;picture
+ title="St. Paul&amp;#39;s cathedral in the background, garden flowers in the foreground."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_3420.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_3420.webp"
@@ -515,16 +702,23 @@ I reached out to Moccamaster and they told me to contact my local distributor, w
  &lt;figcaption&gt;St. Paul&amp;#39;s, London.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Sunset, Mustahevonen, Finland</title><link>https://teukka.tech/photos/summer-23/img_3517/</link><pubDate>Tue, 01 Aug 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-23/img_3517/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/summer-23/individual/img_3517"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_3517.webp"&gt;&lt;picture
  title="Sunset over a dock, rowing boat in the foreground, pine trees scattered about."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3517.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3517.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_3517.webp"
@@ -535,15 +729,23 @@ I reached out to Moccamaster and they told me to contact my local distributor, w
  &lt;figcaption&gt;Sunset, Mustahevonen, Finland.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Spring 2023</title><link>https://teukka.tech/photos/spring-23/</link><pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/spring-23/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Muir Woods, California</title><link>https://teukka.tech/photos/spring-23/img_3360/</link><pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/spring-23/img_3360/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/spring-23/individual/img_3360"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_3360.webp"&gt;&lt;picture
  title="Two men standing on a wooden pathway under giant redwood trees."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3360.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3360.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_3360.webp"
@@ -554,16 +756,23 @@ I reached out to Moccamaster and they told me to contact my local distributor, w
  &lt;figcaption&gt;Muir Woods, California.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>View from the Marin Headlands, California</title><link>https://teukka.tech/photos/spring-23/img_3359/</link><pubDate>Fri, 07 Apr 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/spring-23/img_3359/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/spring-23/individual/img_3359"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_3359.webp"&gt;&lt;picture
  title="Panorama view over the Golden Gate, California."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3359.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3359.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_3359.webp"
@@ -574,55 +783,23 @@ I reached out to Moccamaster and they told me to contact my local distributor, w
  &lt;figcaption&gt;View from the Marin Headlands, California.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Winter 2022-2023</title><link>https://teukka.tech/photos/winter-22-23/</link><pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/winter-22-23/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Climbing up Isokuru</title><link>https://teukka.tech/photos/winter-22-23/img_3347/</link><pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/winter-22-23/img_3347/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/winter-22-23/individual/img_3300"&gt;&lt;picture
- title="Sunset framed over a snow path between two rows of trees"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_3300.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_3300.webp"
- alt="Sunset framed over a snow path between two rows of trees" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Sunset, Lapland&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/winter-22-23/individual/img_3290"&gt;&lt;picture
- title="Panorama view over Berchtesgaten, Germany. Watzmann peak in the background"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_3290.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_3290.webp"
- alt="Panorama view over Berchtesgaten, Germany. Watzmann peak in the background" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;View from the top, Berchtesgaden, Germany.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/winter-22-23/individual/img_3347"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_3347.webp"&gt;&lt;picture
  title="Man walking up snow steps lined with pine trees."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_3347.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3347.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_3347.webp"
@@ -633,156 +810,77 @@ I reached out to Moccamaster and they told me to contact my local distributor, w
  &lt;figcaption&gt;Climbing up Isokuru.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>What's next for Tendril Wiki</title><link>https://teukka.tech/posts/tendril-wiki-future/</link><pubDate>Fri, 19 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/tendril-wiki-future/</guid><description>&lt;p&gt;In my &lt;a href="https://teukka.tech/posts/tendril-wiki-lessons/"&gt;last post&lt;/a&gt;, I discussed some of the lessons I learned from building my personal knowledge management tool, Tendril Wiki. I want to discuss my vision for the tool and ideas around knowledge management. The main goal of Tendril Wiki is to collapse the tools I use for managing information into a single, unified platform. The functionality in Tendril Wiki arises from my own personal needs or from features I&amp;rsquo;ve seen other platforms / tools implement and wanted for myself.&lt;/p&gt;</description></item><item><title>Lessons from Building Tendril Wiki</title><link>https://teukka.tech/posts/tendril-wiki-lessons/</link><pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/tendril-wiki-lessons/</guid><description>&lt;p&gt;Over the past year and half, I&amp;rsquo;ve been working on a knowledge management tool called, &lt;a href="https://github.com/jamestthompson3/tendril-wiki"&gt;Tendril Wiki&lt;/a&gt;. I&amp;rsquo;ve used it to organize my thoughts and catalogue information both at work and in my personal life. Tendril Wiki has served as a place for me to experiment with tooling ideas, gain more experience using the Rust programming language, and copy concepts from other tools for thought. After 18 months, I want to reflect on what I&amp;rsquo;ve learned and where I can improve.&lt;/p&gt;</description></item><item><title>Summer 2022</title><link>https://teukka.tech/photos/summer-2022/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-2022/</guid><description>&lt;p&gt;In Summer 2022, I took a trip with my wife around Europe. We visited Austria, Scotland, and Germany.&lt;/p&gt;
-&lt;p&gt;&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Sunset, Lapland</title><link>https://teukka.tech/photos/winter-22-23/img_3300/</link><pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/winter-22-23/img_3300/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/summer-2022/individual/sheep-mountains"&gt;&lt;picture
- title="A sheep in the foreground with the Austrian Alps in the background. There is a stormy sky with the sun setting, painting the clouds purple and god."&gt;
+ &lt;a href="https://teukka.tech/images/IMG_3300.webp"&gt;&lt;picture
+ title="Sunset framed over a snow path between two rows of trees"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/sheep-mountains.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3300.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
- src="https://teukka.tech/images/sheep-mountains.webp"
- alt="A sheep in the foreground with the Austrian Alps in the background. There is a stormy sky with the sun setting, painting the clouds purple and god." &gt;
+ src="https://teukka.tech/images/IMG_3300.webp"
+ alt="Sunset framed over a snow path between two rows of trees" &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
  
- &lt;figcaption&gt;Sheep on top of Gamskarkogel.&lt;/figcaption&gt;
+ &lt;figcaption&gt;Sunset, Lapland&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>View from the top, Berchtesgaden, Germany</title><link>https://teukka.tech/photos/winter-22-23/img_3290/</link><pubDate>Sat, 07 Jan 2023 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/winter-22-23/img_3290/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/summer-2022/individual/sea-of-peaks"&gt;&lt;picture
- title="A panorama showing the peaks of the Austrian Alps at twilight. The sun is going down and green waves of mountain peaks are sitting beneath a gold and blue sky."&gt;
+ &lt;a href="https://teukka.tech/images/IMG_3290.webp"&gt;&lt;picture
+ title="Panorama view over Berchtesgaten, Germany. Watzmann peak in the background"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/sea-of-peaks.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_3290.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
- src="https://teukka.tech/images/sea-of-peaks.webp"
- alt="A panorama showing the peaks of the Austrian Alps at twilight. The sun is going down and green waves of mountain peaks are sitting beneath a gold and blue sky." &gt;
+ src="https://teukka.tech/images/IMG_3290.webp"
+ alt="Panorama view over Berchtesgaten, Germany. Watzmann peak in the background" &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
  
- &lt;figcaption&gt;Gamskarkogel, Austria.&lt;/figcaption&gt;
+ &lt;figcaption&gt;View from the top, Berchtesgaden, Germany.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>What's next for Tendril Wiki</title><link>https://teukka.tech/posts/tendril-wiki-future/</link><pubDate>Fri, 19 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/tendril-wiki-future/</guid><description>&lt;p&gt;In my &lt;a href="https://teukka.tech/posts/tendril-wiki-lessons/"&gt;last post&lt;/a&gt;, I discussed some of the lessons I learned from building my personal knowledge management tool, Tendril Wiki. I want to discuss my vision for the tool and ideas around knowledge management. The main goal of Tendril Wiki is to collapse the tools I use for managing information into a single, unified platform. The functionality in Tendril Wiki arises from my own personal needs or from features I&amp;rsquo;ve seen other platforms / tools implement and wanted for myself.&lt;/p&gt;</description></item><item><title>Lessons from Building Tendril Wiki</title><link>https://teukka.tech/posts/tendril-wiki-lessons/</link><pubDate>Thu, 04 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/tendril-wiki-lessons/</guid><description>&lt;p&gt;Over the past year and half, I&amp;rsquo;ve been working on a knowledge management tool called, &lt;a href="https://github.com/jamestthompson3/tendril-wiki"&gt;Tendril Wiki&lt;/a&gt;. I&amp;rsquo;ve used it to organize my thoughts and catalogue information both at work and in my personal life. Tendril Wiki has served as a place for me to experiment with tooling ideas, gain more experience using the Rust programming language, and copy concepts from other tools for thought. After 18 months, I want to reflect on what I&amp;rsquo;ve learned and where I can improve.&lt;/p&gt;</description></item><item><title>Cow friends, Austria</title><link>https://teukka.tech/photos/summer-2022/cow-friends/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-2022/cow-friends/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/summer-2022/individual/halfway-up-cairngorm"&gt;&lt;picture
- title="A view of the Scottish Highlands. Olive green hills are criss-crossed with white dirt trails"&gt;
- &lt;source
- srcset="https://teukka.tech/images/halfway-up-cairngorm.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/halfway-up-cairngorm.webp"
- alt="A view of the Scottish Highlands. Olive green hills are criss-crossed with white dirt trails" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Halfway up Cairn Gorm, Scotland&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/summer-2022/individual/fire-salamander"&gt;&lt;picture
- title="A fire salamander relaxing on a dirt trail on a summer afternoon."&gt;
- &lt;source
- srcset="https://teukka.tech/images/fire-salamander.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/fire-salamander.webp"
- alt="A fire salamander relaxing on a dirt trail on a summer afternoon." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Fire salamander, Austria.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/summer-2022/individual/watching-over-the-flock"&gt;&lt;picture
- title="A flock of sheep on the peak of Gamskarkogel in Austria. A wooden cross stands on the peak in the background."&gt;
- &lt;source
- srcset="https://teukka.tech/images/watching-over-the-flock.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/watching-over-the-flock.webp"
- alt="A flock of sheep on the peak of Gamskarkogel in Austria. A wooden cross stands on the peak in the background." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Sheep on the top of Gamskarkogel, Austria.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/summer-2022/individual/early-morning-mountain"&gt;&lt;picture
- title="Clouds obscuring a mountain valley over vivid green meadows. There are cows in the background."&gt;
- &lt;source
- srcset="https://teukka.tech/images/early-morning-mountain.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/early-morning-mountain.webp"
- alt="Clouds obscuring a mountain valley over vivid green meadows. There are cows in the background." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Early morning hike, Austria.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/summer-2022/individual/conquering-the-peak"&gt;&lt;picture
- title="The view of the valley from Coire an t-Sneachda. There is a woman standing on a cliff&amp;#39;s edge in the right foreground."&gt;
- &lt;source
- srcset="https://teukka.tech/images/conquering-the-peak.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/conquering-the-peak.webp"
- alt="The view of the valley from Coire an t-Sneachda. There is a woman standing on a cliff&amp;#39;s edge in the right foreground." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;The view from Coire an t-Sneachda, Scotland.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/summer-2022/individual/cow-friends"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/cow-friends.webp"&gt;&lt;picture
  title="Two young, gray calves huddling together in a mountain meadow."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/cow-friends.webp"&gt;
+ srcset="https://teukka.tech/images/cow-friends.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/cow-friends.webp"
@@ -793,8 +891,196 @@ I reached out to Moccamaster and they told me to contact my local distributor, w
  &lt;figcaption&gt;Cow friends, Austria.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Ideas That Have Changed My Life</title><link>https://teukka.tech/posts/lifechanging-ideas/</link><pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/lifechanging-ideas/</guid><description>&lt;h2 id="about-this-list"&gt;About this list&lt;/h2&gt;
+&lt;/div&gt;</description></item><item><title>Early morning hike, Austria</title><link>https://teukka.tech/photos/summer-2022/early-morning-mountain/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-2022/early-morning-mountain/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/early-morning-mountain.webp"&gt;&lt;picture
+ title="Clouds obscuring a mountain valley over vivid green meadows. There are cows in the background."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/early-morning-mountain.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/early-morning-mountain.webp"
+ alt="Clouds obscuring a mountain valley over vivid green meadows. There are cows in the background." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Early morning hike, Austria.&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Fire salamander, Austria</title><link>https://teukka.tech/photos/summer-2022/fire-salamander/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-2022/fire-salamander/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/fire-salamander.webp"&gt;&lt;picture
+ title="A fire salamander relaxing on a dirt trail on a summer afternoon."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/fire-salamander.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/fire-salamander.webp"
+ alt="A fire salamander relaxing on a dirt trail on a summer afternoon." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Fire salamander, Austria.&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Gamskarkogel, Austria</title><link>https://teukka.tech/photos/summer-2022/sea-of-peaks/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-2022/sea-of-peaks/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/sea-of-peaks.webp"&gt;&lt;picture
+ title="A panorama showing the peaks of the Austrian Alps at twilight. The sun is going down and green waves of mountain peaks are sitting beneath a gold and blue sky."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/sea-of-peaks.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/sea-of-peaks.webp"
+ alt="A panorama showing the peaks of the Austrian Alps at twilight. The sun is going down and green waves of mountain peaks are sitting beneath a gold and blue sky." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Gamskarkogel, Austria.&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Halfway up Cairn Gorm, Scotland</title><link>https://teukka.tech/photos/summer-2022/halfway-up-cairngorm/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-2022/halfway-up-cairngorm/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/halfway-up-cairngorm.webp"&gt;&lt;picture
+ title="A view of the Scottish Highlands. Olive green hills are criss-crossed with white dirt trails"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/halfway-up-cairngorm.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/halfway-up-cairngorm.webp"
+ alt="A view of the Scottish Highlands. Olive green hills are criss-crossed with white dirt trails" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Halfway up Cairn Gorm, Scotland&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Sheep on the top of Gamskarkogel, Austria</title><link>https://teukka.tech/photos/summer-2022/watching-over-the-flock/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-2022/watching-over-the-flock/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/watching-over-the-flock.webp"&gt;&lt;picture
+ title="A flock of sheep on the peak of Gamskarkogel in Austria. A wooden cross stands on the peak in the background."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/watching-over-the-flock.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/watching-over-the-flock.webp"
+ alt="A flock of sheep on the peak of Gamskarkogel in Austria. A wooden cross stands on the peak in the background." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Sheep on the top of Gamskarkogel, Austria.&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Sheep on top of Gamskarkogel</title><link>https://teukka.tech/photos/summer-2022/sheep-mountains/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-2022/sheep-mountains/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/sheep-mountains.webp"&gt;&lt;picture
+ title="A sheep in the foreground with the Austrian Alps in the background. There is a stormy sky with the sun setting, painting the clouds purple and gold."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/sheep-mountains.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/sheep-mountains.webp"
+ alt="A sheep in the foreground with the Austrian Alps in the background. There is a stormy sky with the sun setting, painting the clouds purple and gold." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Sheep on top of Gamskarkogel.&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>The view from Coire an t-Sneachda, Scotland</title><link>https://teukka.tech/photos/summer-2022/conquering-the-peak/</link><pubDate>Mon, 01 Aug 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/summer-2022/conquering-the-peak/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/conquering-the-peak.webp"&gt;&lt;picture
+ title="The view of the valley from Coire an t-Sneachda. There is a woman standing on a cliff&amp;#39;s edge in the right foreground."&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/conquering-the-peak.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/conquering-the-peak.webp"
+ alt="The view of the valley from Coire an t-Sneachda. There is a woman standing on a cliff&amp;#39;s edge in the right foreground." &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;The view from Coire an t-Sneachda, Scotland.&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Ideas That Have Changed My Life</title><link>https://teukka.tech/posts/lifechanging-ideas/</link><pubDate>Tue, 25 Jan 2022 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/lifechanging-ideas/</guid><description>&lt;h2 id="about-this-list"&gt;About this list&lt;/h2&gt;
 &lt;p&gt;This is a running and incomplete list of ideas that have changed the way I thought or interacted
 with the world. The plan is to continuously add ideas and maybe even spin some of them off into their
 own blog posts.&lt;/p&gt;
@@ -805,94 +1091,23 @@ own blog posts.&lt;/p&gt;
 same functionality as a properly set &lt;code&gt;path&lt;/code&gt; option in vim. Key mappings like &lt;code&gt;gf&lt;/code&gt;, &lt;code&gt;[i&lt;/code&gt;, &lt;code&gt;[d&lt;/code&gt;, and
 commands like &lt;code&gt;:find&lt;/code&gt; depend on having your path set correctly to find the file you&amp;rsquo;re searching
 for. Using the &lt;code&gt;:find&lt;/code&gt; command also gives us the ability to tab complete a file name, a feature
-which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/24821/</link><pubDate>Tue, 09 Nov 2021 06:53:41 +0000</pubDate><guid>https://teukka.tech/updates/24821/</guid><description>&lt;p&gt;Indieweb is the type of federated web3 I want to see rather than the introduction of artificial scarcity and an ecologically ruinous accounting system that encompasses current blockchain tech.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/56596/</link><pubDate>Sun, 10 Oct 2021 15:43:16 +0000</pubDate><guid>https://teukka.tech/updates/56596/</guid><description>&lt;p&gt;Computers are excellent tools for inducing altered states of consciousness. Unfortunately, these states are most likely to be fed by feelings of fear, anxiety, anger, or insecurity, with a distinctive outward focus, rather than looking inward and trying to augment more enlightened parts of ourselves like with more traditional spiritual tools.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/44844/</link><pubDate>Fri, 08 Oct 2021 12:27:24 +0000</pubDate><guid>https://teukka.tech/updates/44844/</guid><description>&lt;p&gt;Creating a crappy version of something is the first step to creating a better version of something. It also helps you know what you don&amp;rsquo;t know :)&lt;/p&gt;</description></item><item><title>Mushrom Foraging Trip</title><link>https://teukka.tech/photos/09-25-2021/</link><pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-25-2021/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
+which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/24821/</link><pubDate>Tue, 09 Nov 2021 06:53:41 +0000</pubDate><guid>https://teukka.tech/updates/24821/</guid><description>&lt;p&gt;Indieweb is the type of federated web3 I want to see rather than the introduction of artificial scarcity and an ecologically ruinous accounting system that encompasses current blockchain tech.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/56596/</link><pubDate>Sun, 10 Oct 2021 15:43:16 +0000</pubDate><guid>https://teukka.tech/updates/56596/</guid><description>&lt;p&gt;Computers are excellent tools for inducing altered states of consciousness. Unfortunately, these states are most likely to be fed by feelings of fear, anxiety, anger, or insecurity, with a distinctive outward focus, rather than looking inward and trying to augment more enlightened parts of ourselves like with more traditional spiritual tools.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/44844/</link><pubDate>Fri, 08 Oct 2021 12:27:24 +0000</pubDate><guid>https://teukka.tech/updates/44844/</guid><description>&lt;p&gt;Creating a crappy version of something is the first step to creating a better version of something. It also helps you know what you don&amp;rsquo;t know :)&lt;/p&gt;</description></item><item><title>Big ol' anthill</title><link>https://teukka.tech/photos/09-25-2021/img_1863/</link><pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-25-2021/img_1863/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/09-25-2021/individual/img_1858"&gt;&lt;picture
- title="Mushrooms growning in a decaying part of a tree"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_1858.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_1858.webp"
- alt="Mushrooms growning in a decaying part of a tree" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Mushroom hotel&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/09-25-2021/individual/img_1860"&gt;&lt;picture
- title="Bright yellow chanterelle mushrooms"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_1860.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_1860.webp"
- alt="Bright yellow chanterelle mushrooms" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Chanterelles&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/09-25-2021/individual/img_1859"&gt;&lt;picture
- title="Large growth surrounding a tree"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_1859.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_1859.webp"
- alt="Large growth surrounding a tree" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Mini biome&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/09-25-2021/individual/img_1862"&gt;&lt;picture
- title="Panorama of a Finnish forest in fall, dead ferns cover the ground"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_1862.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_1862.webp"
- alt="Panorama of a Finnish forest in fall, dead ferns cover the ground" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Metsä!&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/09-25-2021/individual/img_1863"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_1863.webp"&gt;&lt;picture
  title="Large anthill resting underneath a tree"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_1863.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_1863.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_1863.webp"
@@ -903,36 +1118,50 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Big ol&amp;#39; anthill&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Chanterelles</title><link>https://teukka.tech/photos/09-25-2021/img_1860/</link><pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-25-2021/img_1860/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/09-25-2021/individual/img_1864"&gt;&lt;picture
- title="Mushrooms growing out of a bank of collapsed soil"&gt;
+ &lt;a href="https://teukka.tech/images/IMG_1860.webp"&gt;&lt;picture
+ title="Bright yellow chanterelle mushrooms"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_1864.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_1860.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
- src="https://teukka.tech/images/IMG_1864.webp"
- alt="Mushrooms growing out of a bank of collapsed soil" &gt;
+ src="https://teukka.tech/images/IMG_1860.webp"
+ alt="Bright yellow chanterelle mushrooms" &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
  
- &lt;figcaption&gt;Mushrooooooms&lt;/figcaption&gt;
+ &lt;figcaption&gt;Chanterelles&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Magical mycota</title><link>https://teukka.tech/photos/09-25-2021/img_1865/</link><pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-25-2021/img_1865/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/09-25-2021/individual/img_1865"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_1865.webp"&gt;&lt;picture
  title="Mushrooms growing out of a log, surrounded by leaves"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_1865.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_1865.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_1865.webp"
@@ -943,15 +1172,131 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Magical mycota&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Finland</title><link>https://teukka.tech/photos/finland/</link><pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/finland/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Metsä!</title><link>https://teukka.tech/photos/09-25-2021/img_1862/</link><pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-25-2021/img_1862/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/finland/individual/bridge_finland"&gt;&lt;picture
- title="Crossing a bridge in the fall over a small stream, a girl is in the foreground"&gt;
+ &lt;a href="https://teukka.tech/images/IMG_1862.webp"&gt;&lt;picture
+ title="Panorama of a Finnish forest in fall, dead ferns cover the ground"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/bridge_finland.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_1862.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_1862.webp"
+ alt="Panorama of a Finnish forest in fall, dead ferns cover the ground" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Metsä!&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Mini biome</title><link>https://teukka.tech/photos/09-25-2021/img_1859/</link><pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-25-2021/img_1859/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_1859.webp"&gt;&lt;picture
+ title="Large growth surrounding a tree"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_1859.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_1859.webp"
+ alt="Large growth surrounding a tree" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Mini biome&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Mushroom hotel</title><link>https://teukka.tech/photos/09-25-2021/img_1858/</link><pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-25-2021/img_1858/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_1858.webp"&gt;&lt;picture
+ title="Mushrooms growning in a decaying part of a tree"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_1858.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_1858.webp"
+ alt="Mushrooms growning in a decaying part of a tree" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Mushroom hotel&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Mushrooooooms</title><link>https://teukka.tech/photos/09-25-2021/img_1864/</link><pubDate>Sat, 25 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-25-2021/img_1864/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_1864.webp"&gt;&lt;picture
+ title="Mushrooms growing out of a bank of collapsed soil"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_1864.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_1864.webp"
+ alt="Mushrooms growing out of a bank of collapsed soil" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Mushrooooooms&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Fall, near Raasepori</title><link>https://teukka.tech/photos/finland/bridge_finland/</link><pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/finland/bridge_finland/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/bridge_finland.webp"&gt;&lt;picture
+ title="Crossing a bridge in the fall over a small stream, a girl is in the foreground"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/bridge_finland.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/bridge_finland.webp"
@@ -962,36 +1307,23 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Fall, near Raasepori&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Lake Saimaa</title><link>https://teukka.tech/photos/finland/saimaa_boat/</link><pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/finland/saimaa_boat/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/finland/individual/island_near_raasepori"&gt;&lt;picture
- title="Sunset over the sea, foreground covered in dried reeds"&gt;
- &lt;source
- srcset="https://teukka.tech/images/island_near_raasepori.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/island_near_raasepori.webp"
- alt="Sunset over the sea, foreground covered in dried reeds" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Sunset in fall&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/finland/individual/saimaa_boat"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/saimaa_boat.webp"&gt;&lt;picture
  title="Sunset over lake Saimaa, boat and people in the foreground"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/saimaa_boat.webp"&gt;
+ srcset="https://teukka.tech/images/saimaa_boat.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/saimaa_boat.webp"
@@ -1002,16 +1334,23 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Lake Saimaa&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Lapland</title><link>https://teukka.tech/photos/finland/lapland/</link><pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/finland/lapland/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/finland/individual/lapland"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/lapland.webp"&gt;&lt;picture
  title="Overcast day overlooking a meadow in Lapland"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/lapland.webp"&gt;
+ srcset="https://teukka.tech/images/lapland.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/lapland.webp"
@@ -1022,16 +1361,50 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Lapland&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Sunset in fall</title><link>https://teukka.tech/photos/finland/island_near_raasepori/</link><pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/finland/island_near_raasepori/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/finland/individual/tree_on_island"&gt;&lt;picture
- title="Sunset poking through a pine tree on the coast"&gt;
+ &lt;a href="https://teukka.tech/images/island_near_raasepori.webp"&gt;&lt;picture
+ title="Sunset over the sea, foreground covered in dried reeds"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/tree_on_island.webp"&gt;
+ srcset="https://teukka.tech/images/island_near_raasepori.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/island_near_raasepori.webp"
+ alt="Sunset over the sea, foreground covered in dried reeds" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Sunset in fall&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Sunset near Raasepori</title><link>https://teukka.tech/photos/finland/tree_on_island/</link><pubDate>Tue, 07 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/finland/tree_on_island/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/tree_on_island.webp"&gt;&lt;picture
+ title="Sunset poking through a pine tree on the coast"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/tree_on_island.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/tree_on_island.webp"
@@ -1042,15 +1415,23 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Sunset near Raasepori&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Espoo Central Park</title><link>https://teukka.tech/photos/09-04-2021/</link><pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-04-2021/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Blueish Purple Mushroom</title><link>https://teukka.tech/photos/09-04-2021/img_1830/</link><pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-04-2021/img_1830/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/09-04-2021/individual/img_1830"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_1830.webp"&gt;&lt;picture
  title="blueish purple mushroom"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_1830.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_1830.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_1830.webp"
@@ -1061,16 +1442,23 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Blueish purple mushroom&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Bright Yellow Mushroom</title><link>https://teukka.tech/photos/09-04-2021/img_1833/</link><pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-04-2021/img_1833/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/09-04-2021/individual/img_1833"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_1833.webp"&gt;&lt;picture
  title="bright yellow mushroom"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_1833.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_1833.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_1833.webp"
@@ -1081,116 +1469,23 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Bright yellow mushroom&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Classic Amanita Muscaria - The Fairytale Mushroom</title><link>https://teukka.tech/photos/09-04-2021/img_1841/</link><pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-04-2021/img_1841/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/09-04-2021/individual/img_1835"&gt;&lt;picture
- title="dense cluster of light brown mushrooms"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_1835.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_1835.webp"
- alt="dense cluster of light brown mushrooms" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Dense cluster of light brown mushrooms&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/09-04-2021/individual/img_1836"&gt;&lt;picture
- title="two bright red mushrooms"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_1836.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_1836.webp"
- alt="two bright red mushrooms" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Two bright red mushrooms&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/09-04-2021/individual/img_1837"&gt;&lt;picture
- title="large brown mushroom growing from a fallen tree"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_1837.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_1837.webp"
- alt="large brown mushroom growing from a fallen tree" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Large brown mushroom growing from a fallen tree&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/09-04-2021/individual/img_1839"&gt;&lt;picture
- title="two large mushroom, I think of genus Amanita"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_1839.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_1839.webp"
- alt="two large mushroom, I think of genus Amanita" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Two large mushroom, I think of genus Amanita&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/09-04-2021/individual/img_1840"&gt;&lt;picture
- title="two mushrooms that are deep brown, and almost purple"&gt;
- &lt;source
- srcset="https://teukka.tech/images/IMG_1840.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/IMG_1840.webp"
- alt="two mushrooms that are deep brown, and almost purple" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Two mushrooms that are deep brown, and almost purple&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/09-04-2021/individual/img_1841"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_1841.webp"&gt;&lt;picture
  title="Classic Amanita muscaria, the fairytale mushroom"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/IMG_1841.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_1841.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/IMG_1841.webp"
@@ -1201,55 +1496,158 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Classic Amanita muscaria, the fairytale mushroom&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Utah, Summer</title><link>https://teukka.tech/photos/utah-2021/</link><pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/utah-2021/</guid><description>&lt;p&gt;&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Deep Brown Almost Purple Mushrooms</title><link>https://teukka.tech/photos/09-04-2021/img_1840/</link><pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-04-2021/img_1840/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/utah-2021/individual/lake_blanche"&gt;&lt;picture
- title="View overlooking Lake Blance"&gt;
+ &lt;a href="https://teukka.tech/images/IMG_1840.webp"&gt;&lt;picture
+ title="two mushrooms that are deep brown, and almost purple"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/lake_blanche.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_1840.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
- src="https://teukka.tech/images/lake_blanche.webp"
- alt="View overlooking Lake Blance" &gt;
+ src="https://teukka.tech/images/IMG_1840.webp"
+ alt="two mushrooms that are deep brown, and almost purple" &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
  
- &lt;figcaption&gt;Lake Blanche&lt;/figcaption&gt;
+ &lt;figcaption&gt;Two mushrooms that are deep brown, and almost purple&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Dense Cluster of Light Brown Mushrooms</title><link>https://teukka.tech/photos/09-04-2021/img_1835/</link><pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-04-2021/img_1835/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/utah-2021/individual/lake_mary"&gt;&lt;picture
- title="View overlooking Lake Mary"&gt;
+ &lt;a href="https://teukka.tech/images/IMG_1835.webp"&gt;&lt;picture
+ title="dense cluster of light brown mushrooms"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/lake_mary.webp"&gt;
+ srcset="https://teukka.tech/images/IMG_1835.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
- src="https://teukka.tech/images/lake_mary.webp"
- alt="View overlooking Lake Mary" &gt;
+ src="https://teukka.tech/images/IMG_1835.webp"
+ alt="dense cluster of light brown mushrooms" &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
  
- &lt;figcaption&gt;Lake Mary&lt;/figcaption&gt;
+ &lt;figcaption&gt;Dense cluster of light brown mushrooms&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Large Brown Mushroom Growing From Fallen Tree</title><link>https://teukka.tech/photos/09-04-2021/img_1837/</link><pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-04-2021/img_1837/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/utah-2021/individual/farmington"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/IMG_1837.webp"&gt;&lt;picture
+ title="large brown mushroom growing from a fallen tree"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_1837.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_1837.webp"
+ alt="large brown mushroom growing from a fallen tree" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Large brown mushroom growing from a fallen tree&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Two Bright Red Mushrooms</title><link>https://teukka.tech/photos/09-04-2021/img_1836/</link><pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-04-2021/img_1836/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_1836.webp"&gt;&lt;picture
+ title="two bright red mushrooms"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_1836.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_1836.webp"
+ alt="two bright red mushrooms" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Two bright red mushrooms&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Two Large Mushrooms of Genus Amanita</title><link>https://teukka.tech/photos/09-04-2021/img_1839/</link><pubDate>Sat, 04 Sep 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/09-04-2021/img_1839/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/IMG_1839.webp"&gt;&lt;picture
+ title="two large mushroom, I think of genus Amanita"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/IMG_1839.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/IMG_1839.webp"
+ alt="two large mushroom, I think of genus Amanita" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Two large mushroom, I think of genus Amanita&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Farmington</title><link>https://teukka.tech/photos/utah-2021/farmington/</link><pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/utah-2021/farmington/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/farmington.webp"&gt;&lt;picture
  title="View overlooking Farmington, Utah"&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/farmington.webp"&gt;
+ srcset="https://teukka.tech/images/farmington.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/farmington.webp"
@@ -1260,8 +1658,61 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Farmington&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/53122/</link><pubDate>Fri, 28 May 2021 14:45:22 +0000</pubDate><guid>https://teukka.tech/updates/53122/</guid><description>&lt;p&gt;What started out as &lt;a href="https://teukka.tech/updates/57598/"&gt;an idea&lt;/a&gt; is now officially available to try! Introducing the beta version of &lt;a href="https://github.com/jamestthompson3/tendril-wiki"&gt;tendril-wiki&lt;/a&gt;, trying to bring what I love from TiddlyWiki and Hugo and make it my own!&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/45594/</link><pubDate>Wed, 19 May 2021 12:39:54 +0000</pubDate><guid>https://teukka.tech/updates/45594/</guid><description>&lt;p&gt;Something that is really hard to capture with a type system is how values change over time. For example, I could have a type of &lt;code&gt;null&lt;/code&gt; when I boot my app, but then have that same data structure have a type &lt;code&gt;string&lt;/code&gt; after a certain point in time. There’s not a great way to tell type systems, “after a certain series of events, if this process is still running, this will be of a certain type”&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/44523/</link><pubDate>Sat, 15 May 2021 12:22:03 +0000</pubDate><guid>https://teukka.tech/updates/44523/</guid><description>&lt;p&gt;Finnish summer weather is so nice that it tricks you into thinking that winter doesn’t exist.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/35750/</link><pubDate>Thu, 13 May 2021 09:55:50 +0000</pubDate><guid>https://teukka.tech/updates/35750/</guid><description>&lt;p&gt;The more I use Rust, the more I appreciate how good the built in tooling is. Not having to configure separate test runners, packagers, package managers, etc for each project results in a huge reduction of mental overhead and allows you to just focus on writing code&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/70579/</link><pubDate>Sun, 11 Apr 2021 19:36:19 +0000</pubDate><guid>https://teukka.tech/updates/70579/</guid><description>&lt;p&gt;RE: &lt;a href="https://teukka.tech/updates/57598/"&gt;this&lt;/a&gt;, I started a TiddlyWiki meets Hugo project to try and get all my info in the same format.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/57598/</link><pubDate>Tue, 06 Apr 2021 15:59:58 +0000</pubDate><guid>https://teukka.tech/updates/57598/</guid><description>&lt;p&gt;Thinking about what sort of tools and processes I can change to tighten up the collection, curation, creation loop.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/33312/</link><pubDate>Sun, 04 Apr 2021 09:15:12 +0000</pubDate><guid>https://teukka.tech/updates/33312/</guid><description>&lt;p&gt;What is it about analog photography that is so satisfying? The feeling of all the mechanical parts? The absence of social pressure to edit and post? The finality of a roll of film?&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/67761/</link><pubDate>Fri, 02 Apr 2021 18:49:21 +0000</pubDate><guid>https://teukka.tech/updates/67761/</guid><description>&lt;p&gt;Of all the Finnish cultural traditions, I think I enjoy sauna the most.&lt;/p&gt;</description></item><item><title>(Nvim) Lua for Javascripters: Module Exports</title><link>https://teukka.tech/posts/js-to-lua-modules/</link><pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/js-to-lua-modules/</guid><description>&lt;h2 id="goals"&gt;Goals&lt;/h2&gt;
+&lt;/div&gt;</description></item><item><title>Lake Blanche</title><link>https://teukka.tech/photos/utah-2021/lake_blanche/</link><pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/utah-2021/lake_blanche/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/lake_blanche.webp"&gt;&lt;picture
+ title="View overlooking Lake Blance"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/lake_blanche.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/lake_blanche.webp"
+ alt="View overlooking Lake Blance" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Lake Blanche&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title>Lake Mary</title><link>https://teukka.tech/photos/utah-2021/lake_mary/</link><pubDate>Sun, 04 Jul 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/utah-2021/lake_mary/</guid><description>&lt;div class="picture"&gt;
+ 
+ &lt;figure&gt;
+ 
+ &lt;a href="https://teukka.tech/images/lake_mary.webp"&gt;&lt;picture
+ title="View overlooking Lake Mary"&gt;
+ 
+ 
+ &lt;source
+ srcset="https://teukka.tech/images/lake_mary.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
+ &lt;img
+ class="u-photo"
+ src="https://teukka.tech/images/lake_mary.webp"
+ alt="View overlooking Lake Mary" &gt;
+ &lt;/picture&gt;
+ &lt;/a&gt;
+ 
+ &lt;figcaption&gt;Lake Mary&lt;/figcaption&gt;
+ &lt;/figure&gt;
+ 
+&lt;/div&gt;</description></item><item><title/><link>https://teukka.tech/updates/53122/</link><pubDate>Fri, 28 May 2021 14:45:22 +0000</pubDate><guid>https://teukka.tech/updates/53122/</guid><description>&lt;p&gt;What started out as &lt;a href="https://teukka.tech/updates/57598/"&gt;an idea&lt;/a&gt; is now officially available to try! Introducing the beta version of &lt;a href="https://github.com/jamestthompson3/tendril-wiki"&gt;tendril-wiki&lt;/a&gt;, trying to bring what I love from TiddlyWiki and Hugo and make it my own!&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/45594/</link><pubDate>Wed, 19 May 2021 12:39:54 +0000</pubDate><guid>https://teukka.tech/updates/45594/</guid><description>&lt;p&gt;Something that is really hard to capture with a type system is how values change over time. For example, I could have a type of &lt;code&gt;null&lt;/code&gt; when I boot my app, but then have that same data structure have a type &lt;code&gt;string&lt;/code&gt; after a certain point in time. There’s not a great way to tell type systems, “after a certain series of events, if this process is still running, this will be of a certain type”&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/44523/</link><pubDate>Sat, 15 May 2021 12:22:03 +0000</pubDate><guid>https://teukka.tech/updates/44523/</guid><description>&lt;p&gt;Finnish summer weather is so nice that it tricks you into thinking that winter doesn’t exist.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/35750/</link><pubDate>Thu, 13 May 2021 09:55:50 +0000</pubDate><guid>https://teukka.tech/updates/35750/</guid><description>&lt;p&gt;The more I use Rust, the more I appreciate how good the built in tooling is. Not having to configure separate test runners, packagers, package managers, etc for each project results in a huge reduction of mental overhead and allows you to just focus on writing code&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/70579/</link><pubDate>Sun, 11 Apr 2021 19:36:19 +0000</pubDate><guid>https://teukka.tech/updates/70579/</guid><description>&lt;p&gt;RE: &lt;a href="https://teukka.tech/updates/57598/"&gt;this&lt;/a&gt;, I started a TiddlyWiki meets Hugo project to try and get all my info in the same format.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/57598/</link><pubDate>Tue, 06 Apr 2021 15:59:58 +0000</pubDate><guid>https://teukka.tech/updates/57598/</guid><description>&lt;p&gt;Thinking about what sort of tools and processes I can change to tighten up the collection, curation, creation loop.&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/33312/</link><pubDate>Sun, 04 Apr 2021 09:15:12 +0000</pubDate><guid>https://teukka.tech/updates/33312/</guid><description>&lt;p&gt;What is it about analog photography that is so satisfying? The feeling of all the mechanical parts? The absence of social pressure to edit and post? The finality of a roll of film?&lt;/p&gt;</description></item><item><title/><link>https://teukka.tech/updates/67761/</link><pubDate>Fri, 02 Apr 2021 18:49:21 +0000</pubDate><guid>https://teukka.tech/updates/67761/</guid><description>&lt;p&gt;Of all the Finnish cultural traditions, I think I enjoy sauna the most.&lt;/p&gt;</description></item><item><title>(Nvim) Lua for Javascripters: Module Exports</title><link>https://teukka.tech/posts/js-to-lua-modules/</link><pubDate>Wed, 31 Mar 2021 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/js-to-lua-modules/</guid><description>&lt;h2 id="goals"&gt;Goals&lt;/h2&gt;
 &lt;p&gt;This aims to be quick reference guide on lua module exports compared to JavaScript module exports.&lt;/p&gt;
 &lt;h2 id="task"&gt;Task&lt;/h2&gt;
 &lt;p&gt;We want to export a series of module scoped functions in both JavaScript and Lua. This guide also show side by side comparisons on writing a file to a specific directory and deleting a file from the same directory.&lt;/p&gt;
@@ -1323,35 +1774,23 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f00"&gt;hi&lt;/span&gt;! link GitLens Comment
 &lt;/span&gt;&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;</description></item><item><title>Using LibUV in Neovim</title><link>https://teukka.tech/posts/2020-01-07-vimloop/</link><pubDate>Tue, 07 Jan 2020 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2020-01-07-vimloop/</guid><description>&lt;h2 id="off-the-main-loop-async-actions-within-neovim"&gt;Off The Main Loop: Async Actions within Neovim&lt;/h2&gt;
 &lt;p&gt;Neovim embeds the libuv library in the editor and exposes lua (and to some extent vimscript through the &lt;code&gt;jobstart&lt;/code&gt; function) bindings for interacting with the library&amp;rsquo;s API. This allows actions in the editor to happen asynchronously, keeping the main editor loop clear for user input. What this means practically for users is that actions which take a long time such as grepping through large projects, generating ctags, or linting can now be done in the background without blocking the user&amp;rsquo;s ability to keep editing text.&lt;/p&gt;</description></item><item><title>From init.vim to init.lua</title><link>https://teukka.tech/posts/2019-12-19-luanvim/</link><pubDate>Mon, 16 Dec 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-12-19-luanvim/</guid><description>&lt;h2 id="why-lua"&gt;Why Lua?&lt;/h2&gt;
-&lt;p&gt;Neovim has an embedded lua 5.1 runtime which is used to create faster and more powerful extensions of your favorite editor. In the &lt;a href="https://neovim.io/charter/"&gt;Neovim charter&lt;/a&gt;, it lists one of its goals as developing a first-class lua scripting alternative to VimL. One of the reasons for doing this is that VimL is a slow interpreted language with almost no optimizations. Much of the time spent in vim startup and in actions from plugins that can block the main loop in the editor is in parsing and executing vimscript. A great explanation of this can be found in Neovim lead maintainer, Justin M. Keyes&amp;rsquo; talk, &lt;a href="https://www.youtube.com/watch?v=Bt-vmPC_-Ho"&gt;We can have nice things&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Central Europe</title><link>https://teukka.tech/photos/central-europe/</link><pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/central-europe/</guid><description>&lt;p&gt;In Fall 2019, I took a trip around Central Europe. I visited Austria, Slovakia, Hungary, and Germany.&lt;/p&gt;
-&lt;p&gt;&lt;div class="picture"&gt;
+&lt;p&gt;Neovim has an embedded lua 5.1 runtime which is used to create faster and more powerful extensions of your favorite editor. In the &lt;a href="https://neovim.io/charter/"&gt;Neovim charter&lt;/a&gt;, it lists one of its goals as developing a first-class lua scripting alternative to VimL. One of the reasons for doing this is that VimL is a slow interpreted language with almost no optimizations. Much of the time spent in vim startup and in actions from plugins that can block the main loop in the editor is in parsing and executing vimscript. A great explanation of this can be found in Neovim lead maintainer, Justin M. Keyes&amp;rsquo; talk, &lt;a href="https://www.youtube.com/watch?v=Bt-vmPC_-Ho"&gt;We can have nice things&lt;/a&gt;.&lt;/p&gt;</description></item><item><title>Berchtesgaden, Germany</title><link>https://teukka.tech/photos/central-europe/berchtesgaden/</link><pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/central-europe/berchtesgaden/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/central-europe/individual/villagealps"&gt;&lt;picture
- title="A village at the foot of a mountain. Snow is powdered down the mountain, but does not reach the village which sits on the side of a lake, just after a forest."&gt;
- &lt;source
- srcset="https://teukka.tech/images/villagealps.webp"&gt;
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/villagealps.webp"
- alt="A village at the foot of a mountain. Snow is powdered down the mountain, but does not reach the village which sits on the side of a lake, just after a forest." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Village in the German alps.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/photos/central-europe/individual/berchtesgaden"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/berchtesgaden.webp"&gt;&lt;picture
  title="Panorama overlooking the town of Berchtesgaden, Germany. The Watzmann peak is visible in the background and covered in snow."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/berchtesgaden.webp"&gt;
+ srcset="https://teukka.tech/images/berchtesgaden.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/berchtesgaden.webp"
@@ -1362,16 +1801,23 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Berchtesgaden, Germany.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Budapest Skyline</title><link>https://teukka.tech/photos/central-europe/skylinebudapest/</link><pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/central-europe/skylinebudapest/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/photos/central-europe/individual/skylinebudapest"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/skylinebudapest.webp"&gt;&lt;picture
  title="Sunset the skyline of Buda in Budapest. Overlooks an old buildings with copper colored roofs with the Danube in the background."&gt;
+ 
+ 
  &lt;source
- srcset="https://teukka.tech/images/skylinebudapest.webp"&gt;
+ srcset="https://teukka.tech/images/skylinebudapest.webp"
+ &gt;
+ 
+ 
+ 
+ 
+ 
+ 
  &lt;img
  class="u-photo"
  src="https://teukka.tech/images/skylinebudapest.webp"
@@ -1382,18 +1828,16 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  &lt;figcaption&gt;Budapest Skyline&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
+&lt;/div&gt;</description></item><item><title>Village in the German Alps</title><link>https://teukka.tech/photos/central-europe/villagealps/</link><pubDate>Thu, 07 Nov 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/photos/central-europe/villagealps/</guid><description>&lt;div class="picture"&gt;
  
  &lt;figure&gt;
  
- &lt;a href="https://teukka.tech/images/wallbudapest.webp"&gt;&lt;picture
- title="Mosaic inlay on a brick wall. Two angels holding a seal."&gt;
+ &lt;a href="https://teukka.tech/images/villagealps.webp"&gt;&lt;picture
+ title="A village at the foot of a mountain. Snow is powdered down the mountain, but does not reach the village which sits on the side of a lake, just after a forest."&gt;
  
  
  &lt;source
- srcset="https://teukka.tech/images/wallbudapest.webp"
+ srcset="https://teukka.tech/images/villagealps.webp"
  &gt;
  
  
@@ -1403,364 +1847,15 @@ which fuzzy finders do not offer.&lt;/p&gt;</description></item><item><title/><l
  
  &lt;img
  class="u-photo"
- src="https://teukka.tech/images/wallbudapest.webp"
- alt="Mosaic inlay on a brick wall. Two angels holding a seal." &gt;
+ src="https://teukka.tech/images/villagealps.webp"
+ alt="A village at the foot of a mountain. Snow is powdered down the mountain, but does not reach the village which sits on the side of a lake, just after a forest." &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
  
- &lt;figcaption&gt;Wall in Budapest.&lt;/figcaption&gt;
+ &lt;figcaption&gt;Village in the German alps.&lt;/figcaption&gt;
  &lt;/figure&gt;
  
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/workingman.webp"&gt;&lt;picture
- title="Man at Work statue. A bronze cast statue of a man peering out of a manhole."&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/workingman.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/workingman.webp"
- alt="Man at Work statue. A bronze cast statue of a man peering out of a manhole." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Man at Work. Bratislava&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/bluechurch.webp"&gt;&lt;picture
- title="Blue church fo St. Elsabeth at twighlight."&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/bluechurch.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/bluechurch.webp"
- alt="Blue church fo St. Elsabeth at twighlight." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Church of St. Elisabeth. Bratislava.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/hikebudapest.webp"&gt;&lt;picture
- title="Grass path between oak trees in the fall."&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/hikebudapest.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/hikebudapest.webp"
- alt="Grass path between oak trees in the fall." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Hiking in the Budapest foothills&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/stagbudapest.webp"&gt;&lt;picture
- title="Stag sitting on a bed of dried oak leaves"&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/stagbudapest.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/stagbudapest.webp"
- alt="Stag sitting on a bed of dried oak leaves" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Stag. Budapest.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/statuevienna.webp"&gt;&lt;picture
- title="Statue of a man on a horse with a flag in his hands. The horse is reared up on its hind legs."&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/statuevienna.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/statuevienna.webp"
- alt="Statue of a man on a horse with a flag in his hands. The horse is reared up on its hind legs." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Vienna.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/museumvienna.webp"&gt;&lt;picture
- title="Inside the Art History Museum in Vienna. View of painted vaulted ceilings"&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/museumvienna.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/museumvienna.webp"
- alt="Inside the Art History Museum in Vienna. View of painted vaulted ceilings" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Art History Museum, Vienna.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/townsquare.webp"&gt;&lt;picture
- title="A town square with a large stone orb held up by lions with the date 1688 inscribed at the base."&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/townsquare.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/townsquare.webp"
- alt="A town square with a large stone orb held up by lions with the date 1688 inscribed at the base." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Square in Székesfehérvár&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/statueszfr.webp"&gt;&lt;picture
- title="Bronze cast statue of an old woman pushing a cart"&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/statueszfr.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/statueszfr.webp"
- alt="Bronze cast statue of an old woman pushing a cart" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Aunt Kati statue in Székesfehérvár&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/creekbyroad.webp"&gt;&lt;picture
- title="A creek by a road in fall. Red fallen leaves are scattered on still green moss. The water is bright blue."&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/creekbyroad.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/creekbyroad.webp"
- alt="A creek by a road in fall. Red fallen leaves are scattered on still green moss. The water is bright blue." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Stream in the German Alps.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/fountainbudapest.webp"&gt;&lt;picture
- title="A fountain with bronze cast statues depicting a man with a hunting party and hounds. A slain stag lies at the man&amp;#39;s feet."&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/fountainbudapest.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/fountainbudapest.webp"
- alt="A fountain with bronze cast statues depicting a man with a hunting party and hounds. A slain stag lies at the man&amp;#39;s feet." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Fountain in Budapest.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/heartszfv.webp"&gt;&lt;picture
- title="A statue with a heart and the letters SZFV"&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/heartszfv.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/heartszfv.webp"
- alt="A statue with a heart and the letters SZFV" &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Székesfehérvár, Hungary.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-
-&lt;div class="picture"&gt;
- 
- &lt;figure&gt;
- 
- &lt;a href="https://teukka.tech/images/towerszkr.webp"&gt;&lt;picture
- title="An old tower with an astrological clock. There is a figure of a man with a fancy costume above the clock."&gt;
- 
- 
- &lt;source
- srcset="https://teukka.tech/images/towerszkr.webp"
- &gt;
- 
- 
- 
- 
- 
- 
- &lt;img
- class="u-photo"
- src="https://teukka.tech/images/towerszkr.webp"
- alt="An old tower with an astrological clock. There is a figure of a man with a fancy costume above the clock." &gt;
- &lt;/picture&gt;
- &lt;/a&gt;
- 
- &lt;figcaption&gt;Clock in Székesfehérvár, Hungary.&lt;/figcaption&gt;
- &lt;/figure&gt;
- 
-&lt;/div&gt;
-&lt;/p&gt;</description></item><item><title>Build Your Own Frontend Framework Part 2, Data Fetching</title><link>https://teukka.tech/posts/2019-10-01-byoff-part-2/</link><pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-10-01-byoff-part-2/</guid><description>&lt;h2 id="part-two-data-fetching-on-mount"&gt;Part Two, Data Fetching on Mount&lt;/h2&gt;
+&lt;/div&gt;</description></item><item><title>Build Your Own Frontend Framework Part 2, Data Fetching</title><link>https://teukka.tech/posts/2019-10-01-byoff-part-2/</link><pubDate>Thu, 10 Oct 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-10-01-byoff-part-2/</guid><description>&lt;h2 id="part-two-data-fetching-on-mount"&gt;Part Two, Data Fetching on Mount&lt;/h2&gt;
 &lt;p&gt;Asynchronous actions are essential in any modern web application. The ability to fetch data from some service and display it to users is an important part of building a framework to support these applications. In order for our components to do this, we need to refactor. Our component calls &lt;code&gt;mount&lt;/code&gt; when we want to render it on the page, but this function only serves to attach styles and event handlers to the component, not fetch data asynchronously. To accommodate actions taken after our component has been defined, but before it is actually rendered, we need a new method: &lt;code&gt;componentDidMount&lt;/code&gt;.&lt;/p&gt;</description></item><item><title>Build Your Own Frontend Framework Part 1</title><link>https://teukka.tech/posts/2019-09-15-byoff-part-1/</link><pubDate>Sun, 15 Sep 2019 00:00:00 +0000</pubDate><guid>https://teukka.tech/posts/2019-09-15-byoff-part-1/</guid><description>&lt;h2 id="part-one-basic-component"&gt;Part One, Basic Component&lt;/h2&gt;
 &lt;p&gt;Components will be the basic building blocks of our frontend framework. Components will allow modular composition and encapsulation.
 The first component implementation will be rather naive, but that&amp;rsquo;s alright since its implementation will evolve over time.

@@ -291,7 +291,7 @@ article .title {
 }
 /* Tags */
 .tags li::before {
-  content: "🏷️ ";
+  content: "🏷️";
 }
 .tags a {
   border-bottom: 3px solid var(--maincolor);
