@@ -1,10 +1,33 @@
 {{ define "main" }}
 <h1 class="page-title">RSS Feeds</h1>
 
-<ul class="posts" style="width: 70%; margin: auto">
+<style>
+  .feeds {
+    width: 70%;
+    margin: auto;
+  }
+  .feeds li {
+    margin: 0.75rem 0;
+    font-size: 1.7rem;
+    display: flex;
+    align-items: center;
+  }
+
+  @media (max-width: 600px) {
+    .feeds {
+      width: 100%;
+      padding-left: 0;
+    }
+    .feeds li {
+      margin: 2rem 0;
+    }
+  }
+</style>
+
+<ul class="posts feeds">
   {{ range sort .Site.Data.rssfeeds.list "title" }}
   <!--prettier-ignore-->
-  <li style="margin: 0.75rem 0; font-size: 1.7rem; display: flex; align-items: center;">
+  <li>
     {{ if (eq .imgData "") }}
       <div style="text-align: center; margin: 0 0.45rem; height: 40px; width: 40px;">📜</div>
     {{ else }}

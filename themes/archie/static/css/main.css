@@ -67,11 +67,17 @@ sup a {
 }
 
 ul {
-  list-style: none;
   padding-left: 2ch;
 }
 ul li::before {
   font-weight: bold;
+}
+
+.body ul li {
+  margin: 1rem 0;
+}
+.body > ul > li > ul {
+  margin-left: 1rem;
 }
 
 /* Images */
@@ -292,6 +298,12 @@ article .title {
 /* Tags */
 .tags li::before {
   content: "🏷️";
+}
+ul.tags {
+  list-style: none;
+}
+ul.posts {
+  list-style: none;
 }
 .tags a {
   border-bottom: 3px solid var(--maincolor);
