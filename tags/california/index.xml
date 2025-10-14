@@ -65,10 +65,10 @@
  &lt;a href="media-20251012-153322"&gt;&lt;picture
  title="Sunset as seen in the side mirror of a car in the desert."&gt;
  &lt;source
- srcset="images/media-20251012-153322.webp"&gt;
+ srcset="https://teukka.tech/images/media-20251012-153322.webp"&gt;
  &lt;img
  class="u-photo"
- src="images/media-20251012-153322.webp"
+ src="https://teukka.tech/images/media-20251012-153322.webp"
  alt="Sunset as seen in the side mirror of a car in the desert." &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
@@ -101,12 +101,12 @@
  
  &lt;figure&gt;
  
- &lt;a href="images/media-20251012-153322.webp"&gt;&lt;picture
+ &lt;a href="https://teukka.tech/images/media-20251012-153322.webp"&gt;&lt;picture
  title="Sunset as seen in the side mirror of a car in the desert."&gt;
  
  
  &lt;source
- srcset="images/media-20251012-153322.webp"
+ srcset="https://teukka.tech/images/media-20251012-153322.webp"
  &gt;
  
  
@@ -116,7 +116,7 @@
  
  &lt;img
  class="u-photo"
- src="images/media-20251012-153322.webp"
+ src="https://teukka.tech/images/media-20251012-153322.webp"
  alt="Sunset as seen in the side mirror of a car in the desert." &gt;
  &lt;/picture&gt;
  &lt;/a&gt;
