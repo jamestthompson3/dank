@@ -13,7 +13,7 @@ images:
 
 # Intro
 
-This is the first year that I'm trying to publish something on or for the web for the month of October. Webtober has been a good opportunity to hack on some projects and work on my blog! See what I did last week [here](/posts/2025-10-14-webtober/)
+This is the first year that I'm trying to publish something on or for the web for the month of October. Webtober has been a good opportunity to hack on some projects and work on my blog! See what I did last week [here](/posts/2025-10-14-webtober-week2/)
 
 ## Projects
 
