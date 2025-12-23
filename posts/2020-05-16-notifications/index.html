@@ -32,7 +32,7 @@
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>&lt;/script&gt;
 </span></span></code></pre></div><p>Since our examples don&rsquo;t rely on the Push API, we&rsquo;ll implement the checks via long polling in our web worker:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-javascript data-lang=javascript><span style=display:flex><span><span style=color:#0f0>// notifier.js
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>onmessage = <span style=color:red>function</span> (e) {
+</span></span></span><span style=display:flex><span>onmessage = <span style=color:red>function</span> (e) {
 </span></span><span style=display:flex><span>  <span style=color:red>switch</span> (e.data.type) {
 </span></span><span style=display:flex><span>    <span style=color:red>case</span> <span style=color:#87ceeb>&#34;JOB_START&#34;</span>:
 </span></span><span style=display:flex><span>      watchForJobWithId(e.data.jobId);
@@ -44,7 +44,7 @@
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:red>function</span> watchForJobWithId(jobId) {
 </span></span><span style=display:flex><span>  <span style=color:#0f0>// long polling
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>  <span style=color:red>const</span> pollChanges = setInterval(() =&gt; {
+</span></span></span><span style=display:flex><span>  <span style=color:red>const</span> pollChanges = setInterval(() =&gt; {
 </span></span><span style=display:flex><span>    fetch(<span style=color:#87ceeb>&#34;/jobs/completed&#34;</span>)
 </span></span><span style=display:flex><span>      .then((res) =&gt; res.json())
 </span></span><span style=display:flex><span>      .then(({ jobs }) =&gt; {

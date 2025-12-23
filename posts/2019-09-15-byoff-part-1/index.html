@@ -26,7 +26,7 @@ Now that we have a very basic component, we need a way to mount it to the DOM. S
 </span></span><span style=display:flex><span>&lt;/script&gt;
 </span></span></code></pre></div><p>This is quite boring, so let&rsquo;s add the ability to style our components and render sub components, or <code>children</code>.
 To do this, we will add a couple more methods to our <code>Component</code> class. We&rsquo;ll start with the <code>mount</code> method:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#0f0>// inside Component class
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>mount() {
+</span></span></span><span style=display:flex><span>mount() {
 </span></span><span style=display:flex><span>  Object.entries(<span style=color:red>this</span>.args.style).forEach(([styleKey, styleValue]) =&gt; {
 </span></span><span style=display:flex><span>    <span style=color:red>this</span>.el.style[styleKey] = styleValue
 </span></span><span style=display:flex><span>  })
@@ -34,7 +34,7 @@ To do this, we will add a couple more methods to our <code>Component</code> clas
 </span></span></code></pre></div><p>In the <code>mount</code> method, we take a style object passed to the component in <code>args</code> and append the component&rsquo;s element with the given style property.
 While this currently doesn&rsquo;t allow us to style components with css selectors, it does allow for simple inline styling that will help us troubleshoot components.
 For our component to render children, we need to add a <code>render</code> method which will take children components as an argument and correctly render them out to the DOM.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#0f0>// inside of Component class
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>render(children) {
+</span></span></span><span style=display:flex><span>render(children) {
 </span></span><span style=display:flex><span>  <span style=color:red>if</span> (!Array.isArray(children)) {
 </span></span><span style=display:flex><span>    <span style=color:red>throw</span> <span style=color:red>new</span> Error(<span style=color:#87ceeb>&#39;Children must be an array!&#39;</span>)
 </span></span><span style=display:flex><span>  }

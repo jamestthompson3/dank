@@ -36,7 +36,7 @@
 </span></span><span style=display:flex><span>];
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#0f0>// install pages
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>self.addEventListener(<span style=color:#87ceeb>&#34;install&#34;</span>, installWorker);
+</span></span></span><span style=display:flex><span>self.addEventListener(<span style=color:#87ceeb>&#34;install&#34;</span>, installWorker);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:red>async</span> <span style=color:red>function</span> installWorker(e) {
 </span></span><span style=display:flex><span>  <span style=color:red>await</span> self.skipWaiting();
@@ -48,7 +48,7 @@
 </span></span><span style=display:flex><span>  <span style=color:red>await</span> deleteOldCaches();
 </span></span><span style=display:flex><span>  <span style=color:red>await</span> installCachedFiles();
 </span></span><span style=display:flex><span>  event.waitUntil(clients.claim()); <span style=color:#0f0>// make the current sw the active sw in all cached pages
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>}
+</span></span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:red>async</span> <span style=color:red>function</span> installCachedFiles() {
 </span></span><span style=display:flex><span>  <span style=color:red>const</span> cache = <span style=color:red>await</span> caches.open(CACHE_NAME);
@@ -85,8 +85,8 @@
 </span></span><span style=display:flex><span>    <span style=color:red>return</span> match;
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>  <span style=color:#0f0>// Create promises for both the network response,
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>  <span style=color:#0f0>// and a copy of the response that can be used in the cache.
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>  <span style=color:red>const</span> fetchResponseP = fetch(request);
+</span></span></span><span style=display:flex><span>  <span style=color:#0f0>// and a copy of the response that can be used in the cache.
+</span></span></span><span style=display:flex><span>  <span style=color:red>const</span> fetchResponseP = fetch(request);
 </span></span><span style=display:flex><span>  <span style=color:red>const</span> fetchResponseCloneP = fetchResponseP.then((r) =&gt; r.clone());
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>  event.waitUntil(
@@ -98,7 +98,7 @@
 </span></span><span style=display:flex><span>  <span style=color:red>return</span> fetchResponseP;
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div><h3 id=going-to-the-network>Going to the network</h3><p>In this segment of the service worker code, we are adding an event listener for <code>fetch</code> events and responding with a cached response under certain conditions. The conditions we are checking before responding with cached response are: if the request is a navigation event (loading this blog post in your browser for example), or if the browser requests additional resources like CSS, Javascript, or images. To illustrate this flow, we&rsquo;ll take a look at two different resources requested by this website, <code>vimtip-gitlens.html</code> and <code>bb8_1.svg</code>.</p><p>Since <code>vimtip-gitlens.html</code> is specified in the <code>PAGES</code> array we cached on service worker activation, we&rsquo;ll look at it first. When you navigate to <a href=https://teukka.tech/vimtip-gitlens.html>the post</a>, the <code>event.respondWith</code> function is executed with the value from <code>cacheResponse</code> being evaluated. Using <code>event.respondWith</code> tells the service worker to intercept the request and respond with the argument passed to this function. Let&rsquo;s step through the <code>cacheResponse</code> function: we first open the current cache (as denoted with the <code>CACHE_NAME</code>) and check to see if there are any entries for the URL of the incoming request. If we&rsquo;ve cached this URL before, we return the cached response&ndash;avoiding a network call. If the service worker can&rsquo;t find the URL from its cache, then makes a network request and places the response into the cache while returning the <em>Promise</em> containing the response back to our main application. Putting the response in the cache is wrapped inside <code>event.waitUntil</code> to ensure that the browser does not interrupt the service worker while updating.</p><h3 id=wrapping-up>Wrapping up</h3><p>The final step in this example is making sure that the service worker always reflects the most up to date content. This means that every time we make a change to one of our cached assets, we update the <code>CACHE_NAME</code> in the service worker. For this blog, I created a bash script that helps ensure I don&rsquo;t forget to update my service worker cache:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-bash data-lang=bash><span style=display:flex><span><span style=color:#e5e5e5>#!/bin/bash
-</span></span></span><span style=display:flex><span><span style=color:#e5e5e5></span>
+</span></span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:#eedd82>UUID</span>=<span style=color:red>$(</span>cat /proc/sys/kernel/random/uuid<span style=color:red>)</span>
 </span></span><span style=display:flex><span>rm -f sw-prod.js
 </span></span><span style=display:flex><span>cp sw.js sw-prod.js

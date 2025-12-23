@@ -26,7 +26,7 @@
 </span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span><span style=color:#0f0>// The Manager class shown in the next example, request adaptors are not covered in this post
 </span></span></span><span style=display:flex><span><span style=color:#0f0>// but more information can be found in the repo link above.
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span><span style=color:red>const</span> postsClient = <span style=color:red>new</span> Manager(
+</span></span></span><span style=display:flex><span><span style=color:red>const</span> postsClient = <span style=color:red>new</span> Manager(
 </span></span><span style=display:flex><span>  <span style=color:#87ceeb>&#34;http://posts.some-service.net&#34;</span>,
 </span></span><span style=display:flex><span>  axiosAdapter
 </span></span><span style=display:flex><span>).validateWith(mySchema);
@@ -48,10 +48,10 @@
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>  validateWith(schema) {
 </span></span><span style=display:flex><span>    <span style=color:red>const</span> self = <span style=color:red>this</span>; <span style=color:#0f0>// Added to prevent confusion with &#39;this&#39; when nesting calls
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>    <span style=color:red>return</span> accessInterceptor(<span style=color:red>function</span> (_, schemaPath) {
+</span></span></span><span style=display:flex><span>    <span style=color:red>return</span> accessInterceptor(<span style=color:red>function</span> (_, schemaPath) {
 </span></span><span style=display:flex><span>      <span style=color:red>if</span> (!(schemaPath <span style=color:red>in</span> schema)) {
 </span></span><span style=display:flex><span>        <span style=color:#0f0>// custom defined error
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>        <span style=color:red>throw</span> <span style=color:red>new</span> PathNotInSchemaError(
+</span></span></span><span style=display:flex><span>        <span style=color:red>throw</span> <span style=color:red>new</span> PathNotInSchemaError(
 </span></span><span style=display:flex><span>          <span style=color:#87ceeb>`</span><span style=color:#87ceeb>${</span>schemaPath<span style=color:#87ceeb>}</span><span style=color:#87ceeb> not in schema.\n valid paths are\n [</span><span style=color:#87ceeb>${</span>Object.keys(
 </span></span><span style=display:flex><span>            schema
 </span></span><span style=display:flex><span>          )<span style=color:#87ceeb>}</span><span style=color:#87ceeb>]`</span>
@@ -69,8 +69,8 @@
 </span></span><span style=display:flex><span>          }
 </span></span><span style=display:flex><span>        });
 </span></span><span style=display:flex><span>      <span style=color:#0f0>// continued below
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>      <span style=color:#0f0>// ...
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>    });
+</span></span></span><span style=display:flex><span>      <span style=color:#0f0>// ...
+</span></span></span><span style=display:flex><span>    });
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
 </span></span><span style=display:flex><span>
@@ -91,7 +91,7 @@
 </span></span><span style=display:flex><span>  ],
 </span></span><span style=display:flex><span>  posts: [{ title: <span style=color:#87ceeb>&#34;some cool post&#34;</span>, desc: <span style=color:#87ceeb>&#34;a great post about javascript&#34;</span> }],
 </span></span><span style=display:flex><span>  <span style=color:#0f0>//....
-</span></span></span><span style=display:flex><span><span style=color:#0f0></span>};
+</span></span></span><span style=display:flex><span>};
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:red>const</span> handler = {
 </span></span><span style=display:flex><span>  get(...args) {
