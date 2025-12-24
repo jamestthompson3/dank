@@ -1,6 +1,5 @@
 ---
 title: "Asia Fall 2025"
-date: 2025-12-23T20:46:10Z
 tags: ["Tokyo", "Seoul", "Busan"]
 layout: section.html
 author: Taylor Thompson
