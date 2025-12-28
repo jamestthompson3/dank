@@ -3,9 +3,9 @@ title: "Aspö in Winter"
 date: 2025-12-28T08:52:26Z
 layout: section.html
 author: Taylor Thompson
-tags: []
+tags: ["island", "photography"]
 images: ["/images/photo-20251228-084421.webp"]
-description: ""
+description: "Pictures I took during Christmas 2025"
 ---
 
 {{< photo-page-ref ref="photo-20251228-084421" src="/images/photo-20251228-084421" type="webp" alt="" caption="" >}}
