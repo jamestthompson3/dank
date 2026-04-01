@@ -4,7 +4,7 @@
 <a href=/feeds>rss feeds</a></nav><div id=fastSearch><label for=searchInput style=display:none>search the blog</label>
 <input id=searchInput tabindex=0 placeholder="search 🔍"><ul id=searchResults></ul></div></header><div class=content><main><br><br><article class="h-entry post"><div class=title><h1 class=title><a class="p-name u-url" href=https://teukka.tech/posts/2019-09-15-byoff-part-1/>Build Your Own Frontend Framework Part 1</a></h1><div class="dt-published meta">Posted on 2019-09-15</div><a rel=author class="p-author h-card" href=/>taylor thompson</a></div><div class=post-tags><nav class="nav tags"><ul class=tags><li><a class=p-category href=/tags/webdev>webdev</a></li><li><a class=p-category href=/tags/javascript>javascript</a></li><li><a class=p-category href=/tags/learning>learning</a></li></ul></nav></div><section class="body e-content"><h2 id=part-one-basic-component>Part One, Basic Component</h2><p>Components will be the basic building blocks of our frontend framework. Components will allow modular composition and encapsulation.
 The first component implementation will be rather naive, but that&rsquo;s alright since its implementation will evolve over time.
-Let&rsquo;s start with creating a <code>Component</code> class:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>const</span> COOL_COMPONENT = Symbol(<span style=color:#87ceeb>&#34;component&#34;</span>);
+Let&rsquo;s start with creating a <code>Component</code> class:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>const</span> COOL_COMPONENT = Symbol(<span style=color:#87ceeb>&#34;component&#34;</span>);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:red>class</span> Component {
 </span></span><span style=display:flex><span>  constructor(element, args = {}) {
@@ -15,17 +15,17 @@ Let&rsquo;s start with creating a <code>Component</code> class:</p><div class=hi
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>Breaking this down:</p><p><code>const COOL_COMPONENT = Symbol('component')</code></p><p>This creates a unique representation for our component type, and will help identify component instances as they get passed around our framework.
 The component takes an element type and some arguments which we&rsquo;ll handle a bit later. The constructor also creates a new element which we&rsquo;ll mount on the DOM with a <code>mount</code> function.
-Now that we have a very basic component, we need a way to mount it to the DOM. Starting with a naive implementation, we can do something like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>function</span> renderToDOM(id, component) {
+Now that we have a very basic component, we need a way to mount it to the DOM. Starting with a naive implementation, we can do something like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>function</span> renderToDOM(id, component) {
 </span></span><span style=display:flex><span>  <span style=color:red>const</span> root = document.querySelector(<span style=color:#87ceeb>`#</span><span style=color:#87ceeb>${</span>id<span style=color:#87ceeb>}</span><span style=color:#87ceeb>`</span>);
 </span></span><span style=display:flex><span>  root.appendChild(Component.el);
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>With this code, we can create components and mount them to the DOM. Let&rsquo;s start building!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span>&lt;div id=<span style=color:#87ceeb>&#34;root&#34;</span>&gt;&lt;/div&gt;
+</span></span></code></pre></div><p>With this code, we can create components and mount them to the DOM. Let&rsquo;s start building!</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-html data-lang=html><span style=display:flex><span>&lt;div id=<span style=color:#87ceeb>&#34;root&#34;</span>&gt;&lt;/div&gt;
 </span></span><span style=display:flex><span>&lt;script&gt;
 </span></span><span style=display:flex><span>  <span style=color:red>const</span> div = <span style=color:red>new</span> Component(<span style=color:#87ceeb>&#34;div&#34;</span>);
 </span></span><span style=display:flex><span>  renderToDOM(<span style=color:#87ceeb>&#34;root&#34;</span>, div);
 </span></span><span style=display:flex><span>&lt;/script&gt;
 </span></span></code></pre></div><p>This is quite boring, so let&rsquo;s add the ability to style our components and render sub components, or <code>children</code>.
-To do this, we will add a couple more methods to our <code>Component</code> class. We&rsquo;ll start with the <code>mount</code> method:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#0f0>// inside Component class
+To do this, we will add a couple more methods to our <code>Component</code> class. We&rsquo;ll start with the <code>mount</code> method:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#0f0>// inside Component class
 </span></span></span><span style=display:flex><span>mount() {
 </span></span><span style=display:flex><span>  Object.entries(<span style=color:red>this</span>.args.style).forEach(([styleKey, styleValue]) =&gt; {
 </span></span><span style=display:flex><span>    <span style=color:red>this</span>.el.style[styleKey] = styleValue
@@ -33,7 +33,7 @@ To do this, we will add a couple more methods to our <code>Component</code> clas
 </span></span><span style=display:flex><span>}
 </span></span></code></pre></div><p>In the <code>mount</code> method, we take a style object passed to the component in <code>args</code> and append the component&rsquo;s element with the given style property.
 While this currently doesn&rsquo;t allow us to style components with css selectors, it does allow for simple inline styling that will help us troubleshoot components.
-For our component to render children, we need to add a <code>render</code> method which will take children components as an argument and correctly render them out to the DOM.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#0f0>// inside of Component class
+For our component to render children, we need to add a <code>render</code> method which will take children components as an argument and correctly render them out to the DOM.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-js data-lang=js><span style=display:flex><span><span style=color:#0f0>// inside of Component class
 </span></span></span><span style=display:flex><span>render(children) {
 </span></span><span style=display:flex><span>  <span style=color:red>if</span> (!Array.isArray(children)) {
 </span></span><span style=display:flex><span>    <span style=color:red>throw</span> <span style=color:red>new</span> Error(<span style=color:#87ceeb>&#39;Children must be an array!&#39;</span>)
@@ -52,7 +52,7 @@ For our component to render children, we need to add a <code>render</code> metho
 </span></span><span style=display:flex><span>    <span style=color:red>return</span> <span style=color:red>this</span>
 </span></span><span style=display:flex><span>  })
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>When given an array of children, <code>render</code> iterates through the array and checks if the child is a component. If it is, then it adds it to another array of components to be appended, if the child is a string, it is appended as a text node to the current component.</p><p>Putting all these pieces together looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>const</span> COOL_COMPONENT = Symbol(<span style=color:#87ceeb>&#34;component&#34;</span>);
+</span></span></code></pre></div><p>When given an array of children, <code>render</code> iterates through the array and checks if the child is a component. If it is, then it adds it to another array of components to be appended, if the child is a string, it is appended as a text node to the current component.</p><p>Putting all these pieces together looks like this:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>const</span> COOL_COMPONENT = Symbol(<span style=color:#87ceeb>&#34;component&#34;</span>);
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span><span style=color:red>class</span> Component {
 </span></span><span style=display:flex><span>  constructor(element, args = {}) {
@@ -85,7 +85,7 @@ For our component to render children, we need to add a <code>render</code> metho
 </span></span><span style=display:flex><span>    });
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#0f0>&lt;!--- index.html ----&gt;</span>
+</span></span></code></pre></div><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-html data-lang=html><span style=display:flex><span><span style=color:#0f0>&lt;!--- index.html ----&gt;</span>
 </span></span><span style=display:flex><span>&lt;div id=<span style=color:#87ceeb>&#34;root&#34;</span>&gt;&lt;/div&gt;
 </span></span><span style=display:flex><span>&lt;script&gt;
 </span></span><span style=display:flex><span>  <span style=color:red>const</span> div = <span style=color:red>new</span> Component(<span style=color:#87ceeb>&#34;div&#34;</span>, {
@@ -98,7 +98,7 @@ For our component to render children, we need to add a <code>render</code> metho
 </span></span><span style=display:flex><span>
 </span></span><span style=display:flex><span>  renderToDOM(<span style=color:#87ceeb>&#34;root&#34;</span>, div);
 </span></span><span style=display:flex><span>&lt;/script&gt;
-</span></span></code></pre></div><p>One last thing to do for our basic component is to add event listeners. We can do this in the <code>mount</code> method of our comonent:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span>
+</span></span></code></pre></div><p>One last thing to do for our basic component is to add event listeners. We can do this in the <code>mount</code> method of our comonent:</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-js data-lang=js><span style=display:flex><span>
 </span></span><span style=display:flex><span>mount() {
 </span></span><span style=display:flex><span>  Object.entries(<span style=color:red>this</span>.args.style).forEach(([styleKey, styleValue]) =&gt; {
 </span></span><span style=display:flex><span>    <span style=color:red>this</span>.el.style[styleKey] = styleValue
@@ -110,7 +110,7 @@ For our component to render children, we need to add a <code>render</code> metho
 </span></span><span style=display:flex><span>    })
 </span></span><span style=display:flex><span>  }
 </span></span><span style=display:flex><span>}
-</span></span></code></pre></div><p>Now we can pass an array of events and their respective handler functions to our component with the <code>on</code> argument.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>const</span> div = <span style=color:red>new</span> Component(<span style=color:#87ceeb>&#34;div&#34;</span>, {
+</span></span></code></pre></div><p>Now we can pass an array of events and their respective handler functions to our component with the <code>on</code> argument.</p><div class=highlight><pre tabindex=0 style=color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none><code class=language-js data-lang=js><span style=display:flex><span><span style=color:red>const</span> div = <span style=color:red>new</span> Component(<span style=color:#87ceeb>&#34;div&#34;</span>, {
 </span></span><span style=display:flex><span>  style: { height: <span style=color:#87ceeb>&#34;300px&#34;</span>, width: <span style=color:#87ceeb>&#34;300px&#34;</span>, background: <span style=color:#87ceeb>&#34;papayawhip&#34;</span> },
 </span></span><span style=display:flex><span>  on: [{ click: () =&gt; console.log(<span style=color:#87ceeb>&#34;Hello there&#34;</span>) }],
 </span></span><span style=display:flex><span>});

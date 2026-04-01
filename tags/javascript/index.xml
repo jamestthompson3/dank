@@ -8,7 +8,7 @@
 &lt;p&gt;Components will be the basic building blocks of our frontend framework. Components will allow modular composition and encapsulation.
 The first component implementation will be rather naive, but that&amp;rsquo;s alright since its implementation will evolve over time.
 Let&amp;rsquo;s start with creating a &lt;code&gt;Component&lt;/code&gt; class:&lt;/p&gt;
-&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f00"&gt;const&lt;/span&gt; COOL_COMPONENT = Symbol(&lt;span style="color:#87ceeb"&gt;&amp;#34;component&amp;#34;&lt;/span&gt;);
+&lt;div class="highlight"&gt;&lt;pre tabindex="0" style="color:#f8f8f2;background-color:#000;-moz-tab-size:4;-o-tab-size:4;tab-size:4;-webkit-text-size-adjust:none;"&gt;&lt;code class="language-js" data-lang="js"&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f00"&gt;const&lt;/span&gt; COOL_COMPONENT = Symbol(&lt;span style="color:#87ceeb"&gt;&amp;#34;component&amp;#34;&lt;/span&gt;);
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt;&lt;span style="color:#f00"&gt;class&lt;/span&gt; Component {
 &lt;/span&gt;&lt;/span&gt;&lt;span style="display:flex;"&gt;&lt;span&gt; constructor(element, args = {}) {
