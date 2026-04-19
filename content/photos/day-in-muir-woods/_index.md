@@ -1,0 +1,17 @@
+---
+title: "Day in Muir Woods"
+date: 2026-04-19T01:06:14Z
+layout: section.html
+author: Taylor Thompson
+tags: []
+images: ["/images/photo-20260419-010432.webp"]
+description: ""
+---
+
+{{< photo-page-ref ref="photo-20260419-010432" src="/images/photo-20260419-010432" type="webp" alt="" caption="" >}}
+{{< photo-page-ref ref="photo-20260419-010337" src="/images/photo-20260419-010337" type="webp" alt="" caption="" >}}
+{{< photo-page-ref ref="photo-20260419-010445" src="/images/photo-20260419-010445" type="webp" alt="" caption="" >}}
+{{< photo-page-ref ref="photo-20260419-010319" src="/images/photo-20260419-010319" type="webp" alt="" caption="" >}}
+{{< photo-page-ref ref="photo-20260419-010426" src="/images/photo-20260419-010426" type="webp" alt="" caption="" >}}
+{{< photo-page-ref ref="photo-20260419-010419" src="/images/photo-20260419-010419" type="webp" alt="" caption="" >}}
+{{< photo-page-ref ref="photo-20260419-010327" src="/images/photo-20260419-010327" type="webp" alt="" caption="" >}}
