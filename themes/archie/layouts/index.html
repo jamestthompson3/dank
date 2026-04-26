@@ -199,7 +199,7 @@
         document.getElementById("artist").textContent = artist["#text"];
         coverart.src = image[1]["#text"];
         let text = "🎧 ";
-        if (track["@attr"].nowplaying) {
+        if (track["@attr"] && track["@attr"].nowplaying) {
           text += "Now Playing";
           setTimeout(loadListeningHistory, 1000 * 60 * 2);
         } else {
