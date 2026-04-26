@@ -199,10 +199,10 @@
         coverart.src = track.image[1]["#text"];
         let text = "🎧 ";
         if (track["@attr"] && track["@attr"].nowplaying) {
-          text += "Now Playing";
+          text += "Now Listening to";
           setTimeout(loadListeningHistory, 1000 * 60 * 2);
         } else {
-          text += "Last Played";
+          text += "Last Listened to";
         }
         nowplaying.querySelector("span").textContent = text;
         coverart.onload = () => {
