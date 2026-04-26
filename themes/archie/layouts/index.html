@@ -191,12 +191,12 @@
         const res = await fetch(
           "https://lastfm-last-played.biancarosa.com.br/slower_loris/latest-song",
         );
-        const track = (await res.json()).track;
-        const { name, artist, url, image } = track;
-        songlink.href = url;
-        song.textContent = name;
-        document.getElementById("artist").textContent = artist["#text"];
-        coverart.src = image[1]["#text"];
+        const json = await res.json();
+        const track = json.track;
+        songlink.href = track.url;
+        song.textContent = track.name;
+        document.getElementById("artist").textContent = track.artist["#text"];
+        coverart.src = track.image[1]["#text"];
         let text = "🎧 ";
         if (track["@attr"] && track["@attr"].nowplaying) {
           text += "Now Playing";
