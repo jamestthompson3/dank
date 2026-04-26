@@ -191,8 +191,7 @@
         const res = await fetch(
           "https://lastfm-last-played.biancarosa.com.br/slower_loris/latest-song",
         );
-        const json = await res.json();
-        const { track } = json;
+        const track = (await res.json()).track;
         const { name, artist, url, image } = track;
         songlink.href = url;
         song.textContent = name;
