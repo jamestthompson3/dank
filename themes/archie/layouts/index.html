@@ -196,7 +196,8 @@
         songlink.href = track.url;
         song.textContent = track.name;
         document.getElementById("artist").textContent = track.artist["#text"];
-        coverart.src = track.image[1]["#text"];
+        const imageUrl = track.image[1]["#text"];
+        coverart.src = imageUrl;
         let text = "🎧 ";
         if (track["@attr"] && track["@attr"].nowplaying) {
           text += "Now Listening to";
@@ -205,7 +206,7 @@
           text += "Last Listened to";
         }
         nowplaying.querySelector("span").textContent = text;
-        if (coverart.src) {
+        if (imageUrl) {
           coverart.onload = () => {
             nowplaying.style.visibility = "visible";
           };
