@@ -205,9 +205,14 @@
           text += "Last Listened to";
         }
         nowplaying.querySelector("span").textContent = text;
-        coverart.onload = () => {
+        if (coverart.src) {
+          coverart.onload = () => {
+            nowplaying.style.visibility = "visible";
+          };
+        } else {
+          coverart.style.display = "none";
           nowplaying.style.visibility = "visible";
-        };
+        }
       }
       loadListeningHistory();
     </script>
