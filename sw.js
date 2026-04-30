@@ -1,5 +1,6 @@
 const CACHE_NAME = "posts-%VERSION%";
-const PAGES = [
+const OFFLINE_URL = "./index.html";
+const PRE_CACHE = [
   "./ico.png",
   "./pandocoverride.css",
   "./style.css",
@@ -7,21 +8,7 @@ const PAGES = [
   "./reset.css",
   "./blog.css",
   "./vim.css",
-  "peer-discover.html",
-  "viiksetjsretro.html",
-  "./knowledge-base.css",
   "./index.html",
-  "./vimloop.html",
-  "./luanvim.html",
-  "./vimtip-gitlens.html",
-  "./frameworkpt2.html",
-  "./frameworkpt1.html",
-  "./frameworkintro.html",
-  "./vimcandothat.html",
-  "./datastructures.html",
-  "./viiksetjs.html",
-  "./proxies.html",
-  "./rxjs-recompose.html",
   "./blogheader.js",
 ];
 
@@ -42,7 +29,7 @@ async function activateServiceWorker(event) {
 
 async function installCachedFiles() {
   const cache = await caches.open(CACHE_NAME);
-  return cache.addAll(PAGES);
+  return cache.addAll(PRE_CACHE);
 }
 
 async function deleteOldCaches() {
@@ -86,6 +73,9 @@ async function cacheResponse(request, event) {
     const match = await cache.match(request.url);
     if (match) {
       return match;
+    }
+    if (request.mode === "navigate") {
+      return cache.match(OFFLINE_URL);
     }
   }
 }
