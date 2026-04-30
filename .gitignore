@@ -3,3 +3,5 @@ tags
 drafts/*
 hugo/public/*
 public/*
+static/sw-prod.js
+.crush/
