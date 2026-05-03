@@ -82,7 +82,7 @@
 }
 #nowplaying {
   visibility: hidden;
-  width: min(280px, 100%);
+  width: min(100%, 340px);
   border-radius: 12px;
   padding: 4px;
   background: #446282f0 !important;
@@ -90,12 +90,29 @@
 }
 #songlink div {
   margin-left: 15px;
+  min-width: 0;
+  flex: 1;
+}
+#coverart {
+  width: 50px;
+  height: 50px;
+  border-radius: 4px;
+  object-fit: cover;
+  flex-shrink: 0;
 }
 #song {
   font-style: italic;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
 }
 #artist {
   font-size: 18px;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  margin: 0;
 }
 .h-card img {
   width: 100px;
@@ -246,14 +263,19 @@ code {
 /* Tablet and below */
 @media (max-width: 768px) {
   .homepage.blurb {
-    width: min(90%, 600px);
+    width: min(85%, 600px);
   }
   .homepage.link-container {
     min-width: auto;
     padding: 0.5rem;
+    gap: 0.5rem;
   }
   .homepage.link {
     padding: 0.75rem 1rem;
+    flex: 0 0 auto;
+  }
+  #nowplaying {
+    width: min(100%, 300px);
   }
   .subheader {
     font-size: 1.5rem;
@@ -293,8 +315,12 @@ code {
   #nowplaying {
     width: 100%;
   }
+  #songlink {
+    gap: 8px;
+  }
   .homepage.blurb {
     width: 100%;
+    border-radius: 0;
   }
   .homepage.link-container {
     min-width: auto;
@@ -305,5 +331,9 @@ code {
   }
   .outlinks.container {
     padding: 0 0.5rem;
+  }
+  .header {
+    font-size: 1.5rem;
+    padding: 1rem 0.5rem;
   }
 }
