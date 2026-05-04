@@ -10,6 +10,7 @@ build:
 
 build_hugo:
 	hugo --minify
+    cp *.html  ./public/
 	bash ./build.sh
 
 build_dev:
