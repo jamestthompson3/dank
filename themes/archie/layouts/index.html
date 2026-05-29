@@ -206,13 +206,9 @@
           text += "Last Listened to";
         }
         nowplaying.querySelector("span").textContent = text;
-        if (imageUrl) {
-          coverart.onload = () => {
-            nowplaying.style.visibility = "visible";
-          };
-        } else {
+        nowplaying.style.visibility = "visible";
+        if (!imageUrl) {
           coverart.style.display = "none";
-          nowplaying.style.visibility = "visible";
         }
       }
       loadListeningHistory();
