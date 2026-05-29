@@ -94,12 +94,13 @@ figure {
 }
 
 figure img {
-  max-height: 500px;
+  max-height: none;
+  width: 100%;
 }
 
 @media screen and (min-width: 600px) {
   figure {
-    padding: 0 40px;
+    padding: 0;
   }
 }
 
